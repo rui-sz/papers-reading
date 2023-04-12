@@ -15,3 +15,17 @@ Graph Convolutional Networks for Text Classification
 
 # 2023.4.9
 
+Imagenet classification with Deep CNN
+
+
+# 2023.4.12
+
+Learning convolutional neural networks for graphs
+    这是2016年的一篇文章
+    本文提出了 PATCHY-SAN model，核心idea：
+    1，CNN 对于CV/NLP等Euclidean数据场景，取得了SOTA效果，但是对于social network等Non-Euclidean数据，还不能很好的处理
+    2，因此本文提出了一种方法，将图数据巧妙的转换成CNN可以处理的 Euclidean 数据格式
+    3，核心过程：确定w个中心节点，并为它们创建邻域；然后将图表示映射为向量表示，使得相似结构的节点处于向量中相似位置
+
+    具体逻辑比较复杂，就不详述了。我个人的看法是：这篇文章设计了巧妙（且复杂）的方法，将图数据映射为CNN能够处理的欧式数据，以便可以使用CNN这一利器，好是好，不过以当今的视角来看，肯定是信息有损的了。后续关注一下其它方法与之的对比，尤其是GNN的对比。
+
