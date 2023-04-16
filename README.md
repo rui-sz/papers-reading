@@ -4,22 +4,41 @@
   
   
   
-  
-  
+# 2023.4.17
+
+Learning phrase representations using rnn encoder-decoder for statistical machine translation  
+    2014年，提出了GRU  
+    
   
 # 2023.4.16  
   
 Deep Visual-Semantic Alignments for Generating Image Descriptions  
     2015年的文章，二作李飞飞  
   
-  
+
 # 2023.4.13  
   
 RNN & LSTM basics  
 The Unreasonable Effectiveness of Recurrent Neural Networks  
-  
-  
-  
+    link: http://karpathy.github.io/2015/05/21/rnn-effectiveness/  
+    核心思想：  
+    1，RNN 引入了时间和依赖信息，适用于序列建模场景，包含Recurrent网络，允许信息持久化。  
+    2，RNN 的优势: 能够处理长度不限的输入, 以及"理论上"可以利用整个输入序列的信息  
+    3，由于Gradient vanishing 和Gradient explosion的问题，RNN 实际上取得的成绩并不大  
+    4，LSTM 的出现，很好的解决了RNN存在的梯度消失和梯度爆炸问题，也因此成为DL领域引用率最高的论文之一  
+
+Long short-term memory
+    1997年的文章  
+    核心思想：  
+    1，LSTM 通过三个门结构的引入解决RNN网络存在的梯度消失和梯度爆炸问题，极大提高RNN网络的能力  
+    2，遗忘门，决定ht-1的信息有多少能传递到ht  
+    3，更新门/输入门，决定记住多少xt和ht-1的信息  
+    4，输出门，决定ct的信息以多少比例输出到ht  
+    5，三个门结构比较好的解决了梯度消失问题，但是并不能够避免梯度爆炸。不过由于LSTM有众多门控结构，跟普通RNN相比，发生梯度爆炸概率低很多  
+    
+    遗憾的是，LSTM 论文并没有solid的理论解释，也没有解释门控为什么这么设计。再次支撑了深度学习是炼丹的说法~ lol  
+    LSTM 相比RNN的改进是比较好理解的，后来基于各种门控又有一些新的变体，例如GRU（Gated Recurrent Unit）等  
+
 # 2023.4.12  
   
 Learning convolutional neural networks for graphs  
