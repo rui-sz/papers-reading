@@ -16,6 +16,12 @@ Graph Convolutional Networks for Text Classification
 # 2023.4.9
 
 Imagenet classification with Deep CNN
+    2017年的文章，用一个改进的CNN网络解决基于ImageNet的1k类分类问题
+    核心idea：
+    1，当时最大的一个CNN网络，基于2块GPU
+    2，2D卷积的高性能GPU实现
+    3，采用了一些技巧（Relu instead of tanh/multiple GPUs），提高模型性能和训练效率
+    4，采用了一些方法避免过拟合：数据增强、dropout等
 
 
 # 2023.4.12
@@ -28,4 +34,8 @@ Learning convolutional neural networks for graphs
     3，核心过程：确定w个中心节点，并为它们创建邻域；然后将图表示映射为向量表示，使得相似结构的节点处于向量中相似位置
 
     具体逻辑比较复杂，就不详述了。我个人的看法是：这篇文章设计了巧妙（且复杂）的方法，将图数据映射为CNN能够处理的欧式数据，以便可以使用CNN这一利器，好是好，不过以当今的视角来看，肯定是信息有损的了。后续关注一下其它方法与之的对比，尤其是GNN的对比。
+
+
+# 2023.4.16
+
 
