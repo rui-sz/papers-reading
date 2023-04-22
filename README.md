@@ -4,17 +4,28 @@
   
   
   
-# 2023.4.17
+# 2023.4.22
 
 Learning phrase representations using rnn encoder-decoder for statistical machine translation  
     2014年，提出了GRU  
     
   
-# 2023.4.16  
+# 2023.4.12 
   
 Deep Visual-Semantic Alignments for Generating Image Descriptions  
     2015年的文章，二作李飞飞  
-  
+
+    本文的核心idea，训练模型来为图片生成文本描述，分为两步  
+    1，基于pretrained RCNN模型 和 BRNN 模型来学习 image 和 text 的emb，建立他们之间的对齐关系  
+    2，训练 generative model MRNN，接收RCNN的信息作为初始输入，并训练MRNN模型  
+        a) 初始化h0，输入START，得到第一个word  
+        b) 输入第一个word，得到输出的第二个word  
+        c) 以此类推，期待输入最后一个word之后输出END  
+
+    建立图文emb映射的思路比较有意思，不足之处  
+    1，输入图片分辨率是固定的  
+    2，RNN只通过bias来接收图像信息，可以做得更好  
+    3，不是end-to-end的  
 
 # 2023.4.13  
   
