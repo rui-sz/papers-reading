@@ -2,15 +2,20 @@
 每周论文学习记录  
   
   
-  
-  
-# 2023.4.22
+
+# pending list
+
+Opening the black box of Deep Neural Networks via Information  
 
 Learning phrase representations using rnn encoder-decoder for statistical machine translation  
     2014年，提出了GRU  
-    
-  
-# 2023.4.12 
+
+# 2023.4.23
+
+Anomaly Detection with Robust Deep Autoencoders
+    2017年
+
+# 2023.4.22 
   
 Deep Visual-Semantic Alignments for Generating Image Descriptions  
     2015年的文章，二作李飞飞  
