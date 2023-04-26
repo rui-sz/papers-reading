@@ -12,8 +12,12 @@ Learning phrase representations using rnn encoder-decoder for statistical machin
 
 # 2023.4.23
 
-Anomaly Detection with Robust Deep Autoencoders
-    2017年
+Anomaly Detection with Robust Deep Autoencoders  
+    2017年  
+    想法：  
+    1，提高autoencoder模型的抗噪声能力，启发于RPCA模型，降原始数据分成正常数据、噪声数据两部分，交替训练  
+    2，L1 正则，L21正则（对矩阵每一列求2范数再求和）  
+    3，先优化AE，再优化正则项  
 
 # 2023.4.22 
   
