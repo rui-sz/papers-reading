@@ -24,7 +24,10 @@ GCN 论文总结
 
 Predict then propagate: Graph neural networks meet personalized pagerank  
     2019 ICLR 的一篇论文，核心思想：  
-    GCN 的公式  
+    GCN 的公式：  
+    ![image](https://github.com/rui-sz/papers-weekly/assets/69101330/dc1506c0-c7c9-4fe5-aea7-1532f449a377)
+    其原理直观理解，就是不断聚合邻居节点的信息，学习聚合权重  
+    那么就存在2个问题：  
 
 
 # 2023.4.23
