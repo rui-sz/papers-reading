@@ -22,7 +22,7 @@ GCN 论文总结
 
 # 2023.5.14
 
-Predict then propagate: Graph neural networks meet personalized pagerank  
+《Predict then propagate: Graph neural networks meet personalized pagerank》  
     2019 ICLR 的一篇论文，核心思想：  
     GCN 的公式：  
     ![image](https://github.com/rui-sz/papers-weekly/assets/69101330/dc1506c0-c7c9-4fe5-aea7-1532f449a377)  
