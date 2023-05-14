@@ -10,16 +10,21 @@ Opening the black box of Deep Neural Networks via Information
 Learning phrase representations using rnn encoder-decoder for statistical machine translation  
     2014年，提出了GRU  
 
-
-
-
-# 2023.5.2
-
 使用Xenon-Generation Finetune LLama  
     文档阅读  
 
 李沐论文精读一篇  
     https://www.zhihu.com/people/mli65/zvideos  
+
+
+GCN 论文总结  
+
+
+# 2023.5.14
+
+Predict then propagate: Graph neural networks meet personalized pagerank  
+    2019 ICLR 的一篇论文，核心思想：  
+    GCN 的公式  
 
 
 # 2023.4.23
