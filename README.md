@@ -17,8 +17,22 @@ Learning phrase representations using rnn encoder-decoder for statistical machin
     https://www.zhihu.com/people/mli65/zvideos  
 
 
-GCN 论文总结  
+# 2023.5.16
 
+ResNet: Deep Residual Learning for Image Recognition  
+GNN 论文总结  
+
+
+# 2023.5.15  
+
+《Semi-supervised classification with graph convolutional networks》  
+    2017 年的文章  
+    昨天 PPNP 的文章基于GCN做了一些创新，今天将GCN回顾一下，这是图卷积的开创性论文，非常经典，今天看来其思路或许比较平常，但是在17年的时候，其将CNN思想用于Graph是非常创新的  
+    核心idea：  
+    1，GCN 相对于GNN（下一篇会回顾）来说，是对信息聚合过程做了一定的简化和近似，之后就类似CNN的卷积了  
+    2，2层卷积网络 + CE loss，为什么只有两层卷积，卷积太浅，信息不能大范围传播，卷积太深，容易过平滑（PPNP解决的问题之一）  
+    3，GCN 要基于整个Graph的邻接矩阵去计算（参见5.14的公式），进行整体求解，因此其范式是 transductive 的，计算开销也大（GraphSAGE后续会改进）  
+    4，从评估结果来看，GCN是要显著优于DeepWalk, LP等传统方法的，从原理看也容易理解。不过遗憾的是没有与GNN做对比，我想其效果应该差于GNN？  
 
 # 2023.5.14
 
