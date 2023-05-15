@@ -20,7 +20,9 @@ Learning phrase representations using rnn encoder-decoder for statistical machin
 # 2023.5.16
 
 ResNet: Deep Residual Learning for Image Recognition  
+todo:  
 GNN 论文总结  
+Deeper insights into graph convolutional networks for semi-supervised learning  
 
 
 # 2023.5.15  
