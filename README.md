@@ -25,6 +25,21 @@ GNN 论文总结
 Deeper insights into graph convolutional networks for semi-supervised learning  
 
 
+# 2023.5.20
+
+《Very deep conversational networks for large-scale image recognition》  
+    2015 ICLR, 大名鼎鼎的VGG  
+    核心idea：  
+    1，2012年 AlexNet 已经展现了CNN处理图片分类的强大能力，之后不同工作有不同演进方向，例如感受野大小、网络深度等  
+    2，本文采用3*3 receptive fields，步长为1，堆叠8~16层卷积+3层FC，想要研究网络深度的影响  
+    
+    部分研究结论：  
+    1，3个3*3卷积层叠加，感受野与1个7*7是一样的，参数量却小得多 3*9*C^2 vs 49*C^2  
+    2，网络深度的增加对于性能提升有显著作用，VGG19对比VGG16效果没有进一步提升，说明参数量饱和  
+    3，1*1卷积层的作用，是一种增加非线性的方式，实验结果显示能提升性能  
+    4，A-LRN 的效果并不比 A好，说明 LRN（AlexNet的创新）效果不大  
+    5，multi scale 技巧，无论用在train（数据增广）还是test（集成）都有效果，也容易理解  
+
 # 2023.5.15  
 
 《Semi-supervised classification with graph convolutional networks》  
