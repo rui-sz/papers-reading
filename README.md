@@ -16,13 +16,15 @@ Learning phrase representations using rnn encoder-decoder for statistical machin
 李沐论文精读一篇  
     https://www.zhihu.com/people/mli65/zvideos  
 
-
-# 2023.5.16
-
-ResNet: Deep Residual Learning for Image Recognition  
 todo:  
 GNN 论文总结  
 Deeper insights into graph convolutional networks for semi-supervised learning  
+
+
+# 2023.5.22
+
+《ResNet: Deep Residual Learning for Image Recognition》  
+    TBD  
 
 
 # 2023.5.20
