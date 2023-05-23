@@ -24,8 +24,15 @@ Deeper insights into graph convolutional networks for semi-supervised learning
 # 2023.5.22
 
 《ResNet: Deep Residual Learning for Image Recognition》  
-    TBD  
+    2016年文章，短短9页，16w引用，绝对是人狠话不多的典范  
+    核心idea：  
+    1，VGG 证明了深的网络更好，但是深的网络难以训练（收敛速度慢、梯度 vanish/explode等）  
+    2，本文提出的残差网络优化了这个问题，网络更深但是计算复杂度并没有提高很多  
+    3，对比VGG net，ResNet-152有8倍的深度，跟 VGG，GoogleNet 等网络的实验对比，效果非常的好，收敛速度也很快  
+    4，本文把网络做深过程中的几个核心部件：skip connection，bottleneck layer等  
 
+    Residual net 和 skip connection 都不是本文的首创，但是却很好的解决了图像分类等问题，非常赞  
+    不足之处是只讲了调参后工程上的做法，却没有很多理论解释（可能也比较难吧），无碍于神作  
 
 # 2023.5.20
 
