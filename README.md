@@ -5,20 +5,15 @@
 
 # pending list
 
-Opening the black box of Deep Neural Networks via Information  
-
-Learning phrase representations using rnn encoder-decoder for statistical machine translation  
+- [ ] Opening the black box of Deep Neural Networks via Information  
+- [ ] Learning phrase representations using rnn encoder-decoder for statistical machine translation  
     2014年，提出了GRU  
-
-使用Xenon-Generation Finetune LLama  
+- [ ] 使用Xenon-Generation Finetune LLama  
     文档阅读  
+- [x] 李沐论文精读一篇: https://www.zhihu.com/people/mli65/zvideos  
 
-李沐论文精读一篇  
-    https://www.zhihu.com/people/mli65/zvideos  
-
-todo:  
-GNN 论文总结  
-Deeper insights into graph convolutional networks for semi-supervised learning  
+- [ ] GNN 论文总结  
+- [ ] Deeper insights into graph convolutional networks for semi-supervised learning  
 
 
 # 2023.5.22
