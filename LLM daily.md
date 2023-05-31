@@ -6,14 +6,24 @@
 《The growing-up story of Language models》  
 ChatGPT账号
 
-## 2023.5.30
+## 2023.6.1
 
-GPT2/GPT3  
+GPT3
+
+## 2023.5.31
+
+《GPT2: Language Models are Unsupervised Multitask Learners》
+    2019年，GPT2  
+    核心idea：  
+    1，1.5B参数，no FT，zero-shot 的能力  
+    2，复用了MQAN文章思想，把multitask以无标文本序列来表达，这种训练是可行的，但是比监督要慢。这就是unsupervised multitask learning  
+    3，训练数据 WebText：Common Crawl数据选优 + Reddit，共40GB  
+    4，测试结果显示当前模型 underfit WebText 数据集，还有进一步提升的空间  
 
 
 ## 2023.5.29
 
-《Improving Language Understanding by Generative Pre-Training》  
+《GPT1: Improving Language Understanding by Generative Pre-Training》  
     2018年文章，GPT模型系列第一篇 GPT1  
     核心idea：  
     1，generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on specific task  
