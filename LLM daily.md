@@ -6,9 +6,24 @@
 《The growing-up story of Language models》  
 ChatGPT账号
 
-## 2023.6.1
+## 2023.6.3
 
-GPT3
+InstructGPT  
+GPT 3.5  
+
+## 2023.6.2
+
+《GPT3: Language Models are Few-Shot Learners》  
+    2020.5, GPT3  
+    核心idea：  
+    1，回到 few shot paradigm（预测时不做梯度更新），模型可学参数量拉到175B  
+    2，FT，需要与任务相关的带标数据集，以及FT过程  
+    3，FS/1S/0S：FS 不参与模型训练，不更新梯度，希望在attention+FFN等环节抽取出样例中的有用信息，学习在上下文中开展，因此叫做 in-context learning  
+    4，训练数据：Common Crawl+WebText+Books+Wiki，约45TB，3000亿token  
+    5，Prompt：自然语言prompt对性能提升有帮助，这也是现在prompt eng大行其道的原因吧  
+    6，结果总体当然惊艳，也展示了在一些场景，few-hot GPT已经超过了当前 FT SOTA 模型，未来可能弃用FT  
+    7，模型局限性：文本生成还比较弱，只能往前看，文本的重要性，多模态的缺失，样本有效性不够，成本，解释性等等  
+
 
 ## 2023.5.31
 
