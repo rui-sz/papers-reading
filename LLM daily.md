@@ -13,7 +13,7 @@ GPT 3.5
 with human feedback》  
     GPT系列承上启下的一篇文章，引入了RLHF这个关键组件  
     核心idea：  
-    1，SFT（13k）, 人工标记prompt+标注答案，基于GPT3模型做了 16 轮迭代fine tune
+    1，SFT（13k）, 人工标记prompt+标注答案，基于GPT3模型做了 16 轮迭代fine tune  
     2，RM（33k），基于6B GPT3模型，每个prompt生成9个答案标注排序，pair-wise ranking损失。RM用于模拟人的反馈  
     3，RL（31k样本），PPO 优化算法，也是OpenAI之前的工作，加散度项控制模型不要跑太远，同时加了原始语言模型目标项  
     4，model alignment 的训练代价是比较低的，只有万级别样本。不过到底align到哪里？  
