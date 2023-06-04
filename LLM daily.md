@@ -5,11 +5,21 @@
 ## TBD
 《The growing-up story of Language models》  
 ChatGPT账号
-
-## 2023.6.3
-
-InstructGPT  
 GPT 3.5  
+
+## 2023.6.4
+
+《InstructGPT：Training language models to follow instructions
+with human feedback》  
+    GPT系列承上启下的一篇文章，引入了RLHF这个关键组件  
+    核心idea：  
+    1，SFT（13k）, 人工标记prompt+标注答案，基于GPT3模型做了 16 轮迭代fine tune
+    2，RM（33k），基于6B GPT3模型，每个prompt生成9个答案标注排序，pair-wise ranking损失。RM用于模拟人的反馈  
+    3，RL（31k样本），PPO 优化算法，也是OpenAI之前的工作，加散度项控制模型不要跑太远，同时加了原始语言模型目标项  
+    4，model alignment 的训练代价是比较低的，只有万级别样本。不过到底align到哪里？  
+    5，局限性，请了40个合同工，数据可能有bias；本文只显式优化了帮助性这一点，对真实性、无害等没有证明太多；另外RL步骤有可能并不需要做，增大SFT数据集可能也可以  
+
+paper 原文待读  
 
 ## 2023.6.2
 
