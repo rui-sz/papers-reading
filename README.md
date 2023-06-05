@@ -15,6 +15,9 @@
 - [ ] GNN 论文总结  
 - [ ] Deeper insights into graph convolutional networks for semi-supervised learning  
 
+StyleDrop: Text-to-Image Generation in Any Style  
+CLIP 得分，衡量文本、图像的对齐程度  
+
 
 # 2023.5.22
 
