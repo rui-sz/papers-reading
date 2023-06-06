@@ -7,6 +7,21 @@
 ChatGPT账号
 GPT 3.5  
 
+## 2023.6.6
+
+《Bert: Pre-training of Deep Bidirectional Transformers for Language Understanding》  
+    对NLP领域贡献非常大的一篇文章，后续的很多任务可以用这个简单的统一架构来做  
+    核心idea：
+    1，基于双向 Transformer，可以同时利用左右两侧上下文信息，因此对语言理解类任务很擅长，融合了EMLo（双向RNN架构）和GPT（单向）的思想。名字也来自芝麻街，like EMLo~  
+    2，在预训练阶段，使用了Masked LM 掩码语言模型（train 阶段随机mask，预测masked的词），Wordpiece 分词后15%的会做；FT 时不做Mask  
+    3，两类预训练任务，Feature based（ELMo、word emb）, fine-tuning（GPT）  
+    4，Bert的模型调参，调L/H/A 两个版本，base 1亿参数，large 3亿参数，当时已经是非常大的模型了  
+    5，训练输入：Transformer 模型输入是一个seq pair，Bert 输入一个seq，过了嵌入层之后，输入的emb是几个emb的相加，token emb+sentence emb+pos emb，其中pos emb是学习得来的  
+    6，Bert 把句子pair都放进去，self attention 可以看到所有的内容，这跟只能看到一部分的 Transformer不太一样，带来的代价是 Bert 就不能做机器翻译了，同时文本摘要等生成任务也不好做了  
+    7，微调模型使用TPU跑1小时，在11个任务上取得SOTA，GLUE 多分类，SQuAD QA 数据集 ，SWAG 判断2个句子关系等  
+
+    总体感觉模型的架构设计非常简洁，思路也很清楚，不愧为NLP里程碑著作。遗憾的是模型道路选择可能也间接注定了后续与GPT系列的效果对比  
+
 ## 2023.6.4
 
 《InstructGPT：Training language models to follow instructions
