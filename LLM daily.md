@@ -7,6 +7,26 @@
 ChatGPT账号
 GPT 3.5  
 
+
+## 2023.6.8
+
+GPT3.5
+
+## 2023.6.7
+
+《Codex: Evaluating Large Language Models Trained on Code》  
+    2020.8 的一篇文章，这会是若干年后程序员大规模失业的缘起吗，让我们师母已呆~  
+    核心idea：  
+    1，Codex 是基于GPT的模型，使用github代码做训练（微调真香），解决实际问题的一篇文章  
+    2，评估方式：正确性判断（NLP BLEU score不合适） pass@k，用了HumanEval 评估集，164个编程问题，签名、文档、单元测试。生成多个答案，top K  
+    3，数据集，github 2020年基于54M project，179G python 文件，经过过滤后得到159G  
+    4，模型训练，用GPT3的参数，只是收敛的更快，精度上并没有变好，重新训练效果也OK。在推理时nucleus sampling 算法引入多样性，同时保证效果；精度 28.8%  
+    5，supervised fine tune，HumanEval 评估跟github数据不对齐，另外搜集了一批更对齐的数据集（竞赛、CI数据等），Codex-S 模型 提升比较多  
+    6，Docstring，函数实现->文档，改变训练方法，签名、实现、docstring  
+    7，局限性：样本有效性不够；docstring写的越长，代码效果越差，不能理解长指令；数学（精确问题）做的不好；训练数据 bias 问题 等； 抄袭等法务风险  
+
+    总体来说，模型思路与GPT/GPT3保持一致，作者花了大量时间准备数据，想评估方法，比较理想的一种范式  
+
 ## 2023.6.6
 
 《Bert: Pre-training of Deep Bidirectional Transformers for Language Understanding》  
