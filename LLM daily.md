@@ -27,6 +27,8 @@ GPT3.5
 
     总体来说，模型思路与GPT/GPT3保持一致，作者花了大量时间准备数据，想评估方法，比较理想的一种范式  
 
+paper 原文待读  
+
 ## 2023.6.6
 
 《Bert: Pre-training of Deep Bidirectional Transformers for Language Understanding》  
@@ -41,6 +43,8 @@ GPT3.5
     7，微调模型使用TPU跑1小时，在11个任务上取得SOTA，GLUE 多分类，SQuAD QA 数据集 ，SWAG 判断2个句子关系等  
 
     总体感觉模型的架构设计非常简洁，思路也很清楚，不愧为NLP里程碑著作。遗憾的是模型道路选择可能也间接注定了后续与GPT系列的效果对比  
+
+paper 原文待读  
 
 ## 2023.6.4
 
