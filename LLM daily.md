@@ -5,12 +5,21 @@
 ## TBD
 《The growing-up story of Language models》  
 ChatGPT账号
-GPT 3.5  
+
 
 
 ## 2023.6.8
 
-GPT3.5
+《HELM: Holistic Evaluation of Language Models》  
+    2022.11, Percy Liang@Stanford 的一篇大作，系统性评估了当前主要的一些LLM  
+    非常基础性的工作，其研究方法和结论目前时段来看都比较有价值  
+    核心内容：  
+    1，选择了现在常见的30个语言模型（参数量310M->530B），设计了7个评估指标，用到16个数据集  
+    2，涉及到的NLP领域：QA,IR,Summarization,Sentiment Analysis,Toxicity detection,Classification  
+    3，评估结果中 InstructGPT, Anthropic-LM, GLM 这几个模型可以重点说下，InstructGPT综合各方面是最好的，Anthropic 这个模型也比较牛，只有52B参数，各方面性能不虚 InstructGPT 很多，GLM 也很不错，国产之光！  
+    4，摘要任务各个模型表现都不太好，作者分析了一下可能是当前摘要评估数据集标注都不太准  
+
+    160+页的大制作，系统看完的话应该能对当前LLM领域有全面的认识，但是很难看得完啊，就过了一遍李沐的视频讲解。paper中的研究方法，对一些问题的处理思路还是挺新颖的，比如如何设计 prompt 来adapt各个模型，以评估我们需要的指标。作者们做了大量扎实的工作，respect  
 
 ## 2023.6.7
 
@@ -50,7 +59,7 @@ paper 原文待读
 
 《InstructGPT：Training language models to follow instructions
 with human feedback》  
-    GPT系列承上启下的一篇文章，引入了RLHF这个关键组件  
+    GPT系列承上启下的一篇文章，引入了RLHF这个关键组件，也称GPT3.5  
     核心idea：  
     1，SFT（13k）, 人工标记prompt+标注答案，基于GPT3模型做了 16 轮迭代fine tune  
     2，RM（33k），基于6B GPT3模型，每个prompt生成9个答案标注排序，pair-wise ranking损失。RM用于模拟人的反馈  
