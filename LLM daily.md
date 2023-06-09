@@ -7,6 +7,28 @@
 ChatGPT账号
 
 
+## 2023.6.9
+
+《李沐：单卡、多卡 Bert/GPT-2 性能对比》  
+    模型参数量：  
+        Bert: 1亿、3亿  
+        GPT-2: 1亿、3亿、7.6亿、large 1.5B  
+    测试卡种：N厂30x系列显卡  
+    模型实现：HuggingFace, Megatron  
+    指标：samples/sec, per GPU TFLOPS, per GPU memory  
+    单卡测试：  
+        Batch 大小调整，尽可能大  
+        内存占用组成：model parameters, layer output(activations), backend libraries  
+        grad_accum，梯度累加也是增大batch的一种方式，减少计算量。不过pretrain可以尽量增加，FT时可能影响收敛  
+        三个关键点：Batch 尽量大，浮点类型fp16/8，Megatron 库  
+    多卡并行测试  
+        数据并行（Megatron）
+            NV link 在GPU通讯方面帮助很大，5~10倍提升  
+        Tensor并行  
+            把网络切分，分开计算，能够训练很大的模型  
+            缺点：不再能通过梯度累加来降低开销  
+        Zero  
+            把模型、Adam状态等切分，每个GPU维持一部分  
 
 ## 2023.6.8
 
