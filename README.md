@@ -19,7 +19,26 @@ StyleDrop: Text-to-Image Generation in Any Style
 CLIP 得分，衡量文本、图像的对齐程度  
 
 
-# 2023.5.22
+## 2023.6.10
+
+GD, SGD, RMSProp, AdaGrad, Adam 之间关系及优化路径，还是比较搞混的，简单梳理下：  
+    GD是NN优化非常重要的部分，标准梯度下降需要计算全量样本，计算量太大，后续优化思路主要有2个（减少计算量、优化下降路径）  
+    SGD 通过随机选择样本减少计算量，可以解决这个问题，minibatch SGD可以加速收敛  
+    但是下降路径却不一定最优，学习率不应该是一个固定值，每一步应该随着梯度变化关系动态适应  
+    如何优化路径？  
+        牛顿法，通过对梯度公式进行泰勒展开保留到二阶导（梯度的梯度），可以优化这个问题，不过计算量也比较大  
+        动量法，把历史梯度数据考虑进来，对梯度更新的0次项做修正，指数滑动加权平均；Nestro方法则结合历史梯度和超前数据  
+        学习率应该逐渐变小，简单的办法随着迭代进行而逐渐减小，这种做法未必好。AdaGrad 提出学习率自适应的方法，在学习率下面除以一个数值  
+        这个数值跟历史梯度有关，修正在不同维度上的学习率。进一步优化也采用指数滑动加权平均，降低历史数据权重，即RMSprop  
+
+    动量法 + RMSprop = Adam(Adaptive moment estimation) optimizer，几个超参：  
+        α：初始学习率  
+        β1：0次项的加权系数，0.9  
+        β2：1次项的加权系数，0.999  
+        epsilon: 10^-8，这个一般不动  
+    通常固定β1,β2,epsilon，保持默认值，调参初始学习率  
+
+## 2023.5.22
 
 《ResNet: Deep Residual Learning for Image Recognition》  
     2016年文章，短短9页，16w引用，绝对是人狠话不多的典范  
@@ -32,7 +51,7 @@ CLIP 得分，衡量文本、图像的对齐程度
     Residual net 和 skip connection 都不是本文的首创，但是却很好的解决了图像分类等问题，非常赞  
     不足之处是只讲了调参后工程上的做法，却没有很多理论解释（可能也比较难吧），无碍于神作  
 
-# 2023.5.20
+## 2023.5.20
 
 《Very deep conversational networks for large-scale image recognition》  
     2015 ICLR, 大名鼎鼎的VGG  
@@ -47,7 +66,7 @@ CLIP 得分，衡量文本、图像的对齐程度
     4，A-LRN 的效果并不比 A好，说明 LRN（AlexNet的创新）效果不大  
     5，multi scale 技巧，无论用在train（数据增广）还是test（集成）都有效果，也容易理解  
 
-# 2023.5.15  
+## 2023.5.15  
 
 《Semi-supervised classification with graph convolutional networks》  
     2017 年的文章  
@@ -58,7 +77,7 @@ CLIP 得分，衡量文本、图像的对齐程度
     3，GCN 要基于整个Graph的邻接矩阵去计算（参见5.14的公式），进行整体求解，因此其范式是 transductive 的，计算开销也大（GraphSAGE后续会改进）  
     4，从评估结果来看，GCN是要显著优于DeepWalk, LP等传统方法的，从原理看也容易理解。不过遗憾的是没有与GNN做对比，我想其效果应该差于GNN？  
 
-# 2023.5.14
+## 2023.5.14
 
 《Predict then propagate: Graph neural networks meet personalized pagerank》  
     2019 ICLR 的一篇论文，核心思想：  
@@ -79,7 +98,7 @@ CLIP 得分，衡量文本、图像的对齐程度
 
     由于 PPNP 信息传播过程中的矩阵求逆运算花销比较大，作者提出了一个近似的 APPNP 模型  
 
-# 2023.4.23
+## 2023.4.23
 
 Anomaly Detection with Robust Deep Autoencoders  
     2017年  
@@ -88,7 +107,7 @@ Anomaly Detection with Robust Deep Autoencoders
     2，L1 正则，L21正则（对矩阵每一列求2范数再求和）  
     3，先优化AE，再优化正则项  
 
-# 2023.4.22 
+## 2023.4.22 
   
 Deep Visual-Semantic Alignments for Generating Image Descriptions  
     2015年的文章，二作李飞飞  
@@ -105,7 +124,7 @@ Deep Visual-Semantic Alignments for Generating Image Descriptions
     2，RNN只通过bias来接收图像信息，可以做得更好  
     3，不是end-to-end的  
 
-# 2023.4.13  
+## 2023.4.13  
   
 RNN & LSTM basics  
 The Unreasonable Effectiveness of Recurrent Neural Networks  
@@ -128,7 +147,7 @@ Long short-term memory
     遗憾的是，LSTM 论文并没有solid的理论解释，也没有解释门控为什么这么设计。再次支撑了深度学习是炼丹的说法~ lol  
     LSTM 相比RNN的改进是比较好理解的，后来基于各种门控又有一些新的变体，例如GRU（Gated Recurrent Unit）等  
 
-# 2023.4.12  
+## 2023.4.12  
   
 Learning convolutional neural networks for graphs  
     2016年的文章  
@@ -140,7 +159,7 @@ Learning convolutional neural networks for graphs
     具体逻辑比较复杂，就不详述了。我个人的看法是：这篇文章设计了巧妙（且复杂）的方法，将图数据映射为CNN能够处理的欧式数据，以便可以使用CNN这一利器，好是好，不过以当今的视角来看，肯定是信息有损的了。后续关注一下其它方法与之的对比，尤其是GNN的对比。  
   
   
-# 2023.4.9  
+## 2023.4.9  
   
 Imagenet classification with Deep CNN  
     2017年的文章，用一个改进的CNN网络解决基于ImageNet的1k类分类问题  
@@ -151,7 +170,7 @@ Imagenet classification with Deep CNN
     4，采用了一些方法避免过拟合：数据增强、dropout等  
   
   
-# 2023.4.8  
+## 2023.4.8  
   
 Graph Convolutional Networks for Text Classification  
     本文提出 TextGCN model，核心idea：  
