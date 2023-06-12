@@ -19,6 +19,13 @@ StyleDrop: Text-to-Image Generation in Any Style
 CLIP 得分，衡量文本、图像的对齐程度  
 
 
+
+## 2023.6.12
+
+DL 三大特征抽取器总结
+    TBD
+
+
 ## 2023.6.10
 
 GD, SGD, RMSProp, AdaGrad, Adam 之间关系及优化路径，还是比较搞混的，简单梳理下：  
