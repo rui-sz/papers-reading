@@ -27,8 +27,17 @@ DL 三大特征抽取器总结
 
 ## 2023.6.13
 
-CLIP
+《CLIP: Learning Transferable Visual Models From Natural Language Supervision》  
+    2021.2 的文章，核心idea：  
+    1，利用自然语言的监督信号，学习迁移性很好的视觉模型，在train时采用对比学习paradiam，推理时可以做zero shot 和 few shot  
+    3，模型架构，预训练阶段train2个编码器文本 + 图片，推理时构建文本prompt，用2个编码器编码，再计算cos相似度  
+    4，训练数据：作者构建的一个高质量数据集WIT/WebImageText，有4亿(image, text) pair，是CLIP如此强大的主要原因之一  
+    5，评估结果：在30个数据集上取得非常好的效果，zero shot 推理在Imagenet上超过ResNet50监督模型，同时表现出非常强的鲁棒性，很炸裂的结果；few shot 之后效果更好，说明模型学习到泛化性很好的特征  
+    6，模型在 MNIST数据集上效果不好，还是强依赖数据，DL的脆弱性所在；同时细分类任务、抽象任务、计数类任务等也表现不太好，原始数据中难以获得高质量信号    
+    7，整体方案比较scalable，不用针对特定任务去搜集监督数据集，同时打破了固定种类标签的范式，无限种类、不限使用场景  
 
+    总体上属于新意度、问题规模、有效性都非常高的一篇文章。  
+    后续继续看下CLIP衍生出来的一些工作  
 
 ## 2023.6.10
 
