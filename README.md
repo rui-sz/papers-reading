@@ -19,17 +19,34 @@ StyleDrop: Text-to-Image Generation in Any Style
 CLIP 得分，衡量文本、图像的对齐程度  
 
 
-
-## 2023.6.14
+## 2023.6.15
 
 DL三大特征抽取器（CNN,RNN,Transformer）总结  
     TBD  
 
-Fine Tuning  
+
+## 2023.6.14
+
+Fine Tuning(by 李沐)  
     用高质量预训练模型，初始化目标模型的权重，再在小数据集上微调  
     微调技巧：  
         1，更强的正则化：小学习率；用少量数据做FT  
         2，如果pretrain数据集中有类似的数据，可以在FC层复用其权重  
+
+《NCI: A Neural Corpus Indexer for Document Retrieval》  
+    2022.10 NIPS 最佳论文之一  
+    核心idea：  
+    1，本文提出比较新颖的E2E做文本检索的方法，部分参考了同会DSI  
+    2，用transformer训练一个s2s的模型，输入query，输出docid  
+    3，train关键点：用层次化聚类的方式生成具有一定语义信息的docid，用docT2query为doc生成query；32w doc  
+    优势：  
+    a）区别于传统搜索基于倒排索引方案，本文E2E的检索很简洁  
+    b）模型记住了文档信息，对新query、长query的泛化能力比较好  
+    劣势：  
+    a）性能上还差的比较多，要消耗大量GPU  
+    b）数据集选择的特殊性，选择了比较复杂的QA数据集，短query存在隐患  
+
+    比较有意思的一篇文章，瑕不掩瑜  
 
 ## 2023.6.13
 
