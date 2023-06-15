@@ -5,7 +5,22 @@
 ## TBD
 《The growing-up story of Language models》  
 ChatGPT账号
+LaMDA  
+WebGPT  
 
+
+## 2023.6.15
+
+ 《Training a Helpful and Harmless Assistant with
+Reinforcement Learning from Human Feedback》  
+    Anthropic，OpenAI出来的一波人做的公司，之前HELM的评测其模型结果很不错  
+    核心idea：
+    1，RLHF 首先用在语言模型，2019年OpenAI得工作，本文比较强调helpful，honest和harmless，但是helpful和harmless是实际解决的2个点，通过 RLHF 的方式  
+    2，数据搜集，标A好还是B好，评估标注工基于对问的问题质量判断，美国硕士文凭标注人员；人比较容易做判断但是难以公式化和自动化的。标注时让用户更基于直觉；标注了 helpful 和 harmless 两个数据集，绝大部分对话发生在4轮以内  
+    3，train：也是三个模型的流程，原始模型，PM，PPO。有2个目标在一起训练的时候模型会分裂。怎么训练？可以通过数据采样或通过权重来控制目标函数。通过对损失RLHF权重的分析，觉得RL可能没有必要的~  
+    4，模型评估，比较模型的 Elo 分数（类似游戏了），两个模型结果对比，另外作者也展示了对齐训练之后在标准数据集上的效果会不会变差，不过发现小模型有可能要付出一定代价（alighment tax）  
+
+    总之跟InstructGPT论文非常像，技术上做了个大早，任务也是多轮对话的方式，却被ChatGPT抢尽了风头~还是要占先机  
 
 ## 2023.6.9
 
@@ -20,7 +35,7 @@ ChatGPT账号
         Batch 大小调整，尽可能大  
         内存占用组成：model parameters, layer output(activations), backend libraries  
         grad_accum，梯度累加也是增大batch的一种方式，减少计算量。不过pretrain可以尽量增加，FT时可能影响收敛  
-        三个关键点：Batch 尽量大，浮点类型fp16/8，Megatron 库  
+        三个关键点：Batch 尽量大，浮点类型优先使用BF16（FP16经常溢出），其指数位数与FP36相同，不会溢出，Megatron 库  
     多卡并行测试  
         数据并行（Megatron）
             NV link 在GPU通讯方面帮助很大，5~10倍提升  
@@ -29,6 +44,12 @@ ChatGPT账号
             缺点：不再能通过梯度累加来降低开销  
         Zero  
             把模型、Adam状态等切分，每个GPU维持一部分  
+
+多种并行train方式：  
+    1，数据并行 DP，相同的设置和模型被复制多份，每份每次都被馈送不同的一份数据。处理是并行完成的，所有份在每个训练步结束时同步。不足之处是模型需要在单个GPU中装得下  
+    2，张量并行 TP，每个 GPU 仅处理张量的一部分，并且仅当某些算子需要完整的张量时才触发聚合操作；由于前向和后向传播中每层都有两个 all reduce，因此 TP 需要设备间有非常快速的互联。  
+    3，Zero 数据并行，只是通常的 DDP，只是没有每个 GPU 都复制完整的模型参数、梯度和优化器状态，而是每个 GPU 只存储其中的一部分。在随后的运行过程中，当需要给定层的完整层参数时，所有 GPU 同步以相互提供它们缺失的部分  
+
 
 ## 2023.6.8
 

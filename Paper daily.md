@@ -20,10 +20,13 @@ CLIP 得分，衡量文本、图像的对齐程度
 
 read1 = video 2    
 
+
 ## 2023.6.15
 
 DL三大特征抽取器（CNN,RNN,Transformer）总结  
     TBD  
+
+
 
 
 ## 2023.6.14
