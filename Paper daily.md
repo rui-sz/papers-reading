@@ -9,7 +9,7 @@
 - [ ] Opening the black box of Deep Neural Networks via Information
 - [ ] Learning phrase representations using rnn encoder-decoder for statistical machine translation2014年，提出了GRU
 - [ ] 使用Xenon-Generation Finetune LLama文档阅读
-- [ ] GNN 论文总结
+- [ ] 写综述：GNN 论文总结
 - [ ] Deeper insights into graph convolutional networks for semi-supervised learning
 - [ ] StyleDrop: Text-to-Image Generation in Any Style 通过文字改变发型等
 - [ ] CLIP 得分，衡量文本、图像的对齐程度
@@ -18,6 +18,21 @@
 - [ ] DALLE
 - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结
   TBD
+- [ ] TODO：
+
+   自注意力原理，MHA 详解
+
+    MMoE
+
+## 2023.6.22
+
+## 2023.6.21
+
+家里人来坡旅游，今天没时间看文章+summarize了，先占个位吧，明天补~
+
+《ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision》
+
+    TBD
 
 ## 2023.6.18
 
