@@ -18,13 +18,46 @@
 - [ ] DALLE
 - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结
   TBD
-- [ ] TODO：
+- [ ] 自注意力原理，MHA 详解
+- [ ] MMoE
+- [ ] 详细看下ViLT跟Bert、ViT之间的相似之处
+- [ ] MAE loss，BiT MAE重建图像
+- [ ] ALBEF工作及后续工作 BLIP/BLIP2，Mixgen
 
-   自注意力原理，MHA 详解
+## 2023.6.24
 
-    MMoE
 
 ## 2023.6.22
+
+《ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision》
+
+多模态领域里程碑著作，把目标检测任务去除了，计算性能有上千倍提升，同时效果整体并没有降低很多。（有时候工作follow的慢一些，可能反而会更容易上手了~)
+
+先上一个牛逼的对比图：
+
+<img src="pic/ViLT1.png" width="400" height="400">
+
+多模态领域 VLP 现状：
+
+* 传统方法计算太贵，在2021年之前，VLP基本都依赖目标检测，识别bounding box，region->word，目标检测作为多模态的一部分（Visual Genome 预训练的目标检测器)。也是因为下游任务很多都是多模目标检测，这样更相关。
+* 并且当前预训练模型的数据集不太大，因此泛化性不一定好。
+* 2020年 Pixel BERT 只用用 ResNet 抽特征图，grid feature，7*7特征图拉直为线性序列，也还是有点贵，并且效果下降了很多，十几个点
+* 传统方法非常依赖视觉特征部分的提升
+
+本文核心idea：
+
+1. 文本图像多模态，需要将图像 pixel 变成具有语义信息的序列，传统方法基于CNN+Region Supervision，比较贵
+2. 怎么设计更简单的图像特征抽取方法，本文受启发于ViT，打patch获取 patch embedding。本质上属于ViT 思想在多模态领域的手快应用。因为是Linear emb 层，计算性能提升了很多，但效果上还是目标检测更好，迄今最简单的 v+l 模型，减少复杂度保证不掉点
+3. 模型结构：2路特征concat为Transformer Encoder的输入，目标函数：image text matching + masked language loss + word patch alignment
+4. 训练过程中小技巧：图像侧做了巧妙的图像数据增强，randAugment 这个工作，并尽量保证文本图片是匹配的；文本侧把文本word整个mask掉，以增强文本图像之间的联系
+5. 训练成本：64个V100的GPU，训练三天，成本太高。相比而言ALBEF单机8卡训3天，以及BLIP等更容易跟进一些。
+
+<img src="pic/ViLT4.png" width="500" height="200">
+
+另外本文对多模态领域工作做了综述，非常扎实，值得学习！
+
+<img src="pic/ViLT2.png" width="500" height="200">
+
 
 ## 2023.6.21
 
