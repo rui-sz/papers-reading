@@ -6,6 +6,17 @@
 
 > paper1 = video 2
 
+领域主线：
+
+1. LLM 系列
+2. GNN系列
+3. Anomaly Detection 系列
+4. 智能运营系列
+5. 搜广推
+6. ABtest
+
+具体文章：
+
 - [ ] Opening the black box of Deep Neural Networks via Information
 - [ ] Learning phrase representations using rnn encoder-decoder for statistical machine translation2014年，提出了GRU
 - [ ] 使用Xenon-Generation Finetune LLama文档阅读
@@ -16,16 +27,15 @@
 - [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
 - [ ] Big Transfer (BiT): General Visual Representation Learning
 - [ ] DALLE
-- [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结
-  TBD
+- [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
 - [ ] 自注意力原理，MHA 详解
-- [ ] MMoE
+- [ ] 搜广推：MMoE
 - [ ] 详细看下ViLT跟Bert、ViT之间的相似之处
 - [ ] MAE loss，BiT MAE重建图像
 - [ ] ALBEF工作及后续工作 BLIP/BLIP2，Mixgen
+- [ ] 多模态预训练工作（by李沐)
 
 ## 2023.6.24
-
 
 ## 2023.6.22
 
@@ -57,7 +67,6 @@
 另外本文对多模态领域工作做了综述，非常扎实，值得学习！
 
 <img src="pic/ViLT2.png" width="500" height="200">
-
 
 ## 2023.6.21
 
