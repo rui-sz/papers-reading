@@ -25,17 +25,56 @@
 - [ ] StyleDrop: Text-to-Image Generation in Any Style 通过文字改变发型等
 - [ ] CLIP 得分，衡量文本、图像的对齐程度
 - [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
-- [ ] Big Transfer (BiT): General Visual Representation Learning
+- [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
 - [ ] DALLE
 - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
-- [ ] 自注意力原理，MHA 详解
+- [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
 - [ ] 搜广推：MMoE
 - [ ] 详细看下ViLT跟Bert、ViT之间的相似之处
 - [ ] MAE loss，BiT MAE重建图像
 - [ ] ALBEF工作及后续工作 BLIP/BLIP2，Mixgen
 - [ ] 多模态预训练工作（by李沐)
+- [ ] 不同的位置编码方式，1D(Bert的), 2D etc
+- [ ] GAP global average pooling
+- [ ] image GPT 的工作
 
-## 2023.6.24
+## 2023.6.25
+
+《AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE》
+
+    2021 ICLR，大名鼎鼎的ViT，本文的重要意义：
+
+1. 证明了在图像任务上CNN不是必须，可以用纯Transformer，在此之前ResNet 还是SOTA的方法
+2. 同时注重可扩展性，基于Transformer尽量少做修改，架构简洁
+3. 挑战了CNN在视觉领域的绝对统治地位，打破了CV和NLP的壁垒，打通CV、NLP的鸿沟，开启了CV新时代
+4. 同时探索自监督预训练方式在CV的可行性，本文证明了也OK，但是相比有监督有不少差距
+
+    主要内容：
+
+* 模型：尽量follow original Tfm，每个patch16X*16作为一个元素，完成token化（2020年类似的工作，2*X2patch)，MHA+Res+MLP。如图1
+* 数据集：imagenet 1k，imagenet 21k，JFT 等
+* 效果：对比ResNet 方法，ViT-H在多个数据集上都取得了最好的效果，性能强大。如图2
+* 训练：在同等计算复杂度下，ViT的效果比CNN要好，不过从论文评估来看，CNN和ViT的效果随着计算复杂度都没有进入瓶颈，还有提升空间.如图3
+* 其他分析：图4可以看出，在<14M数据集上，ResNet的效果还是更好一些，ViT 在更大的数据集上效果更好；自监督工作有潜力（关注MAE)；1D pos emb有学习到2D的信息
+
+
+
+图1：
+
+<img src="pic/ViT1.png" width="500" height="300">
+
+图2：
+
+<img src="pic/ViT2.png" width="600" height="300">
+
+图3：
+
+<img src="pic/ViT3.png" width="600" height="300">
+
+图4：
+
+<img src="pic/ViT4.png" width="600" height="300">
+
 
 ## 2023.6.22
 
