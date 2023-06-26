@@ -38,6 +38,33 @@
 - [ ] GAP global average pooling
 - [ ] image GPT 的工作
 
+## 2023.6.26
+
+《MAE: **Masked Autoencoders Are Scalable ****Vision**** Learners**》
+
+    2021.11的一篇文章，一作是 ResNet 的作者 Kaiming He
+
+本文思路比较straightforward，相当于Bert在CV上面的实现，a masked CV model
+
+"***Simple*** algorithms that ***scale well*** are the core of deep learning."
+
+核心内容：
+
+1. 只用图片本身做自监督学习，属于Bert 在计算机视觉上的拓展
+2. 把Bert从NLP用到CV的时候，会有什么问题？
+   1. 卷积上面不好做掩码
+   2. NLP里面完形填空并不简单，CV的完形填空则相对简单一些~图像中的很多像素是冗余的
+   3. 解码器方面，NLP任务简单FC就行，CV则不行
+3. 模型：非对称性的encoder-decoder架构，encoder follow ViT，decoder 标准 Transformer，损失函数 MSE in pixel space
+4. 实验：下游分类、目标检测、语义分割等数据集上，都有比较好的表现；展示出来的例子也比较震撼，75%遮盖下能够很好的还原
+
+<img src="pic/MAE1.png" width="500" height="350">
+
+<img src="pic/MAE2.png" width="600" height="350">
+
+<img src="pic/MAE3.png" width="600" height="400">
+
+
 ## 2023.6.25
 
 《AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE》
