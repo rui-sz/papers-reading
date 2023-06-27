@@ -38,6 +38,20 @@
 - [ ] GAP global average pooling
 - [ ] image GPT 的工作
 
+## 2023.6.27
+
+《Whisper: Robust Speech Recognition via Large-Scale Weak Supervision》
+
+2022年，OpenAI的文章，语音识别领域一个比较有潜力的工作
+
+核心内容：
+
+1. 已有的方法，主要是无标数据预训练 + 有标数据FT，局限性：没有高质量解码器，需要搜集数据FT；FT的时候容易过拟合
+2. 本文模型，一个标准的Transformer encoder-decoder架构，emb层加了2层卷积，降低输入长度；all in one 的模型
+3. 训练，68h 网上抓下来的多语言数据，做了一定预处理后分成30s/区间，train 了2~3个Epoch
+4. 效果，在英语等语种上都不错，中韩阿拉伯语效果差一些；泛化性也比较好；对比几个商业系统也不错，可能会造成冲击
+
+
 ## 2023.6.26
 
 《MAE: **Masked Autoencoders Are Scalable ****Vision**** Learners**》
@@ -63,7 +77,6 @@
 <img src="pic/MAE2.png" width="600" height="350">
 
 <img src="pic/MAE3.png" width="600" height="400">
-
 
 ## 2023.6.25
 
