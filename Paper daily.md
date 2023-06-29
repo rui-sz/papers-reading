@@ -39,6 +39,26 @@
 - [ ] image GPT 的工作
 - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
 
+## 2023.6.29
+
+《ALBEF: Align before Fuse: Vision and Language Representation Learning with Momentum Distillation》
+
+Transformer用于多模态领域的一篇文章，2021.7
+
+核心内容：
+
+1. 本文propose了一个新的 VL 表示学习框架，相比ViLT资源需求少，更容易复现。对比当前 VLP methods：LXMERT, UNITER, OSCAR 等，本文提出的方法具有更好的模型性能，以及更快的推理速度
+2. 模型：三个 encoder, visual/text/multimodel，分别基于 ViT-B/16, Bert-base, Bert-base; 损失函数ITC对比学习，语言模型 MLM 和 图文匹配 ITM三者之和。引入了动量模型（滑动平均）的pseudo-labels对抗数据噪声
+3. 训练数据：同ViLT/UNITER 采用4M数据集，COCO/VG/GCC/SBU，在A100 8卡机器上train 了30Epoch
+4. 实验：从实验结果来看，在V-L多个任务上都取得很好的效果，如Retrieval/VQA/VE/NLVR/VG等
+
+模型框架：
+
+<img src="pic/ALBEF1.png" width="600" height="350">
+
+准备复现一下论文结果，毕竟相比ViLT，资源需求少了很多
+
+
 ## 2023.6.27
 
 《Whisper: Robust Speech Recognition via Large-Scale Weak Supervision》
