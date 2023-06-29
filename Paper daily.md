@@ -41,6 +41,42 @@
 
 ## 2023.6.29
 
+《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》
+
+2021.3 上传arxiv，ICCV最佳论文
+
+ViT 初步证明了Tfm在CV领域的巨大潜力，它能够让模型架构更加优雅，同时显著降低计算复杂度。但是相比叱咤CV领域多年的CNN骨干网络，还没有普遍性的证明它作为骨干网络的完备性。NLP Tfm -> CV Tfm，面临的困难：
+
+1. 多尺度问题，同物体大小多变，CNN 则应对的很好，ViT 对多尺度特征的把握能力，会弱一些，而对于检测、分割这类任务，多尺度特征很重要
+2. Resolution 困扰，通过patch 初步得到解决
+
+本文的出发点，就是想要证明 Swin Tfm 可以作为通用骨干网络，既然有CNN这么一个CV领域成熟的模型架构做参照，本文作者设计了一个精巧的披着Tfm皮的类CNN架构。并基本把视觉领域所有任务刷了一遍，并且效果很炸裂，基本实现了目标。
+
+
+模型结构
+
+<img src="pic/Swin1.png" width="700" height="300">
+
+核心组件：
+
+1. 局部自注意力，全局计算自注意力对于图像类任务来说，可能有点浪费了，图像的特性还是应该有局部性。本文主要贡献，提出局部自注意力，在7*7序列内计算，计算复杂度跟图片大小成正比，相比较而言ViT是平方
+2. Patch merging，类似于卷积神经网络的卷积操作。基于窗口和移动窗口的注意力计算，算出多尺度特征输入给FPN，去做检测，也可以扔给 unet 去做分割
+3. 掩码自注意力，在基于patch的移动窗口机制下，局部自注意力之上，进行跨窗口注意力计算不是很容易，作者进行了精巧的设计。
+
+<img src="pic/Swin2.png" width="300" height="300">
+
+<img src="pic/Swin3.png" width="300" height="300">
+
+实验：
+
+* 作者把NLP领域分类、目标检测、语义分割代表性数据集都刷了一遍，考虑到其初衷这也是需要做的。效果都相当不错
+* 消融实验证明，shifted window 和 相对位置编码都比较有用。并且在 dense predict 场景（COCO, ADE20k) 的提升幅度大一些，分类提升稍小，结合模型改进点可以理解。
+
+作者实现了其原始目标，Swin Tfm 由于其里程碑式的优秀表现，之后会成为视觉领域一个重要的baseline。本文也体现了作者对CNN，Transformer，MLP 几种架构的研究深度和醇熟运用，随意魔改~
+
+个人看法，Shift window的自注意力计算机制有点太复杂了，太fancy不一定能长久，有生命力的还是简洁优雅的方案
+
+
 《ALBEF: Align before Fuse: Vision and Language Representation Learning with Momentum Distillation》
 
 Transformer用于多模态领域的一篇文章，2021.7
@@ -57,7 +93,6 @@ Transformer用于多模态领域的一篇文章，2021.7
 <img src="pic/ALBEF1.png" width="600" height="350">
 
 准备复现一下论文结果，毕竟相比ViLT，资源需求少了很多
-
 
 ## 2023.6.27
 
