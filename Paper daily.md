@@ -37,6 +37,7 @@
 - [ ] 不同的位置编码方式，1D(Bert的), 2D etc
 - [ ] GAP global average pooling
 - [ ] image GPT 的工作
+- [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
 
 ## 2023.6.27
 
@@ -50,7 +51,6 @@
 2. 本文模型，一个标准的Transformer encoder-decoder架构，emb层加了2层卷积，降低输入长度；all in one 的模型
 3. 训练，68h 网上抓下来的多语言数据，做了一定预处理后分成30s/区间，train 了2~3个Epoch
 4. 效果，在英语等语种上都不错，中韩阿拉伯语效果差一些；泛化性也比较好；对比几个商业系统也不错，可能会造成冲击
-
 
 ## 2023.6.26
 
