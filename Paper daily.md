@@ -39,6 +39,8 @@
 - [ ] image GPT 的工作
 - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
 
+## 2023.6.30
+
 ## 2023.6.29
 
 《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》
@@ -51,7 +53,6 @@ ViT 初步证明了Tfm在CV领域的巨大潜力，它能够让模型架构更�
 2. Resolution 困扰，通过patch 初步得到解决
 
 本文的出发点，就是想要证明 Swin Tfm 可以作为通用骨干网络，既然有CNN这么一个CV领域成熟的模型架构做参照，本文作者设计了一个精巧的披着Tfm皮的类CNN架构。并基本把视觉领域所有任务刷了一遍，并且效果很炸裂，基本实现了目标。
-
 
 模型结构
 
