@@ -35,11 +35,57 @@
 - [ ] GAP global average pooling
 - [ ] image GPT 的工作
 - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
-- [ ] DALLE, DALLE2
 - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
 - [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
+- [ ] viking, milvus等向量检索
+- [ ] 图像生成系列合集：AE, DAE等
+- [ ] DALLE
+
+## 2023.7.1
+
 
 ## 2023.6.30
+
+《Hierarchical Text-Conditional Image Generation with CLIP Latents》
+
+DALLE2，2022.4 OpenAI的工作，也是大热的一篇
+
+一些有趣的应用场景：
+
+1. 根据文本描述，生成原创性的图片，可以任意组合概念、属性、风格
+2. 根据文本对图片进行编辑，因为文本图片共享语义空间
+3. 根据输入图片生成相似风格的图片，如图1
+4. 2个图像内插，如图2
+5. 图像文本内插，如图3
+
+图1：
+
+<img src="pic/DALLE2_1.png" width=500" height="350">
+
+图2：
+
+<img src="pic/DALLE2_2.png" width=500" height="350">
+
+图3：
+
+<img src="pic/DALLE2_3.png" width=500" height="350">
+
+模型主要内容：
+
+1. 本质上是 CLIP+GLIDE 的模型，
+2. Text -> text emb -> image emb -> image，与CLIP的过程是相反的，所以又叫UNCLIP
+3. 模型结构如图4，上半部分是CLIP（在本文一直锁住)，下半部分采用两阶段建模：prior + decoder
+4. prior：text emb->img emb，尝试了AR和Diffusion 两种，Tfm decoder-only 用classifier free方式的效果好一些
+5. decoder：采用GLIDE 的方案，基于UNET，CNN base的模型，最后逐层上采样，级联生成高清大图
+6. 效果评估，COCO FID分数高于GAN，DALLE1等；生成的图片质量很高
+7. 若干局限性：物体属性结合的不好；文字生成效果不好；有自己自己的鸟语~
+
+图4：
+
+<img src="pic/DALLE2_4.png" width=500" height="300">
+
+总体而言，是非常吸引眼球的工作，复刻艺术风格、基于文字生成图片等，相比人工内容创作，拓展了很大的自由空间，具有想象力。不过看得出来训练和推理成本都是很高的，短期内应该难以落地实用，科研的路费钱又不能短时间内看到收益，比较考验投入定力。
+
 
 ## 2023.6.29
 
