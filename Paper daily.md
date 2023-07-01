@@ -8,12 +8,11 @@
 
 领域主线：
 
-1. LLM 系列
+1. 大模型（NLP, CV, 多模态等)
 2. GNN系列
 3. Anomaly Detection 系列
-4. 智能运营系列
-5. 搜广推
-6. ABtest
+4. 搜广推（+智能运营)
+5. ABtest
 
 具体文章：
 
@@ -22,25 +21,27 @@
 - [ ] 使用Xenon-Generation Finetune LLama文档阅读
 - [ ] 写综述：GNN 论文总结
 - [ ] Deeper insights into graph convolutional networks for semi-supervised learning
-- [ ] StyleDrop: Text-to-Image Generation in Any Style 通过文字改变发型等
-- [ ] CLIP 得分，衡量文本、图像的对齐程度
-- [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
-- [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
-- [ ] 搜广推：MMoE
+- [ ] 搜广推：MMoE，DeepFM等
 - [ ] AlphaFold, AlphaFold2
-- [ ] 详细看下ViLT跟Bert、ViT之间的相似之处
-- [ ] MAE loss，BiT MAE重建图像
-- [ ] ALBEF工作及后续工作 BLIP/BLIP2，Mixgen
-- [ ] 多模态预训练工作（by李沐)
 - [ ] 不同的位置编码方式，1D(Bert的), 2D etc
-- [ ] GAP global average pooling
-- [ ] image GPT 的工作
-- [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
-- [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
-- [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
-- [ ] viking, milvus等向量检索相关技术
-- [ ] 图像生成系列合集：AE, DAE等
-- [ ] DALLE，BiT，BLIP 等
+- [ ] 通用内容
+
+  - [ ] GAP global average pooling
+  - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
+  - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
+  - [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
+  - [ ] viking, milvus等向量检索相关技术
+- [ ] 大模型近年来的主要文章（目标：7月底写一篇综述）
+
+  - [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
+  - [ ] StyleDrop: Text-to-Image Generation in Any Style 通过文字改变发型等
+  - [ ] 详细看下ViLT跟Bert、ViT之间的相似之处
+  - [ ] CLIP 得分，衡量文本、图像的对齐程度
+  - [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
+  - [ ] image GPT 的工作
+  - [ ] 多模态预训练工作（by李沐)
+  - [ ] MAE loss，BiT MAE重建图像
+  - [ ] 图像生成系列合集：AE, DAE，DALLE，BiT，BLIP，imagen等
 
 ## 2023.7.2
 
@@ -53,7 +54,6 @@
 《DAE》
 
 《VAE》
-
 
 ## 2023.6.30
 
