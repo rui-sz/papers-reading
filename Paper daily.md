@@ -26,9 +26,6 @@
 - [ ] CLIP 得分，衡量文本、图像的对齐程度
 - [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
 - [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
-- [ ] DALLE
-- [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
-- [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
 - [ ] 搜广推：MMoE
 - [ ] 详细看下ViLT跟Bert、ViT之间的相似之处
 - [ ] MAE loss，BiT MAE重建图像
@@ -38,6 +35,9 @@
 - [ ] GAP global average pooling
 - [ ] image GPT 的工作
 - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
+- [ ] DALLE, DALLE2
+- [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
+- [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
 
 ## 2023.6.30
 
@@ -76,7 +76,6 @@ ViT 初步证明了Tfm在CV领域的巨大潜力，它能够让模型架构更�
 作者实现了其原始目标，Swin Tfm 由于其里程碑式的优秀表现，之后会成为视觉领域一个重要的baseline。本文也体现了作者对CNN，Transformer，MLP 几种架构的研究深度和醇熟运用，随意魔改~
 
 个人看法，Shift window的自注意力计算机制有点太复杂了，太fancy不一定能长久，有生命力的还是简洁优雅的方案
-
 
 《ALBEF: Align before Fuse: Vision and Language Representation Learning with Momentum Distillation》
 
