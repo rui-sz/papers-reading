@@ -27,6 +27,7 @@
 - [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
 - [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
 - [ ] 搜广推：MMoE
+- [ ] AlphaFold, AlphaFold2
 - [ ] 详细看下ViLT跟Bert、ViT之间的相似之处
 - [ ] MAE loss，BiT MAE重建图像
 - [ ] ALBEF工作及后续工作 BLIP/BLIP2，Mixgen
@@ -37,12 +38,16 @@
 - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
 - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
 - [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
-- [ ] viking, milvus等向量检索
+- [ ] viking, milvus等向量检索相关技术
 - [ ] 图像生成系列合集：AE, DAE等
-- [ ] DALLE
-- [ ] AlphaFold, AlphaFold2
+- [ ] DALLE，BiT，BLIP 等
 
-## 2023.7.1
+## 2023.7.2
+
+《BLIP》
+
+《DALLE》
+
 
 ## 2023.6.30
 
