@@ -30,7 +30,7 @@
   - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
   - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
   - [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
-  - [ ] viking, milvus等向量检索相关技术
+  - [ ] viking, milvus等向量检索相关技术，检索和矢量搜索工具（如 LangChain、LlamaIndex 和 Pinecone）
 - [ ] 大模型近年来的主要文章（目标：7月底写一篇综述）
 
   - [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
