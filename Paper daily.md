@@ -42,7 +42,7 @@
   - [ ] 多模态预训练工作（by李沐)
   - [ ] MAE loss，BiT MAE重建图像
 
-## 2023.7.6
+## 2023.7.7
 
 图像生成系列合集：AE, DAE，DALLE，BiT，BLIP，imagen等
 
@@ -55,6 +55,23 @@
 《DAE》
 
 《VAE》
+
+## 2023.7.6
+
+《Scaling Distributed Machine Learning with the Parameter Server》
+
+李沐 2014年的博士论文，本文实现了一个分布式机器学习系统，包括参数服务器，核心内容：
+
+1. 挑战包括可扩展性、一致性、容灾、易用性等等
+2. worker 从servers取参数集合，同时拿到data，计算梯度更新参数后push回server
+3. DAG 计算图，管理各种待计算的任务与其相互依赖关系
+4. 针对一致性与计算性能之间的balance，有不同的并行度选择
+5. consistent hash 比较有意思，server端用它来存储权重
+6. 基于百度、google的最大ML任务做了测试，性能是很不错的
+
+MXNet 作者之一的沐神，在ML计算框架上的积累还是非常深厚的，从其讲解视频中也能感受的到，源自于学生时代的扎实锻炼。
+
+<img src="pic/PS1.png" width=400" height="300">
 
 ## 2023.7.2
 
