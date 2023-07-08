@@ -42,19 +42,67 @@
   - [ ] 多模态预训练工作（by李沐)
   - [ ] MAE loss，BiT MAE重建图像
 
-## 2023.7.7
+## 2023.7.9
 
-图像生成系列合集：AE, DAE，DALLE，BiT，BLIP，imagen等
 
-《BLIP》
+## 2023.7.8
 
-《DALLE》
+图像生成领域的文章很多，发展时间比较久了，对于早期的文章简单串一下
 
-《AE》
+图像生成系列一：
 
-《DAE》
+《AE: Autoencoders, minimum description length, and helmholtz free energy》
 
-《VAE》
+1994年文章，原理如下图：通过网络学习图片的分布，任意概率分布
+
+<img src="pic/AE1.png" width=400" height="200">
+
+《DAE: Extracting and composing robust features with denoising autoencoders》
+
+2008年工作，去噪自编码机。
+
+核心思想通过对输入数据在encoder之前加入噪声，来增强模型鲁棒性
+
+
+《VAE: Auto-encoding variational bayes》
+
+2013年工作，Kingma and Welling。
+
+核心思想，在AE模型的基础上：
+
+1. 中间学习出一个分布（正态分布），再采样得到特征，而不是直接学特征
+2. VAE可以理解为通过网络学习出每个属性正态分布的mean和std编码，然后通过mean和std和N ( 0,1 )正态分布恢复每个属性的正态分布，最后随机采样得到每个属性的离散值。
+3. 鲁棒性更好
+
+<img src="pic/VAE1.png" width=400" height="200">
+
+《VQVAE: *Neural Discrete Representation Learning*》
+
+2017年工作，核心思想：
+
+1. 通过Encoder学习中间编码，然后通过最邻近搜索将中间编码映射为codebook中的K个向量之一，再通过Decoder解码
+2. 跟VAE最大的不同是，中间编码连续->离散，因此编码范围更可控，能够生成更大更高清的图片
+3. AE 的重构思想是用低维中间编码来表达高维数据分布，VAE和VQVAE的思想是设计中间编码的分布，控制图片生成过程。
+
+<img src="pic/VQVAE1.png" width=400" height="200">
+
+
+《GAN: Generative Adversarial Nets》
+
+2014年工作，Ian Goodfellow，领域奠基作
+
+核心内容：
+
+1. 训练2个模型，G和D，分别相当于造假者和警察，前者目标是要完美的造假，后者是要区分出造假
+2. G的目标函数，是让D没办法区分出这是一个生成的图片还是真实图片
+3. GAN的收敛很不稳定，相应原理解释比较复杂不赘述~后续有比较多改进工作
+
+<img src="pic/GAN1.png" width=400" height="200">
+
+
+others get:
+
+    把你的工作重新定义为一门你正在努力打磨的手艺，不要低质量勤奋/重复
 
 ## 2023.7.6
 
