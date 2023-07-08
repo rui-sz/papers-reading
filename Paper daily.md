@@ -42,10 +42,13 @@
   - [ ] 多模态预训练工作（by李沐)
   - [ ] MAE loss，BiT MAE重建图像
 
-## 2023.7.9
-
-
 ## 2023.7.8
+
+《BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation》
+
+
+
+## 2023.7.7
 
 图像生成领域的文章很多，发展时间比较久了，对于早期的文章简单串一下
 
