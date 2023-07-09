@@ -31,6 +31,7 @@
   - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
   - [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
   - [ ] viking, milvus等向量检索相关技术，检索和矢量搜索工具（如 LangChain、LlamaIndex 和 Pinecone）
+  - [ ] 模型FT相关，LoRA，QLoRA，langchain等技术
 - [ ] 大模型近年来的主要文章（目标：7月底写一篇综述）
 
   - [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
@@ -41,11 +42,43 @@
   - [ ] image GPT 的工作
   - [ ] 多模态预训练工作（by李沐)
   - [ ] MAE loss，BiT MAE重建图像
+  - [ ] DALLE/DALLE2 效果体验
+  - [ ] 《BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation》
 
-## 2023.7.8
+## 2023.7.9
 
-《BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation》
+《ALBEF: Align before Fuse: Vision and Language Representation Learning with Momentum Distillation》
 
+Transformer用于多模态领域的一篇文章，2021.7
+
+核心内容：
+
+1. 之前方法存在的问题：图像、文本特征抽取模型单独训练，不在一个空间内；目标检测很昂贵；数据集中噪声
+2. 本文propose了一个新的 VL 表示学习框架，相比ViLT资源需求少，更容易复现。对比当前 VLP methods：LXMERT, UNITER, OSCAR 等，本文提出的方法具有更好的模型性能，以及更快的推理速度
+3. 模型：三个 encoder, visual/text/multimodel，分别基于 ViT-B/16, Bert-base, Bert-base; 损失函数ITC对比学习，语言模型 MLM 和 图文匹配 ITM三者之和。引入了动量模型（滑动平均）的pseudo-labels对抗数据噪声
+4. 训练数据：同ViLT/UNITER 采用4M数据集，COCO/VG/GCC/SBU，在A100 8卡机器上train 了30Epoch
+5. 实验：从实验结果来看，在V-L多个任务上都取得很好的效果，如Retrieval/VQA/VE/NLVR/VG等
+
+模型框架：
+
+<img src="pic/ALBEF1.png" width="600" height="350">
+
+用于预训练的 Image-text pairs 通常有噪声，体现在：
+
+* 正样本弱相关性：文本有可能包含了与图片不相关的词；图片包含了文本未描述的实体
+* 对于ITC学习，图片的negative texts可能也包含了图片的内容
+* 对于MLM来说，可能存在其它words也能描述图片，或者更好
+
+Momentum Distillation / 动量蒸馏
+
+引入momentum model生成的 pseudo-targets，动量模型是基于unimodal和multimodal的指数滑动平均。更新ITC loss，loss 计算把这部分伪标签样本也考虑进来。
+
+
+准备复现一下论文结果，毕竟相比ViLT，资源需求少了很多
+
+update：
+
+    抓了下4M数据集，基本跑通FT的流程了，FT flickr数据集，4卡好像要不了很久
 
 
 ## 2023.7.7
@@ -227,23 +260,6 @@ ViT 初步证明了Tfm在CV领域的巨大潜力，它能够让模型架构更�
 作者实现了其原始目标，Swin Tfm 由于其里程碑式的优秀表现，之后会成为视觉领域一个重要的baseline。本文也体现了作者对CNN，Transformer，MLP 几种架构的研究深度和醇熟运用，随意魔改~
 
 个人看法，Shift window的自注意力计算机制有点太复杂了，太fancy不一定能长久，有生命力的还是简洁优雅的方案
-
-《ALBEF: Align before Fuse: Vision and Language Representation Learning with Momentum Distillation》
-
-Transformer用于多模态领域的一篇文章，2021.7
-
-核心内容：
-
-1. 本文propose了一个新的 VL 表示学习框架，相比ViLT资源需求少，更容易复现。对比当前 VLP methods：LXMERT, UNITER, OSCAR 等，本文提出的方法具有更好的模型性能，以及更快的推理速度
-2. 模型：三个 encoder, visual/text/multimodel，分别基于 ViT-B/16, Bert-base, Bert-base; 损失函数ITC对比学习，语言模型 MLM 和 图文匹配 ITM三者之和。引入了动量模型（滑动平均）的pseudo-labels对抗数据噪声
-3. 训练数据：同ViLT/UNITER 采用4M数据集，COCO/VG/GCC/SBU，在A100 8卡机器上train 了30Epoch
-4. 实验：从实验结果来看，在V-L多个任务上都取得很好的效果，如Retrieval/VQA/VE/NLVR/VG等
-
-模型框架：
-
-<img src="pic/ALBEF1.png" width="600" height="350">
-
-准备复现一下论文结果，毕竟相比ViLT，资源需求少了很多
 
 ## 2023.6.27
 
