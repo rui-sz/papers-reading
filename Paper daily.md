@@ -45,11 +45,49 @@
   - [ ] DALLE/DALLE2 效果体验
   - [ ] 《BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation》
 
+## 2023.7.10
+
+《**VLMO: Unified Vision-Language ****Pre-Training**** with Mixture-of-Modality-Experts**》
+
+2021.11 微软的一篇多模态工作，mixture of experts 思想的应用，挺有意思
+
+核心内容：
+
+1. 模型结构改进，在Tfm encoder基础上，把 FFN 扩展成3个expert FFN，图像、文本、多模态的，底层share params
+2. 训练方式改进，分阶段先应大量单模态数据分别train experts，最后用多模态数据train；ITC+ITM+MLM
+
+模型框架：
+
+<img src="pic/VLMo1.png" width="600" height="450">
+
+MoMO transformer with shared parameters
+
+* 针对不同模态，有不同FFN
+* MHA 层share weights，对不同的模态都有用
+* 要做多次Forward，64张A100的卡，train 3天
+
+训练方式：
+
+<img src="pic/VLMo2.png" width="600" height="300">
+
+train过程中利用大量单模态数据，如上图：
+
+1. Train vision 的时候，MHA和expert FFNs都不freeze
+2. Train text 的时候，vision expert 和 MHA 被冻住，说明self attention 也能在text上work的很好，比较有意思
+3. Train VL 的时候，都不冻住
+
+评估结果：
+
+    因为主要是模型结构改进，评了2个版本 VLMo-Base/VLMo-Large
+
+    在VQA/NLVR2/Retrieval等数据集上评估效果非常好，相比ALBEF、ViLT等都有较大提升
+
+
 ## 2023.7.9
 
 《ALBEF: Align before Fuse: Vision and Language Representation Learning with Momentum Distillation》
 
-Transformer用于多模态领域的一篇文章，2021.7
+2021.7，Transformer用于多模态领域的一篇文章
 
 核心内容：
 
