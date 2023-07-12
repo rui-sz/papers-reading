@@ -1,4 +1,4 @@
-# papers-weekly
+# anpapers-weekly
 
 每周论文学习记录
 
@@ -43,7 +43,37 @@
   - [ ] 多模态预训练工作（by李沐)
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
-  - [ ] 《BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation》
+
+## 2023.7.12
+
+《BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation》
+
+2022.2 的一篇文章，salesforce
+
+本文核心内容：
+
+1. 之前的工作在模型层面有不同类型，ALBEF代表的Encoder类，VLMo的Mixed of experts类
+2. 之前的工作在数据上，有很多noise data，比如Google的CC14M数据集，都是网上抓的，效果suboptimal
+3. 本文在模型上融合了ALBEF和VLMo，如下图1，左侧三个塔就是ALBEF，右侧1个塔decoder结构用于生成模型，右侧三个塔共享了部分模型参数（参考VLMo），decoder塔的损失函数用的LM
+4. 基于原始数据train了第一版BLIP之后，用人工标注的COCO数据集FT了Captioner和Filter2个模型，用于数据增强，再train一个最终的BLIP模型
+5. 从评估结果来看，Captioner+Filter 的效果都很好。也启发了后续其他的工作，例如Stable Diffusion等
+
+
+
+图1 模型架构：
+
+<img src="pic/BLIP1.png" width="650" height="450">
+
+图2 数据增强：
+
+<img src="pic/BLIP2.png" width="650" height="400">
+
+图3 消融实验：
+
+<img src="pic/BLIP3.png" width="650" height="350">
+
+多模态的文章真的很有趣，各种融合NLP和CV的工作，有意思。
+
 
 ## 2023.7.10
 
@@ -82,7 +112,6 @@ train过程中利用大量单模态数据，如上图：
 
     在VQA/NLVR2/Retrieval等数据集上评估效果非常好，相比ALBEF、ViLT等都有较大提升
 
-
 ## 2023.7.9
 
 《ALBEF: Align before Fuse: Vision and Language Representation Learning with Momentum Distillation》
@@ -111,13 +140,11 @@ Momentum Distillation / 动量蒸馏
 
 引入momentum model生成的 pseudo-targets，动量模型是基于unimodal和multimodal的指数滑动平均。更新ITC loss，loss 计算把这部分伪标签样本也考虑进来。
 
-
 准备复现一下论文结果，毕竟相比ViLT，资源需求少了很多
 
 update：
 
     抓了下4M数据集，基本跑通FT的流程了，FT flickr数据集，4卡好像要不了很久
-
 
 ## 2023.7.7
 
@@ -136,7 +163,6 @@ update：
 2008年工作，去噪自编码机。
 
 核心思想通过对输入数据在encoder之前加入噪声，来增强模型鲁棒性
-
 
 《VAE: Auto-encoding variational bayes》
 
@@ -160,7 +186,6 @@ update：
 
 <img src="pic/VQVAE1.png" width=400" height="200">
 
-
 《GAN: Generative Adversarial Nets》
 
 2014年工作，Ian Goodfellow，领域奠基作
@@ -172,7 +197,6 @@ update：
 3. GAN的收敛很不稳定，相应原理解释比较复杂不赘述~后续有比较多改进工作
 
 <img src="pic/GAN1.png" width=400" height="200">
-
 
 others get:
 
