@@ -44,6 +44,11 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
+## 2023.7.15
+
+TODO：3 papers
+
+
 ## 2023.7.12
 
 《BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation》
@@ -58,8 +63,6 @@
 4. 基于原始数据train了第一版BLIP之后，用人工标注的COCO数据集FT了Captioner和Filter2个模型，用于数据增强，再train一个最终的BLIP模型
 5. 从评估结果来看，Captioner+Filter 的效果都很好。也启发了后续其他的工作，例如Stable Diffusion等
 
-
-
 图1 模型架构：
 
 <img src="pic/BLIP1.png" width="650" height="450">
@@ -73,7 +76,6 @@
 <img src="pic/BLIP3.png" width="650" height="350">
 
 多模态的文章真的很有趣，各种融合NLP和CV的工作，有意思。
-
 
 ## 2023.7.10
 
