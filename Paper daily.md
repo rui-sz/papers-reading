@@ -46,7 +46,28 @@
 
 ## 2023.7.15
 
-TODO：3 papers
+《CoCa: Contrastive Captioners are Image-Text Foundation Models》
+
+2022.5 Google Research的工作，核心内容：
+
+1. 标题顾名思义，对比学习和标题生成相结合，想要建立一个 I-T 基础模型，模型结构上看，本文属于 ALBEF 的后续工作，模型结构上几乎一致
+2. 对比ALBEF，把右侧用于语言特征和多模态学习的部分换成了decoder，同时loss上做了简化 ITC+LM，提高学习效率，同时也能适应生成类任务
+3. 本文用到了Google内部的超大数据集，训练数据达到了B级别，模型参数量也很大，最大有2.1B，学界比较难复现
+4. CoCa模型的特征输出，可以用于多种下游任务：image classification，i-t 对比，image capationing 等，效果都非常的好，通过雷达图有比较直观的体现；尤为难能的是在单模态任务上也有非常好的效果
+
+图1 模型架构：
+
+<img src="pic/CoCa1.png" width="700" height="400">
+
+图2 下游任务：
+
+<img src="pic/CoCa2.png" width="600" height="300">
+
+图3 实验结果：
+
+<img src="pic/CoCa3.png" width="600" height="650">
+
+本文用到了Google内部的JFT 3B数据集，可能是模型效果如此好的原因之一。增加了外界复现的难度。
 
 
 ## 2023.7.12
