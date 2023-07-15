@@ -44,7 +44,53 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
+## 2023.7.16
+
+Flamingo
+
+T5
+
+Florence
+
+ALIGN
+
+Imagen
+
+BEiT/BEiTv2
+
+VL-BEiT
+
 ## 2023.7.15
+
+《Image as a Foreign Language: BEIT Pretraining for All Vision and Vision-Language Tasks》
+
+2022.8 微软的工作BEiTv3，文章的标题很大，目的也很明确，核心内容：
+
+1. 想要统一多模态基座模型（2022年开始出现各种），把图像也看作一种语言 Imglish，提出一个更灵活易复用的结构，引言部分写的非常好，关于多模态领域的系统性介绍
+2. 模型大一统的几个核心要素：统一的模型结构 Transformer、通用的预训练目标 Masked data modeling、数据/模型 scale up，这些要素目前都基本完备了
+3. 模型架构：就是一个 VLMo（取了个名字：Multiway Transformer），通过一组多模态epxerts，让模型捕捉更多模态特有信息，不同的输入会被路由到不同的experts；共享的MHA 学习不同模态之间的对齐，并且执行针对多模态任务deep fusion
+4. 模型训练：一个训练任务，每个batch中包括多模态数据；15% tokens of texts, 50% tokens of texts from i-t pairs, 40% of image patches；本文只用 masked data modeling，简单方法容易scale，也容易应用
+5. 评估，本是多模态工作，在单模态上也有非常好的效果，说明了不是目标函数越多越好，本文只用了mask language目标
+6. 关于后续工作，作者的目标还是建立一个跨任务、语言、模态的大一统基座模型，让我们拭目以待
+
+模型架构：
+
+<img src="pic/BEiTv3_1.png" width="700" height="400">
+
+不同的downstream应用场景/方法：
+
+<img src="pic/BEiTv3_2.png" width="700" height="500">
+
+模型训练：
+
+<img src="pic/BEiTv3_3.png" width="700" height="400">
+
+评估结果：
+
+<img src="pic/BEiTv3_4.png" width="700" height="500">
+
+
+## 2023.7.14
 
 《CoCa: Contrastive Captioners are Image-Text Foundation Models》
 
