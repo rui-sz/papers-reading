@@ -46,9 +46,13 @@
 
 ## 2023.7.16
 
+多模态系列：
+
 Flamingo
 
 T5
+
+BEiT/BEiTv2
 
 Florence
 
@@ -56,9 +60,13 @@ ALIGN
 
 Imagen
 
-BEiT/BEiTv2
-
 VL-BEiT
+
+
+LLM 系列：
+
+看一下GPT群内各种资料
+
 
 ## 2023.7.15
 
@@ -89,7 +97,6 @@ VL-BEiT
 
 <img src="pic/BEiTv3_4.png" width="700" height="500">
 
-
 ## 2023.7.14
 
 《CoCa: Contrastive Captioners are Image-Text Foundation Models》
@@ -114,7 +121,6 @@ VL-BEiT
 <img src="pic/CoCa3.png" width="600" height="650">
 
 本文用到了Google内部的JFT 3B数据集，可能是模型效果如此好的原因之一。增加了外界复现的难度。
-
 
 ## 2023.7.12
 
