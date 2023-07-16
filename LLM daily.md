@@ -9,6 +9,11 @@ ChatGPT账号
 LaMDA
 WebGPT
 
+## 2023.7.16
+
+位置编码算法：RoPE，ALiBi 等
+
+
 ## 2023.6.15
 
  《Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback》
