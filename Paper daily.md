@@ -44,17 +44,11 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
-## 2023.7.16
-
-多模态系列：
-
-Flamingo
-
-T5
-
-BEiT/BEiTv2
+## 2023.7.x
 
 Florence
+
+T5
 
 ALIGN
 
@@ -62,10 +56,35 @@ Imagen
 
 VL-BEiT
 
-
 LLM 系列：
 
-看一下GPT群内各种资料
+## 2023.7.16
+
+《BEiT：BERT pre-training of image transformers》
+
+2021.6 微软的工作，可以称作计算机视觉领域的 BERT moment，核心内容：
+
+1. 总体上就是 BERT 的思想，通过 Masked image learning 的方式，学习 image representation
+2. 模型框架上，采用了 16*16 patch线性映射作为输入（类似ViT），visual tokenizer 作为离散 output（来自Zero-shot text-to-image generation），主干网络 Image Transformer
+3. 预训练，基于imagenet 1k数据集，MIM 范式，patch-wise pred，mask 40% image patches，pixel level 的auto encode 会让模型关注图片中的小范围依赖和高频细节，计算量也会大很多。消融实验有效果对比。
+4. 从评估结果看，在图像分类、语义分割等下游任务上的FT效果，要好于之前一系列工作；同时attention map可视化显示显式模型学到了物体信息，虽然本文没有采用任何物体标注数据，也证明了预训练的有效性。
+5. 下一步工作，想要继续在数据和模型复杂度方面 scale up 模型，长期目标是统一的多模态预训练模型
+
+模型架构：
+
+<img src="pic/BEiT1_1.png" width="700" height="450">
+
+分类评估结果：
+
+<img src="pic/BEiT1_2.png" width="700" height="450">
+
+语义分割评估结果：
+
+<img src="pic/BEiT1_3.png" width="700" height="250">
+
+Attention map 可视化：
+
+<img src="pic/BEiT1_4.png" width="700" height="450">
 
 
 ## 2023.7.15
