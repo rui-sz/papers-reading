@@ -58,7 +58,16 @@ VL-BEiT
 
 LLM 系列：
 
+Zero-Shot Text-to-Image Generation
+
+visual tokenizer
+
 ## 2023.7.16
+
+《BEIT V2: Masked Image Modeling with Vector-Quantized Visual Tokenizers》
+
+doing
+
 
 《BEiT：BERT pre-training of image transformers》
 
@@ -85,7 +94,6 @@ LLM 系列：
 Attention map 可视化：
 
 <img src="pic/BEiT1_4.png" width="700" height="450">
-
 
 ## 2023.7.15
 
