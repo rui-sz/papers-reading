@@ -62,12 +62,35 @@ Zero-Shot Text-to-Image Generation
 
 visual tokenizer
 
-## 2023.7.16
+
+## 2023.7.18
 
 《BEIT V2: Masked Image Modeling with Vector-Quantized Visual Tokenizers》
 
-doing
+2022.8 ，BEiT这篇工作的后续，MIM 已经展现出了impressive效果，本文核心内容：
 
+1. 现存的工作很多都聚焦低阶pixels，妨碍了挖掘图像中的高阶语义表示。本文提出语义丰富的visual tokenizer 作为Masked的重建目标，是一个单模态版本的视觉task
+2. 使用 VQ-KD 技术训练这个 tokenizer，它将连续向量空间映射为 compact codes
+3. 模型训练阶段，先训练VQ-KD网络，之后在预训练 ViT 的时候引入了 patch aggreation strategy，强化CLS尽可能表达全局信息
+4. 效果评估，在分类、语义分割等任务上，对比前作BEiT都有较大幅度的提升
+5. 结论：VQ-KD 将连续语义空间离散化，提供可供 MIM 学习的监督token，未来将尝试学习一个 universal tokenizer 映射 words 和 images 到同一个vocab
+
+模型架构：
+
+<img src="pic/BEiTv2_1.png" width="600" height="350">
+
+<img src="pic/BEiTv2_2.png" width="600" height="350">
+
+评估结果：
+
+<img src="pic/BEiTv2_3.png" width="600" height="450">
+
+Codebook 中的语义概念：
+
+<img src="pic/BEiTv2_4.png" width="600" height="400">
+
+
+## 2023.7.16
 
 《BEiT：BERT pre-training of image transformers》
 
