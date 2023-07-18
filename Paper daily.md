@@ -44,7 +44,7 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
-## 2023.7.x
+## 2023.7
 
 Florence
 
@@ -54,13 +54,17 @@ ALIGN
 
 Imagen
 
-VL-BEiT
-
 LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
 visual tokenizer
+
+## 2023.7.19
+
+VL-BEiT
+
+TBD
 
 
 ## 2023.7.18
