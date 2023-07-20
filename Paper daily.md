@@ -58,13 +58,31 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.7.20
+
 visual tokenizer
+
+TBD
 
 ## 2023.7.19
 
-VL-BEiT
+《VL-BEiT: Generative vision language pretraining》
 
-TBD
+2022.6 微软的工作，同属于 BEiT, VLMo 的后续，核心 idea：
+
+1. 本文目标是要建立V-L基础模型 VL-BEiT，一个双向多模态预训练Transformer，A unified Masked data modeling objective
+2. 模型结构上基本复用了 VLMo 的工作，一个 shared Self attention，加上多个 Modality experts。训练和推理时对input做不同的组织，如图二
+3. 预训练，单模态数据 imagenet22k，wiki等text；多模态 CC/SBU/COCO/VG等数据集。训练阶段采用 masked text(Bert)，masked image(BEiT)，masked image-text(本文) 等不同的训练方式，多模态的mask train，可以起到对齐作用
+4. 评估结果，在V-L任务如VQA,VR，以及V任务分类、检索上都表现不错，证明了多模态表征学习良好
+5. 下一步计划，scale up model&data，想要探索NLP预训练的scale up是否在多模态work; 引入多语种预训练，对比学习目标等; zero-shot 跨模态迁移能力
+
+图一：模型结构：
+
+<img src="pic/VL-BEiT2.png" width="600" height="500">
+
+图二：不同模态训练方式
+
+<img src="pic/VL-BEiT1.png" width="600" height="450">
 
 
 ## 2023.7.18
@@ -92,7 +110,6 @@ TBD
 Codebook 中的语义概念：
 
 <img src="pic/BEiTv2_4.png" width="600" height="400">
-
 
 ## 2023.7.16
 
