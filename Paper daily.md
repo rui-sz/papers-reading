@@ -46,8 +46,6 @@
 
 ## 2023.7
 
-Florence
-
 T5
 
 ALIGN
@@ -57,6 +55,10 @@ Imagen
 LLM 系列：
 
 Zero-Shot Text-to-Image Generation
+
+## 2023.7.23
+
+Florence
 
 visual tokenizer
 
