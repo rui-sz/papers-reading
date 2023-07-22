@@ -58,11 +58,44 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
-## 2023.7.20
-
 visual tokenizer
 
 TBD
+
+
+## 2023.7.22
+
+《DETR: End-to-End Object Detection with Transformers》
+
+2020ECCV的文章，DETR 即 detection transformer，是目标检测的里程碑工作，启发后续一系列xx-DETR，影响力巨大。
+
+本文要点：
+
+1. 当前目标检测方法基本都是two stage，出很多预测中间结果再接NMS后处理（过滤掉重复的框，需要复杂调参）本文标题端到端+Transformer，将其看作集合预测问题，不依赖很多先验知识，通过一个端到端网络取得很好的结果
+2. 本质上Transformer 出来的特征够强，所以下游结果比较好，是Tfm的成功
+3. 模型结构，CNN主干网络，接encoder-decoder各6层，ecd学习全局特征，dcd学习边缘特征更好的分割物体，在dcd这里输入一个learned object query 100*256，指引dcd输出我们想要数量的物体
+4. 训练，当作集合预测问题，损失函数这里看作二分图匹配计算loss，构造cost matrix找最优匹配，匈牙利算法，本文场景下，100个框与ground truth计算分类loss+出框loss，填入matrix。训了500个epoch
+5. 评估结果，在COCO数据集上能打平Fast R-CNN，不过对大物体表现比较好；全景分割的效果很好
+6. 本文主要归功于Transformer比较好的提取了特征，可以看作是Tfm的成功。
+
+模型架构：
+
+<img src="pic/DETR1.png" width="550" height="250">
+
+<img src="pic/DETR2.png" width="550" height="250">
+
+自注意力可视化：
+
+<img src="pic/DETR3.png" width="550" height="250">
+
+<img src="pic/DETR4.png" width="550" height="300">
+
+Insight：
+
+很多工作都是在到达一个临界点之后，就会有一个更简单更优雅的里程碑式新框架，把技术演进带到一个新的方向，开启下一个阶段的进化。
+
+例如CNN的AlexNet, ResNet，Transfomer/ViT/ViLT/DETR等都是这样的工作，事物是螺旋向上发展的，中间夹杂阶段跳跃。
+
 
 ## 2023.7.19
 
@@ -83,7 +116,6 @@ TBD
 图二：不同模态训练方式
 
 <img src="pic/VL-BEiT1.png" width="600" height="450">
-
 
 ## 2023.7.18
 
