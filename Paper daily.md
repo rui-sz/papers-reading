@@ -60,9 +60,23 @@ Florence
 
 ## 2023.7.23
 
-visual tokenizer
+《VECTOR-QUANTIZED IMAGE MODELING WITH IMPROVED VQGAN》
 
-TBD
+2021年Google Research的工作，本文要点：
+
+1. 本问题提出了一种更好的通过预测光栅化 image tokens 的Transformer自回归预训练方法
+2. 左侧ViT-VQGAN：在VQGAN 的基础上做了一些改进（Arch，Codebook learning等），Image Token 化的ViT-VQGAN，同时损失函数也做了改进，对多种损失做融合
+3. 右侧VIM：Unsupervised Pretrain transformer，autoregressively Train On imagenet，采用类似GPT的pretrain方法
+4. 效果评估，在图片重建、图片生成、图片分类等任务上都说明预训练效果比较好
+
+模型架构：
+
+<img src="pic/VIM1.png" width="500" height="300">
+
+<img src="pic/VIM2.png" width="600" height="250">
+
+本文的 visual tokenlizer 也是 BEiTv2 中用到的，不过好像在 BEiTV3中被放弃了？采用了更简单的linear patching
+
 
 《**Practical Lessons from Predicting Clicks on ****Ads**** at Facebook**》
 
@@ -90,7 +104,6 @@ top-k中historical 特征占比：
 Negative downsampling 的效果：
 
 <img src="pic/GBDT+LR4.png" width="400" height="300">
-
 
 ## 2023.7.22
 
