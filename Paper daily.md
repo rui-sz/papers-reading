@@ -56,13 +56,40 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
-## 2023.7.23
-
 Florence
+
+## 2023.7.23
 
 visual tokenizer
 
 TBD
+
+《**Practical Lessons from Predicting Clicks on ****Ads**** at Facebook**》
+
+很久之前的一篇文章，今天翻到把其中重点结论记录下吧，都还是比较solid的
+
+1. 主要介绍了FB广告系统中，GBDT+LR这种方法，并与单独的建模做对比说明增益
+2. 模型结构方面，用GBDT将原始features input转换为 sparse feature，拼接后再作为LR的input
+3. 性能评估结论，评估指标采用NE和Calibration，GBDT+LR 对比GBDT和LR都有明显的性能增益，同时LR相比GBDT有微小的性能增益
+4. 特征重要性方面，historical 特征远高于contextual特征；contextual特征对于code start比较有用
+5. 采样方法，均匀采样时10%左右采样率性能就不再提高，负样本下采样2.5效果最好，同时负采样会改变 predict 值的物理意义，需要映射回去
+6. data fressness方面，相比及时更新训练数据，如果停止更新会造成性能下降，1周大概降了1%。实际使用中，如果训练量太大，也可以适当加大LR模型的更新频率
+
+模型架构：
+
+<img src="pic/GBDT+LR1.png" width="400" height="300">
+
+historical 特征 vs contextual 特征：
+
+<img src="pic/GBDT+LR2.png" width="400" height="300">
+
+top-k中historical 特征占比：
+
+<img src="pic/GBDT+LR3.png" width="400" height="300">
+
+Negative downsampling 的效果：
+
+<img src="pic/GBDT+LR4.png" width="400" height="300">
 
 
 ## 2023.7.22
@@ -97,7 +124,6 @@ Insight：
 很多工作都是在到达一个临界点之后，就会有一个更简单更优雅的里程碑式新框架，把技术演进带到一个新的方向，开启下一个阶段的进化。
 
 例如CNN的AlexNet, ResNet，Transfomer/ViT/ViLT/DETR等都是这样的工作，事物是螺旋向上发展的，中间夹杂阶段跳跃。
-
 
 ## 2023.7.19
 
