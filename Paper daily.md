@@ -22,21 +22,18 @@
 - [ ] 写综述：GNN 论文总结
 - [ ] Deeper insights into graph convolutional networks for semi-supervised learning
 - [ ] 搜广推：MMoE，DeepFM等
-- [ ] AlphaFold, AlphaFold2
 - [ ] 不同的位置编码方式，1D(Bert的), 2D etc
 - [ ] 通用内容
 
   - [ ] GAP global average pooling
   - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
   - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
-  - [ ] 自注意力原理，MHA 详解，CV和NLP的自注意力机制
   - [ ] viking, milvus等向量检索相关技术，检索和矢量搜索工具（如 LangChain、LlamaIndex 和 Pinecone）
   - [ ] 模型FT相关，LoRA，QLoRA，langchain等技术
 - [ ] 大模型近年来的主要文章（目标：7月底写一篇综述）
 
   - [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
   - [ ] StyleDrop: Text-to-Image Generation in Any Style 通过文字改变发型等
-  - [ ] 详细看下ViLT跟Bert、ViT之间的相似之处
   - [ ] CLIP 得分，衡量文本、图像的对齐程度
   - [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
   - [ ] image GPT 的工作
@@ -76,7 +73,6 @@ Florence
 <img src="pic/VIM2.png" width="600" height="250">
 
 本文的 visual tokenlizer 也是 BEiTv2 中用到的，不过好像在 BEiTV3中被放弃了？采用了更简单的linear patching
-
 
 《**Practical Lessons from Predicting Clicks on ****Ads**** at Facebook**》
 
@@ -473,7 +469,7 @@ DALLE2，2022.4 OpenAI的工作，也是大热的一篇
 一些有趣的应用场景：
 
 1. 根据文本描述，生成原创性的图片，可以任意组合概念、属性、风格
-2. 根据文本对图片进行编辑，因为文本图片共享语义空间
+2. **根据文本对图片进行编辑**，因为文本图片共享语义空间
 3. 根据输入图片生成相似风格的图片，如图1
 4. 2个图像内插，如图2
 5. 图像文本内插，如图3
