@@ -9,9 +9,32 @@ ChatGPT账号
 LaMDA
 WebGPT
 
-## 2023.7.16
-
 位置编码算法：RoPE，ALiBi 等
+
+## 2023.7.29
+
+《**Retentive Network: A Successor to Transformer for Large Language Models**》
+
+2023.7 微软的工作，尝试提出一个新的主干模型结构
+
+本文要点：
+
+1. 不可能三角：训练并行度、性能、推理速度，之前Tfm的变种尝试做改进，都没有突破这个限制
+2. 提出RetNet来解决这个问题，三种范式：parallel representation, recurrent representation, chunkwise recurrent
+3. 评估结果看，在训练速度，推理速度，内存使用上都好于Tfm，同时在一些下游任务上取得明显优于Tfm的效果
+4. 实验了 1.3/2.7/6.7B三种尺度，后续工作会继续scale up模型大小和训练步数，同时使用RetNet作为多模态的backbone架构
+
+不可能三角：
+
+<img src="pic/RetNet1.png" width="500" height="400">
+
+模型结构对比
+
+<img src="pic/RetNet2.png" width="600" height="400">
+
+下游任务评估：
+
+<img src="pic/RetNet3.png" width="600" height="400">
 
 
 ## 2023.6.15
