@@ -57,6 +57,24 @@ Florence
 
 ## 2023.7.30
 
+《**Flamingo: a Visual Language Model for Few-Shot Learning**》
+
+2022.4 Google 的一篇工作，一个V-L基座模型的尝试，本文要点：
+
+1. 目标是提出一个通用的V-L基础模型，a visual language model that accepts text interleaved with images/videos as input and outputs free-form text（输入/输出的范式，决定了模型能解决的任务类型，VQA/captaining/dialog等)
+2. 模型结构方面，基于一个冻结参数的预训练visual encoder，以及一个冻结参数的预训练Transformer decoder，加入视觉 perceiver resampler 和 文本 gated xattn dense 层
+3. 训练数据，非常大规模的高质量数据集，主要是两类: image text interleaved data，以及高质量 image-text pair数据，达到了billion级别
+4. 评估结果，因为有大规模数据做预训练，效果自然是非常好了，基于4个sample 的few shot已经可以取得很好的效果，同时有6个任务基于32样本few shot会超过其他FT的SOTA结果
+
+模型架构：
+
+<img src="pic/Flamingo1.png" width="500" height="300">
+
+<img src="pic/Flamingo2.png" width="500" height="300">
+
+Insight：我想本文核心的insight在于，V-L可以尝试train一个基座模型，主要包括v-l representation的对齐，同时数据集规模对于性能是非常关键的。
+
+
 《DeepFM: A Factorization-Machine based Neural Network for CTR Prediction》
 
 复习了一下DeepFM，2017年哈工大、华为合作的工作，本文要点：
@@ -75,7 +93,6 @@ Florence
 <img src="pic/DeepFM2.png" width="700" height="200">
 
 近期会集中看一些CTR/推荐相关的文章
-
 
 ## 2023.7.23
 
