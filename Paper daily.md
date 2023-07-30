@@ -55,6 +55,28 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.7.30
+
+《DeepFM: A Factorization-Machine based Neural Network for CTR Prediction》
+
+复习了一下DeepFM，2017年哈工大、华为合作的工作，本文要点：
+
+1. 建模低阶交叉特征（FM）和高阶交叉特征（DNN），不像Wide&Deep，不需要任何特征工程
+2. DeepFM 比 Wide&Deep 更高效，Wide&Deep 的input vector包含大量人工设计的pairwise交叉特征
+3. DeepFM 不需要 FNN 那样的pre-train，直接端到端训练
+4. 从评估结果来看，在Criteo数据集和Company数据集上对比SOTA都有明显的提升
+
+模型架构
+
+<img src="pic/DeepFM1.png" width="500" height="300">
+
+与FNN/PNN/Wide&Deep的对比：
+
+<img src="pic/DeepFM2.png" width="700" height="200">
+
+近期会集中看一些CTR/推荐相关的文章
+
+
 ## 2023.7.23
 
 《VECTOR-QUANTIZED IMAGE MODELING WITH IMPROVED VQGAN》
