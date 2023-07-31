@@ -55,6 +55,32 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.7.31
+
+《Modeling Task Relationships in Multi-task Learning with Multi-gate Mixture-of-Experts》
+
+2018年Google的工作，大名鼎鼎的MMOE，复习一下。主要内容：
+
+1. 本文提出一种 multi-task learning approach MMOE，受MoE model等启发
+2. 该方法显式建模 task 之间的关系，以及学习 task-specific 能力
+3. 该方法比基线要好，尤其在task之间相关性比较低的时候，Multi-gated 可以比较好的处理，通过决定不同task对应的gates之间的overlap程度
+4. 通过一系列synthetic data和real data实验，验证了multi-task模型对于task相关性比较敏感，MMoE 比 OMoE效果要好，在线实验证实MMoE相比SB模型，取得了显著收益，并且在稀疏目标上收益更大
+
+模型架构：
+
+<img src="pic/MMOE1.png" width="600" height="250">
+
+评估结果
+
+<img src="pic/MMOE2.png" width="600" height="250">
+
+<img src="pic/MMOE3.png" width="500" height="250">
+
+模型的原理，通过数学公式表达出来，都是简单优雅的。
+
+<img src="pic/MMOE4.png" width="500" height="250">
+
+
 ## 2023.7.30
 
 《**Flamingo: a Visual Language Model for Few-Shot Learning**》
@@ -73,7 +99,6 @@ Florence
 <img src="pic/Flamingo2.png" width="500" height="300">
 
 Insight：我想本文核心的insight在于，V-L可以尝试train一个基座模型，主要包括v-l representation的对齐，同时数据集规模对于性能是非常关键的。
-
 
 《DeepFM: A Factorization-Machine based Neural Network for CTR Prediction》
 
