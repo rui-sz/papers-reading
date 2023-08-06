@@ -41,7 +41,7 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
-## 2023.7
+## 2023.8
 
 T5
 
@@ -54,6 +54,44 @@ LLM 系列：
 Zero-Shot Text-to-Image Generation
 
 Florence
+
+## 2023.8.6
+
+《ExQoE: **Rebuffering but not Suffering: Exploring Continuous-Time Quantitative ****QoE**** by User’s Exiting Behaviors**》
+
+2023.2 的一篇文章，关于 Multimedia QoE 建模的，本文要点：
+
+1. 对于用户观看短视频时的体验 QoE，缺少合适的量化指标同时满足三个条件（objective，quantitative，continuous-time），本文提出了 exiting behavior 这个指标
+2. 基于 exiting ratio 进行QoE 建模时的难点：non-streaming factors的处理，predict exiting ratio，如何计算不同network情况下的QoE分数
+3. 在模型方面，本文的思路是：
+   1. 将 session playback 离散化为1s片段，构建 state 序列s
+   2. 定义 SER/state exiting ratio，对于大量 state 序列样本，用线性回归法计算出马尔科夫过程的回归公式
+   3. 基于SER的数值，可以用积分思路计算出 session duration 的期望
+4. 在不同network参数下，计算马尔科夫状态转换概率，用于后续预估状态序列的出现概率，进而算E(dura)
+5. 评估结果，这里有一些 insight 比较有参考价值，与机器学习的对比感觉仅供参考吧，写的很含糊
+
+模型方案：
+
+<img src="pic/Rebuffering_but_not_Suffering1.png" width="500" height="350">
+
+SER完整
+
+<img src="pic/Rebuffering_but_not_Suffering2.png" width="500" height="100">
+
+SER近似
+
+<img src="pic/Rebuffering_but_not_Suffering3.png" width="500" height="80">
+
+期望播放时长：
+
+<img src="pic/Rebuffering_but_not_Suffering4.png" width="500" height="100">
+
+结合network的期望播放时长：
+
+<img src="pic/Rebuffering_but_not_Suffering5.png" width="500" height="80">
+
+总体来说，playback 离散化这个思路比较有意思，但是基于马尔科夫过程来建模，忽略了内容/用户/网络等的个性化和动态变化，在优化上应该是不够彻底的。
+
 
 ## 2023.7.31
 
@@ -79,7 +117,6 @@ Florence
 模型的原理，通过数学公式表达出来，都是简单优雅的。
 
 <img src="pic/MMOE4.png" width="500" height="250">
-
 
 ## 2023.7.30
 
