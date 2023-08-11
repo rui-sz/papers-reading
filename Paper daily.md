@@ -55,6 +55,10 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.8.12
+
+TBD
+
 ## 2023.8.6
 
 《ExQoE: **Rebuffering but not Suffering: Exploring Continuous-Time Quantitative ****QoE**** by User’s Exiting Behaviors**》
@@ -91,7 +95,6 @@ SER近似
 <img src="pic/Rebuffering_but_not_Suffering5.png" width="500" height="80">
 
 总体来说，playback 离散化这个思路比较有意思，但是基于马尔科夫过程来建模，忽略了内容/用户/网络等的个性化和动态变化，在优化上应该是不够彻底的。
-
 
 ## 2023.7.31
 
