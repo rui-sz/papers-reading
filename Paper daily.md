@@ -57,7 +57,45 @@ Florence
 
 ## 2023.8.12
 
-TBD
+《YouSlow: QoE Matters More Than QoS:Why People Stop Watching Cat Videos》
+
+2016年的一篇文章，本文要点：
+
+1. 量化 QoE 对于使用ABR的 video streaming 服务来说比较困难，本文推出 YouSlow 插件监控youtube的playback events，研究方法是定义QoE metric abandonment ratio，然后看各种QoS指标与它的相关性
+2. rebufferings increase abandonment six times as much as the start-up latency caused (mostly) by pre-roll ads. 并且同样 RB rate 的情况下，频次越高影响越大
+3. even increasing bitrate during playback can annoy viewers; when the bitrate changes, they abandon videos more than four times as much
+4. a single rebuffering event can cause abandonment rate three times higher than a single bitrate change
+5. 基于YouTube 搜集了一定量的真实用户数据，对于结论的现实意义提供了支撑
+
+    几种QoS指标的影响强弱：rebuffering > bitrate change > start-up latency
+
+ABR 原理：
+
+<img src="pic/YouSlow1.png" width="600" height="300">
+
+RB 量级的影响：
+
+<img src="pic/YouSlow2.png" width="500" height="350">
+
+RB 频次的影响
+
+<img src="pic/YouSlow3.png" width="500" height="500">
+
+RB和码率影响拆分：
+
+<img src="pic/YouSlow4.png" width="700" height="300">
+
+RB 量级和码率变化的叠加影响：
+
+<img src="pic/YouSlow5.png" width="500" height="350">
+
+
+一些延伸：
+
+    1，本文提出的量化分析方法是比较好的，不过基于全局 QoS-QoE 曲线，缺少了一些个性化。
+
+    2，基于过程中的后验统计指标来做调整，相比于基于预测，可能效果上差一些？
+
 
 ## 2023.8.6
 
