@@ -102,6 +102,33 @@ dr：
 <img src="pic/QoE-driven-cache3.png" width="500" height="300">
 
 
+《Wide & Deep Learning for Recommender Systems》
+
+2016年Google的工作，本文要点：
+
+1. 本文在Google Play场景提出了一种新的 Wide & Deep 推荐架构，发挥Wide部分的记忆特性，以及Deep部分的泛化特性
+2. 模型结构上，wide部分是一个基于点乘特征的线性映射，deep部分是一个N层FNN网络，two different inputs are required for the “wide part” and “deep part”, and the input of “wide part” still relies on expertise feature engineering.（人工特征交叉）
+3. 训练时，两部分 joint training，Wide部分FTRL&L1，Deep部分AdaGrad
+4. 从评估结果来看，相比单独的Wide和Deep模型，Wide&Deep offline AUC有小幅提升，在线效果提升明显
+
+模型结构：
+
+<img src="pic/wide_deep1.png" width="700" height="250">
+
+<img src="pic/wide_deep2.png" width="500" height="200">
+
+LR场景原理：
+
+<img src="pic/wide_deep3.png" width="600" height="50">
+
+模型Serving：
+
+<img src="pic/wide_deep4.png" width="550" height="250">
+
+dr：
+
+    最近准备系列复习一下搜广推领域的经典模型架构，温故知新。
+
 
 ## 2023.8.12
 
