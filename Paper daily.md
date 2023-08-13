@@ -41,7 +41,7 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
-## 2023.8
+# 2023.8
 
 T5
 
@@ -54,6 +54,54 @@ LLM 系列：
 Zero-Shot Text-to-Image Generation
 
 Florence
+
+## 2023.8.13
+
+《DeSVQ: Deep learning based streaming video qoe estimation》
+
+2022.1 IIT 的工作，本文要点：
+
+1. 针对 VQA QoE 的 continuous 评估是比较难的事情，综合了质量切换、压缩、卡顿等时序因素
+2. 本文提出了一个DL framework，使用 CNN + LSTM，提取spatial-temporal，以及人工QoS特征信息，预测 z scores QoE 指标
+3. 评估结果，对比之前的同类模型，在效果上有一定提升
+
+模型结构：
+
+<img src="pic/DeSVQ1.png" width="600" height="300">
+
+<img src="pic/DeSVQ2.png" width="600" height="300">
+
+z scores：
+
+<img src="pic/DeSVQ3.png" width="600" height="250">
+
+QoS metrics随frame变化：
+
+<img src="pic/DeSVQ4.png" width="600" height="250">
+
+QoS metrics与QoE关系：
+
+<img src="pic/DeSVQ5.png" width="600" height="250">
+
+dr：
+
+    总体是一个基于 video 内容的内容 QoE 评估方法，并且模型学习目标是人工打标分数，不太 scalable
+
+
+《QoE-Driven Cache Management for HTTP Adaptive Bit Rate Streaming Over Wireless Networks》
+
+2013年的工作，本文要点：
+
+1. 关于如何提供一个 subset of playback bitrates，提供最优的 QoE，同时节省 cloud storage（类似我们的如何提供更少的档位，更好的满足用户）
+2. 通过抽象建模为一个凸优化的数学问题，通过拉格朗日乘子法进行求解
+
+<img src="pic/QoE-driven-cache1.png" width="500" height="350">
+
+<img src="pic/QoE-driven-cache2.png" width="500" height="150">
+
+<img src="pic/QoE-driven-cache3.png" width="500" height="300">
+
+
 
 ## 2023.8.12
 
@@ -133,6 +181,8 @@ SER近似
 <img src="pic/Rebuffering_but_not_Suffering5.png" width="500" height="80">
 
 总体来说，playback 离散化这个思路比较有意思，但是基于马尔科夫过程来建模，忽略了内容/用户/网络等的个性化和动态变化，在优化上应该是不够彻底的。
+
+# 2023.7
 
 ## 2023.7.31
 
