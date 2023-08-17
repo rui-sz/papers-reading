@@ -55,6 +55,38 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.8.17
+
+《Real-time Short Video Recommendation on Mobile Devices》
+
+2022.11 快手的一篇工作，端智能方向，本文要点：
+
+1. server-side 的推荐模型具有一些短板：不能对用户反馈立即做出响应，因为latency；一刷的m个视频在client消费期间不能调整顺序；客户端独有特征的延迟
+2. client的模型有望解决这些问题，比如EdgeRec这类server-client协同的，以及本文这样client-side的模型
+3. 本文在client上构建了一个基于server predicted score，video统计特征，client实时特征的context-aware MMoE模型，预测用户下一个视频的各项指标，然后通过 beam search 方法寻找最优的 list
+4. 从评估结果来看，AUC相比基线模型有显著提升，计算开销android/ios分别120ms/50ms左右；消融实验显示，客户端实时特征>特征工程>近期观看序列
+
+服务架构：
+
+<img src="pic/kuaishou1_1.png" width="650" height="500">
+
+模型结构：
+
+<img src="pic/kuaishou1_2.png" width="650" height="550">
+
+客户端实时特征：
+
+<img src="pic/kuaishou1_3.png" width="600" height="400">
+
+beam search
+
+<img src="pic/kuaishou1_4.png" width="600" height="400">
+
+计算开销
+
+<img src="pic/kuaishou1_5.png" width="600" height="200">
+
+
 ## 2023.8.13
 
 《DeSVQ: Deep learning based streaming video qoe estimation》
@@ -87,7 +119,6 @@ dr：
 
     总体是一个基于 video 内容的内容 QoE 评估方法，并且模型学习目标是人工打标分数，不太 scalable
 
-
 《QoE-Driven Cache Management for HTTP Adaptive Bit Rate Streaming Over Wireless Networks》
 
 2013年的工作，本文要点：
@@ -100,7 +131,6 @@ dr：
 <img src="pic/QoE-driven-cache2.png" width="500" height="150">
 
 <img src="pic/QoE-driven-cache3.png" width="500" height="300">
-
 
 《Wide & Deep Learning for Recommender Systems》
 
@@ -129,7 +159,6 @@ dr：
 
     最近准备系列复习一下搜广推领域的经典模型架构，温故知新。
 
-
 ## 2023.8.12
 
 《YouSlow: QoE Matters More Than QoS:Why People Stop Watching Cat Videos》
@@ -142,7 +171,7 @@ dr：
 4. a single rebuffering event can cause abandonment rate three times higher than a single bitrate change
 5. 基于YouTube 搜集了一定量的真实用户数据，对于结论的现实意义提供了支撑
 
-    几种QoS指标的影响强弱：rebuffering > bitrate change > start-up latency
+   几种QoS指标的影响强弱：rebuffering > bitrate change > start-up latency
 
 ABR 原理：
 
@@ -164,13 +193,11 @@ RB 量级和码率变化的叠加影响：
 
 <img src="pic/YouSlow5.png" width="500" height="350">
 
-
 一些延伸：
 
     1，本文提出的量化分析方法是比较好的，不过基于全局 QoS-QoE 曲线，缺少了一些个性化。
 
     2，基于过程中的后验统计指标来做调整，相比于基于预测，可能效果上差一些？
-
 
 ## 2023.8.6
 
