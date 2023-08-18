@@ -55,6 +55,18 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.8.19
+
+《Continuous Prediction of Streaming Video QoE Using Dynamic Networks》
+
+TBD
+
+
+《Inferring the QoE of HTTP Video Streaming from User-Viewing Activities》
+
+TBD
+
+
 ## 2023.8.17
 
 《Real-time Short Video Recommendation on Mobile Devices》
@@ -85,7 +97,6 @@ beam search
 计算开销
 
 <img src="pic/kuaishou1_5.png" width="600" height="200">
-
 
 ## 2023.8.13
 
