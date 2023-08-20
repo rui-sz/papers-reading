@@ -59,7 +59,26 @@ Florence
 
 《Inferring the QoE of HTTP Video Streaming from User-Viewing Activities》
 
-TBD
+2011年一篇考古文章，研究 QoS/QoE 之间相关关系，通过分析获得 insight，本文要点：
+
+1. 网络质量指标缺少一些关于用户对video满意度的重要信息，video impairment 可能会导致一些用户行为，例如pause，或者减少视频area
+2. 把pause, screen size switch 等事件引入到MOS prediction当中，用LR模型，提高了R方
+3. 设计了一个封闭测试环境，搜集22个subjects的观看行为，然后分析数据
+4. 影响强弱关系：rebuffering frequency > init buffer time > mean rebuffering dura
+
+用户行为调研：
+
+<img src="pic/Inferring_the_Qoe1.png" ">
+
+Events/Activities 时序：
+
+<img src="pic/Inferring_the_Qoe2.png" >
+
+dr：
+
+    本文的分析方法比较精细化，通过在时序层面上找到 events 和 activities 之间的关联关系，有一定insight
+
+    不过，基于一个封闭测试环境，样本量太少，分析也仅限于相关性分析等，实用性不强
 
 
 ## 2023.8.19
@@ -92,7 +111,6 @@ VQA模型和R/M的影响：
 playout pattern 的评估效果：
 
 <img src="pic/Continuous_Prediction_DN5.png" width="650" height="350">
-
 
 ## 2023.8.17
 
