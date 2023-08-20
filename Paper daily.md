@@ -55,16 +55,43 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.8.19
-
-《Continuous Prediction of Streaming Video QoE Using Dynamic Networks》
-
-TBD
-
+## 2023.8.20
 
 《Inferring the QoE of HTTP Video Streaming from User-Viewing Activities》
 
 TBD
+
+
+## 2023.8.19
+
+《Continuous Prediction of Streaming Video QoE Using Dynamic Networks》
+
+2017年的一篇文章，通过回归模型预测实时QoE，内容要点：
+
+1. 持续的 QoE 预估是非常重要的，帮助我们建立更好的内容传输系统
+2. 本文提出了一个基于NN的预估模型，特征输入是VQA, R(playback status), M(time elapse)，label 是MOS作为QoE分数，一个简单的回归模型。并同时关注了不同content 和 playout pattern下的建模和评估
+3. 从评估效果上看，不同VQA模型效果vary，不同内容pattern模型效果vary；R/M特征对于模型效果都有正向帮助
+4. insight方面，证明了 VQA, R, M 这些实时特征，对于预估continuous MOS有帮助
+
+模型结构：
+
+<img src="pic/Continuous_Prediction_DN1.png" width="650" height="450">
+
+效果评估：
+
+<img src="pic/Continuous_Prediction_DN2.png" width="650" height="300">
+
+R和M的影响：
+
+<img src="pic/Continuous_Prediction_DN3.png" width="550" height="250">
+
+VQA模型和R/M的影响：
+
+<img src="pic/Continuous_Prediction_DN4.png" width="650" height="250">
+
+playout pattern 的评估效果：
+
+<img src="pic/Continuous_Prediction_DN5.png" width="650" height="350">
 
 
 ## 2023.8.17
