@@ -55,6 +55,11 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.8.22
+
+TODO：样本平衡度
+
+
 ## 2023.8.20
 
 《Inferring the QoE of HTTP Video Streaming from User-Viewing Activities》
@@ -79,7 +84,6 @@ dr：
     本文的分析方法比较精细化，通过在时序层面上找到 events 和 activities 之间的关联关系，有一定insight
 
     不过，基于一个封闭测试环境，样本量太少，分析也仅限于相关性分析等，实用性不强
-
 
 ## 2023.8.19
 
