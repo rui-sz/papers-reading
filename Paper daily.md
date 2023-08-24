@@ -55,7 +55,7 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.8.23
+## 2023.8.25
 
 TODO：样本平衡度
 
