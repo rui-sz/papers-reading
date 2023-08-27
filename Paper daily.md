@@ -55,9 +55,47 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.8.26
+## 2023.8.28
 
-TODO：样本平衡度
+TBD
+
+## 2023.8.27
+
+《Class-Balanced Loss Based on Effective Number of Samples》
+
+2017年 Google 的一篇文章，讲imbalance数据下的loss优化问题，本文要点：
+
+1. 真实应用中遇到大数据场景下的数据长尾问题，即少量类别占比大部分数据
+2. 现存方法有两类，re-sampling 和 cost-sensitive re-weighting
+3. re-sampling 的方法，over-sampling 降低训练效率，且容易过拟合，虽然under-sampling 方法减少了有价值样本数量，反而更常被选用
+4. re-weighting 方法，如图1中所示的基于 inverse class frequency 效果证明并不理想，本文认为：随着采样提升，新增数据点的额外benefit会下降，因为有 data overlap 的存在，通过公式计算sample的「有效数量」，然后用有效数量来re-weight loss，得到class-balanced loss，是smoothed weighting的一个泛化版本
+5. 通过对β的深入研究，在CIFAR-10上β越大越好，而在CIFAR-100上则是小的β效果更好，结合β的计算公式可以理解，β越大N越大，CIFAR-100相比CIFAR-10，是一个更 fine-grained 的数据集
+
+CB_loss的图示：
+
+<img src="pic/CB_loss1.png" width=400 height=500>
+
+sample的volumn原理：
+
+<img src="pic/CB_loss2.png" >
+
+不同数据集上β取值的影响：
+
+<img src="pic/CB_loss3.png" >
+
+不同数据集上β与Effective number的关系
+
+<img src="pic/CB_loss4.png" >
+
+评估结果1：
+
+<img src="pic/CB_loss5.png" >
+
+评估结果2：
+
+<img src="pic/CB_loss6.png" >
+
+
 
 ## 2023.8.20
 
