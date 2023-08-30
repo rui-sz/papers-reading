@@ -57,7 +57,15 @@ Florence
 
 ## 2023.8.30
 
-TBD
+《Dynamic adaptive HTTP streaming of live content》
+
+2011年的一篇文章，讲述DASH流协议，以及端到端延迟的形成机制，本文要点：
+
+1. DASH 刚 release，本文聚焦 live streaming 服务，研究e2e delay的组成，以及如何最小化这个delay
+2. 讲了数据下载过程，以文件的形式分别拉取，过程中动态调整码率
+3. 端到端延迟的形成过程，本文是以server->client来讲述的，跟TT直播面临的Client->Srv->Client不太一样
+
+整体上来看，有点枯燥，并且考虑到
 
 
 ## 2023.8.27
