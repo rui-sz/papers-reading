@@ -55,6 +55,14 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.8.31
+
+《Beyond Views: Measuring and Predicting Engagement in Online Videos》
+
+
+《QoE in IoT: a vision, survey and future directions》
+
+
 ## 2023.8.30
 
 《Dynamic adaptive HTTP streaming of live content》
@@ -65,7 +73,7 @@ Florence
 2. 讲了数据下载过程，以文件的形式分别拉取，过程中动态调整码率
 3. 端到端延迟的形成过程，本文是以server->client来讲述的，跟TT直播面临的Client->Srv->Client不太一样
 
-整体上来看，有点枯燥，并且考虑到
+整体上来看，有点枯燥，并且考虑到业务差异性，参考价值不大。
 
 
 ## 2023.8.27
