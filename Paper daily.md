@@ -55,7 +55,7 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.8.31
+## 2023.9.2
 
 《Beyond Views: Measuring and Predicting Engagement in Online Videos》
 
