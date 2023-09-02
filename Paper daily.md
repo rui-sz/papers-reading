@@ -55,13 +55,48 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.9.3
+
+《QoE in IoT: a vision, survey and future directions》
+
+
 ## 2023.9.2
 
 《Beyond Views: Measuring and Predicting Engagement in Online Videos》
 
-TBD
+2018 AAAI 的一篇文章，讲量化和预测在线视频的 engagement 的，本文要点：
 
-《QoE in IoT: a vision, survey and future directions》
+1. video engagement, time spent watching. A new metric: relative engagement. 根据视频属性做了校准，同时与质量强相关。发现这个指标 stable over time，与流行度指标区分开。这个engagement指标可被预测
+2. relative engagement，本文核心思想，即 watch percentage 归一化后的指标（rank percentile of video in its duration bin）
+   1. Calibrate watch percentage against duration
+3. 本文的工作不依赖于 individual 用户数据，只在 aggregate level，第一次基于 large-scale 的data 来做，500w+ videos
+4. 未来的工作，本文属于 aggregate measurements 的工作，如何跟 individual measurements 的工作衔接
+
+不同视频的被观看模式：
+
+<img src="pic/beyond_views1.png" width=500 height=400>
+
+top n 视频的watch views和watch duration相关性：
+
+<img src="pic/beyond_views2.png" width=450 height=350>
+
+watch time和engagement map
+
+<img src="pic/beyond_views3.png" width=450 height=300>
+
+Relative engagement与质量指标高度相关
+
+<img src="pic/beyond_views4.png" width=450 height=300>
+
+Relative engagement 随时间的稳定性
+
+<img src="pic/beyond_views5.png" width=450 height=300>
+
+线性回归的预测效果
+
+<img src="pic/beyond_views6.png" width=450 height=300>
+
+总的来说，本文研究的idea本身不复杂，不过分析和建模的过程做的比较严谨，数据可视化做的也好，问题说明相对透彻。
 
 
 ## 2023.8.30
