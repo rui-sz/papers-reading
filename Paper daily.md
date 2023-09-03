@@ -55,9 +55,43 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.9.3
+## 2023.9.4
 
 《QoE in IoT: a vision, survey and future directions》
+
+## 2023.9.3
+
+《Measuring the quality of experience of http video streaming》
+
+2011年 IEEE IM的一篇文章，研究QoS/QoE指标之间的关系，本文要点：
+
+1. 出发点是研究 network QoS 指标如何影响 QoE，三级传导：network QoS->app QoS -> user QoE，两层刻画：network变量如何影响 appQoS，app QoS 如何影响用户QoE/MOS
+2. 在第一层刻画中，本文提出了几个estimate公式，用于估算 appQoS，从评估结果来看，评估的准确率并不高，最好的error rate在50%上下
+3. 在第二层刻画中，发现几个app QoS 的影响强弱顺序：rebuffering frequency > rebuffering duration > init rebuffering；跟我们最近工作中的发现一致
+4. 本文的工作的阶段拆分做的比较好，app QoS 的预估做的没有那么准，但是 user QoE 传导这一层相对客观一些，所以结论还是有挺好的参考价值的
+
+三级指标传导：
+
+<img src="pic/measuring_the_quality1.png" width=450 height=250>
+
+播放时序图：
+
+<img src="pic/measuring_the_quality2.png" width=500 height=300>
+
+三个App QoS指标受network的影响：
+
+<img src="pic/measuring_the_quality3.png" width=700 height=200>
+
+rebuffering 频率估计：
+
+<img src="pic/measuring_the_quality4.png" width=500 height=300>
+
+network QoS/QoE关系：
+
+<img src="pic/measuring_the_quality5.png" width=800 height=200>
+
+
+dr：10多年前的文章了，研究方法比较朴素，数据量也不是很大，但是阶段拆分合理，结论也有比较大的参考价值。在此基础上的研究改进：更好的估计QoS，QoS/QoE传导更自动化
 
 
 ## 2023.9.2
@@ -98,7 +132,6 @@ Relative engagement 随时间的稳定性
 
 总的来说，本文研究的idea本身不复杂，不过分析和建模的过程做的比较严谨，数据可视化做的也好，问题说明相对透彻。
 
-
 ## 2023.8.30
 
 《Dynamic adaptive HTTP streaming of live content》
@@ -110,7 +143,6 @@ Relative engagement 随时间的稳定性
 3. 端到端延迟的形成过程，本文是以server->client来讲述的，跟TT直播面临的Client->Srv->Client不太一样
 
 整体上来看，有点枯燥，并且考虑到业务差异性，参考价值不大。
-
 
 ## 2023.8.27
 
@@ -147,8 +179,6 @@ sample的volumn原理：
 评估结果2：
 
 <img src="pic/CB_loss6.png" >
-
-
 
 ## 2023.8.20
 
