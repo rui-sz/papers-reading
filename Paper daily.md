@@ -41,7 +41,7 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
-# 2023.8
+# 2023.9
 
 T5
 
@@ -58,6 +58,7 @@ Florence
 ## 2023.9.4
 
 《QoE in IoT: a vision, survey and future directions》
+
 
 ## 2023.9.3
 
@@ -92,7 +93,6 @@ network QoS/QoE关系：
 
 
 dr：10多年前的文章了，研究方法比较朴素，数据量也不是很大，但是阶段拆分合理，结论也有比较大的参考价值。在此基础上的研究改进：更好的估计QoS，QoS/QoE传导更自动化
-
 
 ## 2023.9.2
 
@@ -131,6 +131,46 @@ Relative engagement 随时间的稳定性
 <img src="pic/beyond_views6.png" width=450 height=300>
 
 总的来说，本文研究的idea本身不复杂，不过分析和建模的过程做的比较严谨，数据可视化做的也好，问题说明相对透彻。
+
+## 2023.9.1
+
+《Delving into Deep Imbalanced Regression》
+
+2021年ICML的一篇文章，关于回归场景的 imbalance 数据处理问题，本文要点：
+
+1. 现实世界的数据通常不平衡，分类场景的不平衡之前研究比较多，re-sample/re-weight等方法，基于样本/model的也多，regression场景研究偏少
+2. 应对不平衡分类问题的方法，也不能直接用于不平衡回归，原因有：回归不像分类有天然边界，因此re-sample/re-weight都没法用；连续型目标的distance是有意义的，分类方法不能get；回归的有些target没有任何值，需要做extrapolation & interpolation
+3. 本文提出DIR的方法，主要是两种处理，LDS和FDS，分别label和feature做smoothing
+4. LDS，在continuous场景下，后验的label分布并不反映真实label分布，因此估计出label的density distribution，并结合class imbalance方法用到回归中来。见Fig.3
+5. FDS，Fig.4 展示了在不平衡数据中，从特征相似度等角度观测到的不合理的地方，通过引入 feature calibration layer 来优化问题，用到EMA，同样也是kernel 方法
+6. 本文基于几种不同的Benchmarks做实验，证明了DIR方法的有效性和鲁棒性。Fig.7显示了DIR方法对比vanilla model的提升
+
+DIR问题图示：
+
+<img src="pic/DIR1.png" width=600 height=400>
+
+基于同等不平衡数据的分类/回归效果：
+
+<img src="pic/DIR2.png" width=600 height=400>
+
+应用LDS后的回归效果：
+
+<img src="pic/DIR3.png" width=600 height=400>
+
+FDS必要性图示：
+
+<img src="pic/DIR4.png" width=600 height=500>
+
+FDS的处理过程：
+
+<img src="pic/DIR5.png" width=600 height=400>
+
+DIR方法对比Vanilla的效果图示：
+
+<img src="pic/DIR6.png" width=600 height=400>
+
+
+# 2023.8
 
 ## 2023.8.30
 
@@ -886,6 +926,8 @@ MXNet 作者之一的沐神，在ML计算框架上的积累还是非常深厚的
 
 本文用了50页的补充材料来介绍算法细节，包含伪代码。模型是很复杂的，借鉴了很多前人的工作，像Tfm，MSA/空间信息的拆分等等。面对如此复杂的研究课题，我觉得要完成这样一个工作，需要极强的科研和工程能力，否则很容易迷失在其中。牛逼，致敬划时代的工作。
 
+# 2023.6
+
 ## 2023.6.30
 
 《Hierarchical Text-Conditional Image Generation with CLIP Latents》
@@ -1233,6 +1275,8 @@ GD, SGD, RMSProp, AdaGrad, Adam 之间关系及优化路径，还是比较搞混
 
     Residual net 和 skip connection 都不是本文的首创，但是却很好的解决了图像分类等问题，非常赞
     不足之处是只讲了调参后工程上的做法，却没有很多理论解释（可能也比较难吧），无碍于神作
+
+# 2023.5
 
 ## 2023.5.20
 
