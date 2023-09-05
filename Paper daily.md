@@ -55,9 +55,11 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.9.4
+## 2023.9.6
 
 《QoE in IoT: a vision, survey and future directions》
+
+TBD
 
 
 ## 2023.9.3
