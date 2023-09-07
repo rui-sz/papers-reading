@@ -57,9 +57,28 @@ Florence
 
 ## 2023.9.6
 
-《QoE in IoT: a vision, survey and future directions》
+《Predicting User Quitting Ratio in Adaptive Bitrate Video Streaming》
 
-TBD
+2020年 IEEE Transaction on Multimedia 的一篇文章，本文要点：
+
+1. 本文研究ABR条件下用户观看视频的engagement问题，以user quitting ratio为目标，通过受控条件下的主观评测，研究 编码质量、init buffering、stall 等指标对于用户quit ratio的影响，进而提出了一个基于经验公式+线性回归的预测模型
+2. 本文对相关领域研究做了很好的综述梳理，是一个亮点，因为是实验室条件下的测试，重点关注其引文综述、思考方式、分析方法和建模思路，先不用关注其结论
+3. 核心insight是，quality、init buffering、stall 等指标的等级，以及这些指标的变化率、发生的顺序、时间点等，都对用户quit ratio有影响
+
+一些图表：
+
+<img src="pic/predicting_user_quit1.png" width=450 height=500>
+
+<img src="pic/predicting_user_quit2.png" width=450 height=450>
+
+<img src="pic/predicting_user_quit3.png" width=450 height=500>
+
+<img src="pic/predicting_user_quit4.png" width=550 height=400>
+
+一个很好的对流进行序列化的图示：
+
+<img src="pic/predicting_user_quit5.png" width=550 height=150>
+
 
 
 ## 2023.9.3
@@ -92,7 +111,6 @@ rebuffering 频率估计：
 network QoS/QoE关系：
 
 <img src="pic/measuring_the_quality5.png" width=800 height=200>
-
 
 dr：10多年前的文章了，研究方法比较朴素，数据量也不是很大，但是阶段拆分合理，结论也有比较大的参考价值。在此基础上的研究改进：更好的估计QoS，QoS/QoE传导更自动化
 
@@ -170,7 +188,6 @@ FDS的处理过程：
 DIR方法对比Vanilla的效果图示：
 
 <img src="pic/DIR6.png" width=600 height=400>
-
 
 # 2023.8
 
