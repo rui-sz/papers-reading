@@ -55,6 +55,10 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.9.7
+
+TBD
+
 ## 2023.9.6
 
 《Predicting User Quitting Ratio in Adaptive Bitrate Video Streaming》
