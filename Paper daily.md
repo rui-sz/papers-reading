@@ -55,9 +55,10 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.9.7
+## 2023.9.9
 
-TBD
+paper 1
+
 
 ## 2023.9.6
 
@@ -82,8 +83,6 @@ TBD
 一个很好的对流进行序列化的图示：
 
 <img src="pic/predicting_user_quit5.png" width=550 height=150>
-
-
 
 ## 2023.9.3
 
