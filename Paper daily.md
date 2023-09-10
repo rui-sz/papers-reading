@@ -55,9 +55,11 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.9.9
+## 2023.9.11
 
-paper 1
+《Understanding the Impact of Network Dynamics on Mobile Video User Engagement》
+
+TBD
 
 
 ## 2023.9.6
