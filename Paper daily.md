@@ -55,11 +55,25 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.9.14
+
+TBD
+
 ## 2023.9.11
 
 《Understanding the Impact of Network Dynamics on Mobile Video User Engagement》
 
-TBD
+2014年，SIGMETRICS 的一篇文章，本文要点：
+
+1. 从网络运营商的角度，量化影响用户移动端video行为的31个不同的网络因子，同时通过模型建模了这些网络因子和video退出率之间的复杂关系。
+2. 第一个仅通过标准网络统计数据和TCP/IP flow records来监控video user engagement，一个Tree-based的 ML model预测user engagement指标，只 observe 初始的10s打到87%准确率
+3. 总体感觉因为只能用运营商数据，本文得到的结论深度有限，创新点是不需要了解business数据，仅用网络统计和TCP/IP协议头。
+
+做了一些有趣的相关分析：
+
+<img src="pic/understanding_the_impact1.png" width=450 height=500>
+
+总体上以今天视角看，文章深度有限。
 
 
 ## 2023.9.6
