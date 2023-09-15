@@ -55,9 +55,9 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.9.14
+## 2023.9.16
 
-TBD
+paper 2
 
 ## 2023.9.11
 
@@ -74,7 +74,6 @@ TBD
 <img src="pic/understanding_the_impact1.png" width=450 height=500>
 
 总体上以今天视角看，文章深度有限。
-
 
 ## 2023.9.6
 
