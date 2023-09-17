@@ -55,9 +55,43 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.9.16
+## 2023.9.18
 
-paper 2
+TBD
+
+## 2023.9.17
+
+《Deep & Cross Network for Ad Click Predictions》
+
+2017年Google的一篇工作，内容要点：
+
+1. 对于很多预测模型来说，特征工程（识别有效的特征交叉 cross features）很重要，但是这个工作并不简单，需要很多人工，详尽的搜索，并且泛化到未见过的特征交叉是困难的
+2. 离散和类别特征，导致了一个很大且稀疏的特征空间，限制了线性模型如LR；DNN 可以自动学习特征交叉，但是隐式交叉、高度非线性，并且不是很高效率
+3. FM 和 FFM 的浅层结构，限制了模型的表达能力；Wide & Deep 也结合DNN模型做自动特征交叉，但是它仍然需要手动选择cross features作为 linear model 的inputs
+4. 本文提出DCN，保留了DNN的效率，同时通过引入一个更高效的 cross network，显式的做特征交叉，不需要人工，只增加很少的线性计算开销。
+
+模型结构：
+
+<img src="pic/DCNv1_1.png" width=450 height=500>
+
+<img src="pic/DCNv1_2.png" width=450 height=220>
+
+评估结果：
+
+<img src="pic/DCNv1_3.png" width=450 height=220>
+
+<img src="pic/DCNv1_4.png" width=450 height=220>
+
+<img src="pic/DCNv1_5.png" width=450 height=220>
+
+从对比结果可看到，相比DNN模型：
+
+  1，对比几个基线模型，DCN的效果最好
+
+  2，同等logloss的目标下，DCN的参数量相当于DNN的 20%~50%不等
+
+  3，同等参数量的情况下，DCN效果稳定好于DNN
+
 
 ## 2023.9.11
 
