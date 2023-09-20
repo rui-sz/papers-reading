@@ -55,13 +55,41 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.9.18
+## 2023.9.20
 
-TBD
+《**DCN** V2: Improved Deep & Cross Network and Practical Lessons for Web-scale Learning to Rank Systems》
+
+2020年Google的一篇工作，DCN的后续，内容要点：
+
+1. 特征交叉非常重要，前文 DCN 做了不错的工作，但是还有不足，就是cross部分的复杂度相比DNN部分差太多，导致表达能力有限，导致无法scale到很大的数据规模上
+2. 本文的模型结构相比DCN，权重参数改成了矩阵，提高了参数量，增强了模型的表达能力，同时本文尝试了两种组织方式，parallel 和 stacked
+3. 一些实验结果：在两层 cross layers 之后，效果开始稳定/停滞；stacking 和 concat 的效果都不错，一个捕捉高阶交叉，一个捕捉主要交叉；证明了cross layers可以单独优于DNN模型，有取代 ReLUs的潜力；ReLU在特征交叉方面比较低效（差于DCN/DCN-V2），DCN-V2在高阶特征交叉方面，仍然保持高效
+4. 本文在特征交叉的理论分析方面，做了比较扎实的工作
+
+模型结构：
+
+<img src="pic/DCN-V2_1.png" width=500 height=450>
+
+特征交叉：
+
+<img src="pic/DCN-V2_2.png" width=600 height=250>
+
+特征交叉能力：
+
+<img src="pic/DCN-V2_3.png" width=500 height=350>
+
+CrossNet 对比其他的交叉结构：
+
+<img src="pic/DCN-V2_4.png" width=500 height=350>
+
+CrossNet 对比DNN：
+
+<img src="pic/DCN-V2_5.png" width=600 height=250>
+
 
 ## 2023.9.17
 
-《Deep & Cross Network for Ad Click Predictions》
+《DCN: Deep & Cross Network for Ad Click Predictions》
 
 2017年Google的一篇工作，内容要点：
 
@@ -91,7 +119,6 @@ TBD
   2，同等logloss的目标下，DCN的参数量相当于DNN的 20%~50%不等
 
   3，同等参数量的情况下，DCN效果稳定好于DNN
-
 
 ## 2023.9.11
 
