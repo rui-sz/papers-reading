@@ -57,6 +57,46 @@ Florence
 
 ## 2023.9.24
 
+《Outrageously large neural networks: The sparsely-gated mixture-of-experts layer》
+
+2017年 Google 的工作，Hinton 和 Dean 参与，内容要点：
+
+1. NN 的 capacity 受限于网络参数，conditional computation 部分网络是否active因样本而异，可以提高模型capacity同时不增大很多计算量，而Typical DL models，对于每个sample整个网络都是active的，会导致巨大的train/inference costs
+2. 模型结构，在stacked LSTM layers 中间加入MoE层，MoE层由一个很大的 Experts 集合，以及输出sparsed vector 进行选择的 gate network 组成，单个expert的参数量在x million级别；gate network 的选择有 softmax，noisy top-k gate 等方案，本文使用后者
+3. 模型训练时的技巧，Large batch，以及用更大的 hidden layers 来保持住 computation efficiency；通过加入importance权重让模型在训练时各个experts更加balance
+4. 实验结果，在 LM 和 Machine Translation 任务上，MoE model 都展示了很好的效果；在一个更大的model capacity上面，即便用很小的computation cost，也可以取得beat之前SOTA的效果；同时本文提出了一个MoE架构包含137B参数，位于stacked的LSTM layers之间，在translation任务上取得了非常好的效果
+5. 当通过不断增加experts让模型capacity增大到一定程度时，可以看到由于experts过于稀疏，出现了效果退化
+6. 本文非常好的展示了 conditional computation 在 deep networks 中的作用
+
+模型结构：
+
+<img src="pic/Google_MOE1.png" width=600 height=400>
+
+LM 场景，MoE capacity 效果：
+
+<img src="pic/Google_MOE2.png" width=650 height=350>
+
+LM 场景，计算量&效果对比：
+
+<img src="pic/Google_MOE3.png" width=750 height=250>
+
+100B的数据集：
+
+<img src="pic/Google_MOE4.png" width=650 height=350>
+
+Machine Translation 评估：
+
+<img src="pic/Google_MOE5.png" width=650 height=350>
+
+总的来说：
+
+    MoE架构，用更大的capacity（2017年的137B~)，更小的computation cost，取得了更好的性能
+
+    也启发了后续Google的另一篇工作 MMoE
+
+
+## 2023.9.23
+
 《Factorization machines》
 
 复习了一下2010年的这个工作，内容要点：
