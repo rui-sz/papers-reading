@@ -55,6 +55,41 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.9.24
+
+《Factorization machines》
+
+复习了一下2010年的这个工作，内容要点：
+
+1. 本文介绍了 FM 的原理，通过 Factorized 的<vi, vj>来建模特征交叉，适用于数据 high sparsity 的场景，不依赖于observated的实际交叉样本，具有泛化性，同时通过公式变换，将复杂度控制在线性范围内
+2. FM 的优势，可以在非常稀疏的数据上估计参数（SVM fail了）；线性复杂度；像SVM一样可以在任何实值feature vbector上工作；适用于 Regression, Binary Classification, Ranking 等业务场景
+3. FM 与 SVM 的关系，d=1时等价，d=2时FM计算复杂度更低，且适用于huge sparsity数据，FM综合了SVM和因子分解模型的优势
+
+sparsity sample:
+
+<img src="pic/FM1.png" width=500 height=450>
+
+FM d=2:
+
+<img src="pic/FM2.png" width=500 height=100>
+
+FM d=d
+
+<img src="pic/FM3.png" width=500 height=150>
+
+FM 降复杂度：
+
+<img src="pic/FM4.png" width=500 height=350>
+
+SVM d=2:
+
+<img src="pic/FM5.png" width=500 height=150>
+
+FM 与 SVM 在稀疏数据对比：
+
+<img src="pic/FM6.png" width=500 height=300>
+
+
 ## 2023.9.20
 
 《**DCN** V2: Improved Deep & Cross Network and Practical Lessons for Web-scale Learning to Rank Systems》
@@ -85,7 +120,6 @@ CrossNet 对比其他的交叉结构：
 CrossNet 对比DNN：
 
 <img src="pic/DCN-V2_5.png" width=600 height=250>
-
 
 ## 2023.9.17
 
