@@ -55,6 +55,12 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.9.25
+
+《FFM》
+
+TBD
+
 ## 2023.9.24
 
 《Outrageously large neural networks: The sparsely-gated mixture-of-experts layer》
@@ -94,7 +100,6 @@ Machine Translation 评估：
 
     也启发了后续Google的另一篇工作 MMoE
 
-
 ## 2023.9.23
 
 《Factorization machines》
@@ -128,7 +133,6 @@ SVM d=2:
 FM 与 SVM 在稀疏数据对比：
 
 <img src="pic/FM6.png" width=500 height=300>
-
 
 ## 2023.9.20
 
