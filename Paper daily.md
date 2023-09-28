@@ -55,10 +55,39 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.9.29
+
+TBD
+
 ## 2023.9.25
 
-《FFM》
+《FFM：Field-aware Factorization Machines for CTR Prediction》
 
+2016年台湾大学林智任的一篇工作，内容要点：
+
+1. 本文受 PITF 和 后续一篇改进文章的启发，做了FFM用于CTR pred的更全面研究
+2. 模型结构上，将FM的特征&特征点乘权重 <wi, wj>扩展为特征&Field点乘权重 <wi, wf(j)>，进一步强化了对稀疏性的处理，同时扩充了模型复杂度
+3. 从实验结果来看，FFM 对于类别特征的处理更好，如果数据集仅包含数值特征，FFM的效果不一定好；如果转换后的数据不特别稀疏，FFM的效果收益有限。
+
+模型原理：
+
+<img src="pic/FFM1.png" width=500 height=80>
+
+计算复杂度对比（n为特征数量)
+
+<img src="pic/FFM2.png" width=500 height=200>
+
+params的影响：
+
+<img src="pic/FFM3.png" width=500 height=500>
+
+模型效果对比：
+
+<img src="pic/FFM4.png" width=700 height=400>
+
+不同数据集的对比：
+
+<img src="pic/FFM5.png" width=650 height=250>
 
 ## 2023.9.24
 
@@ -101,7 +130,7 @@ Machine Translation 评估：
 
 ## 2023.9.23
 
-《Factorization machines》
+《FM：Factorization machines》
 
 复习了一下2010年的这个工作，内容要点：
 
