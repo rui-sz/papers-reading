@@ -55,9 +55,32 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.9.29
+## 2023.9.30
 
-TBD
+《DMoE: Learning Factored Representations in a Deep Mixture of Experts》
+
+2014年 Ilya@Google 的一篇文章，内容要点：
+
+1. 经典DNN对于所有inputs，entire networks 都会被执行，这在计算上是低效的，同时有过拟合问题
+2. 本文提出了一个2层MoE结构，每层都有experts & gating，引入了 exponential number of paths 通过不同layers的experts组合。建设 larger networks 仍然保持cheap computation，Associate each input with one such combination, network can be Large and efficient
+3. 模型结构，2层MoE，1/2层的expert是一个MLP+Relu，1/2层的gate是2MLP+Relu，2层是一个MLP
+4. 实验结果，本文对比了（A）2层MoE和（B）1层MoE+1层Single Expert、（C）1层MoE+1层Concat、（D）同参数量DNN几种不同的模型结构
+5. 结果表明：A的性能表现介于A和C之间，符合预期；C的模型参数量要大于A，但是A的泛化性更好；相比同等参数量的D，C性能更好，A性能差不多，D过拟合更严重一些；1st layer 更关注location，2nd layer更关注class
+6. 总结下来，2层MoE的优势，在于降低模型复杂度和过拟合风险的同时，性能并没有大幅衰减。
+
+模型原理：
+
+<img src="pic/DMoE1.png" width=600 height=150>
+
+<img src="pic/DMoE2.png" width=600 height=350>
+
+
+实验结果：
+
+<img src="pic/DMoE3.png" width=600 height=350>
+
+<img src="pic/DMoE4.png" width=650 height=500>
+
 
 ## 2023.9.25
 
