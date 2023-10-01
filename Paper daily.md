@@ -55,6 +55,13 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.10.2
+
+《MoE: Adaptive Mixtures of Local Experts》
+
+plan
+
+
 ## 2023.9.30
 
 《DMoE: Learning Factored Representations in a Deep Mixture of Experts》
