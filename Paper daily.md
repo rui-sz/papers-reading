@@ -41,7 +41,7 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
-# 2023.9
+# 2023.10
 
 T5
 
@@ -55,12 +55,26 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.10.3
+
+《**SNR** **: Sub-Network Routing for Flexible ****Parameter Sharing**** in Multi-Task Learning**》
+
+2019年的文章
+
+
+
 ## 2023.10.2
 
 《MoE: Adaptive Mixtures of Local Experts》
 
-plan
+1991年的一篇文章，提出了MoE模型结构
 
+模型结构：
+
+<img src="pic/MoE1.png" width=600 height=600>
+
+
+# 2023.9
 
 ## 2023.9.30
 
