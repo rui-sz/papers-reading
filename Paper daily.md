@@ -59,8 +59,7 @@ Florence
 
 《**SNR** **: Sub-Network Routing for Flexible ****Parameter Sharing**** in Multi-Task Learning**》
 
-2019年的文章
-
+2019年的文章，
 
 
 ## 2023.10.2
@@ -72,7 +71,6 @@ Florence
 模型结构：
 
 <img src="pic/MoE1.png" width=600 height=600>
-
 
 # 2023.9
 
@@ -95,13 +93,11 @@ Florence
 
 <img src="pic/DMoE2.png" width=600 height=350>
 
-
 实验结果：
 
 <img src="pic/DMoE3.png" width=600 height=350>
 
 <img src="pic/DMoE4.png" width=650 height=500>
-
 
 ## 2023.9.25
 
