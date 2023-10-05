@@ -57,7 +57,15 @@ Florence
 
 ## 2023.10.6
 
+《Learning with Whom to Share in Multi-task Feature Learning》
+
 TBD
+
+
+《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
+
+TBD
+
 
 ## 2023.10.5
 
