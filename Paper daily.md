@@ -67,6 +67,11 @@ TBD
 TBD
 
 
+《GPT-4V(ision) System Card》
+
+TBD
+
+
 ## 2023.10.5
 
 《**SNR** **: Sub-Network Routing for Flexible ****Parameter Sharing**** in Multi-Task Learning**》
