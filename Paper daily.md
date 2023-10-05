@@ -55,11 +55,45 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.3
+## 2023.10.6
+
+TBD
+
+## 2023.10.5
 
 《**SNR** **: Sub-Network Routing for Flexible ****Parameter Sharing**** in Multi-Task Learning**》
 
-2019年的文章，
+2019年Google的文章，内容要点：
+
+1. MTL的优势，一个单一模型预测多目标，在提高accuracy的同时，节省计算开销。但是传统的MTL model，在tasks弱关联的情况下，accuracy可能退化很多。因此研究更灵活的架构，manually-tuned，或者soft param shared等，是先前工作一个重要的方向
+2. 本文将共享的low-level hidden layers模块化为若干sub-networks，并且通过隐式变量学习sub-networks之间的关联，达到更灵活的参数共享，同时保持MTL的计算高效（类SB）。tune model architecture to allow flexible param sharing，more/less shared layers for highly/less related tasks
+3. 模型结构，SNR-Trans 和 SNR-Aver 两种，Trans 的sub-networks层之间有W和coding variables，Aver只有coding variables。在 SNR-Trans 结构下，通过设置 coding variables，如果所有 z(i,j)=1，退化为SB结构；如果所有 z(i,i)=1其他都为0，退化为多个 single-task model
+4. 对于sub-networks层之间的z，如果我们缺少 task relatedness 的知识，搜索z的组合将会是 2^z 复杂度；通过在 z 上应用L0正则来控制模型的 sparsity，控制 model capacity 和 smaller serving model size 之间的tradeoff
+5. 从实验结果来看，SNR-Trans和SNR-Aver都显著优于 SB/MMoE/ML-MMoE；同时随着模型参数量的提升，SNR表现出了更好的scalability；L0正则化的应用，比较好的控制 model capacity 和 serving model size之间的tradeoff；SNR 将更多的模型参数用于学习样本数量更多的类别
+
+模型结构：
+
+<img src="pic/SNR1.png" width=650 height=450>
+
+SNR-Trans 和 SNR-Aver
+
+<img src="pic/SNR2.png" width=450 height=350>
+
+accuracy对比：
+
+<img src="pic/SNR3.png" width=400 height=450>
+
+model size对比：
+
+<img src="pic/SNR4.png" width=450 height=350>
+
+capacity vs sparsity：
+
+<img src="pic/SNR5.png" width=450 height=450>
+
+在MMoE基础上，通过SNR的引入，以一种更优雅的模型结构，可以应对不同relatedness level的任务。
+
+显著 outperform SB 和 MMoE
 
 
 ## 2023.10.2
