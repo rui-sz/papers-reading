@@ -57,19 +57,37 @@ Florence
 
 ## 2023.10.6
 
-《Learning with Whom to Share in Multi-task Feature Learning》
-
-TBD
-
-
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
 
-
 《GPT-4V(ision) System Card》
 
 TBD
+
+
+《Learning with Whom to Share in Multi-task Feature Learning》
+
+2011年ICML的一篇文章，算是早期改进MTL的一种尝试，内容要点：
+
+1. 传统上有两种方式来建模 task relatedness：假设关联任务的模型参数是接近的，以及关联任务共享隐式特征表示，后者更合理和优雅。
+2. 本文主要包含2部分内容，Multitask feature learning, MTFL，同时学习task grouping
+3. 模型结构，标准MTL只是多任务一起学习模型参数，本文结合了task grouping，同时提出了求解算法
+4. 实验结果，在手写体识别数据集上，本文方法打败了no groups-MTL 以及other grouping method MTL，并且大幅优于 single tasks
+
+模型原理：
+
+typical MTL
+
+<img src="pic/learning_with_whom1.png" width=600 height=70>
+
+结合task grouping的MTL
+
+<img src="pic/learning_with_whom2.png" width=550 height=300>
+
+实验结果：
+
+<img src="pic/learning_with_whom3.png" width=600 height=400>
 
 
 ## 2023.10.5
@@ -107,7 +125,6 @@ capacity vs sparsity：
 在MMoE基础上，通过SNR的引入，以一种更优雅的模型结构，可以应对不同relatedness level的任务。
 
 显著 outperform SB 和 MMoE
-
 
 ## 2023.10.2
 
