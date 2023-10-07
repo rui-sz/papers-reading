@@ -55,7 +55,7 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.6
+## 2023.10.8
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
@@ -65,6 +65,36 @@ TBD
 
 TBD
 
+## 2023.10.7
+
+《FAT-DeepFFM: Field Attentive Deep Field-aware Factorization Machine》
+
+2019年张俊林的一篇工作，内容要点：
+
+1. 注意力机制在CV和NLP的DL任务中取得了很大的成功，本文关注将注意力机制引入到CTR model中，提升模型的表达能力
+2. 模型原理，本文综合了DeepFFM和CENet field attention（一个SENet的加强版 attention 机制），因此叫FAT-DeepFFM
+3. 实验结果，与之前模型做了比较全面的对比，LR/FM/FFM/DeepFM/DeepFFM/DCN等，FAT-DeepFFM全面优于之前的SOTA；同时也验证了在特征交叉之前引入attention效果会更好。
+
+模型原理：
+
+DeepFFM
+
+<img src="pic/FAT-DeepFFM1.png" width=600 height=450>
+
+Attention Layer
+
+<img src="pic/FAT-DeepFFM2.png" width=500 height=400>
+
+FAT-DeepFFM
+
+<img src="pic/FAT-DeepFFM3.png" width=600 height=450>
+
+实验结果：
+
+<img src="pic/FAT-DeepFFM4.png" width=600 height=450>
+
+
+## 2023.10.6
 
 《Learning with Whom to Share in Multi-task Feature Learning》
 
