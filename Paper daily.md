@@ -93,7 +93,6 @@ FAT-DeepFFM
 
 <img src="pic/FAT-DeepFFM4.png" width=600 height=450>
 
-
 ## 2023.10.6
 
 《Learning with Whom to Share in Multi-task Feature Learning》
@@ -118,7 +117,6 @@ typical MTL
 实验结果：
 
 <img src="pic/learning_with_whom3.png" width=600 height=400>
-
 
 ## 2023.10.5
 
@@ -1599,7 +1597,9 @@ GD, SGD, RMSProp, AdaGrad, Adam 之间关系及优化路径，还是比较搞混
         β1：0次项的加权系数，0.9
     β2：1次项的加权系数，0.999
     epsilon: 10^-8，这个一般不动
-    通常固定β1,β2,epsilon，保持默认值，调参初始学习率
+    通常固定β1,β2,epsilon，保持默认值，调参初始学习率2023.5
+
+# 2023.5
 
 ## 2023.5.22
 
@@ -1613,8 +1613,6 @@ GD, SGD, RMSProp, AdaGrad, Adam 之间关系及优化路径，还是比较搞混
 
     Residual net 和 skip connection 都不是本文的首创，但是却很好的解决了图像分类等问题，非常赞
     不足之处是只讲了调参后工程上的做法，却没有很多理论解释（可能也比较难吧），无碍于神作
-
-# 2023.5
 
 ## 2023.5.20
 
