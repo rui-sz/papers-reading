@@ -55,11 +55,14 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.8
+## 2023.10.9
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
+
+
+## 2023.10.8
 
 《GPT-4V(ision) System Card》
 
@@ -71,6 +74,15 @@ TBD
 
 总体上没有介绍太多能力，感觉进入 multimodal 之后，确实对于内容合规的控制变得更加难了，并且模型能力难以达到一个非常惊艳的水平，相比ChatGPT出现时的震撼，还需要更多时间。
 
+
+
+《DALL·E 3 System Card》
+
+2023.10 发布，主要内容：
+
+1，text->image，DALLE3 训练数据集来自公开的 image-caption pairs
+
+2，在能力上相比DALLE2 有明显提升，感觉细节更多了
 
 ## 2023.10.7
 
