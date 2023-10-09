@@ -73,6 +73,17 @@ TBD
 4. 实验结果，展现了 cross-stitched model 相对于single、ensemble、brute-search MTL，MTL-shared等方法的总体更优效果，具有多任务类型的泛化性，并且对于 data-starved categories 的相对较大更大
 
 
+《Deep Crossing: Web-Scale Modeling without Manually Crafted Combinatorial Features》
+
+2016年微软的一篇文章，关于DNN模型的特征组合/交叉，内容要点：
+
+1. 人工组合特征（Cross features, 是function based on a combination of multiple features）在很多模型中被证明有用，但是在web-scale应用下种类和量级都比较大，Large search space
+2. 本文提出 Deep crossing model, comprised of an emb and stacking layer as well as Residual units, 可以自动组合特征（sparse/dense）以产生更好的模型；FM 在 Sparse 特征输入下表现会更好，Dense 特征下则优势不大，Deep Crossing 的目标是解决更广泛类型的特征输入
+3. 模型结构，emb + stacking + ResNet + Sigmoid, 其核心，也是Deep Crossing 的含义，是通过引入ResNet结构，做深网络进行特征的深度交叉。其证明了DNN在特征交叉方面的能力，以及优雅。Extend residual networks and achieves automatic feature learning by stacking all types of inputs
+4. 实验结果，在仅有text输入的情况下，相比DSSM在较晚时交叉，DC交叉比较早，效果是更好的；在all input的情况下，counting 特征与其他特征一起做交叉，效果很显著。
+
+
+（今天Lark好像出问题了，没法保存图片，就不附图了)
 
 ## 2023.10.8
 
