@@ -55,11 +55,23 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.9
+## 2023.10.10
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
+
+## 2023.10.9
+
+《Cross-stitch Networks for Multi-task Learning》
+
+2016年的一篇文章，关于MTL优化，内容要点：
+
+1. ConvNets 的巨大成功（CV,NLP等领域），本质上也是基于单任务多类别在网络参数层面的知识/表示迁移，那么跨任务的迁移呢？卷积神经网络中的MTL在识别方面展现了巨大的成功，从多个 supervisory tasks learn shared representation，然而当前方法为任务定制model arch，并不generalize，需要对每个任务进行model arch的brute-force的search，强依赖relatedness判断，但是高效衡量不同任务之间的relatedness，在现实世界中仍然是一个开放问题
+2. 本文聚焦CV领域的MTL，提出了可以被end-to-end训练的 cross-stitch unit，学习 shared and task-specific representations 的最优组合，可以捕捉all split archs（and more）；并且cross-stitch可以获得比 brute-force 更好的性能；在网络的每一层，增加一个基于activation maps的线性组合
+3. 模型结构，将cross-stitch加在 conv activation map 后面和加在 pooling activation map 后面，后者效果更好；先 fine-tune 2个specific tasks A/B，再进行 stitch 训练，效果比 train from scatch 更好一些
+4. 实验结果，展现了 cross-stitched model 相对于single、ensemble、brute-search MTL，MTL-shared等方法的总体更优效果，具有多任务类型的泛化性，并且对于 data-starved categories 的相对较大更大
+
 
 
 ## 2023.10.8
