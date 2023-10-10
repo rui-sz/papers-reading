@@ -64,6 +64,17 @@ TBD
 
 ## 2023.10.10
 
+《**Training Compute-Optimal Large Language Models**》
+
+2022 DeepMind 的一篇文章，主要探讨如何最优化训练LLM。
+
+本文训练了 Chinchilla 文本模型，70B参数性能超过280B大模型Gopher，证明了参数量和数据量之间配比的重要性。用最优化训练方式，训练数据量和参数量要同等增加。
+
+对应关系：
+
+<img src="pic/Chinchilla1.png" width=600 height=350>
+
+
 《Is ChatGPT a Good Recommender? A Preliminary Study》
 
 2023年的一篇文章，内容不是太深，内容要点：
