@@ -55,11 +55,27 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.10
+## 2023.10.11
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
+
+
+## 2023.10.10
+
+《Is ChatGPT a Good Recommender? A Preliminary Study》
+
+2023年的一篇文章，内容不是太深，内容要点：
+
+1. 自ChatGPT推出以来，有很多研究关于如何将它运用到不同的业务领域，本文建立了一个 benchmark 评估ChatGPT在推荐场景的性能，关于性能和限制的全面分析
+2. 围绕5种推荐任务类型：rating pred（item打分），序列推荐，直接推荐，解释生成，review总结
+3. 实验结果，从结果来看在 score rating 任务上，ChatGPT 表现不错，在解释生成、文本总结等任务上表现OK，在sequential/direct recommendation任务上表现一般，因为能够提供的上下文有限
+
+系统结构：
+
+<img src="pic/is_chatgpt_a_good_recommender1.png" width=650 height=400>
+
 
 ## 2023.10.9
 
@@ -72,7 +88,6 @@ TBD
 3. 模型结构，将cross-stitch加在 conv activation map 后面和加在 pooling activation map 后面，后者效果更好；先 fine-tune 2个specific tasks A/B，再进行 stitch 训练，效果比 train from scatch 更好一些
 4. 实验结果，展现了 cross-stitched model 相对于single、ensemble、brute-search MTL，MTL-shared等方法的总体更优效果，具有多任务类型的泛化性，并且对于 data-starved categories 的相对较大更大
 
-
 《Deep Crossing: Web-Scale Modeling without Manually Crafted Combinatorial Features》
 
 2016年微软的一篇文章，关于DNN模型的特征组合/交叉，内容要点：
@@ -82,8 +97,8 @@ TBD
 3. 模型结构，emb + stacking + ResNet + Sigmoid, 其核心，也是Deep Crossing 的含义，是通过引入ResNet结构，做深网络进行特征的深度交叉。其证明了DNN在特征交叉方面的能力，以及优雅。Extend residual networks and achieves automatic feature learning by stacking all types of inputs
 4. 实验结果，在仅有text输入的情况下，相比DSSM在较晚时交叉，DC交叉比较早，效果是更好的；在all input的情况下，counting 特征与其他特征一起做交叉，效果很显著。
 
-
 （今天Lark好像出问题了，没法保存图片，就不附图了)
+
 
 ## 2023.10.8
 
@@ -96,8 +111,6 @@ TBD
 2，risks mitigation 方面的工作，比如危险化合物、真人识别、不准确识别等
 
 总体上没有介绍太多能力，感觉进入 multimodal 之后，确实对于内容合规的控制变得更加难了，并且模型能力难以达到一个非常惊艳的水平，相比ChatGPT出现时的震撼，还需要更多时间。
-
-
 
 《DALL·E 3 System Card》
 
