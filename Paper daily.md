@@ -55,12 +55,15 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.11
+## 2023.10.12
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
 
+《Latent Cross: Making Use of Context in Recurrent Recommender Systems》
+
+doing
 
 ## 2023.10.10
 
@@ -74,7 +77,6 @@ TBD
 
 <img src="pic/Chinchilla1.png" width=600 height=350>
 
-
 《Is ChatGPT a Good Recommender? A Preliminary Study》
 
 2023年的一篇文章，内容不是太深，内容要点：
@@ -86,7 +88,6 @@ TBD
 系统结构：
 
 <img src="pic/is_chatgpt_a_good_recommender1.png" width=650 height=400>
-
 
 ## 2023.10.9
 
@@ -109,7 +110,6 @@ TBD
 4. 实验结果，在仅有text输入的情况下，相比DSSM在较晚时交叉，DC交叉比较早，效果是更好的；在all input的情况下，counting 特征与其他特征一起做交叉，效果很显著。
 
 （今天Lark好像出问题了，没法保存图片，就不附图了)
-
 
 ## 2023.10.8
 
