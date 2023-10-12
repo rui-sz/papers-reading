@@ -55,15 +55,36 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.12
+## 2023.10.13
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
 
+## 2023.10.12
+
 《Latent Cross: Making Use of Context in Recurrent Recommender Systems》
 
-doing
+2018年Google的一篇关于特征交叉的文章，内容要点：
+
+1. 推荐系统在request的时候应用context特征（例如：time, location, device, page on the website, other contextual features），对于提升效果很有必要
+2. 本文提供了一个理论解释，关于应用context作为直接特征的局限性，尤其是FFN networks当中。然后提供一个easy-to-use 技术，名为 Latent Cross ，应用contextual features到Youtube的 RNN-based 推荐系统当中，提升了accuracy。
+3. 本文通过实验证明了，ReLU比较弱的交叉能力，DNNs are inefficient to even approximately model 2nd or 3rd-order feature crosses. Context 特征 concated with input, provide limited benefit。而MF model（如FM）的一般形式 ui*vj，可以学习到不同 input 之间的 low-rank relationship，DNN只是 first-order NN
+4. 模型原理，LC形式上非常简单，在context emb和NN的hidden states之间做element-wise的乘积，LC is easy to train and effective in practice
+5. 实验结果，RNN 是一个更强的baseline，因其相比FFN可以更好的表达乘法关系，是一个 second-order NN；本文基于实际RNN-based推荐系统，验证了相比concat特征，LC表现出更好的性能。
+
+ReLU 较弱的交叉能力：
+
+<img src="pic/latent_cross1.png" width=550 height=280>
+
+RNN&LC性能：
+
+<img src="pic/latent_cross2.png" width=550 height=280>
+
+<img src="pic/latent_cross3.png" width=600 height=450>
+
+很不错的一篇文章。
+
 
 ## 2023.10.10
 
