@@ -55,11 +55,39 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.13
+## 2023.10.15
+
+## 2023.10.14
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
+
+《Do Machine Learning Models Memorize or Generalize?》
+
+2023年一篇很有意思的工作，研究模型顿悟现象，内容要点：
+
+1. 2021年研究人员对一系列微型模型进行研究，发现了grokking/领悟的现象，就是一个 overfitting 的模型 train 很久之后突然顿悟的现象，本文试图弄清楚这个现象背后的原因。
+2. 本文重点研究了2个案例，通过对训练过程和网络权重变化的分析，揭示了重要特征：模型参数稀疏化。其他相关技术：dropout, smaller model 等。但是这种现象（grokking）的出现不容易预测。
+
+案例图：
+
+0/1预测问题，初始阶段：
+
+<img src="pic/do_machine_learning1.png" width=550 height=400>
+
+过拟合发生：
+
+<img src="pic/do_machine_learning2.png" width=550 height=400>
+
+泛化阶段：
+
+<img src="pic/do_machine_learning3.png" width=550 height=400>
+
+模加法案例：
+
+<img src="pic/do_machine_learning4.png" width=550 height=200>
+
 
 ## 2023.10.12
 
@@ -84,7 +112,6 @@ RNN&LC性能：
 <img src="pic/latent_cross3.png" width=600 height=450>
 
 很不错的一篇文章。
-
 
 ## 2023.10.10
 
