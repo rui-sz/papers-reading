@@ -55,13 +55,18 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.15
-
-## 2023.10.14
+## 2023.10.16
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
+
+## 2023.10.15
+
+《Deep Neural Networks for YouTube Recommendations》
+
+
+## 2023.10.14
 
 《Do Machine Learning Models Memorize or Generalize?》
 
@@ -87,7 +92,6 @@ TBD
 模加法案例：
 
 <img src="pic/do_machine_learning4.png" width=550 height=200>
-
 
 ## 2023.10.12
 
