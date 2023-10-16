@@ -55,15 +55,35 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.16
+## 2023.10.17
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
 
-## 2023.10.15
+## 2023.10.16
 
 《Deep Neural Networks for YouTube Recommendations》
+
+2016年的一篇文章，Google Youtube 出品，内容要点：
+
+1. 本文发表的时间，还比较少 DL 用于rec sys 的工作，一些难点：freshness，newly uploaded contents, latest actions taken by the users
+2. 本文提出一个 DL-based two-stage 推荐系统，candidate generation and rank.
+3. candidate generation 模型，一个超大的softmax多分类，样本构建（用户隐式消费行为，抽样负样本，每个用户选择等量样本，多入口样本增加多样性），引入离散特征和连续特征，同时引入 example age 创新变量，避免模型忽略了样本时效性只是学习到均值；人口统计学特征有利于模型泛化到新用户
+4. ranking 模型，weighted LR 模型，预测用户观看时长；特征方面，Query(user/context) features are computed once per request，Impression(item) features are computed for each item scored；最有效的特征，是previous interaction with the item itself and other similar items；sparse 特征做emb；NN 对特征缩放和分布非常敏感，因此对continuous input做了归一化，同时输入其平方和开方的值，增加非线性
+5. 总体上是一篇不错的工作，虽然是7年前的，对于推荐模型基础问题都有涉及到
+
+模型结构：
+
+<img src="pic/dnn_for_youtube1.png" width=550 height=400>
+
+candidate generation:
+
+<img src="pic/dnn_for_youtube2.png" width=550 height=400>
+
+ranking:
+
+<img src="pic/dnn_for_youtube3.png" width=550 height=400>
 
 
 ## 2023.10.14
