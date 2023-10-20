@@ -61,6 +61,25 @@ Florence
 
 TBD
 
+## 2023.10.20
+
+《MMCN: Multi-Head Multi-Layer Cross Network》
+
+2021年字节的一篇工作，内容要点：
+
+1. MMCN的愿景就是在不增加dense参数量的情况下提高模型的交叉能力，核心思想：multi-head cross, multi-layer cross
+2. Multi-Head : 1) 将MLP中的第 i 层hidden layer切分为多个head增加交叉结构，保证网络的交叉能力；2)**不同head的交叉采用不同的方式，如element-wise-product/all-interaction/DCN-M等操作，捕捉不同的交叉信息，进一步提升交叉能力
+3. Multi-Layer : 1) 为了更好的保留每层交叉的信息，我们使用short_cut机制将每一层的交叉乘积结果引入之后各hidden layer和最终的logit，保证交叉信息被充分学习；2) 为了构建每层hidden_layer和原始输入的交叉，我们在每一层构建了hidden layer和MLP原始输入的交叉input_cross ，为模型带来了n阶特征和1阶特征的交叉，进一步提升了模型的效果
+4. 特点：不同于DCN/xDeepFM/CDot/DCN-M等网络结构中的大参数矩阵和大矩阵乘法，MMCN更多的是利用原生的element-wise-product运算， 增加较少网络参数量 ，保证了较高的训练速度和较低的推理延迟。
+5. 结果：相比之前的交叉结构 LHUC效果更好，在多个业务上都取得了较大收益。
+
+模型结构：
+
+<img src="pic/MMCN1.png" width=450 height=300>
+
+<img src="pic/MMCN2.png" width=450 height=300>
+
+
 ## 2023.10.16
 
 《Deep Neural Networks for YouTube Recommendations》
