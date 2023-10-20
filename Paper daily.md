@@ -55,7 +55,7 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.17
+## 2023.10.21
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
