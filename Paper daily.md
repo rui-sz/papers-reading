@@ -55,11 +55,31 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.21
+## 2023.10.22
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
+
+## 2023.10.21
+
+《SIM: Search-based User Interest Modeling with Lifelong Sequential Behavior Data for Click-Through Rate Prediction》
+
+2020年Alibaba的一篇文章，讲用户长期行为序列引入Ads模型的，内容要点：
+
+1. 本文对于 user interest model 和 long-term user interest 进行了比较好的综述整理。MIMN 将用户兴趣压缩到 fixed size matrix 中，当seq length超过1000之后精度会下降很多，nose多。DIN 可以搜索user behaviors，但性能比较差。本文的方法model long sequential user behavior data up to 54000，可以高效的处理长序列
+2. 模型结构，核心就是GSU单元和ESU单元，前者从历史行为中search与target item相关的行为（如何建模？），包括hard和soft两种，分别是硬匹配和概率匹配；后者基于 top-K relevant behaviors 建模CTR，用到了MHA机制。GSU的 soft search 方式会加入一个辅助CTR任务进行训练
+3. 实验结果，相比之前模型 DIN 和 DIEN 有显著性能提升，尤其对比DIN有大幅提升。跟 DIEN 相比在<14天样本上表现差别不大，>14天的SIM显著更优
+4. 本文方法，在search related item时，没有考虑到用户的个性偏好，有点类似只是 model 了物品相似性。未来还可以引入 user specific 的interest evolving。
+
+模型结构：
+
+<img src="pic/SIM1.png" width=550 height=400>
+
+Serving：
+
+<img src="pic/SIM2.png" width=550 height=400>
+
 
 ## 2023.10.20
 
@@ -78,7 +98,6 @@ TBD
 <img src="pic/MMCN1.png" width=450 height=300>
 
 <img src="pic/MMCN2.png" width=450 height=300>
-
 
 ## 2023.10.16
 
@@ -103,7 +122,6 @@ candidate generation:
 ranking:
 
 <img src="pic/dnn_for_youtube3.png" width=550 height=400>
-
 
 ## 2023.10.14
 
