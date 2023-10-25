@@ -55,15 +55,17 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.24
+## 2023.10.27
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
 
+## 2023.10.26
+
 《DIN: Deep Interest Network for Click-Through Rate Prediction》
 
-TBD
+doing
 
 ## 2023.10.21
 
