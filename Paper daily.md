@@ -55,17 +55,21 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.10.27
+## 2023.10.28
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
 TBD
 
-## 2023.10.26
+## 2023.10.27
 
 《DIN: Deep Interest Network for Click-Through Rate Prediction》
 
-doing
+2018年Alibaba的一篇文章，讲user behavior建模，内容要点：
+
+1. 背景：传统广告系统深度模型，User features 被压缩到一个固定长度的vector，不管候选ads是什么，给NN模型捕捉用户个性化兴趣带来困难（模型表达能力有限）；另一方面，对于一个特定cdd，也只有部分用户行为有影响。扩大vector dim会增加计算负担
+
+
 
 ## 2023.10.21
 
