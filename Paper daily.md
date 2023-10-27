@@ -61,14 +61,37 @@ Florence
 
 TBD
 
+
 ## 2023.10.27
 
 《DIN: Deep Interest Network for Click-Through Rate Prediction》
 
 2018年Alibaba的一篇文章，讲user behavior建模，内容要点：
 
-1. 背景：传统广告系统深度模型，User features 被压缩到一个固定长度的vector，不管候选ads是什么，给NN模型捕捉用户个性化兴趣带来困难（模型表达能力有限）；另一方面，对于一个特定cdd，也只有部分用户行为有影响。扩大vector dim会增加计算负担
+1. 背景：传统广告系统深度模型，follow一个固定范式：emb layer + MLP，User features 被压缩到一个固定长度的vector，不管候选ads是什么，给NN模型捕捉用户个性化兴趣带来困难（模型表达能力有限）；另一方面，对于一个特定cdd，也只有部分用户行为有影响。扩大vector dim会增加计算负担
+2. 模型结构，Deep Interest Network，本文设计 a local activation unit（也就是对ad的attention结构，相当于 soft search） to adaptively learn the representation of user interests from historical behaviors with respect to a certain ad, taking into consideration the relevance of historical behaviors given a candidate ad；特征输入方面，主要是one-hot特征和multi-hot特征。总体上属于Attentive CTR models
+3. 模型训练，使用了 Mini-batch aware Regularization 和 PReLU/Dice 两种训练技巧，前者用于缓解ID特征引入的过拟合问题；后者可以根据输入数据分布动态调整。从结果对比来看，两种技巧都能涨点
+4. 实验结果，DIN对比DeepFM在AUC指标上作用于不同数据集有千分位到百分位提升，MBA Reg和Dice涨点效果
 
+模型结构：
+
+<img src="pic/DIN1.png" width=700 height=300>
+
+稀疏特征处理：
+
+<img src="pic/DIN2.png" width=500 height=400>
+
+正则化的效果：
+
+<img src="pic/DIN3.png" width=700 height=300>
+
+AUC对比：
+
+<img src="pic/DIN4.png" width=500 height=300>
+
+AUC对比：
+
+<img src="pic/DIN5.png" width=500 height=400>
 
 
 ## 2023.10.21
