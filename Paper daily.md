@@ -61,6 +61,23 @@ Florence
 
 TBD
 
+《Batch normalization: Accelerating deep network training by reducing internal covariate shift》
+
+2015年 Google 的一篇文章，内容要点：
+
+1. 背景：训练DNN时会遇到每一层的input（上一层的activation）的分布在training过程中会变化的问题（导致网络需要不同的adapt新的分布，影响学习和收敛），这种现象叫做internal covariate shift/内协变量移位，应对这种问题通常要降低lr，做更小心的param init
+2. 本文方案：引入 BN(a normalization step that fixes the means and variances of layer inputs) 对 layer inputs进行归一化，让我们可以用更高的 learning rate加速学习，不用太在意 initialization，以及排除 Dropout 的需求。intermediate normalization layers
+3. 模型结构，对每一层的activation输出做归一化，2个计算技巧：独立归一化每一个scalar feature，让它具有 zero mean and unit variance；基于entire training set来做归一化不切实际，选择基于每个mini batch的mean/variance估计来做。相当于每个activation增加了2个params
+4. 实验结果，通过运用BN，只用7%的traing steps beat 了ImageNet上最好的模型；可以不再使用 Dropout
+
+算法原理：
+
+<img src="pic/BN1.png" width=600 height=400>
+
+训练影响：
+
+<img src="pic/BN2.png" width=500 height=300>
+
 
 ## 2023.10.27
 
@@ -92,7 +109,6 @@ AUC对比：
 AUC对比：
 
 <img src="pic/DIN5.png" width=500 height=400>
-
 
 ## 2023.10.21
 
