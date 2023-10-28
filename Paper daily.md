@@ -59,7 +59,21 @@ Florence
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
 
-TBD
+2019年华为和哈工大合作，内容要点：
+
+1. 背景：用户行为中存在 position-bias，一类解决方案是将position作为特征引入模型训练，inference时用默认值，这种表现不稳定，因此是sub-optimal解，在离线建模中，对position进行转换也属于这种方案；另一类解决方案是 as a module，也就是本文的方案
+2. 本文方案：PAL for CTR pred，其假设有2种概率：seen probability and click probability，两者相乘是最终概率，通过模型架构实现该想法
+3. 原理，PAL简化为2个条件概率，seen prob and click prob，offline traing 将两者相乘，online inference时去掉seen tower
+4. 实验结果，选定DeepFM作为baseline，PAL improves CTR and CVR over baseline by 3%~35%；同时PAL结果与ground truth ranking的距离，以及personalization@L方面，也都比baseline要好
+
+模型原理：
+
+<img src="pic/PAL1.png" width=600 height=350>
+
+<img src="pic/PAL2.png" width=700 height=250>
+
+<img src="pic/PAL3.png" width=500 height=250>
+
 
 《Batch normalization: Accelerating deep network training by reducing internal covariate shift》
 
