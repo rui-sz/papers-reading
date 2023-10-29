@@ -55,6 +55,26 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.10.29
+
+《ESMM: Entire Space Multi-Task Model: An Effective Approach for Estimating Post-Click Conversion Rate》
+
+2018年的一篇文章，内容要点：
+
+1. 背景：传统 post-click conversion rate 建模存在的问题：传统CVR模型在展现点击样本上训练，但是推理时作用于整个样本空间。即selection bias 问题；数据稀疏问题，导致模型比较难 fit
+2. 模型结构：很好的利用用户行为的序列特征，通过两个辅助任务 CTR 和 CTCVR，将CVR作为一个中间变量。pCTCVR = pCTR*pCVR。解决了样本空间对齐的问题， 同时通过param transfering也缓解了DS问题
+3. 实验结果：相比基线方法，显著提升了pCVR和pCTCVR的预估效果
+4. ESMM 模型的意义，在于显式的共享了feature，以及label的组合关系。通过把链路拆解的更准确，整体提高了模型学习的效果
+
+问题背景：
+
+<img src="pic/ESMM1.png" width=500 height=250>
+
+模型结构：
+
+<img src="pic/ESMM2.png" width=500 height=450>
+
+
 ## 2023.10.28
 
 《PAL: a position-bias aware learning framework for CTR prediction in live recommender systems》
@@ -74,7 +94,6 @@ Florence
 
 <img src="pic/PAL3.png" width=500 height=250>
 
-
 《Batch normalization: Accelerating deep network training by reducing internal covariate shift》
 
 2015年 Google 的一篇文章，内容要点：
@@ -91,7 +110,6 @@ Florence
 训练影响：
 
 <img src="pic/BN2.png" width=500 height=300>
-
 
 ## 2023.10.27
 
