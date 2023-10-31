@@ -41,7 +41,7 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
-# 2023.10
+# 2023.11
 
 T5
 
@@ -54,6 +54,30 @@ LLM 系列：
 Zero-Shot Text-to-Image Generation
 
 Florence
+
+## 2023.11.1
+
+
+# 2023.10
+
+## 2023.10.31
+
+《Dropout: a simple way to prevent neural networks from overfitting》
+
+2014年 Hinton 在多伦多大学的一篇工作，内容要点：
+
+1. Overfitting 问题，many methods 被开发来解决，Early stop，L1/L2 weight penalties，soft weight sharing；Combination 通常有用，尤其是模型diff时（结构，train data），但是expensive
+2. 本文提出的方法 Dropout，其核心思想是在train NN时随机drop units（与它们的connections一起），避免网络adapt so much
+3. 模型结构，n个units的network可以被看作 2^n 个thinned networks，这些网络share params，所以总的参数量仍然是O(n^2)，对于每个 training case，都对应一个新的thinned network（sampled by dropping out units），所以应用dropout train nn可以被看作基于extensive的weight sharing训练2^n个thinned networks。FF 和 BP 都基于 thinned network。
+4. 实验结果，在CV,NLP等多个任务上都表现出优秀的效果，同时Dropout会生成更稀疏的网络，dropout rate 也不是越大越好，通常0.5左右就行
+
+模型结构：
+
+<img src="pic/dropout1.png" width=500 height=250>
+
+<img src="pic/dropout2.png" width=500 height=300>
+
+
 
 ## 2023.10.29
 
@@ -73,7 +97,6 @@ Florence
 模型结构：
 
 <img src="pic/ESMM2.png" width=500 height=450>
-
 
 ## 2023.10.28
 
