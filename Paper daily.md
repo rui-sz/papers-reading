@@ -55,7 +55,28 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.11.1
+## 2023.11.4
+
+TBD
+
+## 2023.11.3
+
+《SparseNAS: Neural Architecture Search as Sparse Supernet》
+
+2019年的一篇文章，关于NAS的，有点意思，内容要点：
+
+1. 本文目标是将NAS问题从 Single-Path 和 Multi-Path 扩展到自动化的 Mixed-Path Search，基于 over-parameterized supernet 和 sparsity constraints搜索 continuous arch representation。在CNN和RNN网络上实验，能够找到compact, general and powerful NN
+2. 原理如下图示，node 代表feature map，edge 代表operations，NN 是一个DAG，通过搜索、正则等方式找到一个Arch的稀疏表示
+3. 从实验结果来看，在Dense CNN网络上效果很好，参数量减少近10倍，模型性能还有提升；RNN上也有一定效果
+4. 是一个有意思的研究方向，后面再系列看
+
+原理：
+
+<img src="pic/NAS_as_ss1.png" width=600 height=250>
+
+实验结果：
+
+<img src="pic/NAS_as_ss2.png" width=600 height=250>
 
 
 # 2023.10
