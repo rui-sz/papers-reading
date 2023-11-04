@@ -55,7 +55,7 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.11.4
+## 2023.11.5
 
 TBD
 
