@@ -59,6 +59,29 @@ Florence
 
 TBD
 
+## 2023.11.4
+
+《DIEN: Deep interest evolution network for click-through rate prediction》
+
+2018年，Alibaba 发表在AAAI的一篇文章，内容要点：
+
+1. 用户兴趣是变化的，比如一段时间关注books，一段时间关注clothes，当前DL CTR model focus on interaction between features from diff fields, and pay less attention to user interest representation，本文引入一种新颖的网络结构来捕捉 interest evolving process which is relative to the target item
+2. 模型结构，有两个key modules：interest extract layer，extract latent temporal interest，auxiliary loss 在each step用consecutive behavior来辅助监督hidden state的学习，clicked item against non-clicked item；interest evolving layer: model interest evolving process，AUGRU(attention) to activate relative interest during interest evolving。最终学到的h(T)就具有更多 relative history info，兴趣本身会drift（books、clothes），而注意力让我们可以只关注跟target item相关的evolving process
+3. 实验结果，从实验结果看无论在public data上，还是industry data上，都有很大的AUC提升，同时CTR提升了20+%，eCPM提升17+%，消费非常好。
+
+模型结构：
+
+<img src="pic/DIEN1.png" width=650 height=400>
+
+实验结果1：
+
+<img src="pic/DIEN2.png" width=550 height=250>
+
+实验结果2：
+
+<img src="pic/DIEN3.png" width=400 height=200>
+
+
 ## 2023.11.3
 
 《SparseNAS: Neural Architecture Search as Sparse Supernet》
