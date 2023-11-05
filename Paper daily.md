@@ -77,6 +77,27 @@ Florence
 <img src="pic/AnyMAL2.png" width=650 height=350>
 
 
+
+《MIMN: Practice on Long Sequential User Behavior Modeling for Click-Through Rate Prediction》
+
+2019.5 Alibaba 的一篇文章，复习一下，内容要点：
+
+1. 围绕用户兴趣进行模型框架设计是一个有价值的问题，long sequence 造成system latency和storage cost方面的问题。总体上，用户兴趣建模有2个方向，pooling-based（简单、损失精度）和sequential based（复杂、提高精度）
+2. 本文提出一种方案，通过异步UIC模块将用户 long-term interest 编码到fixed-size内存中，解决用户长行为序列存储/计算问题，序列长度可以做到1000，也解决了latency的问题
+3. 系统方案重点是2个部分，异步UIC (User Interest Center) module，maintains the latest interest representation for each user；MIMN模型，参照了NTM的思想，以增量方式工作，将用户历史兴趣压缩在fixed-size的向量中。
+4. 从实验结果看，对比DIN/DIEN等，都有性能提升。不足之处是behavior sequence的长度太短，fixed size 会影响emb表达能力，同时也不是端到端的模型。
+
+系统结构：
+
+<img src="pic/MIMN1.png" width=700 height=400>
+
+<img src="pic/MIMN2.png" width=700 height=400>
+
+实验结果：
+
+<img src="pic/MIMN3.png" width=600 height=300>
+
+
 ## 2023.11.4
 
 《DIEN: Deep interest evolution network for click-through rate prediction》
