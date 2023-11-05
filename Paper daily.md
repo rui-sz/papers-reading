@@ -57,7 +57,25 @@ Florence
 
 ## 2023.11.5
 
-TBD
+《AnyMAL: An Efficient and Scalable Any-Modality Augmented Language Model》
+
+2023.9 Meta的一篇工作，介绍基于LLM的multimodal工作，内容要点：
+
+1. V-L 或跨模态models，由于跨模态对齐数据源的相对稀缺，最近工作shifted towards基于一个语言模型基座，re-purposing several task-specific vision-language datasets。本文工作允许diverse模态混合输入，用搜集到的多模态指令微调数据做FT process，扩充LLM基座到70B规模。
+2. pre-train 阶段，主要是为了modality alignment with paired multimodal data，使用了CLIP/CLAP等工作中的模态encoder，训练一个projection layer与LLM对齐textual space；通过quantization技术做到可以在单块80G卡上以batch size=4来train
+3. fine-tune 阶段，通过人工标注和Synthetic的方式搜集了60K+150K数据集 MM-IT，用QLoRA技术来FT
+4. 实验结果，在captioning tasks for various modalities, multimodal reasoning and instruction-following 两类评估任务上，对比baseline models都表现出明显的提升；此外还做了超参消融实验，发现 increase batch size 以及 number of visual tokens 提升比较小，但是 increase resampling layers number 可以显著reduce loss
+
+总体来说，本文做法很精巧，在emb层pretrain对齐，充分利用LLM模型的powerful reasoning能力，将modality-specific信号通过pre-trained aligner module映射到textual space，加上针对具体任务的FT，取得了较好的效果。
+
+模型原理：
+
+<img src="pic/AnyMAL1.png" width=650 height=350>
+
+实验结果1：
+
+<img src="pic/AnyMAL2.png" width=650 height=350>
+
 
 ## 2023.11.4
 
