@@ -55,6 +55,30 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.11.6
+
+《Flan: Scaling Instruction-Finetuned Language Models》
+
+2022.12 Google的一篇工作，讲大模型指令微调，内容要点：
+
+1. Flan = Finetuning language models，指的是 Instruction finetuning，指令微调，本文主要研究指令微调在 model size，task numbers 等方面的scale，同时研究了CoT数据微调的效果
+2. 模型训练，batch size/lr/steps等超参因model而异；相比于pre-train的计算量，FT用了0.2%~1.6%不等
+3. model size方面，从80M参数，到540B参数，都大幅受益于指令微调；微调的数据task范围越广越好，泛化性越强；在CoT+non-CoT数据上FT，相比于只在某一个类型数据上FT，效果会更好；CoT prompting 起作用有2个条件：模型足够大、任务本身需要推理
+4. 本文证明了Flan 微调数据集+方法的普适性以及显著收益
+
+Finetuning tasks
+
+<img src="pic/Flan1.png" width=650 height=450>
+
+data format：
+
+<img src="pic/Flan2.png" width=700 height=450>
+
+各模型的Flan结果：
+
+<img src="pic/Flan3.png" width=650 height=500>
+
+
 ## 2023.11.5
 
 《AnyMAL: An Efficient and Scalable Any-Modality Augmented Language Model》
