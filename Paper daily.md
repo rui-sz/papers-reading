@@ -55,7 +55,34 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.11.8
+
+TBD
+
 ## 2023.11.7
+
+《DISTIL-WHISPER: ROBUST KNOWLEDGE DISTILLATION VIA LARGE-SCALE PSEUDO LABELLING》
+
+2023.11 hugging face的一篇工作，蒸馏whisper，内容要点：
+
+1. 当Pre-trained speech recognition变得更大时，low-latency or resource-constrained 等约束成为了挑战，这篇工作，用pseudo-labelling 技术knowledge distill Whisper模型到Distil-Whisper，仅适用51%参数比原模型快5.8倍，同时WER性能相差1%以内
+2. 模型结构，4个部分做KD，模型结构方面，复制了whisper的encoder部分，decoder部分保留1st和32nd层，总体参数规模小了49%，在distill train时，用了相比原whisper模型更小的数据集，KL和PL损失加权。其中PL损失又叫pseudo label损失，来自于原whisper模型生成内容
+3. 实验结果，short form和long form结果都比较好，其中long form的结果 distill 模型相比 whisper 原模型效果还更好一些，是由于减少了幻觉和重复内容。
+
+总体而言，通过蒸馏大幅减少模型参数，同时性能基本得以保持。
+
+数据：
+
+<img src="pic/distil-whisper1.png" width=700 height=300>
+
+模型结构：
+
+<img src="pic/distil-whisper2.png" width=700 height=450>
+
+实验结果：
+
+<img src="pic/distil-whisper3.png" width=700 height=300>
+
 
 《MetaLM: Language models are general-purpose interfaces》
 
