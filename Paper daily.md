@@ -55,6 +55,34 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.11.7
+
+《MetaLM: Language models are general-purpose interfaces》
+
+2022.6 的一篇文章，将语言模型作为各种模态、各种task类型的general interface，内容要点：
+
+1. model architecture 已经统一，但是针对不同任务/模态仍然在开发不同的模型，本文提出了MetaLM，作为通用interface to fundation models across tasks and modalities
+2. MetaLM的模型结构，包括一个 causal decoder as universal task layer, 以及数个 pretrained non-causal encoders mounted to it。pretrain MetaLM用一个新的objective: semi-causal language modeling，jointly pretrain the interface and the modular encoders。模型的规模比较小，只有1.3B量级
+3. 对于LM各种变种做了一定归类，比如单向生成架构，prefix LM with en-de 架构，类Bert双向encoder等
+4. 实验结果，language-only and vision-language tasks
+
+模型架构：
+
+<img src="pic/MetaLM1.png" width=700 height=400>
+
+几种LM类型：
+
+<img src="pic/MetaLM2.png" width=700 height=400>
+
+language model:
+
+<img src="pic/MetaLM3.png" width=700 height=600>
+
+vision-language model:
+
+<img src="pic/MetaLM4.png" width=700 height=600>
+
+
 ## 2023.11.6
 
 《Flan: Scaling Instruction-Finetuned Language Models》
@@ -78,7 +106,6 @@ data format：
 
 <img src="pic/Flan3.png" width=650 height=500>
 
-
 ## 2023.11.5
 
 《AnyMAL: An Efficient and Scalable Any-Modality Augmented Language Model》
@@ -100,8 +127,6 @@ data format：
 
 <img src="pic/AnyMAL2.png" width=650 height=350>
 
-
-
 《MIMN: Practice on Long Sequential User Behavior Modeling for Click-Through Rate Prediction》
 
 2019.5 Alibaba 的一篇文章，复习一下，内容要点：
@@ -120,7 +145,6 @@ data format：
 实验结果：
 
 <img src="pic/MIMN3.png" width=600 height=300>
-
 
 ## 2023.11.4
 
@@ -144,7 +168,6 @@ data format：
 
 <img src="pic/DIEN3.png" width=400 height=200>
 
-
 ## 2023.11.3
 
 《SparseNAS: Neural Architecture Search as Sparse Supernet》
@@ -164,7 +187,6 @@ data format：
 
 <img src="pic/NAS_as_ss2.png" width=600 height=250>
 
-
 # 2023.10
 
 ## 2023.10.31
@@ -183,8 +205,6 @@ data format：
 <img src="pic/dropout1.png" width=500 height=250>
 
 <img src="pic/dropout2.png" width=500 height=300>
-
-
 
 ## 2023.10.29
 
