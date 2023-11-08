@@ -1,4 +1,4 @@
-# anpapers-weekly
+# papers-weekly
 
 每周论文学习记录
 
@@ -55,7 +55,7 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
-## 2023.11.8
+## 2023.11.9
 
 TBD
 
