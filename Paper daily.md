@@ -59,6 +59,23 @@ Florence
 
 TBD
 
+## 2023.11.8
+
+《LoRA: Low-Rank Adaptation of Large Language Models》
+
+2021年Microsoft的一篇工作，低秩FT大模型，内容要点：
+
+1. pretrain 大模型用于具体领域时，FT是一个强诉求，之前的方法：添加adapter layer会引入inference latency。然而虽然模型参数众多，但其实模型主要依赖低秩维度的内容(`low intrinsic dimension`)，类比一下，似乎adaption好使的本质也依赖于此，所以提出了Low-Rank Adaptation (LoRA)
+2. LoRA的思想也很简单，在原始PLM旁边增加一个旁路，做一个降维再升维的操作，来模拟所谓的 intrinsic rank。这种思想有点类似于 **残差连接** ，同时使用这个旁路的更新来模拟full finetuning的过程。并且，full finetuning可以被看做是LoRA的特例（当r等于k时）
+3. 模型结构，一个平行的简单网络，A+B，r 可以是1 or 2，当 full rank（d）甚至高达12288。LoRA是 Full Fine-tuning 的一种generalization，当提高r时，最终相当于 FT 原始模型
+4. 模型训练，训练的时候固定PLM的参数，只训练降维矩阵A与升维矩阵B。而模型的输入输出维度不变，输出时将BA与PLM的参数叠加。用随机高斯分布初始化A，用0矩阵初始化B，保证训练的开始此旁路矩阵依然是0矩阵。
+5. 实验结果，相比full FT以及其他方法，LoRA大幅降低了trainable params，同时性能也有优势。总体上，降低FT的参数量10000x，以及GPU memory requirement 3x
+
+实验结果：
+
+<img src="pic/LoRA1.png" width=700 height=400>
+
+
 ## 2023.11.7
 
 《DISTIL-WHISPER: ROBUST KNOWLEDGE DISTILLATION VIA LARGE-SCALE PSEUDO LABELLING》
