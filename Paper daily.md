@@ -57,7 +57,23 @@ Florence
 
 ## 2023.11.9
 
-TBD
+《Qlora: Efficient finetuning of quantized llms》
+
+2023.5 的一篇文章，将高效模型FT的，内容要点：
+
+1. 本文提出QLoRA，一种有效的FT方法，可以减少memory用量，能在48G GPU上FT 65B model，同时保留 full 16-bit FT 的精度；同时，最好的模型Guanaco-65B（基于LLaMA FT)，在Vicuna benchmark上达到99.3%的chatgpt性能
+2. 模型原理，2个关键的部分，一个是将模型量化为4-bit精度，用了NF data type（ information theoretically optimal for normally distributed weights），以及double quantization方法减少内存用量；另一个是用了paged optimizer应对memory spikes
+3. 实验结果，QLoRA对比full FT和LoRA可以极大的减少FT memory用量，同时保持性能不下降；GPT-4 eval 很便宜，可以作为人工eval的一种合理替代
+4. 在Finetune/pretrain时，数据质量远比dataset size要重要；对于一个特定任务来说，合适的数据集比dataset size更重要
+
+模型原理：
+
+<img src="pic/qlora1.png" width=700 height=350>
+
+FT 效果对比：
+
+<img src="pic/qlora2.png" width=600 height=250>
+
 
 ## 2023.11.8
 
@@ -74,7 +90,6 @@ TBD
 实验结果：
 
 <img src="pic/LoRA1.png" width=700 height=400>
-
 
 ## 2023.11.7
 
@@ -100,7 +115,6 @@ TBD
 
 <img src="pic/distil-whisper3.png" width=700 height=300>
 
-
 《MetaLM: Language models are general-purpose interfaces》
 
 2022.6 的一篇文章，将语言模型作为各种模态、各种task类型的general interface，内容要点：
@@ -125,7 +139,6 @@ language model:
 vision-language model:
 
 <img src="pic/MetaLM4.png" width=700 height=600>
-
 
 ## 2023.11.6
 
