@@ -55,6 +55,28 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.11.10
+
+《LLaVA: Visual Instruction Tuning》
+
+2023.4 的一篇文章，关于多模态指令微调，内容要点：
+
+1. LLM 基于机器生成的指令数据做微调已经取得了成功，本文是关于视觉指令微调。本文的方法是，基于 language-only GPT-4 生成多模态 language-image 指令微调数据集（based on image-text pairs），train LLaVA model，a Large 多模态模型/LMM，connect CLIP & LLaMA，finetune end to end
+2. 模型结构，LLaVA 连接vision encoder（CLIP VIT-L/14）和LLM（LLaMA），为了通用目的的vision和language理解。LLM 展现出了语言可以起更广的作用，一个更通用interface，服务于一般目的，不同任务指令可以被隐式表达在语言中。
+3. 模型训练，LLaVA的训练分为2个阶段，Pre-training for Feature Alignment， 保持 visual encoder 和LLM weights frozen，train projection W；Fine-tuning End-to-End. 只保持 visual encoder 冻结。本文的FT探索了两个场景，multimodal chatbot 和 scienceQA
+4. 实验结果：multimodal chatbot 达到了GPT-4 85.1%分位；scienceQA 场景LLaVA模型取得了接近 SOTA 的结果，与GPT-4联合使用可超越SOTA
+
+总体上，本文展示了构建multimodal模型，以及对其进行指令微调的方法，并基于此实验了2个应用场景，都取得不错的效果。
+
+模型结构：
+
+<img src="pic/LLaVA1.png" width=500 height=200>
+
+<img src="pic/LLaVA2.png" width=700 height=250>
+
+<img src="pic/LLaVA3.png" width=700 height=350>
+
+
 ## 2023.11.9
 
 《Qlora: Efficient finetuning of quantized llms》
