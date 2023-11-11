@@ -57,6 +57,26 @@ Florence
 
 ## 2023.11.11
 
+《T0: Multitask Prompted Training Enables Zero-Shot Task Generalization》
+
+2022.3 的一篇文章，关于多任务学习与zero shot泛化性关联的研究，内容要点：
+
+1. 大语言模型展示出了很强的多样化任务zero-shot泛化性，有一种假设是由于在pretrain阶段伴随language modeling的隐式multitask learning，那么显示的mm是否可以增强zero-shot 泛化性呢，本文主要针对这个问题做了研究，关注2个点，多任务 prompt training 是否增强unseen泛化性；多样化prompts是否增强prompt word鲁棒性
+2. 数据，文章搜集了多样化的数据集，每类task包含多个datasets，也即 a large multitask mixture with multiple prompts
+3. 模型，基于T5模型做 prompt finetuning
+4. 实验结果，本文的方法在 unseen 泛化性上有显著收益，多个任务上效果甚至超过了GPT-3 175B；prompt 鲁棒性方面，即便 only 1 prompt per dataset，也有显著效果提升，并且train on more prompts per dataset可以取得更好、更稳定的unseen 泛化性，但是在更多的 dataset（对应不同类型prompts）上训练，看起来并不会持续的让模型对 prompt wording 更鲁棒。
+
+总体上，本文如标题所说展示了multitask prompt finetuning 可以显著增强模型的unseen zero-shot 泛化性；但是增加prompt多样性，看起来并没有增加 prompt wording 的鲁棒性。
+
+数据集：
+
+<img src="pic/T0_1.png" width=650 height=400>
+
+unseen 泛化性：
+
+<img src="pic/T0_2.png" width=650 height=400>
+
+
 《Self-instruct: Aligning language model with self generated instructions》
 
 2023.5 的一篇文章，顾名思义，让预训练模型通过自己生成的instructions对齐的工作，内容要点：
