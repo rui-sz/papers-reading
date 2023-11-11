@@ -55,6 +55,38 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.11.11
+
+《Tk-INSTRUCT: Generalization via Declarative Instructions on 1600+ NLP Tasks》
+
+2022.10 一篇关于NLP模型指令微调下泛化能力研究的一篇文章，内容要点：
+
+1. NLP 模型如何基于 task 指令微调更好的泛化到 unseen tasks上，本文对此做了研究。本文 construct a meta-dataset (dataset of datasets): SUPER-NATURALINSTRUCTIONS，并且训练了一个模型can perform a new task given the instruction, outperforming InstructGPT (which uses 16*× *more parameters).
+2. 数据集，构建了一个包含1600+tasks的数据集，单个task包含最多数千个instances，instruction 模版包含多个元素，Definition，pos examples，neg examples 等等
+3. 模型训练，在构建好指令数据集之后，基于T5基座模型通过meta-tune的方式做监督训练，并在 unseen tasks上测试其泛化能力，评估指标：ROUGE-L 以及 human eval
+4. 实验结果，Tk-Instruct 模型展现出了良好的unseek tasks泛化能力，比175B的InstructGPT更好，但是并不知道 InstructGPT 的数据集情况；相比直接基于相应tasks的supervised finetune（1k instances/task）能力上界，单纯的泛化方式能力提升还有差距。
+5. factors 影响，模型泛化能力与instruct tasks 的数量呈现对数线性关系；同时增加特定任务下的训练数据数量不会有太大帮助，每个任务包含64个是比较合理设置，并且不同任务数据要均衡；模型规模跟泛化能力是正相关的。
+
+总体上，Instruction tuning，可以显著增强语言模型的in-context learning能力，即便面对未见过的任务，即cross-task generalization。Scale up training tasks多样性和model size，对于未知任务的泛化能力都很重要。
+
+Instruction 模版：
+
+<img src="pic/Tk-INSTRUCT1.png" width=400 height=500>
+
+Diverse tasks：
+
+<img src="pic/Tk-INSTRUCT2.png" width=800 height=500>
+
+task 泛化效果：
+
+<img src="pic/Tk-INSTRUCT3.png" width=800 height=350>
+
+不同factors的影响：
+
+<img src="pic/Tk-INSTRUCT4.png" width=800 height=350>
+
+
+
 ## 2023.11.10
 
 《LLaVA: Visual Instruction Tuning》
