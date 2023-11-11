@@ -57,6 +57,30 @@ Florence
 
 ## 2023.11.11
 
+《Self-instruct: Aligning language model with self generated instructions》
+
+2023.5 的一篇文章，顾名思义，让预训练模型通过自己生成的instructions对齐的工作，内容要点：
+
+1. 本文非常详细的介绍了 instruction 集的生成过程。Self-instruct，提供了一种免标注的方法用来对齐 pretrained language models 和 instructions，主要目的是让LM对齐人类意图。
+2. 数据，人工编写 instructions 数据，costly并且缺乏多样性。本来使用一小批（175个）人工撰写的tasks开始，先生成instructions，再生成output。最后过滤掉低质和重复的instructions，加入到 task pool 中。共生成了52K instructions，以及82K inputs/outputs。注意 instruction 和 instance input 在多数情况下没有一个严格的boundaray
+3. 模型，指令数据准备好之后，通过标准的 supervised way train model，为了让模型robust，使用多种templates encode instance
+4. 实验结果，使用了[5025]中的数据集 SUPER-NATURALINSTRUCTIONS/SuperNI 来做评估。评估结果显示Self-instruct GPT3 outperform GPT3 by a large margin(+33.1%)，并且距离instructGPT只有5% gap；另外展示了Instructions 数量的影响，以及引入从 instructGPT 蒸馏出来的高质量instructions后的显著正向影响。
+
+总体上，本文展示了一种低成本指令对齐的方法，让pretrained大模型可以很好的对齐人类指令，为揭开InstructGPT等优秀闭源模型背后的原理起到积极作用。
+
+Instruction 生成：
+
+<img src="pic/self-instruct1.png" width=650 height=400>
+
+实验结果1：
+
+<img src="pic/self-instruct2.png" width=450 height=400>
+
+实验结果2：
+
+<img src="pic/self-instruct3.png" width=650 height=400>
+
+
 《Instruction tuning with GPT-4》
 
 2023.4 一篇用GPT-4来辅助instruct tuning的文章，内容要点：
@@ -75,7 +99,6 @@ Florence
 实验结果2：
 
 <img src="pic/instruct_with_gpt4_2.png" width=500 height=400>
-
 
 《Tk-INSTRUCT: Generalization via Declarative Instructions on 1600+ NLP Tasks》
 
@@ -105,8 +128,6 @@ task 泛化效果：
 
 <img src="pic/Tk-INSTRUCT4.png" width=800 height=350>
 
-
-
 ## 2023.11.10
 
 《LLaVA: Visual Instruction Tuning》
@@ -128,7 +149,6 @@ task 泛化效果：
 
 <img src="pic/LLaVA3.png" width=700 height=350>
 
-
 ## 2023.11.9
 
 《Qlora: Efficient finetuning of quantized llms》
@@ -147,7 +167,6 @@ task 泛化效果：
 FT 效果对比：
 
 <img src="pic/qlora2.png" width=600 height=250>
-
 
 ## 2023.11.8
 
