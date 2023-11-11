@@ -57,6 +57,26 @@ Florence
 
 ## 2023.11.11
 
+《Instruction tuning with GPT-4》
+
+2023.4 一篇用GPT-4来辅助instruct tuning的文章，内容要点：
+
+1. 本文展示了使用GPT-4作为teacher for self-instruct tuning的有效性，其基本思想与[5026]很接近
+2. 数据，基于52K instruction-following数据，用GPT4进行了扩展，以及翻译成中文
+3. 模型，选择LLaMA-7B作为基座模型，train 了2个版本，LLaMA-GPT4和LLaMA-GPT4-CN，并基于GPT-4对不同模型结果的的rating训练了Reward model
+4. 实验结果，在eval的benchmarks上LLaMA-GPT4对比LLaMA-GPT3.5，helpfulness上升了，诚实性和无害性下降；LLaMA-GPT4对比GPT4，三项指标接近；LLaMA-GPT4 和 GPT4 倾向于输出更长的结果，对于更有创造力的任务表现更好。
+
+总体上，本文展示了用GPT-4生成指令数据以及用作评估的有效性，为指令微调工作提效。
+
+实验结果1：
+
+<img src="pic/instruct_with_gpt4_1.png" width=500 height=400>
+
+实验结果2：
+
+<img src="pic/instruct_with_gpt4_2.png" width=500 height=400>
+
+
 《Tk-INSTRUCT: Generalization via Declarative Instructions on 1600+ NLP Tasks》
 
 2022.10 一篇关于NLP模型指令微调下泛化能力研究的一篇文章，内容要点：
