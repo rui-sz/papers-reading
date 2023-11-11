@@ -55,6 +55,32 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.11.12
+
+《T5/Google: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer》
+
+2020年Google的一篇雄文，内容要点：
+
+1. 本文研究一个 unified approach to transfer learning 让我们可以treat每一个text任务作为 "text-to-text" 问题
+2. 数据，使用了C4数据集，unlabelled
+3. 模型，本文详细分析了几种不同类型的语言模型结构，En-De, Decoder-AR, prefix LM 等，结合attention masked分析各自的作用机制
+4. 实验结果，从实验结果来看，T5-11B模型在多个任务上都取得了SOTA的结果
+
+总体上，T5 可以称作是一篇雄文，对于 NLP pretrain + finetune 范式的进展做了阶段性总结，对很多基本问题进行了细致剖析，属于必读的文章。
+
+模型架构：
+
+<img src="pic/T5_0.png" width=650 height=400>
+
+语言模型结构：
+
+<img src="pic/T5_1.png" width=650 height=500>
+
+实验结果：
+
+<img src="pic/T5_2.png" width=650 height=600>
+
+
 ## 2023.11.11
 
 《T0: Multitask Prompted Training Enables Zero-Shot Task Generalization》
