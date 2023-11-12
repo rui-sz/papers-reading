@@ -52,6 +52,31 @@ Florence
 
 ## 2023.11.12
 
+《Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning》
+
+2020.12 Meta的一篇文章，旨在研究 pretrain + finetune 能work的内在机制，内容要点：
+
+1. Abstract: 现实中在一个亿级别参数模型上tune task，只用到几百上千条样本。背后的机制还没有被很好的理解。pretrained model 有一个非常低的 intrinsic dimension，可以被用来finetune。
+2. Intrinsic dim 可以告诉我们需要多少参数来closely的近似finetuning时的优化问题，那么损失函数的intrinsic dim衡量了达到saticfactory solution的最小参数量。本文提出的方法是，searching over various d，选择能达到90% full training metric的最小的d。
+3. 一些关键实验研究结论
+   1. Large scale training of MLM 学习到足够通用和分散的语言表示，可以促进下游任务学习高度压缩的任务表示。Model params 数量strongly inversely correlates with Intrinsic dim, ID可能是serveral orders of magnitudes less than total params，也就是模型的参数量越大，我们需要越少的 intrinsic dim 去表示一个下游task，pretrain 隐式的最小化了intrinsic dim（**of later tuning for ****diff** ** NLP tasks** ）。
+   2. Pretrained model BERT 在capacity方面是redundant的，可以被显著的稀疏化而不会带来太多效果衰退（待进一步阅读）
+   3. Pretrain 拟合的效果越好（steps增加），finetune下游任务时intrinsic dim 越小。越容易解决的任务，显示出越低的内在表示。LM的Pretrain 提供了一个compression framework 以最小化NLP tasks的avg desc length
+   4. 泛化性依赖于 intrinsic dimension 的量级，而不是pretrained model 的params count
+
+不同模型的intrinsic dim：
+
+<img src="pic/Intrinsic_Dimensionality_Explains1.png" width=650 height=500>
+
+intrinsic dim 和pretrain的关系：
+
+<img src="pic/Intrinsic_Dimensionality_Explains2.png" width=650 height=300>
+
+intrinsic dim和model size的关系：
+
+<img src="pic/Intrinsic_Dimensionality_Explains3.png" width=650 height=250>
+
+
 《Finetuned language models are zero-shot learners》
 
 2022年ICLR的一篇文章，研究指令微调对模型泛化性的影响，内容要点：
