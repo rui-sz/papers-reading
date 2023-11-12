@@ -52,6 +52,25 @@ Florence
 
 ## 2023.11.12
 
+《U-net: Convolutional networks for biomedical image segmentation》
+
+2015年的一篇优秀工作，关于image segmentation的，内容要点：
+
+1. 一个共识是训练DNN网络需要数千annotated training samples，本文提出了一个网络和训练侧基于data augmentation更有效的利用标记样本。包括随机变形，以及drop-out layer 的隐式数据增强
+2. 模型结构，一个U型网络，总体上是一个 Encoder-Decoder 的架构：Encoder 部分是卷积 + max pooling(down sampling)，Decoder 部分是 up sampling + 卷积 + skip-connection，核心 idea 是增加了一些层，将 pooling operators 替换为 upsampling operators。两部分信息综合提供前景+背景信息，一个是CNN的特征提取，另一个是upsampled output。
+3. 实验结果，取得了非常好的performance on very different segmentation applications. 受益于数据增强技术，只需要很少的 labelled 样本，training time: 10 hours on a NVidia Titan GPU (6 GB)
+
+总体上，是一个非常精巧的设计，将前景和背景信息综合起来，提供一个信息丰富的feature map，用于最后的pixel-wise的softmax层进行边界判断。
+
+模型结构：
+
+<img src="pic/unet1.png" width=650 height=500>
+
+实验结果：
+
+<img src="pic/unet2.png" width=600 height=250>
+
+
 《Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning》
 
 2020.12 Meta的一篇文章，旨在研究 pretrain + finetune 能work的内在机制，内容要点：
