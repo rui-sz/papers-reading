@@ -21,7 +21,6 @@
 - [ ] 使用Xenon-Generation Finetune LLama文档阅读
 - [ ] 写综述：GNN 论文总结
 - [ ] Deeper insights into graph convolutional networks for semi-supervised learning
-- [ ] 搜广推：MMoE，DeepFM等
 - [ ] 不同的位置编码方式，1D(Bert的), 2D etc
 - [ ] 通用内容
 
@@ -29,11 +28,9 @@
   - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
   - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
   - [ ] viking, milvus等向量检索相关技术，检索和矢量搜索工具（如 LangChain、LlamaIndex 和 Pinecone）
-  - [ ] 模型FT相关，LoRA，QLoRA，langchain等技术
 - [ ] 大模型近年来的主要文章（目标：7月底写一篇综述）
 
   - [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
-  - [ ] StyleDrop: Text-to-Image Generation in Any Style 通过文字改变发型等
   - [ ] CLIP 得分，衡量文本、图像的对齐程度
   - [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
   - [ ] image GPT 的工作
@@ -42,8 +39,6 @@
   - [ ] DALLE/DALLE2 效果体验
 
 # 2023.11
-
-T5
 
 ALIGN
 
@@ -56,6 +51,31 @@ Zero-Shot Text-to-Image Generation
 Florence
 
 ## 2023.11.12
+
+《Finetuned language models are zero-shot learners》
+
+2022年ICLR的一篇文章，研究指令微调对模型泛化性的影响，内容要点：
+
+1. 本文关于一种简单有效的提升language model zero-shot能力的方法，137B微调后的模型FLAN，在20/25个datasets上surpass zero-shot GPT3 175B，甚至在一些dataset上outperform few-shot GPT3 by a large margin
+2. 数据，60 NLP datasets，每个dataset准备10个不同的templates，increase diversity
+3. 模型，base model 是LaMDA-PT, 137B decoder-only，在搜集的数据集上进行指令微调
+4. 实验结果1，指令微调的收益只对足够大的model size（>10B）有效，对于小模型甚至有害，因为模型的capacity不够；task clusters的数量对于提升unseen泛化能力很重要；
+5. 实验结果2，指令的重要性：如果没有指令只有FT，效果并不好，伪指令的效果也不好，自然语言指令效果最好；Few-shot inference： **few-shot 推理提升了所有任务的性能** ，尤其是对于output比较长/复杂的任务，examples帮助模型更好的理解输出格式。同时few-shot降低了prompt engineering带来的方差；Instruction tuning 可以跟其他优化方法共同使用，例如 prompt tuning
+
+总体上，这篇文章围绕指令微调做了细致工作，并且做了很好的消融实验帮助提升认知。
+
+数据：
+
+<img src="pic/finetuned_language_models1.png" width=650 height=500>
+
+Unseen泛化性：
+
+<img src="pic/finetuned_language_models2.png" width=650 height=500>
+
+model size的影响：
+
+<img src="pic/finetuned_language_models3.png" width=450 height=350>
+
 
 《T5/Google: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer》
 
@@ -80,7 +100,6 @@ Florence
 
 <img src="pic/T5_2.png" width=650 height=600>
 
-
 ## 2023.11.11
 
 《T0: Multitask Prompted Training Enables Zero-Shot Task Generalization》
@@ -101,7 +120,6 @@ Florence
 unseen 泛化性：
 
 <img src="pic/T0_2.png" width=650 height=400>
-
 
 《Self-instruct: Aligning language model with self generated instructions》
 
@@ -125,7 +143,6 @@ Instruction 生成：
 实验结果2：
 
 <img src="pic/self-instruct3.png" width=650 height=400>
-
 
 《Instruction tuning with GPT-4》
 
