@@ -50,7 +50,31 @@ Zero-Shot Text-to-Image Generation
 
 Florence
 
+## 2023.11.13
+
+TBD
+
 ## 2023.11.12
+
+《Openflamingo: An open-source framework for training large autoregressive vision-language models》
+
+2023.8 复现Flamingo的一篇工作，内容要点：
+
+1. 本文的目标是实现opensource Flamingo（但是不支持video inputs），Flamingo（[5036]）具有很强的in-context learning能力（up to 32）
+2. 通行的VL model format是 (image, text)->text，有点受限。更灵活的做法是 interleaved sequence of images and text to textual outputs, enabling fewshot, in-context learning or multi-round multimodal chatbot interactions
+3. 模型结构，同 Flamingo，在语言模型选型上选择了MPT和RedPajama（不算好），训练时using 64 GPUs distributed across 8 nodes on Stabilty AI’s cluster
+4. 实验结果，表现是不错的，在7个V-L任务上能达到Flamingo 80%~89%的性能；`<image>` 和 <|endofchunk|> 的trainable对于性能也有提升；另外不同类型任务的性能 evolving 不一样
+
+总体上，作为Flamingo的一个开源实现，效果不错，同时资源使用也不多，具有比较强的参考意义。
+
+模型信息：
+
+<img src="pic/openflamingo1.png" width=650 height=250>
+
+实验结果：
+
+<img src="pic/openflamingo2.png" width=650 height=500>
+
 
 《U-net: Convolutional networks for biomedical image segmentation》
 
