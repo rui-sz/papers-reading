@@ -52,6 +52,25 @@ Florence
 
 ## 2023.11.13
 
+《Llama-adapter: Efficient fine-tuning of language models with zero-init attention》
+
+2023.6 的一篇工作，内容要点：
+
+1. 背景：LLaMA-Adapter 是一个轻量级FT框架，在LLaMA-7B之上引入1.2M参数，8 A100卡finetune 1hour。
+2. 模型结构，在预训练模型的 Transformer high layers 中插入 adaption prompts，FT 时冻结LLaMA的原始参数，只train adaption prompts。为了avoid noise at early traing stage，使用zero-initialized attention mechanism with zero gating
+3. 实验结果，从结果来看LLaMA-Adapter用了更少的参数和计算量，outperform了Alpaca和Alpaca-LoRA模型；多模态场景下，也有很不错的效果表现；消融实验显示 adaption 插入的layer越多越好
+
+总体上，本文工作验证了指令微调收益，以及多模态场景下的适应能力。
+
+模型原理：
+
+<img src="pic/LLaMA_adapter1.png" width=650 height=300>
+
+指令响应实验结果：
+
+<img src="pic/LLaMA_adapter2.png" width=650 height=200>
+
+
 《The Lottery Ticket Hypothesis for Pre-trained BERT Networks》
 
 2020年一篇关于模型 pruning 的文章，内容要点：
