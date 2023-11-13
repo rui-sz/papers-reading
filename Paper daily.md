@@ -52,7 +52,20 @@ Florence
 
 ## 2023.11.13
 
-TBD
+《The Lottery Ticket Hypothesis for Pre-trained BERT Networks》
+
+2020年一篇关于模型 pruning 的文章，内容要点：
+
+1. 本文基于BERT研究LTH问题，对BERT模型进行 sparsity/pruning/compressing 处理，减少模型大小同时尽可能保持性能。之前的pruning on BERT 关注create small subnetworks on a specific downstream task，本文目标是small subnetworks universallytrainable on a range of downstream tasks
+2. 模型压缩的几种做法：**pruning** (in which parts of a model are removed), **quantization**
+   (in which parameters are represented with fewer bits), **parameter-sharing** (in which the same parameters are used in multiple parts of a model), **distilliation** (in which a smaller student model is trained to mimic a larger teacher model)
+3. pruning 有结构化的与非结构化的，结构化比如从网络结构（attention heads、MLP layers等）角度去做，本文是非结构化方法
+4. 实验结果，For a range of downstream tasks, we indeed find matching subnetworks at 40% to 90% sparsity，同时保持性能不下降的太厉害。
+
+实验结果：
+
+<img src="pic/The_Lottery_Ticket_Hypothesis1.png" width=650 height=250>
+
 
 ## 2023.11.12
 
