@@ -52,6 +52,16 @@ Florence
 
 ## 2023.11.13
 
+《Large-scale contrastive language-audio pretraining with feature fusion and keyword-to-caption augmentation》
+
+2023.4 蒙特利尔大学一篇language-audio pretrain的文章，内容要点：
+
+1. 本文主要是关于language audio对比学习的，用到了large scale data、feature fusion以及keyword-to-caption augmentation
+2. 数据，本文release了一个audio caption数据集LAION-Audio-630K，是当前最大的
+3. 模型结构，类似CLIP，比较典型的对比学习结构，不同之处在于2点，一个是Audio的feature fusion结构，另一个是Text侧接入了data augmentation环节
+4. 实验结果，在 text-to-audio retrieval以及audio classification任务上都有不错的效果。
+
+
 《BLIP2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models》
 
 2023.6 的一篇 V-L 工作，内容要点：
