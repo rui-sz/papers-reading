@@ -52,6 +52,25 @@ Florence
 
 ## 2023.11.13
 
+《BLIP2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models》
+
+2023.6 的一篇 V-L 工作，内容要点：
+
+1. VLP pretrain 的成本比较高，因为e2e并且规模大，本文提出BLIP2，主打generic和efficient。对于 VLP 任务来说，cross-modal alignment 很关键，冻结 unimodal 的权重会增加难度，本文propose Querying Transformer (Q-Former) pre-trained with a new two-stage pre-training strategy
+2. 模型结构，总体上除了 text/vison encoder 这部分之外，就是 Q Former 结构的引入，2阶段预训练：Representation learning stage, enforces the Q-Former to learn visual representation most relevant to the text。三个目标：ITC+ITG+ITM，这一步减少了后续LLM模型的V-L对齐负担；generative learning stage, trains the Q-Former such that its output visual representation can be interpreted by the LLM，LLM 的选型 decode-only or En-De，对应的loss不同
+3. 实验结果，在 VQA, image captioning, image-text retrieval 等多个任务上表现出良好的性能，并且对比 BLIP, Flamingo 等工作，BLIP2的训练量要更小。
+
+总体上，属于利用pretrained vision/text encoder，加入新结构适配到 V-L generic任务上的优秀工作。
+
+模型结构：
+
+<img src="pic/BLIP2_1.png" width=500 height=350>
+
+实验结果：
+
+<img src="pic/BLIP2_2.png" width=600 height=200>
+
+
 《Llama-adapter: Efficient fine-tuning of language models with zero-init attention》
 
 2023.6 的一篇工作，内容要点：
