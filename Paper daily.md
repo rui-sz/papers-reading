@@ -49,11 +49,23 @@ LLM 系列：
 Zero-Shot Text-to-Image Generation
 
 
-## 2023.11.14
-
-Florence
+## 2023.11.15
 
 Florence2
+
+## 2023.11.14
+
+《Florence: A New Foundation Model for Computer Vision》
+
+2021.11 微软的一篇文章，尝试构建视觉基础模型，内容要点：
+
+1. We use the name of *Florence *as the origin of the trail for exploring ***vision foundation *** **models** , as well as the birthplace of Renaissance
+2. 数据，使用了 9亿 image-text pair 数据作为预训练集
+3. 模型，是个典型的对比学习框架，language部分用了12层的transformer，image部分用了Swin Transformer（CNN based），总参数量8.9亿，因为数据量比较庞大，在512张A100-40G上训了10天
+4. 实验结果，在多个数据集上取得优秀的效果。
+
+总体上，是一篇很不错的 vision foundation 模型的工作，以现在视角来看，也很标准。
+
 
 《Fake Alignment: Are LLMs Really Aligned Well?》
 
