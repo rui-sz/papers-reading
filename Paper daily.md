@@ -48,7 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+
+## 2023.11.14
+
 Florence
+
+Florence2
+
+《Fake Alignment: Are LLMs Really Aligned Well?》
+
+2023.11 的一篇水作，内容要点：
+
+1. Fake alignment 定义：模型只是记住了在面对开放式安全问题时怎么回答，但是面对选择问题时却判断的不好
+2. 本文提出了一个Fake Alignment Evaluation Framework (FAEF)，用来评估模型的伪对齐问题。
 
 ## 2023.11.13
 
