@@ -48,11 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
-## 2023.11.15
+## 2023.11.17
 
-Florence2
+《Florence-2: Advancing a Unified Representation for a Variety of Vision Tasks》
 
-TBD
+2023.11 微软的一篇工作，内容要点：
+
+1. 本文的出发点，是建立一个视觉基础模型，可以生成univied, prompt-based representation for 各种vision tasks。阻碍vision foundation model开发的主要障碍，一个是缺少全面的 visual 标注；另一个是缺失一个统一的预训练framework，能融合计算机视觉中的 spatial hierarchy and semantic granularity
+2. 数据，通过 data engine 流程，结合其他模型，构建了一个包含 126M images，500M text annotations，1.3B text-region annotations，3.6B text phrase-region annotations的数据集 FLD-5B。在构建数据时，包含了 image/region/fine-grained levels 等不同级别，具有丰富的语义和图像信息
+3. 模型，相比 Flamingo，构建了一个更小的模型，参数量只有2/7亿，但是pretrain数据集要大得多，应该是比较耗费资源的
+4. 实验结果，在 zero shot 场景以及 caption/VQA 等FT任务上，都表现出很好的性能。
+
+总体上，对比 Florence 1的工作，本文在训练范式上摆脱了对比学习框架，用更大更丰富的文本图像数据集充分pretrain一个简洁的模型框架，seq2seq结构，效果非常好。 训练数据量比 Flamingo 大很多，效果也更好。
+
 
 ## 2023.11.14
 
