@@ -50,6 +50,18 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.19
 
+《SAM: Segment Anything Model》
+
+2023年Meta的一篇分割基础模型的工作，内容要点：
+
+1. 本文的出发点是想建立一个 cv 基础模型，可以通过prompt用于任意 segment 任务，具有优秀的Zero shot generalization能力
+2. 数据，数据集部分做了很复杂的迭代搜集工作，最终形成了SA-1B 这样一个包含11M图片，以及1+B masks的高质量数据集，比任意现有seg数据集都大400倍以上
+3. 模型结构，image encoder(ViT) + prompt emcoder(position emb, CLIP, convs) + mask decoder(Tfm decoder + linear classifier) 结构
+4. 实验结果，在多个分割类任务上取得很好的效果。
+
+总体上，本文通过构建一个超大的高质量分割数据集，以及一个精心设计的pretrain task，预训练了SAM模型，具有优秀的zero shot 泛化性能，堪称分割领域的GPT时刻。
+
+
 《DINOv2: Learning Robust Visual Features without Supervision》
 
 2023.4 Meta AI的一篇研究图像预训练模型的工作，内容要点：
