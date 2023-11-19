@@ -48,6 +48,20 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.19
+
+《DINO: Emerging Properties in Self-Supervised Vision Transformers》
+
+2021年Meta的工作，研究Vision预训练，内容要点：
+
+1. 在本文中，我们通过研究发现 SSL ViT features 包含关于语义分割的隐式信息，同时使用 Small patches with ViTs能提升 resulting features的质量
+2. 相关工作有，Self-supervised learning，语言模型用words in a sentence to create pretext tasks，相比于一个句子一个label的监督学习，能提供更丰富的信息；Self-training and knowledge distillation，self training 目标是通过将一小批标注样本propagate给一大批未标注样本的方式来提高features质量，kd，训练一个小的网络模仿更大模型的输出来压缩模型
+3. 模型，本文模型结构，teacher是在training过程中动态build的，而不是提前训练好，Student 和 teacher 模型同结构，使用CE损失，teacher 的梯度不回传，而是根据student network的ema来更新；self-supervised pretraining 范式
+4. 实验结果，DINO 与 其他 SSL 方法的对比，以及与 supervised 方法的对比，可以看到 DINO + ViT-B/8 的性能已经与 supervised 方法很接近了，同时 ViT-B/8 效果好于 ViT-B/16，当缩小patch size时，perf 可以在不增加额外参数的情况下被显著提升，同时会降低吞吐；另外，kNN分类中呈现出的特征质量，有潜力应用于 image retrieval; 同时特征中的 scene layout 也可以让image seg受益，DINO 的 Self-supervised pretraining，迁移效果比 supervised pretraining 要好（Table 6）
+
+总体上，本文研究基于 ViT 模型结构的 SSL，应用 self distillation 思路，结果发现相比于 supervised learning，DINO 能学到更好的特征表示，对比其他SSL方法 DINO 也更加好；ViT 架构下小的patch效果更好，吞吐变差
+
+
 ## 2023.11.17
 
 《Florence-2: Advancing a Unified Representation for a Variety of Vision Tasks》
@@ -61,7 +75,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，对比 Florence 1的工作，本文在训练范式上摆脱了对比学习框架，用更大更丰富的文本图像数据集充分pretrain一个简洁的模型框架，seq2seq结构，效果非常好。 训练数据量比 Flamingo 大很多，效果也更好。
 
-
 ## 2023.11.14
 
 《Florence: A New Foundation Model for Computer Vision》
@@ -74,7 +87,6 @@ Zero-Shot Text-to-Image Generation
 4. 实验结果，在多个数据集上取得优秀的效果。
 
 总体上，是一篇很不错的 vision foundation 模型的工作，以现在视角来看，也很标准。
-
 
 《Fake Alignment: Are LLMs Really Aligned Well?》
 
@@ -94,7 +106,6 @@ Zero-Shot Text-to-Image Generation
 3. 模型结构，类似CLIP，比较典型的对比学习结构，不同之处在于2点，一个是Audio的feature fusion结构，另一个是Text侧接入了data augmentation环节
 4. 实验结果，在 text-to-audio retrieval以及audio classification任务上都有不错的效果。
 
-
 《BLIP2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models》
 
 2023.6 的一篇 V-L 工作，内容要点：
@@ -112,7 +123,6 @@ Zero-Shot Text-to-Image Generation
 实验结果：
 
 <img src="pic/BLIP2_2.png" width=600 height=200>
-
 
 《Llama-adapter: Efficient fine-tuning of language models with zero-init attention》
 
@@ -132,7 +142,6 @@ Zero-Shot Text-to-Image Generation
 
 <img src="pic/LLaMA_adapter2.png" width=650 height=200>
 
-
 《The Lottery Ticket Hypothesis for Pre-trained BERT Networks》
 
 2020年一篇关于模型 pruning 的文章，内容要点：
@@ -146,7 +155,6 @@ Zero-Shot Text-to-Image Generation
 实验结果：
 
 <img src="pic/The_Lottery_Ticket_Hypothesis1.png" width=650 height=250>
-
 
 ## 2023.11.12
 
@@ -169,7 +177,6 @@ Zero-Shot Text-to-Image Generation
 
 <img src="pic/openflamingo2.png" width=650 height=500>
 
-
 《U-net: Convolutional networks for biomedical image segmentation》
 
 2015年的一篇优秀工作，关于image segmentation的，内容要点：
@@ -187,7 +194,6 @@ Zero-Shot Text-to-Image Generation
 实验结果：
 
 <img src="pic/unet2.png" width=600 height=250>
-
 
 《Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning》
 
@@ -213,7 +219,6 @@ intrinsic dim和model size的关系：
 
 <img src="pic/Intrinsic_Dimensionality_Explains3.png" width=650 height=250>
 
-
 《Finetuned language models are zero-shot learners》
 
 2022年ICLR的一篇文章，研究指令微调对模型泛化性的影响，内容要点：
@@ -237,7 +242,6 @@ Unseen泛化性：
 model size的影响：
 
 <img src="pic/finetuned_language_models3.png" width=450 height=350>
-
 
 《T5/Google: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer》
 
