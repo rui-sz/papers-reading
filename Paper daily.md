@@ -50,6 +50,18 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.19
 
+《DINOv2: Learning Robust Visual Features without Supervision》
+
+2023.4 Meta AI的一篇研究图像预训练模型的工作，内容要点：
+
+1. 背景，研究 all purpose features if pretrained on a large quantity of curated data，并验证 quality of DINOv2 on various computer vision benchmarks at both image and pixel levels。
+2. 数据，通过 emb/dedup/retrieval 三阶段的data pipeline，本文构建了一个A small but diverse corpus of 142M images，LVD-142M。只使用图片信息，并没有用到任何text
+3. 模型结构，模型复用了 ViT-L/g 等，做了一些改进，比如 FlashAttention/FSDP 等
+4. 实验结果，有比较多有价值的结论，基于LVD-142M训练的ViT-g，其性能总体好于基于 ImageNet-22K supervised ViT-g；图像分辨率的影响，可以看到**在 high resolution 上训一小段时间**可以获得接近于全部 high resolution 训练的效果；ViT-L/14 distilled from ViT-g/14，表现优于ViT-L/14 trained from Scratch
+
+总体上，本文给出了一个预训练良好的 image encoder，可以产出与(weakly)supervised model效果接近/更好的高质量特征，而不需要任何finetune工作，甚至优于 CLIP/MAE等SOTA方法。之后作者会继续scale，达到LLM instruction emergence的效果
+
+
 《DINO: Emerging Properties in Self-Supervised Vision Transformers》
 
 2021年Meta的工作，研究Vision预训练，内容要点：
