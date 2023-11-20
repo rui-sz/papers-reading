@@ -48,6 +48,15 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.20
+
+《Code Llama: Open Foundation Models for Code》
+
+2023年Meta的工作，内容要点：
+
+1. Code LLaMA, based on LLaMA 2，达成了开源模型的SOTA，支持大input contexts，zero-shot instructions
+2. 实验结果，Code LLAMA-Instruct 显著提高了在truthfullness, toxicity等benchmarks上的表现
+
 ## 2023.11.19
 
 《SAM: Segment Anything Model》
