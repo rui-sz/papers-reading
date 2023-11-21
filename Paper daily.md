@@ -48,6 +48,18 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.21
+
+《PolyCoder: A systematic evaluation of large language models of code》
+
+2022.5 卡内基梅隆的一篇工作，关于代码模型，内容要点：
+
+1. 本文对 code models 做了一个系统性评估，在本文发表时，没有 open source language model 仅在多编程语种的code数据集上训练，本文填补了这个空白，开源了 PolyCoder model
+2. 数据，本文数据集对比Codex 和 CodeParrot 覆盖更少的 python code，同时cover多种不同的编程语言
+3. 模型，本文聚焦于一种模型范式 causal language model，采用GPT-2的模型结构
+4. 评估结果，一些有价值结论：在训练数据中包含自然语言，可以帮助模型学习；PolyCoder(2.7B) 用了更少的 python token 但是效果与 GPT-Neo(2.7B)差不多，说明其他编程语言有transfer的增益效果；也不是在所有编程语言上，blend 自然语言和代码都会更好，在部分编程语言上，可能只好一点点
+
+
 ## 2023.11.20
 
 《Code Llama: Open Foundation Models for Code》
