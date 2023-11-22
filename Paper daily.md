@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.22
+
+《Codegen: An open large language model for code with multi-turn program synthesis》
+
+2023.2 Salesforce的一篇工作，内容要点：
+
+1. 本文主要做了两件事，一个是在大规模code&text数据集上训练了一组语言/代码模型，另外给出了一个MTPB的代码生成多轮评估框架，可以量化模型的多轮代码生成能力
+2. 模型，causal language model，参数从350M到16.1B。基于自然语言desc的conditional代码生成能力emergence，可能源自于模型size，训练目标，以及训练数据本身。之所以叫emergence，因为模型并不是在 comment-code pairs 上面训练的，就像其他无监督语言模型一样。
+3. 评估结果，CodeGen-Mono 2.7B outperforms Codex 2.5B，同时作者发现用户意图如果能被模型更好的理解，代码生成也更可能成功，模型的代码能力和语言能力成正比。
+
+总体上是，一个很好的开源基座代码模型。
+
+
 ## 2023.11.21
 
 《PolyCoder: A systematic evaluation of large language models of code》
