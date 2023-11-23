@@ -48,6 +48,20 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.23
+
+《CodeT5+: Open Code Large Language Models for Code Understanding and Generation》
+
+2023.5 Salesforce 另外一篇代码大模型的工作，内容要点：
+
+1. 背景，现有的LLM code模型存在2个局限，一是限定的网络结构，二是限定的训练目标。导致不能广泛适用于各种下游code任务。本文采用了En-De架构，用混合目标pretrain，同时结合指令微调技术，获得了很好的性能。
+2. 数据，在CSN数据集上扩充形成了一个多语言数据集，51.5B tokens，比CSN大50X；指令微调时使用了GPT生成的20k微调数据
+3. 模型，采用了T5模型架构，shallow encoder and deep decoder arch，多不同的任务激活网络的不同部分。在训练时分为2阶段，一阶段 pretrain model with massive code data；二阶段 pretrain the model with a smaller set of code-text data。指令微调
+4. 实验结果，在内容理解和内容生成类数据集上，都表现出良好的效果。
+
+总体上，本文基于T5模型的En-De架构，设计了一个结合多训练目标的基座模型，能适用于不同下游场景。
+
+
 ## 2023.11.22
 
 《Codegen: An open large language model for code with multi-turn program synthesis》
