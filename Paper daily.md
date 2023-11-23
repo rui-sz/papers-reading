@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.23
 
+《CodeT: Code generation with generated tests》
+
+2022.11 微软的一篇工作，内容要点：
+
+1. 背景，代码生成模型会针对一个问题生成多个 solution，如何选择是一个问题，本文提出了一个方法CodeT，使用同一个LLM模型，同时生成solution和test cases，然后选择通过率最高的solution
+2. 实验结果，本文的方法可以显著提升各种LLM模型的代码生成质量，不足之处是会引入一些计算开销。
+
+总体上是个很新颖的简单思路，取得很不错的效果。
+
+
+
 《CodeT5+: Open Code Large Language Models for Code Understanding and Generation》
 
 2023.5 Salesforce 另外一篇代码大模型的工作，内容要点：
