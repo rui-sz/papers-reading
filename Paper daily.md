@@ -48,6 +48,20 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.24
+
+《InCoder: A generative model for code infilling and synthesis》
+
+2022.4 Meta的一篇文章，关于 causal mask 训练方式，内容要点：
+
+1. 背景：left-to-right的代码生成方式，在被持续稳定的优化；本文提出一个unified model for program synthesis（L2R） and editing（mask and infill）。
+2. 数据：159GB code data from github 以及 57GB from StackOverflow
+3. 模型：6.7B Transformer，本文采用 causal mask objective 的训练方式，使其既能适应left-to-right任务，也能适应 infilling 任务
+4. 实验结果：在 infilling、代码生成等任务上，CM 方式建模都好于L-R，并且单行和多行效果都持平codex
+
+总之，本文证实了 causal mask objective 的训练方式能同时应对代码 generation 和 infilling 任务。
+
+
 ## 2023.11.23
 
 《CodeT: Code generation with generated tests》
