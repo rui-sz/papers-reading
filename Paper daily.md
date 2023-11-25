@@ -48,6 +48,18 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.25
+
+《CodeBERT: A Pre-Trained Model for Programming and Natural Languages》
+
+2020年微软的一篇工作，属于Code model的早期工作，内容要点：
+
+1. 第一个NL-PL pretrained model for 多编程语言，适用于code search and code-to-text generation tasks
+2. 数据，训练数据覆盖了bimodal的NL-PL pairs，以及unimodal的code数据
+3. 模型，采用了BERT的 encoder-only 架构
+4. 实验结果，在text-code retrieval 和 code-to-text 生成任务上，效果好于之前的模型，主要是纯NLP的预训练模型。实验还是偏理解，以及简单的生成。
+
+
 ## 2023.11.24
 
 《InCoder: A generative model for code infilling and synthesis》
