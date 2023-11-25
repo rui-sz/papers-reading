@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.25
 
+《AlphaCode: Competition-level code generation with alphacode》
+
+2022.2 DeepMind一片采用 Encoder-Decoder架构的code model工作，内容要点：
+
+1. AlphaCode 模型基于Encoder-Decoder 架构，采用 a shallow encoder and a deep decoder significantly improves the efficiency of training without hurting problem solve rate
+2. 模型，pretrain on open-source code + finetuned on CodeContests data
+3. 实验结果，在10个Contests任务上，能达到平均 54.3%的水平；在Apps数据集上，AlphaCode 5@1000，能达到接近 Codex 12B 的水平（还有一些差距）
+
+总体上，是En-De架构一篇不错的工作，效果上还在追赶 CodeX
+
+
 《CodeGeeX: A Pre-Trained Model for Code Generation with Multilingual Evaluations on HumanEval-X》
 
 2023.3 清华、智谱和华为的一篇工作，SOTA的开源Code模型，内容要点：
