@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.25
 
+《CodeGeeX: A Pre-Trained Model for Code Generation with Multilingual Evaluations on HumanEval-X》
+
+2023.3 清华、智谱和华为的一篇工作，SOTA的开源Code模型，内容要点：
+
+1. 本文提出了一个13B的模型 CodeGeeX，code generation 任务。训练了850B tokens 23 programming language 的数据
+2. 模型，基于decoder-only架构，39层 decoder，总参数量13B
+3. 实验结果，在HumanEval-X 基准上超过 CodeGen-Multi-16B取得了SOTA结果；在 code translation任务上也是全面好于CodeGen-Multi-16B；为83%用户带来效率提升
+
+总体上，是一篇优秀的工作和论文，关于模型细节和训练，讲的比较细，做了比较多工程优化。
+
+
 《GraphCodeBERT: Pre-training code representations with data flow》
 
 2021.9 MSRA的一篇工作，关于Code预训练模型，内容要点：
