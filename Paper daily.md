@@ -50,6 +50,16 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.25
 
+《GraphCodeBERT: Pre-training code representations with data flow》
+
+2021.9 MSRA的一篇工作，关于Code预训练模型，内容要点：
+
+1. 现有方法忽略了 code structure (semantic structure)，本文第一次尝试引入semantic structure of code，通过显式构建data flow的方式。相关工作：NN with Code Structure
+2. 数据，基于source code通过AST等方式构造出 variable relation关系，作为Data Flow(code stucture）信息
+3. 模型，采用了BERT的 encoder-only 架构，输入为 text+code+data flow，输出部分有三个目标：MLM，edge prediction，variable alignment。同时引入了graph-guided masked attention机制
+4. 实验结果，在 code search, clone detection, code translation, and code refinement 多个任务上都有很不错的结果，GraphCodeBERT这种建模方式，很适合做理解类任务。
+
+
 《CodeBERT: A Pre-Trained Model for Programming and Natural Languages》
 
 2020年微软的一篇工作，属于Code model的早期工作，内容要点：
@@ -58,7 +68,6 @@ Zero-Shot Text-to-Image Generation
 2. 数据，训练数据覆盖了bimodal的NL-PL pairs，以及unimodal的code数据
 3. 模型，采用了BERT的 encoder-only 架构
 4. 实验结果，在text-code retrieval 和 code-to-text 生成任务上，效果好于之前的模型，主要是纯NLP的预训练模型。实验还是偏理解，以及简单的生成。
-
 
 ## 2023.11.24
 
@@ -73,7 +82,6 @@ Zero-Shot Text-to-Image Generation
 
 总之，本文证实了 causal mask objective 的训练方式能同时应对代码 generation 和 infilling 任务。
 
-
 ## 2023.11.23
 
 《CodeT: Code generation with generated tests》
@@ -85,8 +93,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上是个很新颖的简单思路，取得很不错的效果。
 
-
-
 《CodeT5+: Open Code Large Language Models for Code Understanding and Generation》
 
 2023.5 Salesforce 另外一篇代码大模型的工作，内容要点：
@@ -97,7 +103,6 @@ Zero-Shot Text-to-Image Generation
 4. 实验结果，在内容理解和内容生成类数据集上，都表现出良好的效果。
 
 总体上，本文基于T5模型的En-De架构，设计了一个结合多训练目标的基座模型，能适用于不同下游场景。
-
 
 ## 2023.11.22
 
@@ -111,7 +116,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上是，一个很好的开源基座代码模型。
 
-
 ## 2023.11.21
 
 《PolyCoder: A systematic evaluation of large language models of code》
@@ -122,7 +126,6 @@ Zero-Shot Text-to-Image Generation
 2. 数据，本文数据集对比Codex 和 CodeParrot 覆盖更少的 python code，同时cover多种不同的编程语言
 3. 模型，本文聚焦于一种模型范式 causal language model，采用GPT-2的模型结构
 4. 评估结果，一些有价值结论：在训练数据中包含自然语言，可以帮助模型学习；PolyCoder(2.7B) 用了更少的 python token 但是效果与 GPT-Neo(2.7B)差不多，说明其他编程语言有transfer的增益效果；也不是在所有编程语言上，blend 自然语言和代码都会更好，在部分编程语言上，可能只好一点点
-
 
 ## 2023.11.20
 
@@ -146,7 +149,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文通过构建一个超大的高质量分割数据集，以及一个精心设计的pretrain task，预训练了SAM模型，具有优秀的zero shot 泛化性能，堪称分割领域的GPT时刻。
 
-
 《DINOv2: Learning Robust Visual Features without Supervision》
 
 2023.4 Meta AI的一篇研究图像预训练模型的工作，内容要点：
@@ -158,7 +160,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文给出了一个预训练良好的 image encoder，可以产出与(weakly)supervised model效果接近/更好的高质量特征，而不需要任何finetune工作，甚至优于 CLIP/MAE等SOTA方法。之后作者会继续scale，达到LLM instruction emergence的效果
 
-
 《DINO: Emerging Properties in Self-Supervised Vision Transformers》
 
 2021年Meta的工作，研究Vision预训练，内容要点：
@@ -169,7 +170,6 @@ Zero-Shot Text-to-Image Generation
 4. 实验结果，DINO 与 其他 SSL 方法的对比，以及与 supervised 方法的对比，可以看到 DINO + ViT-B/8 的性能已经与 supervised 方法很接近了，同时 ViT-B/8 效果好于 ViT-B/16，当缩小patch size时，perf 可以在不增加额外参数的情况下被显著提升，同时会降低吞吐；另外，kNN分类中呈现出的特征质量，有潜力应用于 image retrieval; 同时特征中的 scene layout 也可以让image seg受益，DINO 的 Self-supervised pretraining，迁移效果比 supervised pretraining 要好（Table 6）
 
 总体上，本文研究基于 ViT 模型结构的 SSL，应用 self distillation 思路，结果发现相比于 supervised learning，DINO 能学到更好的特征表示，对比其他SSL方法 DINO 也更加好；ViT 架构下小的patch效果更好，吞吐变差
-
 
 ## 2023.11.17
 
