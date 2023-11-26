@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.26
 
+《BART: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension》
+
+2019.10 的一篇工作，尝试统一NL生成、理解、翻译等任务，内容要点：
+
+1. 本文提出了BART模型，一个 seq2seq 的pretrain model，适用于NL生成、翻译、理解等任务
+2. 模型，一个典型的Encoder-Decoder架构，训练分为2阶段，一阶段对text做任意的noising变换，包括变长、调换顺序、mask等；二阶段做seq-seq pretrain。BART = BERT + GPT，并且在训练技巧上做了升级
+3. 实验结果，从实验结果看，当在text generation任务上tune时非常有效，对于理解任务也work的很好。
+
+总体上，属于早期基于transformer统一各种任务类型的尝试，有新意也有一定效果。
+
+
 《PLBART: Unified pre-training for program understanding and generation》
 
 2021.4 的一篇工作，关于一个general的代码理解和生成模型，内容要点：
