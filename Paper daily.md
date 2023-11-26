@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.26
+
+《Unixcoder: Unified cross-modal pre-training for code representation》
+
+2022.3 微软的一篇工作，内容要点：
+
+1. 对于代码模型，En-De 架构在生成任务上是 sub-optimal 的，尤其对于要求decoder-only的代码补全类任务。unidirectional framework is sub-optimal for understanding tasks. 本文提出 UniXCoder，一个 **unified cross-modal pre-trained model**
+2. 模型，En-De 架构，设计了三种不同的预训练任务 MLM, CLM, DN，并且引入跨模态的comment和AST数据来加强模型的表征学习
+3. 实验结果，在理解和生成上都取得不错结果，达到当前的SOTA
+
+总体上，基于 En-De 架构，一个统一的多任务、跨模态预训练模型，文章写的不错，容易理解。
+
+
 ## 2023.11.25
 
 《AlphaCode: Competition-level code generation with alphacode》
@@ -56,7 +69,8 @@ Zero-Shot Text-to-Image Generation
 
 1. AlphaCode 模型基于Encoder-Decoder 架构，采用 a shallow encoder and a deep decoder significantly improves the efficiency of training without hurting problem solve rate
 2. 模型，pretrain on open-source code + finetuned on CodeContests data
-3. 实验结果，在10个Contests任务上，能达到平均 54.3%的水平；在Apps数据集上，AlphaCode 5@1000，能达到接近 Codex 12B 的水平（还有一些差距）
+
+3，实验结果，在10个Contests任务上，能达到平均 54.3%的水平；在Apps数据集上，AlphaCode 5@1000，能达到接近 Codex 12B 的水平（还有一些差距）
 
 总体上，是En-De架构一篇不错的工作，效果上还在追赶 CodeX
 
