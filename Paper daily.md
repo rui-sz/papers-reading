@@ -50,6 +50,18 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.26
 
+《SPT-Code: Sequence-to-Sequence Pre-Training for Learning Source Code Representations》
+
+2022.5 南京大学等的一篇工作，内容要点：
+
+1. 当前很多code模型基于encoder-only架构，这并不理想，本文基于 encoder-decoder 架构，设计了三种pretrain tasks：knowledge of source code, the corresponding  **code structure** , as well as a natural language description
+2. 数据，依赖 bilingual 的code-text数据集，限制了pretrain code model的发展，也要使用 self-supervised方法，本文基于 CodeSearchNet数据集，设计了三种预训练任务，Masked Sequence to Sequence (MASS), the code sequence；Code-AST prediction, its AST；Method Name Generation (MNG), the associated natural language description
+3. 模型，T5 的encoder-decoder结构，262M参数
+4. 实验结果，FT之后，在代码理解和生成任务上结果都还不错，但是实验并不全面，没有测试general的数据集
+
+总体上，除了预训练目标之外，没有太多新意，结果说明也不够全面。
+
+
 《StarCoder: may the source be with you》
 
 2023.5 HF 的一篇代码模型文章，内容要点：
