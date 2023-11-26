@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.26
 
+《StarCoder: may the source be with you》
+
+2023.5 HF 的一篇代码模型文章，内容要点：
+
+1. 本文推出 StarCoder 和 StarCoderBase 2个模型，15.5B parameter models with 8K context length，StarCoderBase在1T Code数据上训练，在35B python tokens上FT得到StarCoder。2个模型基于decoder-only架构
+2. 数据，the Stack 数据集，1T tokens
+3. 实验结果，StarCoderBase outperform了所有 multiple language opensource model，并且outperform了CodeX。2个模型在自然语言推理上的表现不太好，对比大语言模型相差较多，但是比其他代码模型要好。
+
+总体上，是code generation的新SOTA
+
+
 《APPS: Measuring Coding Challenge Competence With APPS》
 
 2021.11 的一个code generation评估基准工作，内容要点：
