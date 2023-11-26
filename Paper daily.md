@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.26
 
+《PLBART: Unified pre-training for program understanding and generation》
+
+2021.4 的一篇工作，关于一个general的代码理解和生成模型，内容要点：
+
+1. 本文的目标是开发一个general model form PLUG(Program and Language Understanding and Generation) applications
+2. 数据，a large-collection of Java and Python functions and natural language descriptions from Github and StackOverflow，code + text 混合数据
+3. 模型，采用Encoder-decoder 架构，总共1.4亿参数，训练目标为：Token masking, token deletion, token infilling
+
+总体上，从实验结果看，在理解和生成任务上表现还不错。比较早期的模型，相对较小
+
+
 《SPT-Code: Sequence-to-Sequence Pre-Training for Learning Source Code Representations》
 
 2022.5 南京大学等的一篇工作，内容要点：
