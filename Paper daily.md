@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.26
 
+《APPS: Measuring Coding Challenge Competence With APPS》
+
+2021.11 的一个code generation评估基准工作，内容要点：
+
+1. APPS，是一个评估code generation from natural language specifications的benchmark。准确严谨的评估代码生成并不容易
+2. 数据集，构建了三个level的数据集，一共10000个问题，使用test cases通过率和strict accuracy等指标
+3. 实验结果，从实验结果看GPT3-175B并不是一个好的程序生成模型，有比较多语法错误，BLEU也不是一个好的用来衡量程序生成性能的指标；
+
+总体上来看，APPS 是一个相对严谨、难的code generation benchmark
+
+
 《Unixcoder: Unified cross-modal pre-training for code representation》
 
 2022.3 微软的一篇工作，内容要点：
