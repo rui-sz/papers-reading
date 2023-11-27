@@ -48,6 +48,20 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.27
+
+《NatGen: Generative pre-training by “Naturalizing” source code》
+
+2022.7 哥伦比亚大学一篇很不错的code pretrain model文章，内容要点：
+
+1. 预训练代码模型在self-supervised fashion下有不同的pretraining objectives，本文提出了一个新的预训练目标：“Naturalizing” of source code, 探索 code’s bimodal, dual-channel (formal & natural channels) nature。生成等价，但是更natural的代码
+2. 数据，基于CodeSearchNet + 1M functions each for C and C#数据集，通过6个改写规则de-naturalize代码
+3. 模型，模型生成代码的能力，主要依赖于模型被优化的pretrain objectives；受启发于文字工作者，消化不好的text，rewrite良好的text；基于encoder-decoder架构结合上述de-naturalize数据的seq2seq的预训练模型，能够更好的理解代码。
+4. 实验结果，当 few shot 样本量很少时，NatGen 模型显著优于CodeT5，NatGen 模型的zero shot 和few shot性能更好，原因：通过naturalization 任务学到的coding 知识更general 和transferable；对于代码生成任务而言，pretrain 应该显式的教会模型写代码，这样FT所需数据量就更少
+
+总体上，是一篇很好的文章，内容简洁易懂，效果也不错，在代码生成、代码翻译、代码修改三个FT任务上都取得了SOTA的效果，优于CodeT5。
+
+
 ## 2023.11.26
 
 《BART: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension》
