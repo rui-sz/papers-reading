@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.27
 
+《On Learning Meaningful Code Changes via Neural Machine Translation》
+
+2019.6 的一篇工作，关于 code change NMT model 的，要点：
+
+1. 本文主要研究通过NMT方法来学习code change是否可行，code change包括bug fix，refactoring 等等
+2. 数据，基于三个库的数据，挖掘生成 PRs作为训练验证集
+3. 模型，基于RNN 的encoder-decoder结构
+
+总体上，是一个比较有新意的seq2seq paradiam用来解决代码转换问题的工作，效果也还可以。
+
+
 《NatGen: Generative pre-training by “Naturalizing” source code》
 
 2022.7 哥伦比亚大学一篇很不错的code pretrain model文章，内容要点：
