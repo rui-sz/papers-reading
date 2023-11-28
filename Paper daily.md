@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.28
+
+《VulRepair: A T5-Based Automated Software Vulnerability Repair》
+
+2022年的工作，关于code repair，要点：
+
+1. AI-based 方法帮助 find, detect, localize vulnerabilities 是很有价值的一件事情，本文提出VulRepair模型，一个T5-based model
+2. 数据集，在一个更大的数据集上pretrain，CSN；之后在CVE Fixes 和 Big-Vul上FT
+3. 模型，Code Representation + T5 model + linear layer
+
+总体上，基于T5模型做了一个code repair model，这篇文章的写作是非常好的，细节比较清晰。
+
+
 ## 2023.11.27
 
 《On Learning Meaningful Code Changes via Neural Machine Translation》
