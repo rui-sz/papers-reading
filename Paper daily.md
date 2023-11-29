@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.11.29
+
+《Multimodal Chain-of-Thought Reasoning in Language Models》
+
+2023.2 AWS和上交的一篇研究CoT的工作，要点：
+
+1. 本文的主要内容是提出了一个 Multimodal-CoT 的框架，使用text和vision特征作为输入，用two-stage CoT来提高推理效果
+2. 模型，T5/Flan-T5，用了DETR的vision encoder，基于 ScienceQA分割数据集用于Supervised training
+3. 实验结果，two stage CoT相比one stage，推理效果更好，同时引入了vision特征后效果更好
+
+总体上，本文对 CoT和 multimodal CoT做了比较有意思的研究，有一些有价值的洞见和结论。
+
+
 ## 2023.11.28
 
 《VulRepair: A T5-Based Automated Software Vulnerability Repair》
@@ -59,7 +72,6 @@ Zero-Shot Text-to-Image Generation
 3. 模型，Code Representation + T5 model + linear layer
 
 总体上，基于T5模型做了一个code repair model，这篇文章的写作是非常好的，细节比较清晰。
-
 
 ## 2023.11.27
 
@@ -73,7 +85,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，是一个比较有新意的seq2seq paradiam用来解决代码转换问题的工作，效果也还可以。
 
-
 《NatGen: Generative pre-training by “Naturalizing” source code》
 
 2022.7 哥伦比亚大学一篇很不错的code pretrain model文章，内容要点：
@@ -84,7 +95,6 @@ Zero-Shot Text-to-Image Generation
 4. 实验结果，当 few shot 样本量很少时，NatGen 模型显著优于CodeT5，NatGen 模型的zero shot 和few shot性能更好，原因：通过naturalization 任务学到的coding 知识更general 和transferable；对于代码生成任务而言，pretrain 应该显式的教会模型写代码，这样FT所需数据量就更少
 
 总体上，是一篇很好的文章，内容简洁易懂，效果也不错，在代码生成、代码翻译、代码修改三个FT任务上都取得了SOTA的效果，优于CodeT5。
-
 
 ## 2023.11.26
 
@@ -98,7 +108,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，属于早期基于transformer统一各种任务类型的尝试，有新意也有一定效果。
 
-
 《PLBART: Unified pre-training for program understanding and generation》
 
 2021.4 的一篇工作，关于一个general的代码理解和生成模型，内容要点：
@@ -108,7 +117,6 @@ Zero-Shot Text-to-Image Generation
 3. 模型，采用Encoder-decoder 架构，总共1.4亿参数，训练目标为：Token masking, token deletion, token infilling
 
 总体上，从实验结果看，在理解和生成任务上表现还不错。比较早期的模型，相对较小
-
 
 《SPT-Code: Sequence-to-Sequence Pre-Training for Learning Source Code Representations》
 
@@ -121,7 +129,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，除了预训练目标之外，没有太多新意，结果说明也不够全面。
 
-
 《StarCoder: may the source be with you》
 
 2023.5 HF 的一篇代码模型文章，内容要点：
@@ -131,7 +138,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，StarCoderBase outperform了所有 multiple language opensource model，并且outperform了CodeX。2个模型在自然语言推理上的表现不太好，对比大语言模型相差较多，但是比其他代码模型要好。
 
 总体上，是code generation的新SOTA
-
 
 《APPS: Measuring Coding Challenge Competence With APPS》
 
@@ -143,7 +149,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上来看，APPS 是一个相对严谨、难的code generation benchmark
 
-
 《Unixcoder: Unified cross-modal pre-training for code representation》
 
 2022.3 微软的一篇工作，内容要点：
@@ -153,7 +158,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，在理解和生成上都取得不错结果，达到当前的SOTA
 
 总体上，基于 En-De 架构，一个统一的多任务、跨模态预训练模型，文章写的不错，容易理解。
-
 
 ## 2023.11.25
 
@@ -168,7 +172,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，是En-De架构一篇不错的工作，效果上还在追赶 CodeX
 
-
 《CodeGeeX: A Pre-Trained Model for Code Generation with Multilingual Evaluations on HumanEval-X》
 
 2023.3 清华、智谱和华为的一篇工作，SOTA的开源Code模型，内容要点：
@@ -179,7 +182,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，是一篇优秀的工作和论文，关于模型细节和训练，讲的比较细，做了比较多工程优化。
 
-
 《GraphCodeBERT: Pre-training code representations with data flow》
 
 2021.9 MSRA的一篇工作，关于Code预训练模型，内容要点：
@@ -188,7 +190,6 @@ Zero-Shot Text-to-Image Generation
 2. 数据，基于source code通过AST等方式构造出 variable relation关系，作为Data Flow(code stucture）信息
 3. 模型，采用了BERT的 encoder-only 架构，输入为 text+code+data flow，输出部分有三个目标：MLM，edge prediction，variable alignment。同时引入了graph-guided masked attention机制
 4. 实验结果，在 code search, clone detection, code translation, and code refinement 多个任务上都有很不错的结果，GraphCodeBERT这种建模方式，很适合做理解类任务。
-
 
 《CodeBERT: A Pre-Trained Model for Programming and Natural Languages》
 
