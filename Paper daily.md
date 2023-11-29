@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.29
 
+《Learn to Explain: Multimodal Reasoning via Thought Chains for Science Question Answering》
+
+2022.10 的一篇工作，基于多模态数据集研究CoT问题，要点：
+
+1. 人类回答问题会综合多模态信息运用CoT来得到答案，本文推出 ScienceQA 这个多模态benchmark，研究多模态CoT问题，CoT 不仅能帮助few-shot learning，还可以帮助fine-tuning
+2. 实验结果，CoT可以在多种模型范式下取得收益，Few-shot GPT-3 +1.2%, finetuned UnifiedQA +3.99%；通过QCMLE->A来研究GPT3模型能力的上界，展示了先生成解释，再生成答案的能力上限很高；另外，当EL位于A之前时，可以看到GPT3(CoT)的性能会大幅下降，很可能是因为要先生成比较长的L和E的话，predict会提前停止或者用完了maximum tokens
+3. 其他有意思的洞见，指令微调，instruction 提供了一些关于task的信息，比如 explanation 等；基于 CoT 可以借助更少的数据学习，UnifiedQA with CoT obtains the same results as UnifiedQA without CoT with only 40% of the training data
+
+总体上，本文研究基于多模态benchmark ScienceQA的CoT问题，发现CoT对于few-shot和finetuned model都会有收益，同时GPT-3的模型能力上界比较高；基于CoT技术来FT模型，只需要更少的样本达到同等性能。
+
+
 《Chain of thought prompting elicits reasoning in large language models》
 
 2022.11 Google 一篇研究CoT的工作，要点：
