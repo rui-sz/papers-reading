@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.11.29
 
+《Chain of thought prompting elicits reasoning in large language models》
+
+2022.11 Google 一篇研究CoT的工作，要点：
+
+1. 本文研究如何基于 few-shot prompt 来提高language model的reasoning能力，本文只用一个 off-the-shelf model，不需要对模型参数做任何调整
+2. 模型，使用了几个常见的系列模型，baseline为standard Few-shot prompting，策略组为Few-shot prompting with CoT
+3. 实验结果，在数学、符号和常识推理问题上，CoT few-shot prompting都展现出了相比standard更强的reasoning 能力，并且越大的模型表现越好，这是一个emergent 能力；在prompt时，reason after answer并没有什么用，跟标准版本的prompt差不多
+
+总体上，CoT 展示出了能够拓展 language model 适应范围的能力，但是我们并不知道 NN 是否真的在 reasoning，这是一个 open question
+
+
 《Multimodal Chain-of-Thought Reasoning in Language Models》
 
 2023.2 AWS和上交的一篇研究CoT的工作，要点：
