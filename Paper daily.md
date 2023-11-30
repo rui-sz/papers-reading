@@ -38,7 +38,7 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
-# 2023.11
+# 2023.12
 
 ALIGN
 
@@ -47,6 +47,21 @@ Imagen
 LLM 系列：
 
 Zero-Shot Text-to-Image Generation
+
+## 2023.12.1
+
+《Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks》
+
+2021年Meta最初关于RAG的文章，要点：
+
+1. 本文提出一个混合的generation model，同时使用 parametric 和 non-parametric memory，也就是针对 knowledge-intensive tasks 做general-purpose RAG finetuning
+2. 模型，retrieval（BERT based） + generation（BART based），train 的时候，只train query encoder和BART generator
+3. 实验结果，RAG 在open-domain QA上取得SOTA结果，RAG更factual和specific
+
+总体上，本文工作开启了一个新方向，关于 parametric 和 non-parametric memory 如何交互，有利于减少generation model的幻觉，在diversity，factural，specific上都表现更好。本文在对问题进行抽象、数学化表达方面做的比较好。
+
+
+# 2023.11
 
 ## 2023.11.29
 
