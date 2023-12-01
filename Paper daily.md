@@ -50,6 +50,16 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.1
 
+《In-Context Retrieval-Augmented Language Models》
+
+2023.8 AI21 Labs的一篇研究RAG的的文章，要点：
+
+1. RAG 显示了提升生成模型性能的能力，现存的RAG方法focus on modify the model arch，本文提出的方法不需要做 model arch 的修改，使用 off-the-shelf retriever and generator
+2. 实验结果，In-context RAG led to LM's Perf gains，等同于扩大LM's params 2~3倍；Sparse retriever 明显优于 dense retriever，并且成本更低；Query length 对于性能会有一定影响，sparse retriever l=32, dense retriever l=64；在更大的模型上，RAG效果更好
+
+总体上，本文提出了一种应用RAG的简单方案，并且得出一些有指导价值的结论
+
+
 《Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks》
 
 2021年Meta最初关于RAG的文章，要点：
