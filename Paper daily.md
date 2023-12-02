@@ -50,6 +50,18 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.2
 
+《Contriever: Unsupervised Dense Information Retrieval with Contrastive Learning》
+
+2022.8 Meta AI的一篇工作，要点：
+
+1. IR 领域 dense retrievers 发展迅速，取得了SOTA的结果，outperform BM25 传统方法。但是对于新的领域，dense retrievers 发展并不顺利，本文提出用对比学习训练unsupervised dense retrievers，并且在11/15 of BEIR上outperform BM25，并且具有很好的跨语言能力。
+2. 模型，使用BERT base arch，对比学习loss，positive/negative pairs构造方面用了一些技巧
+3. 实验结果，使用对比学习，在没有annotated样本的情况下，dense retriever Contriever 总体优于BM25；在 MS MARCO 数据集上finetune后，效果很好，因此提出基于 retrieved results 做 re-rank，在BEIR基准上取得SOTA结果；并且具有不错的多语言效果。
+
+总体上，本文研究NN在召回问题上的应用，在没有 supervision 的情况下用对比学习训练一个 dense retriever，Contriever 优于BM25，召回结果经过rerank处理后打成新SOTA
+
+
+
 《An explanation of in-context learning as implicit bayesian inference》
 
 2022.7 的一篇文章，研究ICL的理论解释，要点：
