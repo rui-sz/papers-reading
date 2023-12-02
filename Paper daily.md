@@ -50,6 +50,19 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.2
 
+《Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?》
+
+2022.10 Meta的一篇文章，价值比较高，要点：
+
+1. 本文研究相比于zero-shot而言，在few-shot learning时，到底demonstrations中的哪一部分对于LM比较有用，有一些非常有意思的发现。
+2. 实验结果，结果显示LM确实利用了demonstrations的某些方面，让结果更好，不过few shot 中Ground truth 展示，在 ICL 中实际上是不那么重要的，因此在classification and multi-choice tasks中，随机替换few shot labels，并不hurt perf，因为模型已经具备了这部分知识；那么demonstration中的哪个部分对perf有影响？the label space and the distribution of the input text are both key to ICL；以及specifying the overall format（input-label pair） is also crucial
+3. 延伸思考1，模型在test时并不真的「learn」，因此imput-label对应关系没有那么重要。也就是“demonstrations are for *task location *and the intrinsic ability to perform the task is obtained at pretraining time”
+4. 延伸思考2，Demonstrations 和 instructions 的作用可能是类似的，都是做 task location，它们只是激活模型已经学到的能力，而并不引入新的知识。
+5. 延伸思考3，本文也启发研究，如何让模型在pretrain时学到wider的task semantics，以增强zero-shot/few-shot的能力；同时也启发 Zero-shot 有显著提升空间，用unlabelled input + random labels
+
+总体上，本文研究few shot中demonstrations的哪个部分对LM的推理性能比较重要，有若干有价值的发现，是一篇非常好的文章。
+
+
 《VRepair: Neural Transfer Learning for Repairing Security Vulnerabilities in C Code》
 
 2022年的一篇工作，要点：
