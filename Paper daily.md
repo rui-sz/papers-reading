@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.2
 
+《VRepair: Neural Transfer Learning for Repairing Security Vulnerabilities in C Code》
+
+2022年的一篇工作，要点：
+
+1. Vulnerability repair 结合DL进行研究的一个问题是数据集太小，而Bug fixing 跟它是类似的问题，本文利用迁移学习思想来研究
+2. 方法，先在 big bug fix corpus 数据集上训练，然后在 small vulnerability fix dataset 上 finetune。模型选用了一个典型的en-de Transformer架构
+3. 实验结果，相比在小数据集上直接训练vulnerability model，本文提出的bug fix pretrain + vul finetune效果更好。未来基于github 的各种commit，可能可以训练code change model，去做comment generation or other tasks
+
+总体上，对于非DL科班的人来说，是一个好的尝试，文章罗列了很多科普概念，但是没有什么太多新意。
+
+
 《KATE: What Makes Good In-Context Examples for GPT-3?》
 
 2021.1 微软的一篇文章，研究怎么更好的选择few-shot examples，要点：
