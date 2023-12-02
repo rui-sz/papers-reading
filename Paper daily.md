@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.2
 
+《REPLUG: Retrieval-Augmented Black-Box Language Models》
+
+2023.5 研究RAG的一篇文章，要点：
+
+1. 本文研究，把LM当做一个黑盒，用tuneable retrieval model 来加强它。RePLUG & LSR，LM可以被用来supervise retrieval model，进而帮助LM更好的pred
+2. 模型，对比了各种可以访问的模型，GPT系列，OPT等；train retrieval model时，把LM的打分当做一个supervise signal。 Retrieve 10 docs per input，然后调用10次推理，在ensemble
+3. 实验结果，可以减少 LM 的perplexity；retrieval提升了模型的问题解决能力；该方法适用于各种模型；取得的收益不仅来自于ensemble，也来自retrieved relevant docs。当retrieved doc中包含有rare entities时，会更加有用。
+
+总体上，本文研究把LM当做黑盒，结合retrieval model引入retrieved doc，大幅提高了language modeling以及下游tasks的效果。
+
+
 《Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?》
 
 2022.10 Meta的一篇文章，价值比较高，要点：
