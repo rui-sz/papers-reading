@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.2
+
+《EPR: Learning To Retrieve Prompts for In-Context Learning》
+
+2022.5 的一篇关于few shot ICL的文章，质量一般，要点：
+
+1. 背景：In context learning, LM 可以看到 test instance 和 few training examples as its input and directly decodes the output without any update to its parameters, output 严重依赖 selected training examples。本文提出EPR，一种学习retrieve好的prompt以增强ICL的方法
+2. 方法：本文的方法比较简单，用scoring LM对training examples进行打分，然后用对比学习训练supervised retriever（training an efficient dense retriever，EPR），最后推理的模型是：supervised retriever + LM
+3. 实验结果，可以看到，当scoring LM与generator LM的训练数据类似时，效果会更好。同时dense retriever 显著优于BM25。（这个结论与[5097]并不冲突，[5097]讲的是 retrieve doc来做ICL，起到补充信息的作用；而本文是retrieve examples，起到few-shot的作用）
+
+总体上，这个方法idea比较简单，并且似乎有数据泄露的嫌疑？
+
+
 ## 2023.12.1
 
 《In-Context Retrieval-Augmented Language Models》
@@ -59,7 +72,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文提出了一种应用RAG的简单方案，并且得出一些有指导价值的结论
 
-
 《Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks》
 
 2021年Meta最初关于RAG的文章，要点：
@@ -69,7 +81,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，RAG 在open-domain QA上取得SOTA结果，RAG更factual和specific
 
 总体上，本文工作开启了一个新方向，关于 parametric 和 non-parametric memory 如何交互，有利于减少generation model的幻觉，在diversity，factural，specific上都表现更好。本文在对问题进行抽象、数学化表达方面做的比较好。
-
 
 # 2023.11
 
@@ -85,7 +96,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文研究基于多模态benchmark ScienceQA的CoT问题，发现CoT对于few-shot和finetuned model都会有收益，同时GPT-3的模型能力上界比较高；基于CoT技术来FT模型，只需要更少的样本达到同等性能。
 
-
 《Chain of thought prompting elicits reasoning in large language models》
 
 2022.11 Google 一篇研究CoT的工作，要点：
@@ -96,7 +106,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，CoT 展示出了能够拓展 language model 适应范围的能力，但是我们并不知道 NN 是否真的在 reasoning，这是一个 open question
 
-
 《Multimodal Chain-of-Thought Reasoning in Language Models》
 
 2023.2 AWS和上交的一篇研究CoT的工作，要点：
@@ -106,7 +115,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，two stage CoT相比one stage，推理效果更好，同时引入了vision特征后效果更好
 
 总体上，本文对 CoT和 multimodal CoT做了比较有意思的研究，有一些有价值的洞见和结论。
-
 
 ## 2023.11.28
 
