@@ -50,6 +50,18 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.2
 
+《KATE: What Makes Good In-Context Examples for GPT-3?》
+
+2021.1 微软的一篇文章，研究怎么更好的选择few-shot examples，要点：
+
+1. ICL，generalize to unseen tasks without fintuing，是大模型很重要的能力，同时Few-shot 性能严重依赖 in-context examples 的选择，本文聚焦如何更好的选择
+2. 本文提出方法Retrieve 语义相似的examples，in-context examples 跟test example在emb space上更相近会带来更好的效果。a retrieval model 被引入。总体上叫做KATE方法。
+3. 模型，retrieval model(emb based) -> few shot examples + GPT-3
+4. 实验结果，情感分析任务上，本文的方法比random和KNN都明显更好，在类似task的数据集（sst-2）上FT，可以提升性能；消融实验发现，In-context examples，多一些会更好（在20个左右达到性能高点），Retrieval 候选的training sets集合大小，越大越好，examples 顺序的影响，相似度 reverse更好，可能由于这种排列顺序，相似的example离test更近
+
+总体上，本文对于如何选择few-shot examples做了有价值的研究，基于语义相似度对比random有明显收益，同时在task-specific数据集上FT的emb 模型效果会更好。
+
+
 《EPR: Learning To Retrieve Prompts for In-Context Learning》
 
 2022.5 的一篇关于few shot ICL的文章，质量一般，要点：
