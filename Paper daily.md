@@ -50,6 +50,16 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.2
 
+《An explanation of in-context learning as implicit bayesian inference》
+
+2022.7 的一篇文章，研究ICL的理论解释，要点：
+
+1. 本文研究LLM in context learning 能力的理论解释，LM infer the latent concept across multiple sentences；在inference阶段，当LM在不同的例子间，也推断shared prompt concept时，ICL就发生了。即：implicit Bayesian inference
+2. 实验结论，在ICL场景下，Example 长一些是更有用的，accuracy提高；随着examples数量的提升，accuracy也会提高；更大的模型，可以提升 In-Context learning 能力，尽管当 pretraining loss 可能保持相同，larger models can improve in-context learning beyond improving pretraining perplexity；examples 的顺序会对性能有显著影响。
+
+总体上，属于研究ICL理论性比较强的一篇文章，结论也相对比较solid。后续提供insights for pretraining and prompting LLM
+
+
 《REPLUG: Retrieval-Augmented Black-Box Language Models》
 
 2023.5 研究RAG的一篇文章，要点：
