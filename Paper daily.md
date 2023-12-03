@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.3
 
+《Atlas: Few-shot Learning with Retrieval Augmented Language Models》
+
+2022.11 Meta一片研究RAG的文章，要点：
+
+1. Few-shot 是LM的一项重要emergent能力，然而RA 模型尚未展现出令人信服的few-shot learning能力。本文研究 few-shot learning 是否一定要求model存储大量信息在params中，是否记忆能力可以和泛化能力解耦开
+2. 本文给出的model Atlas, design and train retrieval-augmented language models，聚焦下游 few-shot learning能力，模型采用 Contriever + T5 架构，jointly pretrain/finetune，并且为提高性能对loss和tasks做了针对性设计
+3. 实验结果，Jointly pretrain，对于few shot性能提升有显著帮助；当FT样本有限的时候，在jointly FT时query-side FT和rerank 方法比较有效；FT model Atlas 在QA数据集上取得了SOTA结果。
+
+总体上，本文研究RAG model的few-shot learning能力，主要研究方向是 jointly pretrain/finetune retriever 和 language model，结果证明有明显收益。
+
+
 《A Survey on In-context Learning》
 
 2023.6 关于ICL的一篇综述文章，要点：
