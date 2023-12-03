@@ -48,6 +48,20 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.3
+
+《A Survey on In-context Learning》
+
+2023.6 关于ICL的一篇综述文章，要点：
+
+1. 关于ICL的一篇综述文章，参考价值还不错
+2. ICL 定义，is a paradiam 允许LM 只通过a few examples的展示学习新tasks，Key idea is learn from analogy/类比，learn the pattern hidden in the demonstration and accordingly make the right prediction
+3. ICL 能力的影响因素：pretrain, prompting template, in-context examples selection, order of examples etc.；提升ICL能力的一些方法，warmup（Supervised/self-supervised），Demonstrations，Scoring functions
+4. ICL 的更多使用场景：数据标注，data engineering；Model Augmentating，保持LM arch不变，prepend retrieved docs to the input；Knowledge updating
+
+总体上，本文对LLMs的ICL能力做了比较系统的综述，包括定义、能力来源研究、能力提升方向、使用场景等，有一定参考价值。
+
+
 ## 2023.12.2
 
 《Contriever: Unsupervised Dense Information Retrieval with Contrastive Learning》
