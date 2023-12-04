@@ -48,6 +48,17 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.4
+
+《RETRO: Improving Language Models by Retrieving from Trillions of Tokens》
+
+2022.2 DeepMind 的一篇文章，关于RAG，要点：
+
+1. 增加模型的params有2个好处：增加额外的计算；增加模型对于training data的记忆，相比于增加模型 params，本文直接让模型access a large database，将模型的可用数据相比训练时扩大了一个数量级
+2. 实验结果，随着模型增大，retrieval model 的gain持续增长；随着retrieval database增大，retrieval model 的gain持续增长；
+3. RETRO 的收益来源：explicit neighbour copying and general knowledge extraction
+
+
 ## 2023.12.3
 
 《Atlas: Few-shot Learning with Retrieval Augmented Language Models》
