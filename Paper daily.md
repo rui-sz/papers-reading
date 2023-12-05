@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.5
+
+《DPR: Dense Passage Retrieval for Open-Domain Question Answering》
+
+2022.9 Meta AI 的一篇工作，如题研究 dense retriever，要点：
+
+1. Open-domain QA，retriever 传统上使用TF-IDF、BM25等，后来有提出inverse cloze task (ICT) objective，但是计算开销大。本文解决一个问题，只使用 pairs of questions and passages train 一个dense embedding model，不引入额外预训练工作
+2. Final solution: the embedding is optimized for maximizing inner products of the question and relevant passage vectors, with an objective comparing all pairs of questions and passages in a batch
+3. 实验结果，只通过少量高质量数据训练一个高质量的dense retriever是有可能的，1000条样本outperform BM25；不同训练方式的差异，in-batch negative examples 比较有用，BM25 negatives也有用
+
+总体上，本文证明了 dense retrieval 可以outperform以及replace sparse retrieval component in 传统QA。
+
+
 ## 2023.12.4
 
 《RETRO: Improving Language Models by Retrieving from Trillions of Tokens》
