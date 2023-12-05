@@ -48,18 +48,32 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.6
+
+TBD
+
 ## 2023.12.5
+
+《EMDR: End-to-End Training of Multi-Document Reader and Retriever for Open-Domain Question Answering》
+
+2021.11 Google 的一篇工作，open-domain QA领域的新SOTA，要点：
+
+1. 本文的工作是在 open-domain question answering system 上提出了一个E2E的训练框架，叫做EMDR^2，取得了当时的SOTA效果。在这之前的优化方案，一个是two-stage training，另一个是condition on 单个retrieve doc。
+2. 模型，本文方法，将retrieved docs作为latent variables, combine them. 通过EM算法来迭代优化，将模型的反馈作为pseudo labels去同时优化retriever和reader。（没有像DPR那样supervised的训练retriever，结果反而更好）
+3. 实验结果，在三个主要的open-domain QA数据集上取得SOTA结果，方法优于FiD和DPR
+
+总体上，一个 End-to-End 训练 multi-document Retriever 和 Reader 的模型框架，取得SOTA结果。
+
 
 《DPR: Dense Passage Retrieval for Open-Domain Question Answering》
 
-2022.9 Meta AI 的一篇工作，如题研究 dense retriever，要点：
+2020.9 Meta AI 的一篇工作，如题研究 dense retriever，要点：
 
 1. Open-domain QA，retriever 传统上使用TF-IDF、BM25等，后来有提出inverse cloze task (ICT) objective，但是计算开销大。本文解决一个问题，只使用 pairs of questions and passages train 一个dense embedding model，不引入额外预训练工作
 2. Final solution: the embedding is optimized for maximizing inner products of the question and relevant passage vectors, with an objective comparing all pairs of questions and passages in a batch
 3. 实验结果，只通过少量高质量数据训练一个高质量的dense retriever是有可能的，1000条样本outperform BM25；不同训练方式的差异，in-batch negative examples 比较有用，BM25 negatives也有用
 
 总体上，本文证明了 dense retrieval 可以outperform以及replace sparse retrieval component in 传统QA。
-
 
 ## 2023.12.4
 
@@ -70,7 +84,6 @@ Zero-Shot Text-to-Image Generation
 1. 增加模型的params有2个好处：增加额外的计算；增加模型对于training data的记忆，相比于增加模型 params，本文直接让模型access a large database，将模型的可用数据相比训练时扩大了一个数量级
 2. 实验结果，随着模型增大，retrieval model 的gain持续增长；随着retrieval database增大，retrieval model 的gain持续增长；
 3. RETRO 的收益来源：explicit neighbour copying and general knowledge extraction
-
 
 ## 2023.12.3
 
@@ -84,7 +97,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文研究RAG model的few-shot learning能力，主要研究方向是 jointly pretrain/finetune retriever 和 language model，结果证明有明显收益。
 
-
 《A Survey on In-context Learning》
 
 2023.6 关于ICL的一篇综述文章，要点：
@@ -95,7 +107,6 @@ Zero-Shot Text-to-Image Generation
 4. ICL 的更多使用场景：数据标注，data engineering；Model Augmentating，保持LM arch不变，prepend retrieved docs to the input；Knowledge updating
 
 总体上，本文对LLMs的ICL能力做了比较系统的综述，包括定义、能力来源研究、能力提升方向、使用场景等，有一定参考价值。
-
 
 ## 2023.12.2
 
@@ -109,8 +120,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文研究NN在召回问题上的应用，在没有 supervision 的情况下用对比学习训练一个 dense retriever，Contriever 优于BM25，召回结果经过rerank处理后打成新SOTA
 
-
-
 《An explanation of in-context learning as implicit bayesian inference》
 
 2022.7 的一篇文章，研究ICL的理论解释，要点：
@@ -119,7 +128,6 @@ Zero-Shot Text-to-Image Generation
 2. 实验结论，在ICL场景下，Example 长一些是更有用的，accuracy提高；随着examples数量的提升，accuracy也会提高；更大的模型，可以提升 In-Context learning 能力，尽管当 pretraining loss 可能保持相同，larger models can improve in-context learning beyond improving pretraining perplexity；examples 的顺序会对性能有显著影响。
 
 总体上，属于研究ICL理论性比较强的一篇文章，结论也相对比较solid。后续提供insights for pretraining and prompting LLM
-
 
 《REPLUG: Retrieval-Augmented Black-Box Language Models》
 
@@ -130,7 +138,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，可以减少 LM 的perplexity；retrieval提升了模型的问题解决能力；该方法适用于各种模型；取得的收益不仅来自于ensemble，也来自retrieved relevant docs。当retrieved doc中包含有rare entities时，会更加有用。
 
 总体上，本文研究把LM当做黑盒，结合retrieval model引入retrieved doc，大幅提高了language modeling以及下游tasks的效果。
-
 
 《Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?》
 
@@ -144,7 +151,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文研究few shot中demonstrations的哪个部分对LM的推理性能比较重要，有若干有价值的发现，是一篇非常好的文章。
 
-
 《VRepair: Neural Transfer Learning for Repairing Security Vulnerabilities in C Code》
 
 2022年的一篇工作，要点：
@@ -154,7 +160,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，相比在小数据集上直接训练vulnerability model，本文提出的bug fix pretrain + vul finetune效果更好。未来基于github 的各种commit，可能可以训练code change model，去做comment generation or other tasks
 
 总体上，对于非DL科班的人来说，是一个好的尝试，文章罗列了很多科普概念，但是没有什么太多新意。
-
 
 《KATE: What Makes Good In-Context Examples for GPT-3?》
 
@@ -167,7 +172,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文对于如何选择few-shot examples做了有价值的研究，基于语义相似度对比random有明显收益，同时在task-specific数据集上FT的emb 模型效果会更好。
 
-
 《EPR: Learning To Retrieve Prompts for In-Context Learning》
 
 2022.5 的一篇关于few shot ICL的文章，质量一般，要点：
@@ -177,7 +181,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，可以看到，当scoring LM与generator LM的训练数据类似时，效果会更好。同时dense retriever 显著优于BM25。（这个结论与[5097]并不冲突，[5097]讲的是 retrieve doc来做ICL，起到补充信息的作用；而本文是retrieve examples，起到few-shot的作用）
 
 总体上，这个方法idea比较简单，并且似乎有数据泄露的嫌疑？
-
 
 ## 2023.12.1
 
