@@ -50,7 +50,26 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.6
 
-TBD
+《*WizardCoder* : Empowering Code Large Language Models with Evol-Instruct》
+
+2023.6 微软的一篇工作，基于StarCoder指令微调模型，要点：
+
+1. 基于 StarCoder 15.5B模型，做instruction finetuning，具体方法是采用了WizardLM中的Evol-instruct方法
+2. the *Evol-Instruct *method, which involves evolving existing instruction data to generate more complex and diverse datasets.
+3. To construct the training dataset, we initialized it with the 20K instruction-following dataset called
+   Code Alpaca. We iteratively employ the Evol-Instruct technique on this dataset consisting of 20,000
+   samples to produce evolved data.
+4. 评估结果看，结果大幅超过了之前的SOTA工作
+
+
+《Fid: Leveraging passage retrieval with generative models for open domain question answering》
+
+2021.2 FAIR的一篇研究retrieval & generative model的工作，要点：
+
+1. 生成式模型，对OpenQA问题已经证明了其竞争力，本文研究这些模型如何从retrieving text passages中受益
+2. 本文的方法，retriever + multiple encoder + decoder，模型只在decoder中做evidence fusion，因此叫：fusion-in-decoder，这种方法也允许在decoder中更好的aggregate evidence from multiple passages
+3. 实验结果，从实验结果看，在三个QA数据集上取得SOTA结果，同时伴随retrieved passages，性能是scalable的
+
 
 ## 2023.12.5
 
