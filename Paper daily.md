@@ -48,6 +48,17 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.7
+
+《Gemini: A Family of Highly Capable Multimodal Models》
+
+2023.12.6 Google 发布的多模态大模型，总体上：
+
+以多种模态 Text, image, video, audio 作为输入，输出 text, image
+
+在单模态的评估集上，基本都超过了之前的SOTA
+
+
 ## 2023.12.6
 
 《*WizardCoder* : Empowering Code Large Language Models with Evol-Instruct》
