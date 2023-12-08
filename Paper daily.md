@@ -50,6 +50,9 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.7
 
+《》
+
+
 《Gemini: A Family of Highly Capable Multimodal Models》
 
 2023.12.6 Google 发布的多模态大模型，总体上：
