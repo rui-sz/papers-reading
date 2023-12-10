@@ -48,10 +48,18 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.10
+
+《**Searching for MobileNetV3**》
+
+2019.11 Google一篇关于Mobile端NN模型的文章，要点：
+
+1. 在 Mobile NN 领域，研究optimal trade-off between accuracy and efficiency 是一个活跃的领域，方法包括减少网络参数、reducing operations，network search，Quantization和knowledge distillation等
+2. MoblenetV3 模型，use platform-aware NAS to search for the global network structures by optimizing each network block, and NetAdapt for network search
+3. 从实验结果来看，在分类、分割等任务上行，比V2性能取得明显提升。整体性能劣化不太多
+
+
 ## 2023.12.7
-
-《》
-
 
 《Gemini: A Family of Highly Capable Multimodal Models》
 
