@@ -48,6 +48,24 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.12
+
+《Mistral 7B》
+
+2023一篇模型工作，要点：
+
+1. 本文研究如何用小模型来获取不错的性能，Mistral 7B outperforms the best open 13B model (Llama 2) across all evaluated benchmarks，并在多个任务上 surpass 了 LLaMA1 34B model
+2. 模型，Transformer arch，重点变化是引入了GQA和SWA，在模型效果和推理速度上都获得提升
+
+
+《HEIM: Holistic Evaluation of Text-to-Image Models》
+
+2023.11 斯坦福的一篇文章，Percy的作品，要点：
+
+1. 像HELM一样，建立了一组benchmarks 评估text->image的12个维度
+2. 26个model，60+数据集
+
+
 ## 2023.12.10
 
 《**Searching for MobileNetV3**》
@@ -58,7 +76,6 @@ Zero-Shot Text-to-Image Generation
 2. MoblenetV3 模型，use platform-aware NAS to search for the global network structures by optimizing each network block, and NetAdapt for network search
 3. 从实验结果来看，在分类、分割等任务上行，比V2性能取得明显提升。整体性能劣化不太多
 
-
 ## 2023.12.7
 
 《Gemini: A Family of Highly Capable Multimodal Models》
@@ -68,7 +85,6 @@ Zero-Shot Text-to-Image Generation
 以多种模态 Text, image, video, audio 作为输入，输出 text, image
 
 在单模态的评估集上，基本都超过了之前的SOTA
-
 
 ## 2023.12.6
 
@@ -83,7 +99,6 @@ Zero-Shot Text-to-Image Generation
    samples to produce evolved data.
 4. 评估结果看，结果大幅超过了之前的SOTA工作
 
-
 《Fid: Leveraging passage retrieval with generative models for open domain question answering》
 
 2021.2 FAIR的一篇研究retrieval & generative model的工作，要点：
@@ -91,7 +106,6 @@ Zero-Shot Text-to-Image Generation
 1. 生成式模型，对OpenQA问题已经证明了其竞争力，本文研究这些模型如何从retrieving text passages中受益
 2. 本文的方法，retriever + multiple encoder + decoder，模型只在decoder中做evidence fusion，因此叫：fusion-in-decoder，这种方法也允许在decoder中更好的aggregate evidence from multiple passages
 3. 实验结果，从实验结果看，在三个QA数据集上取得SOTA结果，同时伴随retrieved passages，性能是scalable的
-
 
 ## 2023.12.5
 
@@ -104,7 +118,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，在三个主要的open-domain QA数据集上取得SOTA结果，方法优于FiD和DPR
 
 总体上，一个 End-to-End 训练 multi-document Retriever 和 Reader 的模型框架，取得SOTA结果。
-
 
 《DPR: Dense Passage Retrieval for Open-Domain Question Answering》
 
