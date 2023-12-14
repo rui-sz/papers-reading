@@ -50,7 +50,16 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.14
 
-TBD
+《(GenRead)Generate rather than retrieve: Large language models are strong context generators》
+
+2023.1 微软的一篇工作，RAG的变种，要点：
+
+1. 针对 knowledge-intensive tasks，当前主流的方案采用 *retrieve-then-read *的模型pipeline，本文提出 generate-then-read的框架，outperform 了当前SOTA模型DPR-FiD，没有retrieve任何外部doc
+2. 模型，用 large model generate（GPT3.5），后接GPT3.5 or SFT 的FiD模型
+3. 实验结果，GENREAD 取得 71.6/54.4 EM分数在TriviaQA和WebQ上, significantly 优于  *DPR**-FiD；另外*本文的方法可以和 dense retrievers 结合起来使用，也可以和任何 reader 结合起来使用。
+
+总体上本文的方法基于 generate-then-read 框架是一股清流，不借助任何doc实现起来更简单，但问题也很突出，数据无法更新。不过 generate + retriever 倒是可以考虑。
+
 
 ## 2023.12.12
 
@@ -61,14 +70,12 @@ TBD
 1. 本文研究如何用小模型来获取不错的性能，Mistral 7B outperforms the best open 13B model (Llama 2) across all evaluated benchmarks，并在多个任务上 surpass 了 LLaMA1 34B model
 2. 模型，Transformer arch，重点变化是引入了GQA和SWA，在模型效果和推理速度上都获得提升
 
-
 《HEIM: Holistic Evaluation of Text-to-Image Models》
 
 2023.11 斯坦福的一篇文章，Percy的作品，要点：
 
 1. 像HELM一样，建立了一组benchmarks 评估text->image的12个维度
 2. 26个model，60+数据集
-
 
 ## 2023.12.10
 
