@@ -48,6 +48,17 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.15
+
+《FiD-KD: Distilling knowledge from reader to retriever for question answering》
+
+2022.8 更新的一篇文章，在FiD基础上，运用distillation思想，蒸馏reader的知识到retriever中，要点：
+
+1. retrieve-then-generate的任务，比较难通过训练 retriever，难点在于获取 pairs of query and support documents 包含跟query相关的信息，被 knowledge distillation 启发，通过reader中的attention score来监督训练retriever，以返回更相关的结果
+2. 模型，retriever + reader（FiD），用reader model的synthetic label去train retriever model，attention activations是一个好的相关性代理
+3. 实验结果，迭代式训练可以获得更好的结果，拿到了 SOTA 的结果（比之前的DPR，RAG都要好）
+
+
 ## 2023.12.14
 
 《(GenRead)Generate rather than retrieve: Large language models are strong context generators》
