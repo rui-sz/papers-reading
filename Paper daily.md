@@ -48,6 +48,18 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.16
+
+《phi-1: Textbooks Are All You Need》
+
+2023.6 微软的一篇研究代码小模型的工作，要点：
+
+1. 本文作者基于高质量数据集train 了一个1.3B的code模型，outperform了StarCoder/CodeT5+等一众模型
+2. 数据，作者认为当前的训练数据存在一些问题，比如样本不够严谨，文档混乱等，会影响模型训练效果，作者构建了3个数据集：6B filtered code-language dataset, a synthetic textbook dataset, a synthetic exercises dataset，前2者组成 CodeTextBook，后1个是CodeExercises（python only）
+3. 模型，decoder-only model，先在CodeTextBook上pretrain，再在CodeExercises上FT
+4. 实验结果，在HumanEval上大幅领先于之前的StarCoder等模型，并且做了一系列实验，证明收益来自于更高质的数据，而不是数据泄露
+
+
 ## 2023.12.15
 
 《FiD-KD: Distilling knowledge from reader to retriever for question answering》
