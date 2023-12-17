@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.17
 
+《TinyStories: How Small Can Language Models Be and Still Speak Coherent English?》
+
+2023.4 Microsoft Research 的一篇文章，研究 SLMs，要点：
+
+1. 本文聚焦SLMs的问题，研究语言模型最小的要求，以获得 generate text that is consistent, diverse, and meaningful 的能力
+2. 本文研究了 10 million params 级别模型, much simple arch(only one transformer block)，仍然可以输出 fluent and consistent stories，同时保持多样性和语法正确，并展示了推理能力。提出一种新的评估范式，让GPT4进行评分
+3. 有一些关于模型 width/depth 的发现，width is more important for capturing factual knowledge, whereas depth is more important for contextual tracking.（推理？）
+
+    通过synthesize精致的高质量数据集来构建模型，是一个可行的思路。
+
+
 《Generative Agents: Interactive Simulacra of Human Behavior》
 
 2023.8 Stanford 和 Google Research 一篇很有意思的文章，要点：
@@ -57,7 +68,6 @@ Zero-Shot Text-to-Image Generation
 1. 非常有意思的一篇文章，本文聚焦创建一个小的，交互式的社会，基于25个llm driven agents
 2. 模型，Architecture 包含三个主要模块：Memory stream, memory retrieval model；Reflection, draw conclusions；Planning，把 conclusions 翻译成high-level inference
 3. 实验结果，从实验结果以及消融实验来看，这个 sandbox 环境产生了一些有意义的交互和结果，未来随着llm本身的性能优化，以及整体方案提升产生更好的结果。
-
 
 《Textbooks Are All You Need II: **phi-1.5 **technical report》
 
@@ -68,7 +78,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，在Common sense reasoning、自然语言理解、Reasoning任务上都取得了跟5x模型大小相当的性能。
 
 总体上，再次证明了高质量数据的重要性，作者大胆猜测或许可能通过1B左右参数取得 ChatGPT 的能力
-
 
 ## 2023.12.16
 
