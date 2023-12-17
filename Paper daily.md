@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.17
+
+《Textbooks Are All You Need II: **phi-1.5 **technical report》
+
+2023.9 的一篇文章，仍然研究小语言模型，要点：
+
+1. 本文继续关注small language model，关注 natural language 问题，仍然是一个1.3B的model，取得了可以与 5x 大小模型相匹配的性能
+2. 数据，在phi-1.0的基础上更拓展了2份数据，一个是generated nlp dataset，一个是web dataset，作者推测**创建一个 synthetic 数据集在不远的将来是一项重要技能，以及AI研究的核心topic之一**
+3. 实验结果，在Common sense reasoning、自然语言理解、Reasoning任务上都取得了跟5x模型大小相当的性能。
+
+总体上，再次证明了高质量数据的重要性，作者大胆猜测或许可能通过1B左右参数取得 ChatGPT 的能力
+
+
 ## 2023.12.16
 
 《phi-1: Textbooks Are All You Need》
@@ -59,7 +72,6 @@ Zero-Shot Text-to-Image Generation
 3. 模型，decoder-only model，先在CodeTextBook上pretrain，再在CodeExercises上FT
 4. 实验结果，在HumanEval上大幅领先于之前的StarCoder等模型，并且做了一系列实验，证明收益来自于更高质的数据，而不是数据泄露
 
-
 ## 2023.12.15
 
 《FiD-KD: Distilling knowledge from reader to retriever for question answering》
@@ -69,7 +81,6 @@ Zero-Shot Text-to-Image Generation
 1. retrieve-then-generate的任务，比较难通过训练 retriever，难点在于获取 pairs of query and support documents 包含跟query相关的信息，被 knowledge distillation 启发，通过reader中的attention score来监督训练retriever，以返回更相关的结果
 2. 模型，retriever + reader（FiD），用reader model的synthetic label去train retriever model，attention activations是一个好的相关性代理
 3. 实验结果，迭代式训练可以获得更好的结果，拿到了 SOTA 的结果（比之前的DPR，RAG都要好）
-
 
 ## 2023.12.14
 
@@ -82,7 +93,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，GENREAD 取得 71.6/54.4 EM分数在TriviaQA和WebQ上, significantly 优于  *DPR**-FiD；另外*本文的方法可以和 dense retrievers 结合起来使用，也可以和任何 reader 结合起来使用。
 
 总体上本文的方法基于 generate-then-read 框架是一股清流，不借助任何doc实现起来更简单，但问题也很突出，数据无法更新。不过 generate + retriever 倒是可以考虑。
-
 
 ## 2023.12.12
 
