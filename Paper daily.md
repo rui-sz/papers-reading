@@ -50,6 +50,15 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.17
 
+《Generative Agents: Interactive Simulacra of Human Behavior》
+
+2023.8 Stanford 和 Google Research 一篇很有意思的文章，要点：
+
+1. 非常有意思的一篇文章，本文聚焦创建一个小的，交互式的社会，基于25个llm driven agents
+2. 模型，Architecture 包含三个主要模块：Memory stream, memory retrieval model；Reflection, draw conclusions；Planning，把 conclusions 翻译成high-level inference
+3. 实验结果，从实验结果以及消融实验来看，这个 sandbox 环境产生了一些有意义的交互和结果，未来随着llm本身的性能优化，以及整体方案提升产生更好的结果。
+
+
 《Textbooks Are All You Need II: **phi-1.5 **technical report》
 
 2023.9 的一篇文章，仍然研究小语言模型，要点：
