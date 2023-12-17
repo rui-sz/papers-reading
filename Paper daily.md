@@ -50,6 +50,15 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.17
 
+《**Reflexion: Language Agents with Verbal Reinforcement Learning**》
+
+2023.10 Northeastern University, MIT, Princeton University 等的一篇文章，研究 Reflexion agent 的，要点：
+
+1. LLM 越来越多与环境进行交互，但是LLM利用传统RL从行动和错误中学习确是一件高成本的事情，需要额外samples和计算cost，本文提出了一个优化框架，称作 Verbal reinforcement learning，利用自然语言来做 policy optimization，教会model从过去的行动和错误中学习
+2. 模型：*self-reflection *to build a persisting memory of self-reflective experiences which allows an agent to identify its own errors and self-suggest lessons to learn from its mistakes over time
+3. 实验结果：Reflexion 方法在多个任务中都取得非常好的效果，例如 sequential decision-making, coding, language reasoning 等，尤其在 HE 数据集上取得了 91% pass@1 的效果，outperform了GPT4
+
+
 《TinyStories: How Small Can Language Models Be and Still Speak Coherent English?》
 
 2023.4 Microsoft Research 的一篇文章，研究 SLMs，要点：
