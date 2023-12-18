@@ -50,6 +50,18 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.18
 
+《**Toolformer: Language Models Can Teach Themselves to ****Use**** Tools**》
+
+2023.2 FAIR 的一篇文章，研究让LMs使用工具，要点：
+
+1. 本文研究如何让LMs学会使用工具，Toolformer 模型
+2. 数据，基于 CCNet 数据集的一部分，用few-shot prompt LM的方法进行样本生成，再从中过滤出FT数据集，并确保API call 发生在对模型最有用的地方
+3. 模型，基于GPT-J做FT，a batch size of 128 and a learning rate of 10^-5，warmup for first 10%
+4. 实验结果，对于多个任务都有显著作用，QA，数学推理，翻译等；同时scaling laws的研究表明，对于比较小的模型，API calls 不是很有用，大模型才能学会怎么使用；即便对于大的模型，有和没有API calls 的性能gap仍然很大。
+
+总体上，很有创新性的一篇文章，遗憾之处在于规模仍然太小，基础模型小，并且tool的类别也不多。
+
+
 《React: Synergizing reasoning and acting in language models》
 
 2023.3 的Google一篇文章，研究把LLM的Reasoning和Acting结合起来，要点：
@@ -59,7 +71,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果：在QA等任务上效果不错，同时scale研究表明，在小模型时，基于prompt来combine reasoning 和 acting 的效果并不好，FT 能取得更好的效果。大模型时，prompt 的效果好一些，
 
 总体上，本文研究把大模型的 Reasoning 和 Acting 能力结合起来，解决general task，从结果来看还不错。跟[5124]的区别在于，[5124]是一个迭代的方法，verbal RL，本文是推理+Act
-
 
 《*WizardLM* : Empowering Large Language Models to Follow Complex Instructions》
 
@@ -71,7 +82,6 @@ Zero-Shot Text-to-Image Generation
 4. 实验结果：在 17/29 个 skills上，WizardLM 达到了ChatGPT 90%的效果，虽然有些方面还落后，但是已经说明使用 AI-evolved instructions FT 来enhance LLM是一个好的方向
 
 总体上，本文设计 AI-evolved instructions dataset，用来FT LLaMA模型后，取得了不错的效果。
-
 
 ## 2023.12.17
 
