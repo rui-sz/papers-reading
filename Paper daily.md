@@ -48,6 +48,20 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.18
+
+《*WizardLM* : Empowering Large Language Models to Follow Complex Instructions》
+
+2023.6 Microsoft 和 北京大学的一篇工作，基于 LLaMA FT了一个模型，要点：
+
+1. 背景：之前的 instruction FT 有2个主要问题：samples in NLP dataset share a few common instructions，严重限制了他们的 diversity；instructions only ask for one task，而人类instructions通常有多种 task demands
+2. 数据：本文基于 Alpaca/Vicuna 的instruction dataset，使用 **OpenAI ChatGPT API** 执行 4 epochs of evolution（in-depth, in-breadth），最终得到250k instructions
+3. 模型：LLM FT with instruction tuning 取得了很大的成功，本文提出Evol-Instruct，用LLM替代人力生成 large amounts of instruction data，具有varying levels of complexity，然后FT LLaMA，得到 WizardLM 模型
+4. 实验结果：在 17/29 个 skills上，WizardLM 达到了ChatGPT 90%的效果，虽然有些方面还落后，但是已经说明使用 AI-evolved instructions FT 来enhance LLM是一个好的方向
+
+总体上，本文设计 AI-evolved instructions dataset，用来FT LLaMA模型后，取得了不错的效果。
+
+
 ## 2023.12.17
 
 《**Reflexion: Language Agents with Verbal Reinforcement Learning**》
@@ -58,7 +72,6 @@ Zero-Shot Text-to-Image Generation
 2. 模型：*self-reflection *to build a persisting memory of self-reflective experiences which allows an agent to identify its own errors and self-suggest lessons to learn from its mistakes over time
 3. 实验结果：Reflexion 方法在多个任务中都取得非常好的效果，例如 sequential decision-making, coding, language reasoning 等，尤其在 HE 数据集上取得了 91% pass@1 的效果，outperform了GPT4
 
-
 《TinyStories: How Small Can Language Models Be and Still Speak Coherent English?》
 
 2023.4 Microsoft Research 的一篇文章，研究 SLMs，要点：
@@ -67,8 +80,7 @@ Zero-Shot Text-to-Image Generation
 2. 本文研究了 10 million params 级别模型, much simple arch(only one transformer block)，仍然可以输出 fluent and consistent stories，同时保持多样性和语法正确，并展示了推理能力。提出一种新的评估范式，让GPT4进行评分
 3. 有一些关于模型 width/depth 的发现，width is more important for capturing factual knowledge, whereas depth is more important for contextual tracking.（推理？）
 
-    通过synthesize精致的高质量数据集来构建模型，是一个可行的思路。
-
+   通过synthesize精致的高质量数据集来构建模型，是一个可行的思路。
 
 《Generative Agents: Interactive Simulacra of Human Behavior》
 
