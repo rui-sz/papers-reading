@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.18
 
+《React: Synergizing reasoning and acting in language models》
+
+2023.3 的Google一篇文章，研究把LLM的Reasoning和Acting结合起来，要点：
+
+1. Reasoning 和 Acting 之前被当做separate topic来对待，本文Combine reasoning and acting,  in language models for general task solving，其中Reasoning, 帮助模型得出、跟踪和更新 action plan；Actions, interface with and gather additional information from external sources such as knowledge bases or environments
+2. 模型：有两种方案，prompt 和 finetune，ReAct*→ *CoT-SC 当ReAct在given steps内无法正确返回时，退回到CoT的模式
+3. 实验结果：在QA等任务上效果不错，同时scale研究表明，在小模型时，基于prompt来combine reasoning 和 acting 的效果并不好，FT 能取得更好的效果。大模型时，prompt 的效果好一些，
+
+总体上，本文研究把大模型的 Reasoning 和 Acting 能力结合起来，解决general task，从结果来看还不错。跟[5124]的区别在于，[5124]是一个迭代的方法，verbal RL，本文是推理+Act
+
+
 《*WizardLM* : Empowering Large Language Models to Follow Complex Instructions》
 
 2023.6 Microsoft 和 北京大学的一篇工作，基于 LLaMA FT了一个模型，要点：
