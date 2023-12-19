@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.19
 
+《HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face》
+
+2023.12 的一篇文章，研究LLM agent，要点：
+
+1. 背景：解决 AI tasks with different domains ahd modalities 是迈向AGI的关键一步，把LLM作为controller来manage 现有的AI models解决复杂AI tasks，让LLM可以解决超越text的问题，当前有两类方法：Unified multimodal language models；The integration of using tools or models in LLMs，HuggingGPT 属于这种方法，可以持续吸收task-specific experts的能力。
+2. 模型：本文提出 HuggingGPT 这个agent框架，一种新的AI solution，使用language作为interface来连接各个AI models。solution 包含4个阶段：task planning，model selection，task execution，response generation
+3. 实验结果：几种不能类型的任务都能解决的比较好，并且充分证明了LLM基础能力的重要性。
+
+总体上，本文属于agent应用的novel尝试，跟Reflexion/React等文章要解决的问题类似，不过当前agent领域是不是缺少一些权威的benchmarks？不太好做横向对比。
+
+
 《DHEN: A Deep and Hierarchical Ensemble Network for Large-Scale Click-Through Rate Prediction》
 
 2022.3 Meta 的一篇关于CTR建模特征交叉的文章，要点：
@@ -60,7 +71,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文核心idea是不同interaction module（DCN,linear,CNN,self-attention,AdvancedDLRM等）的 stack 深度交叉，证明了不同交叉模块堆叠交叉后，取得良好效果。
 
-
 《GLaM: Efficient scaling of language models with mixture-of-experts》
 
 2022.8 Google 的一篇文章，研究大语言模型+MoE的效果，要点：
@@ -68,7 +78,6 @@ Zero-Shot Text-to-Image Generation
 1. 本文推出了GLaM(**G**eneralist **La**nguage **M**odel)系列模型，使用 sparsely activated mixture-of-experts architecture，单位token的训练能耗只相当于GPT-3的 1/3，但是却取得更好的 zero, one, few-shot perf
 2. 模型，系列模型按总参数量看，最小的模型 130M，最大的模型1.2T。效果最好的1.2T模型，在训练和推理时，会激活2/64 experts，带来稀疏化的效果
 3. 实验结果，在NLU和NLG任务上，GLaM模型都表现出更好的训练性能，以及更好的效果，另外一面是由于网络更大，占用的devices会更多。模型稀疏化是继续scale up的一个重要研究方向。
-
 
 ## 2023.12.18
 
