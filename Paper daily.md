@@ -48,6 +48,17 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.19
+
+《GLaM: Efficient scaling of language models with mixture-of-experts》
+
+2022.8 Google 的一篇文章，研究大语言模型+MoE的效果，要点：
+
+1. 本文推出了GLaM(**G**eneralist **La**nguage **M**odel)系列模型，使用 sparsely activated mixture-of-experts architecture，单位token的训练能耗只相当于GPT-3的 1/3，但是却取得更好的 zero, one, few-shot perf
+2. 模型，系列模型按总参数量看，最小的模型 130M，最大的模型1.2T。效果最好的1.2T模型，在训练和推理时，会激活2/64 experts，带来稀疏化的效果
+3. 实验结果，在NLU和NLG任务上，GLaM模型都表现出更好的训练性能，以及更好的效果，另外一面是由于网络更大，占用的devices会更多。模型稀疏化是继续scale up的一个重要研究方向。
+
+
 ## 2023.12.18
 
 《**Toolformer: Language Models Can Teach Themselves to ****Use**** Tools**》
@@ -60,7 +71,6 @@ Zero-Shot Text-to-Image Generation
 4. 实验结果，对于多个任务都有显著作用，QA，数学推理，翻译等；同时scaling laws的研究表明，对于比较小的模型，API calls 不是很有用，大模型才能学会怎么使用；即便对于大的模型，有和没有API calls 的性能gap仍然很大。
 
 总体上，很有创新性的一篇文章，遗憾之处在于规模仍然太小，基础模型小，并且tool的类别也不多。
-
 
 《React: Synergizing reasoning and acting in language models》
 
