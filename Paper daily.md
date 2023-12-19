@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.19
 
+《DHEN: A Deep and Hierarchical Ensemble Network for Large-Scale Click-Through Rate Prediction》
+
+2022.3 Meta 的一篇关于CTR建模特征交叉的文章，要点：
+
+1. 背景：对于CTR建模来说，特征交叉很重要，更好的特征交叉会提升效果，然而不同的design对于不同dataset有不同效果，表明可能它们分别capture了non-overlapping的info。
+2. 模型，本文提出DHEN，包括 a collection of heterogeneous interaction modules and ensemble components，学习到一个基于异构modules之上的不同级别的层次交叉，总体也是一个 deep stacking structure，类似ResNet，Transformer等
+3. 评估结果，同等计算量下，DHEN scaling up 的效果比MoE要好，不同interaction module交叉的效果不一样，总体上堆叠交叉取得正向收益
+
+总体上，本文核心idea是不同interaction module（DCN,linear,CNN,self-attention,AdvancedDLRM等）的 stack 深度交叉，证明了不同交叉模块堆叠交叉后，取得良好效果。
+
+
 《GLaM: Efficient scaling of language models with mixture-of-experts》
 
 2022.8 Google 的一篇文章，研究大语言模型+MoE的效果，要点：
