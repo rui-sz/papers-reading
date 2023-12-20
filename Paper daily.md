@@ -48,6 +48,20 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.20
+
+《NExT-GPT: Any-to-Any Multimodal LLM》
+
+2023.9 NUS的一篇工作，研究 any-to-any LLM，要点：
+
+1. 背景：本文目标是开发 any-to-any MM-LLMs，能够接受any modality作为input，也能output any modality（之前的工作缺失的），提出 NExT-GPT model，只微调1%的参数
+2. 数据：三类数据集 Text + X -> Text，Text -> Text + X，以及modality-switching instruction tuning dataset
+3. 模型：总体上是 imagebind + linear projection + LLM + Transformer projection + diffusion model
+4. 实验结果：从实验结果看，在几类任务上都取得比较好的效果，对于大一统模型来说是不错的
+
+总体上，本文提出了一个 end-to-end general-purpose any-to-any multimodal LLM (MM-LLM) model，并取得比较好的效果。
+
+
 ## 2023.12.19
 
 《HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face》
