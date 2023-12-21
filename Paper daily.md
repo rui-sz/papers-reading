@@ -48,6 +48,16 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.21
+
+《ChatGPT’s One-year Anniversary: Are Open-Source Large Language Models Catching up?》
+
+2023.11 的一篇回顾总结文章，要点：
+
+1. ChatGPT推出1周年之际，本文对open source, close source大模型做了全面评估，总体上还是闭源模型的效果更好，但是开源模型的差距已经越来越小
+2. 本文总结了6个维度的很多个benchmarks，对大语言模型做了系统评估。多个模型在效果上可以达到接近甚至超过GPT-3.5-turbo的水平，但是距离GPT-4普遍还有比较大的差距。考虑到模型规模以及投入水平，开源模型的追赶还是可期的。
+
+
 ## 2023.12.20
 
 《NExT-GPT: Any-to-Any Multimodal LLM》
@@ -61,7 +71,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文提出了一个 end-to-end general-purpose any-to-any multimodal LLM (MM-LLM) model，并取得比较好的效果。
 
-
 ## 2023.12.19
 
 《HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face》
@@ -73,7 +82,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果：几种不能类型的任务都能解决的比较好，并且充分证明了LLM基础能力的重要性。
 
 总体上，本文属于agent应用的novel尝试，跟Reflexion/React等文章要解决的问题类似，不过当前agent领域是不是缺少一些权威的benchmarks？不太好做横向对比。
-
 
 《DHEN: A Deep and Hierarchical Ensemble Network for Large-Scale Click-Through Rate Prediction》
 
