@@ -48,6 +48,18 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.22
+
+《Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models》
+
+2023.3 微软的一篇文章，关于agent构建的，要点：
+
+1. ChatGPT 提供一个统一的language interface with  *remarkable conversational competency and reasoning capabilities，本文提出 Visual ChatGPT system，集成不同的VFMs，支持ChatGPT式的使用体验，另一种解决方案是，是否有必要train一个**多模态**的model？
+2. *模型，核心部分是一个 prompt manager，显式的告诉ChatGPT每个VFM的能力，以及其input-output format，并且把visual info转换成language，同时管理历史信息
+
+总体上，通过prompt manager来管理VFMs，使用自然语言与 ChatGPT 交互，来推动整个任务执行流程前进，毕竟还是有一些局限，ChatGTP对于图像、视频等的信息感知是有偏差的，但整体还是一个比较有意思的工作。
+
+
 ## 2023.12.21
 
 《ChatGPT’s One-year Anniversary: Are Open-Source Large Language Models Catching up?》
@@ -56,7 +68,6 @@ Zero-Shot Text-to-Image Generation
 
 1. ChatGPT推出1周年之际，本文对open source, close source大模型做了全面评估，总体上还是闭源模型的效果更好，但是开源模型的差距已经越来越小
 2. 本文总结了6个维度的很多个benchmarks，对大语言模型做了系统评估。多个模型在效果上可以达到接近甚至超过GPT-3.5-turbo的水平，但是距离GPT-4普遍还有比较大的差距。考虑到模型规模以及投入水平，开源模型的追赶还是可期的。
-
 
 ## 2023.12.20
 
