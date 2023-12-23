@@ -50,6 +50,16 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.23
 
+《PandaGPT: One Model To Instruction-Follow Them All》
+
+2023.5 腾讯AI lab 的一篇文章，关于多模态model的，要点：
+
+1. 当前的多模态对齐工作，局限于text和其他模态之间的对齐，PandaGPT，第一个 general-purpose 的model，可以处理来自6种模态的instruction-following input，并且这些能力只通过trained on aligned image-text pairs获得
+2. 模型，imagebind + Vicuna，为了对齐 ImageBind 和 Vicuna 的feature space，在 160k 数据上FT，并且为了减少计算量，只FT少部分参数
+
+总体上，本文基于Imagebind和Vicuna的工作，不同之处在于PandaGPT模型做了instructions的微调，因此适应多种模态的prompt task，文中也有比较多Demo，但是缺少公共评测集结果。
+
+
 《Vipergpt: Visual inference via python execution for reasoning》
 
 2023.3 的一篇工作，也属于Agent的范畴，不同之处在于用python代码来衔接，要点：
