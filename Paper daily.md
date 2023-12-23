@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.23
+
+《WebGPT: Browser-assisted question-answering with human feedback》
+
+2022.6 OpenAI的一篇工作，让GPT3联网，要点：
+
+1. 本文 FT GPT-3 to answer long-form questions(LFQA) using a text-based web browsing environment, which allows the model to search and navigate the web. 相比于RAG来说，本文把 R 这个部分替换为了bing搜索引擎，理论上效果应该会更好。
+2. 数据，用到了几份数据，ELI5 和 TruthfulQA；并通过人工演示搜集了一批 demonstrations 数据，以及comparisons score数据
+3. 模型，基于GPT3 model family，用到了BC, RM, RL, rejection sampling 等训练方法。从实验结果来看，最好的model outperform humans on ELI5，但是对于 out-of-distribution questions仍然表现不好。（可能是FT有偏了）
+
+总体上，本文通过让GPT拿到bing search数据，来处理LFQA task，经过FT后，在这些问题上取得了 outperform human的结果，但是这种FT方法对于out of distribution的问题仍然表现不好。属于2年前的工作了，现在的模型能力，agent 方案，更丰富的FT技术等，应该能表现的更好。
+
+
 ## 2023.12.22
 
 《Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models》
