@@ -50,6 +50,17 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.23
 
+《Vipergpt: Visual inference via python execution for reasoning》
+
+2023.3 的一篇工作，也属于Agent的范畴，不同之处在于用python代码来衔接，要点：
+
+1. 背景：回答 visual queries 非常复杂，需要visual processing and reasoning，E2E方法之前主导这类task，但是缺少解释性和泛化性；modular programs提供了一种替代，本文提出ViperGPT框架，应用code gen 模型，引入V-L models到流程中来
+2. 本文的方法，通过生成代码（Codex）来衔接各个model，对复杂流程进行 modular，用代码来控制逻辑；一种平行的方法是生成 text instructions（哪种思路更好呢？没找到效果对比的数据）；另外all-in-one的model也是一个方案，类似Google Gemini这种
+3. 模型：Our prompt consists of an application programming interface (API), detailed in the following section, which we provide to the LLM as part of its input context.
+
+总体上，本文提出了一个很好的框架，通过生成代码来衔接各个基础模型，完成复杂的visual input 任务，评估了多个数据集，如RefCOCO，GQA，OK-VQA，NExT-QA 等，取得了SOTA的效果
+
+
 《WebGPT: Browser-assisted question-answering with human feedback》
 
 2022.6 OpenAI的一篇工作，让GPT3联网，要点：
@@ -59,7 +70,6 @@ Zero-Shot Text-to-Image Generation
 3. 模型，基于GPT3 model family，用到了BC, RM, RL, rejection sampling 等训练方法。从实验结果来看，最好的model outperform humans on ELI5，但是对于 out-of-distribution questions仍然表现不好。（可能是FT有偏了）
 
 总体上，本文通过让GPT拿到bing search数据，来处理LFQA task，经过FT后，在这些问题上取得了 outperform human的结果，但是这种FT方法对于out of distribution的问题仍然表现不好。属于2年前的工作了，现在的模型能力，agent 方案，更丰富的FT技术等，应该能表现的更好。
-
 
 ## 2023.12.22
 
@@ -71,7 +81,6 @@ Zero-Shot Text-to-Image Generation
 2. *模型，核心部分是一个 prompt manager，显式的告诉ChatGPT每个VFM的能力，以及其input-output format，并且把visual info转换成language，同时管理历史信息
 
 总体上，通过prompt manager来管理VFMs，使用自然语言与 ChatGPT 交互，来推动整个任务执行流程前进，毕竟还是有一些局限，ChatGTP对于图像、视频等的信息感知是有偏差的，但整体还是一个比较有意思的工作。
-
 
 ## 2023.12.21
 
