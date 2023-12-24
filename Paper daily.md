@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.24
+
+《API-Bank: A Comprehensive Benchmark for Tool-Augmented LLMs》
+
+2023.10 的一篇文章，研究LLM 的tool使用能力，要点：
+
+1. LLM 可以通过使用tool来强化自己的能力，本文提出了三个问题，LLM使用tools能力的有效性评估，如何强化LLM使用tools的能力，有哪些障碍需要被解决。构建了API-Bank这个专门设计的数据集（相当于一个 instruction finetuning 数据集），设计了一个multi-agent 标注数据的流程
+2. 模型，基于Alpaca-7B 和API-Bank数据集FT，显示了比较强的API使用能力
+3. 实验结果，当前的LLMs具备一定的使用tool的能力，但是diverse并且high-quality的数据集，对于提升模型能力大有帮助
+
+总体上，本文构建了一个tool-augmented LLM的数据集API-Bank，并对不同类型模型的不同level tool使用能力做了研究，同时也证明了数据集的有效性。Multi-agent标注数据的流程很有借鉴意义，协同agent完成复杂任务。
+
+
 ## 2023.12.23
 
 《PandaGPT: One Model To Instruction-Follow Them All》
