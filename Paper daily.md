@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.28
+
+《vLLM: Efficient Memory Management for Large Language Model Serving with *PagedAttention*》
+
+2023.10 UC Berkeley 和 Stanford 的一篇文章，关于提高LLM推理性能，要点：
+
+1. LLMs 的高吞吐量要求batching处理足够多的请求，但是key-value cache memory for each request很巨大，容易由于fragmentation和redundant duplication造成显著浪费，本文提出PagedAttention，受虚拟内存和paging技术启发的一种attention 算法，operates on KV cache stored in 非连续内存上
+2. 模型，以13B模型为例，inference期间的内存占用主要分为三部分：model params 固定占用26GB，attention KV cache，大约30%显存，还有其他activations等占用一小部分。其中KV这部分因为内存碎片等原因有比较多浪费。本文的block-based PagedAttention可以很好的解决这个问题
+3. 实验结果，vLLM 提高popular LLMs by 2-4 倍吞吐，在同等水平的latency下，性能有比较明显的提升。
+
+总体上，本文通过深入到LLM inference时的memory使用机制，借鉴OS vitural memory思路，提出了block-based PagedAttention，显著优化了LLM推理时的内存约束，大幅提高了吞吐。
+
+
 ## 2023.12.24
 
 《API-Bank: A Comprehensive Benchmark for Tool-Augmented LLMs》
