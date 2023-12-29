@@ -48,6 +48,19 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.29
+
+《Emu2: Generative Multimodal Models are In-Context Learners》
+
+2023.12 的一篇文章，BAAI和清华、北大合作，要点：
+
+1. Human 可以比较容易的基于in context examples处理多模态tasks，当前多模态model在努力imitate，本文展示了task-agnostic ICL 能力（few-shot），并且Generalize to unseen multimodal tasks，可以被effective scaling-up极大的加强
+2. 模型，比较经典的 visual encoder + generative multimodal model + visual decoder，通过几个基础预训练模型来初始化，然后通过大体量的多模数据集进行continue training。pretrained后的模型，还可以做instruction finetuning
+3. 实验结果，以37B的尺寸，在VQA和LMM benchmarks上，以及图像生成数据集上，都取得非常好的结果，甚至超过了 Flamingo 80B和 DALLE3
+
+总体上，以一个非常简洁的模型架构，通过pretrain数据的scaling up，取得很好的结果，模型的思想与[5007]也比较像，只是当时还没有这么大这么好的pretrained foundation model
+
+
 ## 2023.12.28
 
 《vLLM: Efficient Memory Management for Large Language Model Serving with *PagedAttention*》
@@ -59,7 +72,6 @@ Zero-Shot Text-to-Image Generation
 3. 实验结果，vLLM 提高popular LLMs by 2-4 倍吞吐，在同等水平的latency下，性能有比较明显的提升。
 
 总体上，本文通过深入到LLM inference时的memory使用机制，借鉴OS vitural memory思路，提出了block-based PagedAttention，显著优化了LLM推理时的内存约束，大幅提高了吞吐。
-
 
 ## 2023.12.24
 
@@ -73,7 +85,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文构建了一个tool-augmented LLM的数据集API-Bank，并对不同类型模型的不同level tool使用能力做了研究，同时也证明了数据集的有效性。Multi-agent标注数据的流程很有借鉴意义，协同agent完成复杂任务。
 
-
 ## 2023.12.23
 
 《PandaGPT: One Model To Instruction-Follow Them All》
@@ -85,7 +96,6 @@ Zero-Shot Text-to-Image Generation
 
 总体上，本文基于Imagebind和Vicuna的工作，不同之处在于PandaGPT模型做了instructions的微调，因此适应多种模态的prompt task，文中也有比较多Demo，但是缺少公共评测集结果。
 
-
 《Vipergpt: Visual inference via python execution for reasoning》
 
 2023.3 的一篇工作，也属于Agent的范畴，不同之处在于用python代码来衔接，要点：
@@ -95,7 +105,6 @@ Zero-Shot Text-to-Image Generation
 3. 模型：Our prompt consists of an application programming interface (API), detailed in the following section, which we provide to the LLM as part of its input context.
 
 总体上，本文提出了一个很好的框架，通过生成代码来衔接各个基础模型，完成复杂的visual input 任务，评估了多个数据集，如RefCOCO，GQA，OK-VQA，NExT-QA 等，取得了SOTA的效果
-
 
 《WebGPT: Browser-assisted question-answering with human feedback》
 
