@@ -48,6 +48,10 @@ LLM 系列：
 
 Zero-Shot Text-to-Image Generation
 
+## 2023.12.31
+
+update
+
 ## 2023.12.29
 
 《Emu2: Generative Multimodal Models are In-Context Learners》
