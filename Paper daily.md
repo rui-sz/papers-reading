@@ -50,7 +50,16 @@ Zero-Shot Text-to-Image Generation
 
 ## 2023.12.31
 
-update
+《A Survey of Large Language Models》
+
+2023.11 的一篇文章，ChatGPT推出1周年之际，本文对LLM的发展现状进行了系统阐述，要点：
+
+    真可谓是一篇雄文，全面、系统，且深入的介绍了LLM的发展过程，广度和深度兼具
+
+    对于模型结构、预训练、下游使用、评估等都有非常好的介绍，甚至对多模态内容也有涉及
+
+    非常有价值的一篇参考文章
+
 
 ## 2023.12.29
 
@@ -63,7 +72,6 @@ update
 3. 实验结果，以37B的尺寸，在VQA和LMM benchmarks上，以及图像生成数据集上，都取得非常好的结果，甚至超过了 Flamingo 80B和 DALLE3
 
 总体上，以一个非常简洁的模型架构，通过pretrain数据的scaling up，取得很好的结果，模型的思想与[5007]也比较像，只是当时还没有这么大这么好的pretrained foundation model
-
 
 ## 2023.12.28
 
