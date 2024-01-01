@@ -16,6 +16,12 @@
 
     非常有价值的一篇参考文章
 
+
+《2023年paper阅读总结》
+
+    TBD
+
+
 ## 2023.12.29
 
 《Emu2: Generative Multimodal Models are In-Context Learners》
