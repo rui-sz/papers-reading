@@ -2,51 +2,7 @@
 
 每周论文学习记录
 
-# pending list
-
-> paper1 = video 2
-
-领域主线：
-
-1. 大模型（NLP, CV, 多模态等)
-2. GNN系列
-3. Anomaly Detection 系列
-4. 搜广推（+智能运营)
-5. ABtest
-
-具体文章：
-
-- [ ] Opening the black box of Deep Neural Networks via Information
-- [ ] Learning phrase representations using rnn encoder-decoder for statistical machine translation2014年，提出了GRU
-- [ ] 使用Xenon-Generation Finetune LLama文档阅读
-- [ ] 写综述：GNN 论文总结
-- [ ] Deeper insights into graph convolutional networks for semi-supervised learning
-- [ ] 不同的位置编码方式，1D(Bert的), 2D etc
-- [ ] 通用内容
-
-  - [ ] GAP global average pooling
-  - [ ] Grad-cam: Visual explanations from deep networks via gradient-based localization  视觉DNN的可解释性
-  - [ ] DL三大特征抽取器（CNN,RNN,Transformer）总结TBD
-  - [ ] viking, milvus等向量检索相关技术，检索和矢量搜索工具（如 LangChain、LlamaIndex 和 Pinecone）
-- [ ] 大模型近年来的主要文章（目标：7月底写一篇综述）
-
-  - [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
-  - [ ] CLIP 得分，衡量文本、图像的对齐程度
-  - [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
-  - [ ] image GPT 的工作
-  - [ ] 多模态预训练工作（by李沐)
-  - [ ] MAE loss，BiT MAE重建图像
-  - [ ] DALLE/DALLE2 效果体验
-
 # 2023.12
-
-ALIGN
-
-Imagen
-
-LLM 系列：
-
-Zero-Shot Text-to-Image Generation
 
 ## 2023.12.31
 
@@ -59,7 +15,6 @@ Zero-Shot Text-to-Image Generation
     对于模型结构、预训练、下游使用、评估等都有非常好的介绍，甚至对多模态内容也有涉及
 
     非常有价值的一篇参考文章
-
 
 ## 2023.12.29
 
