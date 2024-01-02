@@ -32,7 +32,6 @@
 
   - [ ] Big Transfer (BiT): General Visual Representation Learning （CNN中做的比较大的)
   - [ ] Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
-  - [ ] image GPT 的工作
   - [ ] 多模态预训练工作（by李沐)
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
