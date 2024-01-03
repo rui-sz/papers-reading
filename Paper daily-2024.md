@@ -50,4 +50,4 @@
 
 《Multimodal Foundation Models: From Specialists to General-Purpose Assistants》
 
-2023.9 Microsoft出的多模态领域综述文章，阅读中
+2023.9 Microsoft出的多模态领域综述文章，阅读中，进度30%
