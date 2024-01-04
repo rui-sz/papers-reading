@@ -9,7 +9,6 @@
 3. Anomaly Detection 系列
 4. 搜广推（+智能运营)
 
-
 # pending list
 
 > paper1 = video 2
@@ -46,8 +45,10 @@
 
 # 2024.1
 
-## 2024.1.1
+## 2024.1.5
 
 《Multimodal Foundation Models: From Specialists to General-Purpose Assistants》
 
-2023.9 Microsoft出的多模态领域综述文章，阅读中，进度30%
+2023.9 Microsoft出的多模态领域综述文章，阅读中，进度40%
+
+务必要完成了。。
