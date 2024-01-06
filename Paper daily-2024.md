@@ -45,10 +45,28 @@
 
 # 2024.1
 
+## 2024.1.6
+
+TBD
+
 ## 2024.1.5
 
 《Multimodal Foundation Models: From Specialists to General-Purpose Assistants》
 
-2023.9 Microsoft出的多模态领域综述文章，阅读中，进度40%
+2023.9 Microsoft出的多模态领域综述文章，review视角全面，细致深入，质量很高，要点：
 
-务必要完成了。。
+1. Multimodal foundation models pre-trained for special purposes
+   1. Topics:
+      1. methods of learning vision backbones for **visual understanding**      CLIP，BEiT，SAM 等
+      2. text-to-image **visual generation**      包括 SD 等
+2. Multimodal foundation models aim to be **general-purpose assistants**
+   1. General-purpose assistants 的三个要点：
+      1. an unified network architecture
+      2. an unified input-output data format
+      3. a general interface that facilitates easy interaction with humans.
+   2. Topics/三种方案:
+      1. **unified vision models** inspired by large language models (LLMs)
+      2. end-to-end training of **multimodal ****LLMs**
+      3. Chaining multimodal tools with LLMs:**multimodal agents**
+
+要说缺憾，就是主要覆盖的是 image/image-language，没有覆盖音频、3D、视频等更多领域。
