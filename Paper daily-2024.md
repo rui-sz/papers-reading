@@ -47,7 +47,16 @@
 
 ## 2024.1.6
 
-TBD
+《GLIP: Grounded Language-Image Pre-training》
+
+2022.6 MSRA和UCLA的一篇文章，要点：
+
+1. 本文统一了 object detection（找出图像中所有感兴趣目标，确定它们的类别和位置） 和 visual grounding（输入图片和物体文字描述，找到物体的bounding box） 2个任务，推出GLIP model, learn object-level, language-aware and semantic-rich visual representations，显示出很强的zero-shot和few-shot迁移性，到各种object-level识别任务上。reformulate objective detection as a phrase grounding problem
+2. 模型，与CLIP model仅在最后一层fusion vision和language不同，GLIP model 采用deep cross-modality fusion，加强vision和language信号的交互；pre-trained on 27M grounding data, including 3M human annotated fine-grained data and 24M web-crawled image text pairs
+3. 实验结果，GLIP show promising results on zero-shot and fine-tuning settings on several benchmarks。由于vision&text信号的深度融合，prompt tuning 结果接近full tuned model效果。
+
+总体上，本文尝试统一目标检测和visual grounding任务，推出一个简洁且强大的预训练model GLIP，取得很好的性能。
+
 
 ## 2024.1.5
 
