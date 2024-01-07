@@ -47,6 +47,17 @@
 
 ## 2024.1.7
 
+《Imagen: Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding》
+
+2022.5 Google 的一篇text-to-image文章，要点：
+
+1. 本文提出 text-to-image model Imagen，底层都是扩散模型diffusion model，整体框架比 DALLE2 简单很多
+2. 模型，Combine transformer based LMs with high-fidelity diffusion models; T5 + 3个diffusion models
+3. 实验结果，在COCO数据集，以及本文推出的DrawBench上，比DALLE2, GLIDE, VQGAN+CLIP的结果都要好，是新的SOTA；消融实验发现Increasing the size of the language model in Imagen boosts both sample fidelity and image-text alignment much more than increasing the size of the image diffusion model
+
+Imagen 的关键发现是，在text-only corpora上预训练的LMs，其text embeddings对于text-to-image synthesis非常有效，效果优于基于CLIP text latents的DALLE2
+
+
 《MobileVLM: A Fast, Strong and Open Vision Language Assistant for Mobile Devices》
 
 2023.12 美团和浙大合作的一篇研究Moble VLM的工作，要点：
