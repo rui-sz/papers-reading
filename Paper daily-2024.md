@@ -45,6 +45,19 @@
 
 # 2024.1
 
+## 2024.1.7
+
+《MobileVLM: A Fast, Strong and Open Vision Language Assistant for Mobile Devices》
+
+2023.12 美团和浙大合作的一篇研究Moble VLM的工作，要点：
+
+1. 本文推出 MobleVLM targeted to run on mobile devices，对开元VLM的arch和training做了一定总结
+2. 模型，模型结构比较简单，类似 LLaVA 的架构，主干LLM模型采用了 MobileLLaMA，projection 采用了一个downscale的设计LDP结构，总体比较常规；训练数据用了1.3T tokens，是比较大的
+3. 实验结果，相对做了比较全的对比，包括与SOTA模型在VLM benchmarks上的性能对比，推理速度，以及vision encoder scales 和 training paradigms 消融实验的对比等。不过这一块的结论不是那么清晰
+
+总体属于对 MobileVLM 一篇还比较务实的研究工作，结论方面感觉不是很深刻
+
+
 ## 2024.1.6
 
 《GLIP: Grounded Language-Image Pre-training》
