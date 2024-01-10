@@ -45,6 +45,16 @@
 
 ## 2024.1.10
 
+《ALIGN: Scaling up visual and vision-language representation learning with noisy text supervision》
+
+2021年Google Research的一篇视觉预训练文章，跟CLIP类似，要点：
+
+1. 本文的主要目标是 scale up visual and vision-language representation learning，因此命名  **ALIGN** : **A L**arge-scale **I**ma**G**e and **N**oisy-text embedding，是一个非常好的V和V-L预训练模型
+2. 数据，标题里有scaling，数据集的大小也绝不含糊，首先是一个1B的image alt-text pairs；后来增加多语种，扩充到1.8B大小数据集，cover 100+种语言
+3. 模型，相对比较简单，image encoder + text encoder + contrastive loss（normalized softmax）
+4. 实验结果，因为数据集非常大，预训练效果很好，在zero-shot/SFT的classification任务上，都取得非常好的效果，zero-shot超过CLIP；在T2I，I2T等retrieval任务上，也取得很好的效果
+
+
 《REDCODER: Retrieval Augmented Code Generation and Summarization》
 
 2021.9 的一篇文章，研究RAG增强Code场景，要点：
