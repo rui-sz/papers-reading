@@ -37,13 +37,34 @@
 
   ALIGN
 
-  Imagen
-
   LLM 系列：
 
   Zero-Shot Text-to-Image Generation
 
 # 2024.1
+
+## 2024.1.10
+
+《REDCODER: Retrieval Augmented Code Generation and Summarization》
+
+2021.9 的一篇文章，研究RAG增强Code场景，要点：
+
+1. 想法是针对程序员的高频场景，利用existing high-quality code 和 desc，通过IR召回后引入generation process
+2. 模型，retriever 参考了DPR的 two different parallel encoders；generator 用的PLBART
+3. 实验结果，对比之前单独基于 retriever 和 generation 的方法，效果提升比较明显
+
+
+## 2024.1.8
+
+《ShareGPT4V: Improving Large Multi-Modal Models with Better Captions》
+
+2023.11 中科大和上海AILab的一篇文章，关于构建高质量image-text数据集的，要点：
+
+1. 多模态领域缺少足够的高质量数据集，传统数据集中的 Vision 在info和细粒度semantics上都很rich，但是brief的captions只focus在突出的objects上，造成巨大信息丢失；本文推出了一个ShareGPT4V数据集，以及相应的ShareGPT4V-7B 多模态model
+2. 数据，先基于GPT4-Vision生成100k高质量captions数据，然后build a strong caption model，expand 数据集到1.2M，avg length 是942 characters
+3. 模型，ShareGPT4V-7B model follow LLaVA-1.5 的设计，包含3个integral组件
+
+本文主要是研究高质量captions数据的有效性，能实现LMMs更好的alignment
 
 ## 2024.1.7
 
@@ -57,7 +78,6 @@
 
 Imagen 的关键发现是，在text-only corpora上预训练的LMs，其text embeddings对于text-to-image synthesis非常有效，效果优于基于CLIP text latents的DALLE2
 
-
 《MobileVLM: A Fast, Strong and Open Vision Language Assistant for Mobile Devices》
 
 2023.12 美团和浙大合作的一篇研究Moble VLM的工作，要点：
@@ -67,7 +87,6 @@ Imagen 的关键发现是，在text-only corpora上预训练的LMs，其text emb
 3. 实验结果，相对做了比较全的对比，包括与SOTA模型在VLM benchmarks上的性能对比，推理速度，以及vision encoder scales 和 training paradigms 消融实验的对比等。不过这一块的结论不是那么清晰
 
 总体属于对 MobileVLM 一篇还比较务实的研究工作，结论方面感觉不是很深刻
-
 
 ## 2024.1.6
 
@@ -80,7 +99,6 @@ Imagen 的关键发现是，在text-only corpora上预训练的LMs，其text emb
 3. 实验结果，GLIP show promising results on zero-shot and fine-tuning settings on several benchmarks。由于vision&text信号的深度融合，prompt tuning 结果接近full tuned model效果。
 
 总体上，本文尝试统一目标检测和visual grounding任务，推出一个简洁且强大的预训练model GLIP，取得很好的性能。
-
 
 ## 2024.1.5
 
