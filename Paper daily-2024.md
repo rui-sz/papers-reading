@@ -43,6 +43,17 @@
 
 # 2024.1
 
+## 2024.1.11
+
+《If LLM Is the Wizard, Then Code Is the Wand》
+
+2024.1 UIUC的一篇文章，对于Code在LLM领域的作用做了系统性梳理，要点：
+
+本文系统性梳理了 Code pretrain 在 LLMs 能力当中的作用，包括code 能力，reasoning能力，capture  structural knowledge能力等；增强LLM与digital tool, physical tool connect的能力等，对于增强 IAs 也非常有益。
+
+没有读的很仔细，粗略扫了一遍，后面有需要再看吧
+
+
 ## 2024.1.10
 
 《ALIGN: Scaling up visual and vision-language representation learning with noisy text supervision》
