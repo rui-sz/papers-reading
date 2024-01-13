@@ -43,6 +43,19 @@
 
 # 2024.1
 
+## 2024.1.13
+
+《VISTA-LLAMA: Reliable Video Narrator via Equal Distance to Visual Tokens》
+
+2023.12 字节和浙江大学合作的工作，关于 Video understanding 能力的，要点：
+
+1. 本文目标是加强 visual understanding and facilitate temporal modeling within the language model
+2. 模型，包括几个部分 visual encoder + visual projector + text encoder + language model，其中projector提升了时序建模能力，并且能把long video压缩到更少的tokens；attention 机制也做了改进，保持equal distance between visual tokens and any language tokens，同时ratain relative distance between two language tokens，也就是EDVT attention
+3. 实验结果，在Video理解任务上表现不错，zero-shot VQA 多个数据集上达到SOTA结果，video-based text generation 表现也不错
+
+总体上，属于基于 trained with LLM 的多模态路径上一个新颖的尝试，解决时序问题，提升video理解能力，计算量和人力投入应该都不大。
+
+
 ## 2024.1.11
 
 《If LLM Is the Wizard, Then Code Is the Wand》
@@ -52,7 +65,6 @@
 本文系统性梳理了 Code pretrain 在 LLMs 能力当中的作用，包括code 能力，reasoning能力，capture  structural knowledge能力等；增强LLM与digital tool, physical tool connect的能力等，对于增强 IAs 也非常有益。
 
 没有读的很仔细，粗略扫了一遍，后面有需要再看吧
-
 
 ## 2024.1.10
 
@@ -65,7 +77,6 @@
 3. 模型，相对比较简单，image encoder + text encoder + contrastive loss（normalized softmax）
 4. 实验结果，因为数据集非常大，预训练效果很好，在zero-shot/SFT的classification任务上，都取得非常好的效果，zero-shot超过CLIP；在T2I，I2T等retrieval任务上，也取得很好的效果
 
-
 《REDCODER: Retrieval Augmented Code Generation and Summarization》
 
 2021.9 的一篇文章，研究RAG增强Code场景，要点：
@@ -73,7 +84,6 @@
 1. 想法是针对程序员的高频场景，利用existing high-quality code 和 desc，通过IR召回后引入generation process
 2. 模型，retriever 参考了DPR的 two different parallel encoders；generator 用的PLBART
 3. 实验结果，对比之前单独基于 retriever 和 generation 的方法，效果提升比较明显
-
 
 ## 2024.1.8
 
