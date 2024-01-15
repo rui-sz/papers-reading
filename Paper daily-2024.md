@@ -43,6 +43,19 @@
 
 # 2024.1
 
+## 2024.1.15
+
+《LLaVAR: Enhanced Visual Instruction Tuning for Text-Rich Image Understanding》
+
+2023.6 Adobe Research 和 Stanford 合作的一篇文章，要点：
+
+1. LLaVAR: LLaVA (Large Language and Vision Assistant) that can **R**ead. 顾名思义，本文目标是提升 instruction-tuned model 对于 text-rich image 的理解能力，设计了一套方法构建高质量的 instruction tuning 数据集
+2. 数据，除了来自LLaVA的数据之外，设计了一个流程，用OCR提取text数据，并基于OCR和captain的结果 prompt GPT4，生成 high-quality instruction tuning 数据集
+3. 模型，模型复用了LLaVA的模型架构，两阶段训练，pretrain + finetune，实验结果主要验证了对于图片中text的理解能力
+
+总体上，本文通过构建一个精巧的数据集，加强了instruction-tuned model对于text-rich image中text的理解能力，是一篇方法比较巧妙的文章，成本也不高。
+
+
 ## 2024.1.13
 
 《VISTA-LLAMA: Reliable Video Narrator via Equal Distance to Visual Tokens》
