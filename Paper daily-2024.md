@@ -43,6 +43,19 @@
 
 # 2024.1
 
+## 2024.1.17
+
+《Minigpt-4: Enhancing vision-language understanding with advanced large language models》
+
+2023.4 沙特阿布扎比大学的一篇多模态研究工作，要点：
+
+1. 我们相信GPT4的加强的多模态生成能力源自于对复杂LLM的使用，将 visual features 对齐到一个先进的LLM，可以获得很多GPT4展示出来的高级multimodal能力
+2. 模型，BLIP2 的Vit&QFormer + Vicuna，做一阶段预训练，加一轮finetune
+3. 实验结果，对比先前使用 less powerful language models的模型（比如BLIP2），MiniGPT4 展示出了更强的基于图片的理解和生成能力；align visual features with LLM，基于detailed image desc pairs效果更好
+
+总体上，本文用一个很简单的方法，将预训练图像encoder与比较强的LLM级联，然后做一定量的pretrain+finetune，极大的增强了模型的图像理解和文本生成能力，涌现出类似GPT4的很多能力。
+
+
 ## 2024.1.15
 
 《LLaVAR: Enhanced Visual Instruction Tuning for Text-Rich Image Understanding》
@@ -55,7 +68,6 @@
 
 总体上，本文通过构建一个精巧的数据集，加强了instruction-tuned model对于text-rich image中text的理解能力，是一篇方法比较巧妙的文章，成本也不高。
 
-
 ## 2024.1.13
 
 《VISTA-LLAMA: Reliable Video Narrator via Equal Distance to Visual Tokens》
@@ -67,7 +79,6 @@
 3. 实验结果，在Video理解任务上表现不错，zero-shot VQA 多个数据集上达到SOTA结果，video-based text generation 表现也不错
 
 总体上，属于基于 trained with LLM 的多模态路径上一个新颖的尝试，解决时序问题，提升video理解能力，计算量和人力投入应该都不大。
-
 
 ## 2024.1.11
 
