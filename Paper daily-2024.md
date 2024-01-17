@@ -56,6 +56,16 @@
 总体上，本文用一个很简单的方法，将预训练图像encoder与比较强的LLM级联，然后做一定量的pretrain+finetune，极大的增强了模型的图像理解和文本生成能力，涌现出类似GPT4的很多能力。
 
 
+《Minigpt-5: Interleaved vision-and-language generation via generative vokens》
+
+2024.10 加州大学的一篇研究多模态理解和生成的工作，要点：
+
+1. 本文出发点是增加LLM同时输出images+texts的能力，做法上基于 MiniGPT4 引入multimodal generation能力，核心是一种generative vokens的中间变量
+2. 模型：范式 interleaved multimodal input -> interleaved multimodal output, Multimodal LLM + Stable diffusion；采用两阶段 train，一阶段 unimodal alignment stage，text as input, generate vokens，二阶段 vokens as input, generate vision and language实验结果，性能优于SD2、Divter等之前表现比较好的model
+
+总体上，在设计上比较有创意，属于集成型的model，基于一些不错的model（MiniGPT4和SD2），使用一些训练技巧达到比较好的效果
+
+
 ## 2024.1.15
 
 《LLaVAR: Enhanced Visual Instruction Tuning for Text-Rich Image Understanding》
