@@ -43,6 +43,11 @@
 
 # 2024.1
 
+## 2024.1.18
+
+《TBD》
+
+
 ## 2024.1.17
 
 《Minigpt-4: Enhancing vision-language understanding with advanced large language models》
