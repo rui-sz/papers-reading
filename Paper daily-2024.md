@@ -66,6 +66,18 @@
 总体上，在设计上比较有创意，属于集成型的model，基于一些不错的model（MiniGPT4和SD2），使用一些训练技巧达到比较好的效果
 
 
+《InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning》
+
+2023.6 Salesforce 研究V-L模型指令微调的工作，要点：
+
+1. 本文的出发点，是受language model启发要研究 V-L model 的 instruction tuning 问题，InstructBLIP 可以理解为是 BLIP2 + 指令微调
+2. 数据，本文 uses a much wider range of vision-language instruction data, covering both template-based converted data and LLM-generated data. 26个dataset
+3. 模型，在BLIP-2的模型架构上做了一些改进，引入instruction-aware visual feature extraction，Balancing training dataset 等
+4. 实验结果，在多个数据集上outperform了BLIP-2和Flamingo；同时通过消融实验证明，instruction template 有多样性的 instruction tuning 对于模型泛化到 unseen tasks 上的性能contribute比较大，而单纯的 multitask learning 则作用有限；InstructBLIP在下游任务上FT的效果也好于BLIP-2，说明其是一个更好的 for specific-task FT的基线model
+
+总体上，是 V-L model 做指令微调的一篇很好的文章，工作扎实，效果好，同时消融实验的insight比较有价值。
+
+
 ## 2024.1.15
 
 《LLaVAR: Enhanced Visual Instruction Tuning for Text-Rich Image Understanding》
