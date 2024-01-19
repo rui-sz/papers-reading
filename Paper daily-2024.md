@@ -43,9 +43,18 @@
 
 # 2024.1
 
-## 2024.1.18
+## 2024.1.19
 
-《TBD》
+《Qwen-VL: A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond》
+
+2023.10 alibaba 的一个多模态model，要点：
+
+1. 本文推出Qwen-VL大概10B参数量，面向的任务类型：image captioning, question answering, text-oriented question answering/OCR, and visual grounding
+2. 数据，三阶段训练分别采用了不同数据集，一阶段是weakly labelled image-text pairs，二阶段是基于高质量数据的multitask pretraining，三阶段是supervised finetuning
+3. 模型，架构上采用了openclip ViT+Position-aware Vision-Language Adapter + QwenLM，总参数量大概10B
+4. 实验结果，在多个种类的图文tasks上，比如captaining，VQA，OCR，grounding等任务上，都表现出很强的性能，可以说比BLIP、LLaVA、Flamingo等模型都要好，也表现出了很好的few-shot learning能力
+
+总体上，本文基于两个预训练基座组装了一个V-L model，在训练上采用了一些技巧，取得很好的评估结果，未来发展方向，包括拓展更多的模态，继续scaling up the model size，增加多模态生成能力
 
 
 ## 2024.1.17
