@@ -43,6 +43,19 @@
 
 # 2024.1
 
+## 2024.1.20
+
+《(CM3leon)Scaling Autoregressive Multi-Modal Models: Pretraining and Instruction Tuning》
+
+2023.9 FAIR的一篇工作，关于 token based 多模态模型，要点：
+
+1. 本文展示了 text-only 的 autoregressive models 也可以很好的用于 text 和 image generation，推出了 CM3leon，RAG 增强训练，token-based，decoder-only multimodal model，可以生成和填充text, image
+2. 模型，同CM3 decoder-only transformer architecture，去掉了 bias terms, dropout, and learnable parameters for layer norms and use a sequence length of 4096 instead of 2048，在3B的tokens数据集上训练；RAG 增强的方法，希望在pretrain阶段引入相关的、多样化数据。
+3. 实验结果，pretrain + SFT，在图像编辑/生成，以及文本生成方面都展示出了比较好的能力。
+
+总体上，本文用 decoder-only model来解决图像生成问题，extend the scope of autoregressive model，展示了compete with and exceed diffusion model的能力，在效率和质量方面。
+
+
 ## 2024.1.19
 
 《Qwen-VL: A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond》
