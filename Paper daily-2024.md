@@ -45,6 +45,17 @@
 
 ## 2024.1.21
 
+《DALLE: Zero-Shot Text-to-Image Generation》
+
+2021.2 OpenAI的一篇text-to-image model文章，要点：
+
+1. 传统的 text-to-image generation聚焦于寻找更好的模型假设，例如复杂 arch，辅助loss，或者伴随信息object part labels, seg masks等，直接用pixel来做token的话，造成大量的内存消耗，本文描述一个简单的方法，把text,image tokens当做data seq，
+2. 模型，autoregressive model 是基于sparse transformer，image tokenizer 使用了VQ-VAE2，text 和 image 的token vocab size分别是16384和8192；模型大小12B，mask attention使用 conv 类型的
+3. 实验结果，相比之前GAN的方法，在真实性和image-captain匹配上都在90+%评估中更好；FID分数，在MS-COCO上表现跟GAN相当，但是在CUB上差的比较多
+
+总体上，DALLE使用统一的decoder-only transformer来训练text-to-image model，方法上比较新颖简洁，效果还可以。不过DALLE 论文给出的公式信息并不多，会影响部分理解。
+
+
 《CM3: A causal masked multimodal model of the internet》
 
 2022.1 FAIR 的一篇工作，研究decoder-only的多模态模型，要点：
