@@ -43,6 +43,19 @@
 
 # 2024.1
 
+## 2024.1.21
+
+《CM3: A causal masked multimodal model of the internet》
+
+2022.1 FAIR 的一篇工作，研究decoder-only的多模态模型，要点：
+
+1. 本文推出一个CM3（**C**ausally-**M**asked **M**ultimodal **M**odeling） model，基于 hyper-text 结构化数据（full document structure including images and hypertext links）训练，用到 causally masked objective，因此具备 bidirectional context 理解能力
+2. 模型，decoder-only 的架构，引入了VQVAE-GAN来做Visual tokenization，重点训练了2个尺寸 2.7 billion（CM3-Medium） and 13 billion（CM3-Large）
+3. 实验结果，在prompt的时候，结合html类型数据格式，可以适应于多种类型下游任务，例如conditional/unconditional image生成，text-image/image-text等
+
+总体上本文工作属于[5157] HTML 的延伸，使用了VQVAE-GAN的visual tokens，以及 causal masked objective，并scaling up 了一个数量级，适用多种任务类型，同时与T5对比，masked language model 性能相当，未损失性能。
+
+
 ## 2024.1.20
 
 《(CM3leon)Scaling Autoregressive Multi-Modal Models: Pretraining and Instruction Tuning》
