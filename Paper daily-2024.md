@@ -43,6 +43,20 @@
 
 # 2024.1
 
+## 2024.1.22
+
+《Make-A-Scene: Scene-Based Text-to-Image Generation with Human Priors》
+
+2022.3 Meta 的一篇 text-to-image 优化工作，要点：
+
+1. Text-to-image 面临的几个重要问题，Controllability，用文字控制 style/color 比较容易，但是structure, form, or arrangement就很难描述；bounding box 控制；Human preception，对齐人的图像偏好；Quality and resolution
+2. 本文 provides a new type of control complementary to text，通过增加scene input的方式，有比较多好处，比如更好的控制性，在生成系列图片时更好的一致性（story teller）
+3. 模型，骨干部分是一个GPT3的 decoder-only transformer，text/scene/image 分别通过相应的Encoder来编码成token，scene 在推理时是可选的；为了增强VQ编码的效果，使用了一些技巧，例如face-aware/object-aware等
+4. 实验结果，从定性和定量评估上都取得很不错的效果，FID的对比超过DALLE和GLIDE等，消融实验表明 face-aware, CF, scene input 等优化机制都有不错的效果
+
+总体上，本文对于 text-to-image 问题增加控制性和提高生成质量，是一个比较新颖的尝试，也取得不错效果。
+
+
 ## 2024.1.21
 
 《DALLE: Zero-Shot Text-to-Image Generation》
