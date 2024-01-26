@@ -43,7 +43,18 @@
 
 # 2024.1
 
-## 2024.1.22
+## 2024.1.26
+
+《Baize: An Open-Source Chat Model with Parameter-Efficient Tuning on Self-Chat Data》
+
+2023.12 MSRA 的一篇工作，围绕如何生成高质量数据FT 弱model，要点：
+
+1. 本文提出了一个使用ChatGPT生成高质量 multi-turn chat corpus 数据的pipeline，接着使用 param-efficient LoRA方法来FT LLaMA model，提出了SDF方法（相当于蒸馏ChatGPT），得到Baize
+2. 模型，基于LLaMA，用LoRA进行finetuning，在过程中用到了 self-distillation finetuning 技术
+3. 实验结果，从定量定性的评估来看，本文方法都还比较有效，同样参数规模能compete Vicuna等
+
+
+## 2024.1.23
 
 《Make-A-Scene: Scene-Based Text-to-Image Generation with Human Priors》
 
