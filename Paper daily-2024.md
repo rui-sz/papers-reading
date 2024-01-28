@@ -43,6 +43,10 @@
 
 # 2024.1
 
+## 2024.1.29
+
+TBD
+
 ## 2024.1.26
 
 《Baize: An Open-Source Chat Model with Parameter-Efficient Tuning on Self-Chat Data》
@@ -52,7 +56,6 @@
 1. 本文提出了一个使用ChatGPT生成高质量 multi-turn chat corpus 数据的pipeline，接着使用 param-efficient LoRA方法来FT LLaMA model，提出了SDF方法（相当于蒸馏ChatGPT），得到Baize
 2. 模型，基于LLaMA，用LoRA进行finetuning，在过程中用到了 self-distillation finetuning 技术
 3. 实验结果，从定量定性的评估来看，本文方法都还比较有效，同样参数规模能compete Vicuna等
-
 
 ## 2024.1.23
 
@@ -67,7 +70,6 @@
 
 总体上，本文对于 text-to-image 问题增加控制性和提高生成质量，是一个比较新颖的尝试，也取得不错效果。
 
-
 ## 2024.1.21
 
 《DALLE: Zero-Shot Text-to-Image Generation》
@@ -80,7 +82,6 @@
 
 总体上，DALLE使用统一的decoder-only transformer来训练text-to-image model，方法上比较新颖简洁，效果还可以。不过DALLE 论文给出的公式信息并不多，会影响部分理解。
 
-
 《CM3: A causal masked multimodal model of the internet》
 
 2022.1 FAIR 的一篇工作，研究decoder-only的多模态模型，要点：
@@ -90,7 +91,6 @@
 3. 实验结果，在prompt的时候，结合html类型数据格式，可以适应于多种类型下游任务，例如conditional/unconditional image生成，text-image/image-text等
 
 总体上本文工作属于[5157] HTML 的延伸，使用了VQVAE-GAN的visual tokens，以及 causal masked objective，并scaling up 了一个数量级，适用多种任务类型，同时与T5对比，masked language model 性能相当，未损失性能。
-
 
 ## 2024.1.20
 
@@ -103,7 +103,6 @@
 3. 实验结果，pretrain + SFT，在图像编辑/生成，以及文本生成方面都展示出了比较好的能力。
 
 总体上，本文用 decoder-only model来解决图像生成问题，extend the scope of autoregressive model，展示了compete with and exceed diffusion model的能力，在效率和质量方面。
-
 
 ## 2024.1.19
 
@@ -118,7 +117,6 @@
 
 总体上，本文基于两个预训练基座组装了一个V-L model，在训练上采用了一些技巧，取得很好的评估结果，未来发展方向，包括拓展更多的模态，继续scaling up the model size，增加多模态生成能力
 
-
 ## 2024.1.17
 
 《Minigpt-4: Enhancing vision-language understanding with advanced large language models》
@@ -131,7 +129,6 @@
 
 总体上，本文用一个很简单的方法，将预训练图像encoder与比较强的LLM级联，然后做一定量的pretrain+finetune，极大的增强了模型的图像理解和文本生成能力，涌现出类似GPT4的很多能力。
 
-
 《Minigpt-5: Interleaved vision-and-language generation via generative vokens》
 
 2024.10 加州大学的一篇研究多模态理解和生成的工作，要点：
@@ -140,7 +137,6 @@
 2. 模型：范式 interleaved multimodal input -> interleaved multimodal output, Multimodal LLM + Stable diffusion；采用两阶段 train，一阶段 unimodal alignment stage，text as input, generate vokens，二阶段 vokens as input, generate vision and language实验结果，性能优于SD2、Divter等之前表现比较好的model
 
 总体上，在设计上比较有创意，属于集成型的model，基于一些不错的model（MiniGPT4和SD2），使用一些训练技巧达到比较好的效果
-
 
 《InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning》
 
@@ -152,7 +148,6 @@
 4. 实验结果，在多个数据集上outperform了BLIP-2和Flamingo；同时通过消融实验证明，instruction template 有多样性的 instruction tuning 对于模型泛化到 unseen tasks 上的性能contribute比较大，而单纯的 multitask learning 则作用有限；InstructBLIP在下游任务上FT的效果也好于BLIP-2，说明其是一个更好的 for specific-task FT的基线model
 
 总体上，是 V-L model 做指令微调的一篇很好的文章，工作扎实，效果好，同时消融实验的insight比较有价值。
-
 
 ## 2024.1.15
 
