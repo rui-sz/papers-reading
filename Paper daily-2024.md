@@ -45,7 +45,14 @@
 
 ## 2024.1.29
 
-TBD
+《MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models》
+
+2023.12 腾讯优图实验室和厦门大学的一篇多模态模型评估工作，要点：
+
+1. 本文提出了一个 comprehensive dataset MME, to evaluate MLLMs的性能
+2. 数据，包括14个不同的数据集，涵盖 perception and cognition task，preception包含 coarse-grained 和 fine-grained，以及OCR任务；指令和回答经过特殊设计，非常简洁，以保证对所有模型公平，并且指标易于计算
+3. 模型，评估了30个 up-to-date 的MLLMs，给出了 preception 和 cogintion 的leaderboards
+
 
 ## 2024.1.26
 
