@@ -43,6 +43,17 @@
 
 # 2024.1
 
+## 2024.1.30
+
+《How Good Are GPT Models at Machine Translation? A Comprehensive Evaluation》
+
+2023.2 Microsoft 的一篇关于 GPT model MT 能力的系统评估文章，要点：
+
+1. 本文主要研究GPT model的MT性能，做了一个全面的评估，三种不同版本GPT model，对比一些基于WMT数据集的最优模型
+2. 实验结果，在high resources 语言上，GPT models 获得了非常有竞争力的结果，但是在low resources语言上，能力相对有限。
+3. 本文进一步全面分析理解了GPT translations的特征，对比NMT model，对于获取关于GPT models for translations的潜力和限制有启发。
+
+
 ## 2024.1.29
 
 《MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models》
@@ -52,7 +63,6 @@
 1. 本文提出了一个 comprehensive dataset MME, to evaluate MLLMs的性能
 2. 数据，包括14个不同的数据集，涵盖 perception and cognition task，preception包含 coarse-grained 和 fine-grained，以及OCR任务；指令和回答经过特殊设计，非常简洁，以保证对所有模型公平，并且指标易于计算
 3. 模型，评估了30个 up-to-date 的MLLMs，给出了 preception 和 cogintion 的leaderboards
-
 
 ## 2024.1.26
 
