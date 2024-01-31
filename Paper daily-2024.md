@@ -41,6 +41,13 @@
 
   Zero-Shot Text-to-Image Generation
 
+# 2024.2
+
+## 2024.2.1
+
+TBD
+
+
 # 2024.1
 
 ## 2024.1.30
