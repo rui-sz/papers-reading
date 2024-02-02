@@ -43,9 +43,17 @@
 
 # 2024.2
 
-## 2024.2.1
+## 2024.2.2
 
-TBD
+《DALLE3: Improving Image Generation with Better Captions》
+
+2023.10 CloseAI的一篇T2I工作，要点：
+
+1. 本文展示了T2I model的prompt following abilities 可以被 highly descriptive generated image captions 显著增强，当前模型在这方面表现不好，假设是由于训练数据中 noisy and inaccurate image captions 导致的；同时T2I model 的一个严峻挑战是 controllability 不足。对于这些问题，本文通过caption improvement来解决
+2. 模型，总体上采用2个阶段，re-captioning + diffusion model，通过训练一个 descriptive 的 re-captioning model，生成 Synthetic data，基于这个更丰富的 caption 数据来训练 diffusion model
+3. 实验结果，对比 DALLE2 和 其他 SD model 都有显著效果提升，采用了 automatic/human evaluation等不同方法；评估工作总体讲的比较少
+
+总体上，本文通过增强 caption 数据来优化了 T2I model的 prompt following 能力，取得很好的效果，遗憾的是对于模型细节披露太少，只讲了数据处理这部分工作。
 
 
 # 2024.1
@@ -59,7 +67,6 @@ TBD
 1. 本文主要研究GPT model的MT性能，做了一个全面的评估，三种不同版本GPT model，对比一些基于WMT数据集的最优模型
 2. 实验结果，在high resources 语言上，GPT models 获得了非常有竞争力的结果，但是在low resources语言上，能力相对有限。
 3. 本文进一步全面分析理解了GPT translations的特征，对比NMT model，对于获取关于GPT models for translations的潜力和限制有启发。
-
 
 ## 2024.1.29
 
