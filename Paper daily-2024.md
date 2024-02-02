@@ -45,6 +45,16 @@
 
 ## 2024.2.2
 
+《Large Language Models Are State-of-the-Art Evaluators of Translation Quality》
+
+2023.5 微软的一篇文章，研究GPT模型评估翻译质量，要点：
+
+1. 本文的总体思路就是用GPT模型来对翻译结果进行评价，构建4种不同的prompt（2 scoring + 2 classification），以及2种不同的mode（human-ref, not）让GPT给出判断结果，再与人工打分对比给出accuracy
+2. 实验结果，GEMBA-GPT4的评估准确率要显著高于model-based COMET22，以及大幅高于传统 BLEU 分
+
+本文用的Zero shot prompt 的方式来询问GPT，后续few-shot，以及SFT都是继续可以尝试的方向，同时可能也会启发后续 document-level 的MT工作，构建更好用的metrics
+
+
 《DALLE3: Improving Image Generation with Better Captions》
 
 2023.10 CloseAI的一篇T2I工作，要点：
@@ -54,7 +64,6 @@
 3. 实验结果，对比 DALLE2 和 其他 SD model 都有显著效果提升，采用了 automatic/human evaluation等不同方法；评估工作总体讲的比较少
 
 总体上，本文通过增强 caption 数据来优化了 T2I model的 prompt following 能力，取得很好的效果，遗憾的是对于模型细节披露太少，只讲了数据处理这部分工作。
-
 
 # 2024.1
 
