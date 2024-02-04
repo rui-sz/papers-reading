@@ -35,13 +35,19 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
-  ALIGN
-
-  LLM 系列：
-
-  Zero-Shot Text-to-Image Generation
-
 # 2024.2
+
+## 2024.2.4
+
+《Emu: Generative Pretraining in Multimodality》
+
+2023.7 BAAI 联合清华、北大的一篇多模态文章，要点：
+
+1. 本文推出Emu，一个Transformer-based 多模态基础模型，采用了统一的 autoregressive objective of predicting the next element, including both visual and textual tokens，这种建模方式，可以被用作 generalist interface
+2. 数据，除了传统的 image-text 数据集之外，本文基于 video 提取了 interleaved image-text 数据
+3. 模型，visual encoder + causal transformer + LLM + diffusion decoder，14B 模型参数量；训练有三个阶段，pretraining、diffusion model FT、instruction finetuning
+4. 实验结果，在 zero shot/few shot evaluation 上都表现出比较好的效果，模型有较好的ICL能力
+
 
 ## 2024.2.2
 
@@ -53,7 +59,6 @@
 2. 实验结果，GEMBA-GPT4的评估准确率要显著高于model-based COMET22，以及大幅高于传统 BLEU 分
 
 本文用的Zero shot prompt 的方式来询问GPT，后续few-shot，以及SFT都是继续可以尝试的方向，同时可能也会启发后续 document-level 的MT工作，构建更好用的metrics
-
 
 《DALLE3: Improving Image Generation with Better Captions》
 
