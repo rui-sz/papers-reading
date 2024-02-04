@@ -39,6 +39,16 @@
 
 ## 2024.2.4
 
+《Sparse transformer: Generating Long Sequences with Sparse Transformers》
+
+2019.4，OpenAI Ilya 领衔的一篇研究Transformer 平方计算问题的文章，要点：
+
+1. 本文的出发点为了解决随着 sequence 增长，transformer attention 部分占用内存和计算开销呈平方复杂度的问题，Scaling up autoregressive generative models，让 Transformer Arch 更适合 modeling long sequences
+2. 本文提出了一种对 attention matrix 进行sparse factorization 的方法，将attention复杂度降到 n*sqrt(n)，以及其他几种优化：一种网络变种能train更深的网络；在backward pass中对attention matrices进行recompution以节省存储；Fast attention kernels for training
+
+总体上，本文是解决Transformer attention平方问题的早期论文，在图像生成问题上揭示了attention的原罪，就是其实不需要那么密集的注意力，启发了后续的一系列工作
+
+
 《Emu: Generative Pretraining in Multimodality》
 
 2023.7 BAAI 联合清华、北大的一篇多模态文章，要点：
