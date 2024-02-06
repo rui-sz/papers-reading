@@ -37,6 +37,33 @@
 
 # 2024.2
 
+## 2024.2.6
+
+《VAE: Auto-encoding variational bayes》
+
+2013年Kingma的一篇文章，在AE基础上将其改造成能做数据生成，要点：
+
+AE：
+
+    x->z->x'，最小化损失函数 L(x,x')
+
+    目的是提取抽象特征z，或者数据降维
+
+VAE：
+
+    总体是一个生成式模型，在AE思想的基础上引入变分的思想，使其能够进行数据生成。
+
+    中间学习出一个分布（正态分布），再采样得到特征，而不是直接学特征
+
+    VAE可以理解为通过网络学习出每个属性正态分布的mean和std编码，然后通过mean和std和N ( 0,1 )正态分布恢复每个属性的正态分布，最后随机采样得到每个属性的离散值。
+
+    鲁棒性会更好
+
+    总体上，VAE是AEVB算法的一个具体例子，证明了重参数化的变分下界的，使其可以用标准随机梯度法直接优化，同时VAE生成模型的缺陷就是生成的图片相对模糊（why？），VAE提出后，很多学者针对这个问题进行了优化。如结合GAN等。
+
+    理论性比较强的一篇文章。
+
+
 ## 2024.2.4
 
 《Sparse transformer: Generating Long Sequences with Sparse Transformers》
@@ -48,7 +75,6 @@
 
 总体上，本文是解决Transformer attention平方问题的早期论文，在图像生成问题上揭示了attention的原罪，就是其实不需要那么密集的注意力，启发了后续的一系列工作
 
-
 《Emu: Generative Pretraining in Multimodality》
 
 2023.7 BAAI 联合清华、北大的一篇多模态文章，要点：
@@ -57,7 +83,6 @@
 2. 数据，除了传统的 image-text 数据集之外，本文基于 video 提取了 interleaved image-text 数据
 3. 模型，visual encoder + causal transformer + LLM + diffusion decoder，14B 模型参数量；训练有三个阶段，pretraining、diffusion model FT、instruction finetuning
 4. 实验结果，在 zero shot/few shot evaluation 上都表现出比较好的效果，模型有较好的ICL能力
-
 
 ## 2024.2.2
 
