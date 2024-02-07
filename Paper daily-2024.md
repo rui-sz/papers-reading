@@ -37,6 +37,23 @@
 
 # 2024.2
 
+## 2024.2.7
+
+《VQVAE: *Neural Discrete Representation Learning*》
+
+2017年DeepMind的一篇工作，跟 PixelCNN强关联，要点如下：
+
+1. AutoEncoder的重构思想就是 **用低纬度的latent code分布来表达高纬度的数据分布** ，但是潜空间的编码点相互之间关系不大，基本上只能用来抽特征做分类，不能用来做图像生成。VAE和VQVAE的重构思想是通过 **设计latent code的分布形式** ，进而控制图片生成的过程。
+2. VAE是增大自由度，VQVAE 相比VAE控制了自由度。VQVAE通过Encoder学习出中间编码，然后通过最邻近搜索将中间编码映射为codebook中K个向量之一，然后通过Decoder对latent code进行重建。
+
+VQ-VAE 与 VAE 的主要2点区别：
+
+1. encoder 部分输出的是 discrete codes，而不是 continuous latent variables
+2. learnt rather than static
+
+VQVAE相比于VAE最大的不同是 **直接找每个属性的离散值，通过类似于查表的方式** ，计算codebook和中间编码的最近邻作为latent code。由于维护了一个codebook，编码范围更加可控，VQVAE相对于VAE， **可以生成更大更高清的图片** (这也为后续DALLE和VQGAN的出现做了铺垫)。
+
+
 ## 2024.2.6
 
 《VAE: Auto-encoding variational bayes》
