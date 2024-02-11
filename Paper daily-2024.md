@@ -37,6 +37,16 @@
 
 # 2024.2
 
+## 2024.2.11
+
+《PixelCNN: Pixel recurrent neural networks》
+
+2016年 DeepMind 的一篇自回归图像生成模型的文章，要点：
+
+1. 本文属于运用 autoregressive modeling 方法建模图像生成的文章，这与VAE的方法显著不同？
+2. 模型，PixelRNN 和 PixelCNN，主要区别在于第一层 conv Mask A 提取特征之后的若干层网络结构上，前者是LSTM，后者是CNN，Recurrent Neural Networks (RNN) are powerful models that offer a compact, shared parametrization of a series of conditional distributions，CNN-based model属于前者的变种，同时作者为了有效训练更深的网络，引入了 residual connection 结构
+
+
 ## 2024.2.7
 
 《VQVAE: *Neural Discrete Representation Learning*》
@@ -52,7 +62,6 @@ VQ-VAE 与 VAE 的主要2点区别：
 2. learnt rather than static
 
 VQVAE相比于VAE最大的不同是 **直接找每个属性的离散值，通过类似于查表的方式** ，计算codebook和中间编码的最近邻作为latent code。由于维护了一个codebook，编码范围更加可控，VQVAE相对于VAE， **可以生成更大更高清的图片** (这也为后续DALLE和VQGAN的出现做了铺垫)。
-
 
 ## 2024.2.6
 
@@ -79,7 +88,6 @@ VAE：
     总体上，VAE是AEVB算法的一个具体例子，证明了重参数化的变分下界的，使其可以用标准随机梯度法直接优化，同时VAE生成模型的缺陷就是生成的图片相对模糊（why？），VAE提出后，很多学者针对这个问题进行了优化。如结合GAN等。
 
     理论性比较强的一篇文章。
-
 
 ## 2024.2.4
 
