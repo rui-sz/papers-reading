@@ -37,6 +37,24 @@
 
 # 2024.2
 
+## 2024.2.12
+
+VQVAE实际上只是一种类似于AE的编码解码器，并没有生成功能，它需要联合如PixelCNN等模型才能进行生成。
+
+用 VQVAE 生成图像的步骤
+
+1. 训练VQVAE
+   1. Image1 -> Encoder（emb1） + cookbook（emb2） + decoder -> image2
+2. 用VQVAE重建数据集里的随机数据
+   1. 重建，就是模拟训练的过程，随机取一些图片，先编码后解码，看解码出来的图片和原图片是否一致。
+   2. 重建效果还是很重要的，它决定了该方法做图像生成的质量上限
+   3. 重建过程中的中间数据 image1->emb2 作为 PixelCNN 的训练数据
+3. 训练PixelCNN
+   1. 基于上述 image1->emb2 训练生成压缩图片（离散编码图片）
+   2. 这样 PixelCNN 就可以用空白图片作为输入生成压缩图片了，再输入VQVAE做解码
+4. 用PixelCNN+VQVAE随机生成图片
+   1. PixelCNN 生成压缩图片，然后VQVAE解码
+
 ## 2024.2.11
 
 《PixelCNN: Pixel recurrent neural networks》
