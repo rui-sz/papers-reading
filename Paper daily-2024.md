@@ -37,6 +37,19 @@
 
 # 2024.2
 
+## 2024.2.14
+
+《One-peace: EXPLORING ONE GENERAL REPRESENTATION MODEL TOWARD UNLIMITED MODALITIES》
+
+2023.5 达摩院和华科合作的一篇文章，要点：
+
+1. 本文提出了一个 scalable way for building a general representation model across different modalities，其思想中有很强的 ImageBind 和 BEiT v3 的影子
+2. 模型，modality Adaptors + Fusion Encoder(cross attention + FFNs) 的模型结构，loss 包括 cross-modal aligning 和 intra modal denoising 两种，分别用于跨模态对齐以及单模态特征学习；在训练时，两阶段使用 image-text 和 audio-text 数据； 模型尺寸4B
+3. 实验结果，在 vision/audio/visio-language等任务上对比之前SOTA都展示出了很强的能力，同时展示出了很强的跨模态zero shot能力，尽管训练数据中并未出现相应的模态组合
+
+总体上，在数据使用上的思想 Like Imagebind，只不过本文是将image/audio与text对齐，其训练思想有点类似 BEiT v3，分阶段训练网络的不同部分。从结果来看是一篇很不错的文章，只不过创新性稍有不足。
+
+
 ## 2024.2.12
 
 VQVAE实际上只是一种类似于AE的编码解码器，并没有生成功能，它需要联合如PixelCNN等模型才能进行生成。
