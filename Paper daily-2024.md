@@ -37,6 +37,17 @@
 
 # 2024.2
 
+## 2024.2.15
+
+《Prompting Large Language Model for Machine Translation: A Case Study》
+
+2023.1 Edinburgh 大学基于ChatGLM研究LLM MT的一篇文章，重点关注prompt技巧，要点：
+
+1. 本文重点研究 prompt LLM do MT，关注如何让 prompting works for MT，研究了 prompt template 和 few-shot examples selection
+2. 方法，基于ChatGLM-130B model（这个模型本身性能应该一般，所以结论不一定具有普适性），研究了 template 和 template language 的影响，language 方面英语表现最好，尽管pretrain语料中英语和中文token相当；
+3. 实验结果，*在选择few shot examples 时，high translation quality, high * *semantic similarity**, high **LLM** likelihood, long sequence length and high similarity to test inputs are all preferable strategies. 但是相关性都比较弱，迁移性一般；单语言examples以及random pairs表现都比较一般，pseudo parallel data表现不错，表明了在demo中保持正确mapping的作用*
+
+
 ## 2024.2.14
 
 《One-peace: EXPLORING ONE GENERAL REPRESENTATION MODEL TOWARD UNLIMITED MODALITIES》
