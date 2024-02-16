@@ -37,6 +37,19 @@
 
 # 2024.2
 
+## 2024.2.16
+
+《Diffusion Transformer: Scalable Diffusion Models with Transformers》
+
+2022.12 Meta 实习生的一篇工作，要点：
+
+1. 本文研究基于 transformer architecture 扩展 diffusion models，VAE + diffusion transformer
+2. 模型，transformer-based DDPMs 基于 image + condition 的input，输出 latent emb，VAE decoder 再输出最终图片，本文探索的 DiT design space 包括：patch size, transformer block arch，model size
+3. 实验结果，adaLN-Zero 的DiT设计更有效，model size，patch size，Gflops对模型性能（FID，定性评估等）都有比较显著影响
+
+总体上，本文属于 transformer based diffusion model 一篇很不错的文章，并且做了很好的消融实验。不足之处是，似乎本文主要还是为了解决图像生成问题，并不能作为大一统 foundation model
+
+
 ## 2024.2.15
 
 《Prompting Large Language Model for Machine Translation: A Case Study》
@@ -46,7 +59,6 @@
 1. 本文重点研究 prompt LLM do MT，关注如何让 prompting works for MT，研究了 prompt template 和 few-shot examples selection
 2. 方法，基于ChatGLM-130B model（这个模型本身性能应该一般，所以结论不一定具有普适性），研究了 template 和 template language 的影响，language 方面英语表现最好，尽管pretrain语料中英语和中文token相当；
 3. 实验结果，*在选择few shot examples 时，high translation quality, high * *semantic similarity**, high **LLM** likelihood, long sequence length and high similarity to test inputs are all preferable strategies. 但是相关性都比较弱，迁移性一般；单语言examples以及random pairs表现都比较一般，pseudo parallel data表现不错，表明了在demo中保持正确mapping的作用*
-
 
 ## 2024.2.14
 
@@ -59,7 +71,6 @@
 3. 实验结果，在 vision/audio/visio-language等任务上对比之前SOTA都展示出了很强的能力，同时展示出了很强的跨模态zero shot能力，尽管训练数据中并未出现相应的模态组合
 
 总体上，在数据使用上的思想 Like Imagebind，只不过本文是将image/audio与text对齐，其训练思想有点类似 BEiT v3，分阶段训练网络的不同部分。从结果来看是一篇很不错的文章，只不过创新性稍有不足。
-
 
 ## 2024.2.12
 
@@ -87,7 +98,6 @@ VQVAE实际上只是一种类似于AE的编码解码器，并没有生成功能�
 
 1. 本文属于运用 autoregressive modeling 方法建模图像生成的文章，这与VAE的方法显著不同？
 2. 模型，PixelRNN 和 PixelCNN，主要区别在于第一层 conv Mask A 提取特征之后的若干层网络结构上，前者是LSTM，后者是CNN，Recurrent Neural Networks (RNN) are powerful models that offer a compact, shared parametrization of a series of conditional distributions，CNN-based model属于前者的变种，同时作者为了有效训练更深的网络，引入了 residual connection 结构
-
 
 ## 2024.2.7
 
