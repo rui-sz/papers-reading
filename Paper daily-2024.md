@@ -37,6 +37,19 @@
 
 # 2024.2
 
+## 2024.2.19
+
+《DDPM: Denoising diffusion probabilistic models》
+
+2020年diffusion model用于图像生成的奠基作，要点：
+
+1. 本文被认为是 diffusion model 用于图像生成领域的奠基作，解决了DPM的一些不足，使得图像生成质量大幅提高，使得扩散模型在图像生成领域大放异彩。对前向、后向的过程进行了比较严谨的分析和证明，对reverse process采用U-Net结构建模
+2. 模型，reverse的预测过程是比较简单的，predict 添加的噪声（预测噪声比预测原始的x0要容易的多），一个细节是，最后生成的图像怎么来，不是 x0 hat 的采样值，而是其期望
+3. 实验结果，能够生成高质量图像，并且可以在diffusion steps中间对不同图片做插值，来做图像融合
+
+无论是 DDPM 还是 DDIM，这些扩散模型在生成图片时，都是输入一个随机高斯噪声数据， 然后逐步的产出一张有意的真实图片。这个过程中每一步都是一个随机过程，所以每次执行产出的图片都不一样， 生成的图像多样性非常好。但是不能对生成结果做控制。
+
+
 ## 2024.2.16
 
 《Diffusion Transformer: Scalable Diffusion Models with Transformers》
