@@ -37,6 +37,18 @@
 
 # 2024.2
 
+## 2024.2.20
+
+《VideoGPT: Video Generation using VQ-VAE and **Transformers**》
+
+2021年UC Berkeley的一篇video生成模型的文章，要点：
+
+1. 本文是用 transformer 生成 video 的一篇工作，如标题用到了VQ-VAE和transformer
+2. 模型，VQ-VAE + Transformer，VQVAE encoder + autoregresive model + VQVAE decoder
+
+总体上，是用 transformer 生成video一个不错的尝试
+
+
 ## 2024.2.19
 
 《DDPM: Denoising diffusion probabilistic models》
@@ -49,7 +61,6 @@
 
 无论是 DDPM 还是 DDIM，这些扩散模型在生成图片时，都是输入一个随机高斯噪声数据， 然后逐步的产出一张有意的真实图片。这个过程中每一步都是一个随机过程，所以每次执行产出的图片都不一样， 生成的图像多样性非常好。但是不能对生成结果做控制。
 
-
 ## 2024.2.16
 
 《Diffusion Transformer: Scalable Diffusion Models with Transformers》
@@ -61,7 +72,6 @@
 3. 实验结果，adaLN-Zero 的DiT设计更有效，model size，patch size，Gflops对模型性能（FID，定性评估等）都有比较显著影响
 
 总体上，本文属于 transformer based diffusion model 一篇很不错的文章，并且做了很好的消融实验。不足之处是，似乎本文主要还是为了解决图像生成问题，并不能作为大一统 foundation model
-
 
 ## 2024.2.15
 
@@ -331,6 +341,7 @@ VAE：
 
 总体上，本文通过构建一个精巧的数据集，加强了instruction-tuned model对于text-rich image中text的理解能力，是一篇方法比较巧妙的文章，成本也不高。
 
+
 ## 2024.1.13
 
 《VISTA-LLAMA: Reliable Video Narrator via Equal Distance to Visual Tokens》
@@ -342,6 +353,7 @@ VAE：
 3. 实验结果，在Video理解任务上表现不错，zero-shot VQA 多个数据集上达到SOTA结果，video-based text generation 表现也不错
 
 总体上，属于基于 trained with LLM 的多模态路径上一个新颖的尝试，解决时序问题，提升video理解能力，计算量和人力投入应该都不大。
+
 
 ## 2024.1.11
 
