@@ -37,6 +37,19 @@
 
 # 2024.2
 
+## 2024.2.25
+
+《Improved denoising diffusion probabilistic models》
+
+2021年OpenAI的一篇文章，基于DDPM做了一些改进，要点：
+
+1. 之前尚未证明DDPM相比其它模型（例如autoregressive model）可以获得 competitive log-likelihood 性能，而log-likelihood 是广泛用于生成模型的指标，一般认为优化LL可以促使model capture所有数据分布形式。本文目标对DDPM模型进行优化，让其具有更好的 log-likelihood 性能，同时保持 sample quality 较高
+2. 模型，几个改进项：正向diffusion从linear改为cosine；优化损失函数；通过消融实验可以看到这2个都有正向效果。同时 sampling 的速度也有提升，相比较而言DDPM需要上百steps sample得到好样本
+3. 实验结果，FID性能与模型计算量呈log线性关系，NLL弱线性，说明diffusion模型是 scalable 的。在likelihood建模方面，DDPM相比CNN-based方法更好，但是比transformer-based方法要弱。
+
+不过本文方法的计算量更大一些，1000 steps->4000 steps
+
+
 ## 2024.2.20
 
 《VideoGPT: Video Generation using VQ-VAE and **Transformers**》
@@ -47,7 +60,6 @@
 2. 模型，VQ-VAE + Transformer，VQVAE encoder + autoregresive model + VQVAE decoder
 
 总体上，是用 transformer 生成video一个不错的尝试
-
 
 ## 2024.2.19
 
@@ -341,7 +353,6 @@ VAE：
 
 总体上，本文通过构建一个精巧的数据集，加强了instruction-tuned model对于text-rich image中text的理解能力，是一篇方法比较巧妙的文章，成本也不高。
 
-
 ## 2024.1.13
 
 《VISTA-LLAMA: Reliable Video Narrator via Equal Distance to Visual Tokens》
@@ -353,7 +364,6 @@ VAE：
 3. 实验结果，在Video理解任务上表现不错，zero-shot VQA 多个数据集上达到SOTA结果，video-based text generation 表现也不错
 
 总体上，属于基于 trained with LLM 的多模态路径上一个新颖的尝试，解决时序问题，提升video理解能力，计算量和人力投入应该都不大。
-
 
 ## 2024.1.11
 
