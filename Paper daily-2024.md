@@ -37,6 +37,19 @@
 
 # 2024.2
 
+## 2024.2.28
+
+《ADM: Diffusion Models Beat GANs on Image Synthesis》
+
+2021.5 OpenAI的一篇工作，研究用diffusion model生成图像，要点：
+
+1. 本文在DDPM基础上做了一系列改进，以达到更好的 image sample quality to the current state-of-the-art generative models，也就是GANs
+2. 模型，a method for using gradients from a classifier to guide a diffusion model during sampling，controlled generative models with a pre-trained classifier
+3. 实验结果，SOTA on unconditional image synthesis and with classifier guidance on conditional image synthesis，match BigGAN-deep even with as few as 25 forward passes per sample
+
+总体上，本文在diffusion模型结构上做了有效改进，同时通过引入guidance trade off diversity for fidelity
+
+
 ## 2024.2.25
 
 《Improved denoising diffusion probabilistic models》
