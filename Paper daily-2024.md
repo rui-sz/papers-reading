@@ -35,6 +35,21 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
+# 2024.3
+
+## 2024.3.3
+
+《Generative AI for Translation in 2024》
+
+2024.2 的一篇文章，系统性的研究了主流LLMs在翻译性能上与NMT models的对比关系
+
+要点
+
+1. LLM 基本上在性能上可以match top MT model，PaLM2 的翻译性能表现最好，Gemini pro 的翻译性能还不错；在OpenAI model中，GPT4 -Turbo 的表现最好，GPT 3.5Turbo并不弱，差的不多；LLaMA2 对比闭源模型还有比较大差距
+2. 1M长度文本的翻译成本方面GPT系列与传统MT服务差不多，Google 的大模型服务要明显低一些，低20倍以上
+3. LLM 的翻译速度相比NMT要慢100倍以上
+
+
 # 2024.2
 
 ## 2024.2.28
@@ -49,7 +64,6 @@
 
 总体上，本文在diffusion模型结构上做了有效改进，同时通过引入guidance trade off diversity for fidelity
 
-
 ## 2024.2.25
 
 《Improved denoising diffusion probabilistic models》
@@ -61,7 +75,6 @@
 3. 实验结果，FID性能与模型计算量呈log线性关系，NLL弱线性，说明diffusion模型是 scalable 的。在likelihood建模方面，DDPM相比CNN-based方法更好，但是比transformer-based方法要弱。
 
 不过本文方法的计算量更大一些，1000 steps->4000 steps
-
 
 ## 2024.2.20
 
