@@ -37,6 +37,17 @@
 
 # 2024.3
 
+## 2024.3.5
+
+《COMET**: A Neural Framework for MT Evaluation》
+
+2020.1 Unbabel AI 的一篇机器翻译评估指标文章，要点：
+
+1. BLEU指标，是基于 MT-generated hypothesis and a human-generated reference translation in the target language. 存在一些弱点
+2. 本文推出COMET model，一个多语言翻译模型，验证了三种目标：DA,HTER,MQM，基础模型就是 XLM-RoBERTa 的model，在上面加了结构做回归和分类（详细了解TODO）
+3. 实验结果，相比BLEU效果要好很多，是更优秀的MT评估指标
+
+
 ## 2024.3.3
 
 《Generative AI for Translation in 2024》
