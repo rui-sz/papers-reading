@@ -37,6 +37,29 @@
 
 # 2024.3
 
+## 2024.3.11
+
+《ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation》
+
+2023.12 的一篇文章，研究T2I model评估指标和improve问题，要点：
+
+1. 本文提出了一个基于 human preference feedback 评估和提高 text-to-image models 的方法
+2. 模型，基于 BLIP backbone 训练了一个分类model，评估结果显示在与 Human preference 对齐上比 CLIP score 和 FID 明显要好，单张图片也更有区分度。
+
+总体上，属于研究T2I模型评估的一篇很好的工作，ImageReward 指标比CLIP score和FID更有优势。
+
+
+《CLIPScore: A Reference-free Evaluation Metric for Image Captioning》
+
+2021年底2022年初，研究image caption任务的评估指标，要点：
+
+1. 此前 image captioning 依赖 reference-based automatic evaluations，本文提出了基于CLIP model不依赖 reference 的model
+2. 模型，用CLIP输出的text/image emb，计算cos距离，作为相似度衡量；ref 版本在此基础上引入了跟人工标注样本集的距离进行增强
+3. 实验结果，跟人工判断的一致性比之前评估指标（BLEU, ROUGE-L, METEOR, CIDEr）都要高一些
+
+总体上，属于利用CLIP强大的cross-modal emb对齐能力，方法比较简单，在早期应该效果不错。
+
+
 ## 2024.3.5
 
 《COMET**: A Neural Framework for MT Evaluation》
