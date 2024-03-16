@@ -37,6 +37,18 @@
 
 # 2024.3
 
+## 2024.3.16
+
+《InternLM-XComposer2: Mastering Free-form Text-Image Composition and Comprehension in Vision-Language Large Models 》
+
+2024.1 上海AI-Lab与香港中文大学、商汤的一篇关于多模态模型的文章，要点：
+
+1. 模型，本文提出了 XComposer2 model，InternLM2 + CLIP ViT-L，引入partial LoRA（PLoRA）的设计，在保留LLM knowledge 的情况下，引入visual特征，本model不能生成图片，但是可以在生成的text中插入图片
+2. 实验结果，在 vision-language understanding and free-form text-image composition 上展现了很强的能力，outperform 了一众 open-source models，并且在与closed-source model的对比中也展示出了竞争力
+
+总体上，在 multimodal 理解，以及long-text multi-modal content composition 上能力很强
+
+
 ## 2024.3.11
 
 《ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation》
