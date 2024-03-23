@@ -37,6 +37,19 @@
 
 # 2024.3
 
+## 2023.3.22
+
+《(LDM)Diffusion Models: High-Resolution Image Synthesis with Latent Diffusion Models》
+
+2022年一篇对diffusion model进行改进的文章，要点：
+
+1. 本文是潜在扩散模型，LDMs work on compressed latent space of lower dimensionality，Stable diffusion 是 LDM 的一个开源预训练模型，由于它的开源迅速火爆起来
+2. 模型，引入一个autoencoder 先对原始对象进行压缩编码，编码后的向量再应用到扩散模型，引入batch-based adversarial objective相比基于像素的L2/L1 loss更能保证图像质量。潜空间的尺寸远远小于像素空间（f是一个参数，本文试验4和8效果比较好），极大了降低了硬件资源的需求，同时也能加速整个过程。增加一个自编码器并没有改变 DDPM 的算法过程，所以并不需要对 DDPM 算法代码做任何改动。另外设计的conditional mechanism，通过在 UNET 中加入 Attention 机制，处理条件变量
+3. 实验结果，Achieve new SOTA for image inpainting and class-conditional image synthesis，以及在 unconditional image gen，text-to-image synthesis，超分等任务上的 competitive perf，同时对比 pixel-based DMs [5177]显著降低计算开销
+
+总体上，Pixel-based representations of images 包含 barely perceptible, high-freq details，与pixel-based diffusion approaches相比，本文提出在低维隐空间进行的LDM model，显著降低了计算开销，同时能生成百万像素级更高清的图像。
+
+
 ## 2024.3.16
 
 《InternLM-XComposer2: Mastering Free-form Text-Image Composition and Comprehension in Vision-Language Large Models 》
@@ -47,7 +60,6 @@
 2. 实验结果，在 vision-language understanding and free-form text-image composition 上展现了很强的能力，outperform 了一众 open-source models，并且在与closed-source model的对比中也展示出了竞争力
 
 总体上，在 multimodal 理解，以及long-text multi-modal content composition 上能力很强
-
 
 ## 2024.3.11
 
@@ -60,7 +72,6 @@
 
 总体上，属于研究T2I模型评估的一篇很好的工作，ImageReward 指标比CLIP score和FID更有优势。
 
-
 《CLIPScore: A Reference-free Evaluation Metric for Image Captioning》
 
 2021年底2022年初，研究image caption任务的评估指标，要点：
@@ -71,7 +82,6 @@
 
 总体上，属于利用CLIP强大的cross-modal emb对齐能力，方法比较简单，在早期应该效果不错。
 
-
 ## 2024.3.5
 
 《COMET**: A Neural Framework for MT Evaluation》
@@ -81,7 +91,6 @@
 1. BLEU指标，是基于 MT-generated hypothesis and a human-generated reference translation in the target language. 存在一些弱点
 2. 本文推出COMET model，一个多语言翻译模型，验证了三种目标：DA,HTER,MQM，基础模型就是 XLM-RoBERTa 的model，在上面加了结构做回归和分类（详细了解TODO）
 3. 实验结果，相比BLEU效果要好很多，是更优秀的MT评估指标
-
 
 ## 2024.3.3
 
@@ -94,7 +103,6 @@
 1. LLM 基本上在性能上可以match top MT model，PaLM2 的翻译性能表现最好，Gemini pro 的翻译性能还不错；在OpenAI model中，GPT4 -Turbo 的表现最好，GPT 3.5Turbo并不弱，差的不多；LLaMA2 对比闭源模型还有比较大差距
 2. 1M长度文本的翻译成本方面GPT系列与传统MT服务差不多，Google 的大模型服务要明显低一些，低20倍以上
 3. LLM 的翻译速度相比NMT要慢100倍以上
-
 
 # 2024.2
 
