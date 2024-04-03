@@ -35,6 +35,21 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
+# 2024.4
+
+## 2024.4.3
+
+停更了一段时间，近期有点忙于其他事情~论文阅读会继续catch up起来，同时增加代码阅读和实践。
+
+《SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis》
+
+2023.7 Stability 的一篇文章，关于improve SD的，要点：
+
+1. 本文在SD的基础上进行优化，以提高image synthesis的质量。模型代码和参数开源
+2. 模型，包括 text-to-image(base)和image-to-image(refine)的两个阶段；相比SD，base部分包含一个3倍大小的UNet；通过cross attention引入了conditioning tech；improved autoencoder；multi-aspect training 等
+3. 实验结果，在human preference上，SDXL相比SD基线有很大提升，但是FID和CLIP Score未能反映这一点，体现了对应指标的局限性。
+
+
 # 2024.3
 
 ## 2023.3.22
@@ -48,7 +63,6 @@
 3. 实验结果，Achieve new SOTA for image inpainting and class-conditional image synthesis，以及在 unconditional image gen，text-to-image synthesis，超分等任务上的 competitive perf，同时对比 pixel-based DMs [5177]显著降低计算开销
 
 总体上，Pixel-based representations of images 包含 barely perceptible, high-freq details，与pixel-based diffusion approaches相比，本文提出在低维隐空间进行的LDM model，显著降低了计算开销，同时能生成百万像素级更高清的图像。
-
 
 ## 2024.3.16
 
