@@ -37,6 +37,17 @@
 
 # 2024.4
 
+## 2024.4.29
+
+《Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone》
+
+2024.4 微软出的一篇文章，延续基于filtered高质量数据train小模型的思路，要点：
+
+1. 本文工作属于 phi-1和phi-2的延续，基于过滤的高质量数据，以及模型生成数据。相当于phi-2的scale-up versino
+2. 模型，在3.5T数据上训练了三个版本的model，训练分为两个阶段：phase-1 teach model general knowledge 和 language understanding；phase-2 使用 more heavily filtered webdata (a subset used in Phase-1)以及synthetic data，教会 model  logical reasoning and various niche skills
+3. 实验结果，尽管只有3.8B参数，phi-3 mini 在achedemic datasets上的效果，与Mixtral 8*7B以及GPT-3.5相当
+
+
 ## 2024.4.3
 
 停更了一段时间，近期有点忙于其他事情~论文阅读会继续catch up起来，同时增加代码阅读和实践。
@@ -48,7 +59,6 @@
 1. 本文在SD的基础上进行优化，以提高image synthesis的质量。模型代码和参数开源
 2. 模型，包括 text-to-image(base)和image-to-image(refine)的两个阶段；相比SD，base部分包含一个3倍大小的UNet；通过cross attention引入了conditioning tech；improved autoencoder；multi-aspect training 等
 3. 实验结果，在human preference上，SDXL相比SD基线有很大提升，但是FID和CLIP Score未能反映这一点，体现了对应指标的局限性。
-
 
 # 2024.3
 
