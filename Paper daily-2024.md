@@ -35,6 +35,22 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
+# 2024.6
+
+## 2024.6.1
+
+《**Chameleon: Mixed-Modal Early-Fusion Foundation Models**》
+
+FAIR 在2024.5的一篇文章，属于 CM3Leon 工作的后续，本文要点：
+
+1，本文介绍了一个 token based multimodal 模型，在精心设计的多模态数据集上预训练和SFT，最终在多模态理解生成和纯文本任务上都取得良好的效果。
+
+2，数据，text-only data 2.9T，text-image data 1.5T，interleaved data 400B
+
+3，模型，2个版本 7B/34B，采用了 early-fusion 的设计方式，与Gemini结构类似，在 pretrain 模型时为了保证stable有比较多技巧，例如dropout, QK-Norm 的使用
+
+4，实验结果，在多模态任务上，例如VQA，取得了非常好的效果，outperform Flamingo等模型，同时在text任务上，保持了competitive 的结果，可以对抗LLaMA2 34B
+
 # 2024.4
 
 ## 2024.4.29
@@ -46,7 +62,6 @@
 1. 本文工作属于 phi-1和phi-2的延续，基于过滤的高质量数据，以及模型生成数据。相当于phi-2的scale-up versino
 2. 模型，在3.5T数据上训练了三个版本的model，训练分为两个阶段：phase-1 teach model general knowledge 和 language understanding；phase-2 使用 more heavily filtered webdata (a subset used in Phase-1)以及synthetic data，教会 model  logical reasoning and various niche skills
 3. 实验结果，尽管只有3.8B参数，phi-3 mini 在achedemic datasets上的效果，与Mixtral 8*7B以及GPT-3.5相当
-
 
 ## 2024.4.3
 
