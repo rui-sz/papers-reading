@@ -35,6 +35,20 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
+# 2024.8
+
+## 2024.8.8
+
+《**Retrieval-Augmented Generation for Large Language Models: A Survey**》
+2024.3 的一篇文章，本文要点：
+1，对 RAG 的发展做了归纳总结，三个阶段：Naive RAG, Advanced RAG, Modular RAG
+
+2，RAG 优化的一些方法：Retrieval Source, Indexing Optimization, Query Optimization, Embedding, Adapter
+3，PE，RAG，FT 几种方法的对比，做了比较好的总结归纳
+
+总体来说，没有很多新意，但是从系统性梳理和抽象的角度，是一篇不错的综述文章
+
+
 # 2024.6
 
 ## 2024.6.1
