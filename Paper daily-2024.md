@@ -37,6 +37,22 @@
 
 # 2024.8
 
+## 2024.8.11
+
+《**Knowledge Adaptation from Large Language Model to Recommendation for Practical Industrial Application**》
+2024.5 快手的一篇将LLM引入RS的文章，要点：
+1，背景：传统推荐引擎的 ID embeddings 忽视了 semantic info of items，导致rec system泛化能力不强，无法泛化到unseen data上，特别是在冷启动和长尾 user recommendation 问题上；LLM 通过预训练拥有 general knowledge，因此有理解和推理能力。而RS的ID emb则 fall within the collaborative knowledge domain，因此 bridge the gap between general and recommendation-specific domains is crucial，可以提高推荐系统的有效性和泛化性
+
+2，想法：本文 explore the learning of user and item embeddings for recommender systems from LLM-based content representations. 提出了 a twin-tower structure supervised by the recommendation task and tailored for practical industrial application. Llm-driven knowlEdge Adaptive RecommeNdation (LEARN) framework
+
+3，数据：快手线上数据，31 million items interacted with by 12 million users over a 10-month period
+
+4，模型：将预训练的 LLM（Baichuan2-7B）用作 item encoders，冻结LLM参数避免遗忘问题，生成item emb，然后用 transformer model 训练得到user emb；模型整体是一个 twin tower 架构，item tower 有三个变种
+
+5，实验结果：在用于快手App场景时，取得了不错的business benefit
+
+总的来说，本文属于将RS和LLM结合的一篇有效实践，synergizes open-world knowledge with collaborative knowledge
+
 ## 2024.8.8
 
 《**Retrieval-Augmented Generation for Large Language Models: A Survey**》
