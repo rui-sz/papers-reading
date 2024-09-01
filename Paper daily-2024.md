@@ -35,6 +35,17 @@
   - [ ] MAE loss，BiT MAE重建图像
   - [ ] DALLE/DALLE2 效果体验
 
+# 2024.9
+## 2024.9.1
+《**VBPR: Visual Bayesian Personalized Ranking from Implicit Feedback**》
+2016年的一篇文章，是研究 visual signal 引入RS的一篇早期工作，结果具有比较好的参考价值。内容要点：
+1，背景：本文研究基于隐式 feedback 的个性化ranking问题，在BPR-MF基础上引入 visual signal
+2，数据：用到了2个包含隐式反馈的数据集，amazon.com 和 tradesy.com，其中 cold-start 的占比比较高，可能是后续实验结果不错的一个原因
+3，方法：在BPR-MF的基础上，引入 AlexNet 提取的CNN信号，用于捕捉视觉信息对用户决策的影响，BPR-MF 是一个pair-wise的框架（当时的SOTA框架）
+4，实验结果，VBPR对比其他 pair-wise 方法有明显的AUC提升；当然对比point-wise方法就更好了。理论上 latent factors 可以uncover任意relevant的信号，但是cold/cool 的items会导致这种方法不是特别有效，在此基础上引入 explicit 的signal，有助于模型学习。实验结果也佐证了这一点。
+未来的研究方向，包括 temporal dynamics，以及引入 visual signal 的 efficiency 问题
+
+
 # 2024.8
 
 ## 2024.8.11
